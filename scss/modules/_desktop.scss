@@ -1,0 +1,48 @@
+body {
+    width:100%;
+}
+
+.login_page {
+    display:flex;
+}
+.intro_img {
+    width:50%;
+    border:1px solid red;
+}
+
+.login_form {
+    width:50%;
+    border:1px solid blue;
+    box-sizing: border-box;
+}
+
+.signup_page {
+    display:flex;
+}
+
+.signup_form {
+    width:50%;
+    box-sizing: border-box;
+    padding:0 8%;
+}
+
+.complete_page {
+    display:flex;
+}
+
+.complete_form {
+    width:50%;
+    box-sizing: border-box;
+}
+
+.complete_icon {
+    margin-top:20%;
+}
+
+.complete_t {
+    padding:60px 0 40px 0;
+}
+
+.complete_p {
+    margin-bottom: 160px;
+}

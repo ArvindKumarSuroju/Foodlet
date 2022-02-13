@@ -1,3 +1,14 @@
 
 /*mobile version*/
-@import "modules/mobile"
+
+
+    @import "modules/mobile";
+
+
+
+/* Desktop */
+
+@media (min-width:1000px) {
+    @import "modules/desktop";
+
+}
