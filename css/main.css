@@ -137,6 +137,22 @@ footer {
   .complete_p {
     margin-bottom: 160px;
   }
+  width: 480px;
+  margin: 0 auto;
+}
+
+.clear::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+input {
+  background-color: #ccc;
+  border: 0;
+  padding: 1%;
+  border-radius: 10px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
