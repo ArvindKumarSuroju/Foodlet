@@ -4,32 +4,42 @@ body {
 
 .inner { 
     padding:0 8%;
-    border:1px solid yellow;
+    // border:1px solid yellow;
 }
 
 
 input {
     background-color:#ccc;
     border:0;
-
+    margin-bottom:5%;
     padding:10px;
     box-sizing: border-box;
     border-radius: 10px;
     width:100%;
 }
 
+a {
+    text-decoration: none;
+}
 .caption {
     text-align:right;
+}
+
+.check {
+    font-size:13px;
+    line-height:3px;
+    margin:4% 0;
 }
 
 button {
     margin:10% auto;
     display:block;
-    padding: 10px 50px;
+    padding: 10px 70px;
     text-align:center;
     border:0;
     border-radius: 14px;
     background-color:#ccc;
+    font-weight:bold;
 }
 
 
@@ -40,7 +50,7 @@ button {
 
 .btm {
     text-align:center;
-    padding-top:40%;
+    padding:30% 0 15% 0;
 }
 
 
@@ -66,7 +76,7 @@ select {
     height:100px;
     width:100px;
     border:1px solid black;
-    margin:0 auto;
+    margin:20% auto;
 }
 .complete_t {
     text-align:center;
@@ -74,6 +84,12 @@ select {
 .complete_p {
     text-align:center;
 }
+
+.start_btn {
+    margin-top:15%;
+    margin-bottom:20%;
+}
+
 
 /*footer*/
 footer {
@@ -85,3 +101,5 @@ footer {
     font-size:10px;
     line-height:30px;
 }
+
+
