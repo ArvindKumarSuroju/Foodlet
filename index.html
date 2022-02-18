@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="app.webmanifest">
+    <script>
+        if ('serviceWorker' in navigator) { //if browser supports Service worker
+            // register the service worker in sw.js
+            navigator.serviceWorker.register('./sw.js')
+                .then(function(reg) {
+                    console.log(`Service Worker Registered`);
+                })
+                .catch(function(error) {
+                    console.log(`Service Worker Error (${error})`);
+                });
+        } else {
+            console.error("This browser doesn't support Service Worker");
+        }
+    </script>
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/main.js" defer></script>
@@ -12,108 +27,23 @@
 
     <title>Foodlet</title>
 </head>
+
 <body>
-    <header>
-        <h2>FOODLET PARTNER</h2>
-    </header>
-    <!--on-boarding page-->
-    <div id="boarding">
-        <h1 class="logo"><img src="" alt=""></h1>
-        <p>tagline here</p>
-        <button>Log in</button>
-        <button>Sign up</button>
-        <p class="direction">Foodlet Business Partner?</p>
-        <a href="" class="select">Log in / Sign up here</a>
+    <div class="toolbar">
+
+        <a href="#login-customer">Login Customer| </a>
+        <a href="#on-boarding-customer">On boarding Customer|</a>
+        <a href="#signup-customer">Sign Up customer|</a>
+        <a href="#registration-successful">Registration Success|</a>
+        <a href="#partner-login">Partner Login|</a>
+        <a href="#partner-signup">Partner Signup|</a>
+
     </div>
-    <!--LOG IN PAGE-->
-    <main>
-        <div id="login" class="page">
-            <div class="login_page">
-                <div class="intro_img"></div>
-                <div class="login_form inner">
-                    <h2 class="title">Log in</h2>
-                    <label for="">Username</label>
-                    <div>
-                        <input type="text">
-                    </div>
-                    <label for="">Password</label>
-                    <div>
-                        <input type="text">
-                    </div>
-
-                    <p><a class="caption">Forgot your password?</a></p>
-                    <input type="checkbox">Remember me
-                    <button>LOG IN</button>
-                    <div class="btm"><span class="question">New users?</span><a href="#signup" class="click">Create Account</a></div>
-                </div>
-            </div>
-        </div>
-        <!--Sign up page-->
-        <div id="signup" class="page">
-            <div class="signup_page">
-                <div class="intro_img"></div>
-                <div class="signup_form inner">
-                    <h2 class="title">Create an Account</h2>
-
-                    <label for="">Name <span class="dot">*</span></label>
-                    <div>
-                        <input type="text" required>
-                    </div>
-                    <label for="">Password <span class="dot">*</span></label>
-                    <div>
-                        <input type="text" required>
-                    </div>
-                    <label for="">Phone Number <span class="dot">*</span></label>
-                    <div>
-                        <input type="text" required>
-                    </div>
-                    <label for="">Email
-                        <input type="text">
-                    </label>
-                    <label for="" required>Location</label>
-                    <div class="location">
-                        <select name="" id="">
-                            <option value="">Choose your location</option>
-                            <option value="">Metro Vancouver</option>
-                            <option value="">East Vancouver</option>
-                            <option value="">West Vancouver</option>
-                            <option value="">North Vancouver</option>
-                        </select>
-                    </div>
-                    <input type="checkbox">By signing up, you agree with Foodlet's Terms of Service & Privacy Policy.
-                    <button><a href="#complete">SIGN UP</a></button>
-                    <div class="btm2">
-                        <p class="question">I alredy have an account</p><a class="click">Log in</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div id="complete" class="page">
-            <div class="complete_page">
-                <div class="intro_img"></div>
-                <div class="complete_form inner">
-                    <div class="complete_icon">
-                        <img src="" alt="">
-                    </div>
-                    <h3 class="complete_t">Registrarion Complete!</h3>
-                    <p class="complete_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur eaque
-                        accusamus saepe porro recusandae tempore expedita distinctio et vel, at ut officia eos obcaecati
-                        adipisci illo perferendis nostrum illum.</p>
-                    <button>Let's start</button>
-                </div>
-            </div>
-
-            <h3>Registrarion Complete!</h3>
-            <p> is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur eaque accusamus saepe porro recusandae tempore expedita distinctio et vel, at ut officia eos obcaecati adipisci illo perferendis nostrum illum.</p>
-            <button>Let's start</button>
-        </div>
-    </main>
-    <footer class="copyright">
-        <span>
-            &copy;2022 FOODLET. ALL RIGHTS RESERVED.
-        </span>
-    </footer>
+    <div id="mainArea">
+        <!-- the main part will be dynamically updated as each page loads -->
+    </div>
+    <script src="routing.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

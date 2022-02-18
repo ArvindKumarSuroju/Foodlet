@@ -1,34 +1,52 @@
 /*mobile version*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+h1, h2, h3, h4, h5, h5, div, p, ul, li, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
 .inner {
   padding: 0 8%;
-  border: 1px solid yellow;
 }
 
 input {
-  background-color: #ccc;
+  background-color: #ecf1f4;
   border: 0;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 10px;
   width: 100%;
+  margin-bottom: 5%;
+  padding: 3%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 .caption {
   text-align: right;
 }
 
+.check {
+  font-size: 13px;
+  line-height: 3px;
+  margin: 4% 0;
+}
+
 button {
   margin: 10% auto;
   display: block;
-  padding: 10px 50px;
+  padding: 10px 70px;
   text-align: center;
   border: 0;
   border-radius: 14px;
-  background-color: #ccc;
+  background-color: #2e8b56;
+  color: white;
 }
 
 .question {
@@ -37,19 +55,38 @@ button {
 
 .btm {
   text-align: center;
-  padding-top: 40%;
+  padding: 30% 0 15% 0;
+}
+
+.caption {
+  color: #f19737;
 }
 
 .click {
   font-weight: bold;
   padding: 0 7px;
+  color: #f19737;
+}
+
+header {
+  height: 50px;
+  background-color: #00615b;
+}
+
+/*Log in screen*/
+.title {
+  text-align: center;
+}
+
+.login_form, .signup_form {
+  margin-top: 20px;
 }
 
 /*sign up screen*/
 select {
   width: 100%;
   border: 0;
-  background-color: #ccc;
+  background-color: #ecf1f4;
   padding: 10px 0;
   border-radius: 10px;
 }
@@ -58,12 +95,21 @@ select {
   text-align: center;
 }
 
+.require {
+  font-size: 13px;
+}
+
 /*complete screen*/
+#complete {
+  box-sizing: border-box;
+}
+
 .complete_icon {
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  margin: 0 auto;
+  height: 150px;
+  width: 150px;
+  background-color: #2e8b56;
+  border-radius: 50%;
+  margin: 20% auto;
 }
 
 .complete_t {
@@ -72,12 +118,21 @@ select {
 
 .complete_p {
   text-align: center;
+  color: #00615b;
+  padding: 7% 0;
+  font-size: 15px;
+}
+
+.start_btn {
+  margin-top: 15%;
+  margin-bottom: 20%;
 }
 
 /*footer*/
 footer {
   height: 30px;
-  background-color: #ccc;
+  background-color: #00615b;
+  color: white;
 }
 
 .copyright {
@@ -98,12 +153,11 @@ footer {
 
   .intro_img {
     width: 50%;
-    border: 1px solid red;
+    background-color: #ecf1f4;
   }
 
   .login_form {
     width: 50%;
-    border: 1px solid blue;
     box-sizing: border-box;
   }
 
@@ -134,25 +188,9 @@ footer {
     padding: 60px 0 40px 0;
   }
 
-  .complete_p {
-    margin-bottom: 160px;
+  input {
+    padding: 10px 0;
   }
-  width: 480px;
-  margin: 0 auto;
-}
-
-.clear::after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
-input {
-  background-color: #ccc;
-  border: 0;
-  padding: 1%;
-  border-radius: 10px;
-  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

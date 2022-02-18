@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0rem;
+    text-align: center;   
+}
+
+
+body, html, section.partner-login, section.partner-signup, section.onboarding {
+    height: 100vh;
+    width: 100vw;
+}
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 3;
+    justify-content: space-between;
+}
+
+.onboarding-content, .partner-login-form, .partner-signup-form {
+    width: 90vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background: #00615B;
+    color: white;
+
+    padding: 7px 60px;
+}
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -2%;
+}
+
+h2 {
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -2%;
+    margin: 0;
+}
+
+footer {
+    background: #00615B;
+    color: white;
+    font-weight: 600;
+    font-size: 11px;
+
+    padding: 5.5px 15.5px;
+}
+
+main {
+    max-width: 500px;
+    margin: auto;
+
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    background: #2E8B56;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+
+    width: 174px;
+    padding: 13px;
+    margin: 23px auto;
+    border-radius: 10px;
+}
+
+a {
+    color: #F19737;
+    font-weight: 600;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+
+
+
+
+/* .onboarding, .partner-login {
+    display: none;
+    height: auto;
+}
+
+.onboarding, .partner-signup {
+    display: none;
+    height: auto;
+}
+
+.partner-login, .partner-signup {
+    display: none;
+    height: auto;
+} */
+
+aside {
+    display: none;
+}
+
+
+
+
+
+/*  FORMS */
+form input[type=text] {
+    background: #EEF2F5;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+}
+
+form input[type=text]:focus {
+    border: 2px solid #51CF67;
+}
+
+form input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+}
+
+.checkbox {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox label {
+    font-weight: 300;
+}
+
+.inside-form {
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin: 12px 0rem;
+}
+
+label {
+    text-align: left;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
+/*  BOTTOM LINK */
+.bottom-link {
+    margin: 1.5rem auto;
+}
+
+.bottom-link p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/*  ON-BOARDING SCREEN */
+.onboarding header {
+    display: none;
+}
+
+
+.onboarding img {
+    max-width: 80%;
+    display: block;
+    padding: 119px 41.5px 22px 41.5px;
+    margin: auto;
+
+}
+
+.onboarding .tagline {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.onboarding .branding {
+    padding-bottom: 40px;
+}
+
+
+
+
+/*  PARTNER LOG IN */
+.partner-login-forgetpassword {
+    display: block;
+    text-align: right;
+}
+
+.partner-login-rememberme {
+    margin-top: 18px;
+    margin-bottom: 40px;
+}
+
+
+
+
+/*  PARTNER SIGN UP */
+.partner-signup form p {
+    text-align: left;
+    font-size: 14px;
+}
+
+.partner-signup h2 {
+    padding: 1rem 0;
+}
+
+.partner-signup .checkbox {
+    line-height: 22.4px;
+}
+
+.partner-signup .button {
+    margin-bottom: .5rem;
+    margin-top: 2rem;
+}
+
+.partner-signup .bottom-link {
+    margin-bottom: 30px;
+}
+
+#partner-signup-termsagreement {
+    align-self: flex-start;
+    margin: 0;
+    margin-right: .5rem;
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    aside {
+        display: block;
+        background: #EEF2F5;
+        height: 100%;
+        width: 50vw;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        max-width: 80%;
+    }
+
+    header {
+        background: none;
+        position: absolute;
+        left: 50%;
+        padding: 50px 0rem 0 3.5rem;
+    }
+
+    h1 {
+        font-size: 38px;
+        color: black;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 30px;
+        margin-top: 120px;
+    }
+
+
+
+
+
+    .onboarding .branding {
+        padding-bottom: 106px;
+    }
+
+    .onboarding img {
+        max-width: 50%;
+        padding-top: 80px;
+    }
+
+    .onboarding .bottom-link {
+        margin-top: 163px;
+    }
+
+    .partner-login-form, .partner-signup-form, .onboarding-content {
+        width: 40vw;
+        padding: 0 50px;
+    }
+
+
+
+    .partner-signup header {
+        padding-top: 30px;
+    }
+    
+    .partner-signup-form h2 {
+        display: none;
+    }
+
+    .partner-signup-form form {
+        padding-top: 100px;
+    }
+
+    .partner-signup-form .button {
+        margin: 1.5rem auto;
+    }
+
+    .partner-signup .bottom-link {
+        margin-top: 0;
+    }
+
+
+}

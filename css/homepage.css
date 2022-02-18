@@ -1,0 +1,178 @@
+.header {
+  height: 50px;
+  background-color: #00615b;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hamburger {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}
+
+.location_select {
+  width: 70%;
+  padding: 2% 0;
+  margin: 1% 0;
+}
+
+.filter {
+  background-color: #51cf67;
+  border: 0;
+  color: #00615b;
+  padding: 2% 6%;
+  margin-left: 2rem;
+}
+
+.map {
+  text-align: center;
+  font-size: 20px;
+  height: 400px;
+  border-bottom: 2px solid black;
+}
+
+h4 {
+  text-align: center;
+}
+
+#store {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.stores {
+  width: 500%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.store_detail {
+  display: flex;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.store_detail .store_img {
+  height: 50px;
+  width: 50px;
+}
+
+.store_cate, .store_dis {
+  font-size: 13px;
+}
+
+.heart {
+  width: 10px;
+  height: 10px;
+}
+
+.pickup_detail {
+  background-color: #ccc;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.clock {
+  width: 8px;
+  height: 8px;
+  border: 1px solid black;
+  line-height: 8px;
+  margin: 0 5px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.subbar_title {
+  padding: 10px 0 20px 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.category, .dietary, .distance {
+  padding: 3% 0 5px 0;
+  font-size: 15px;
+  border: 1px solid red;
+}
+
+label {
+  font-size: 13px;
+}
+
+a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #ccc;
+  border: 1px solid blue;
+  line-height: 30px;
+}
+
+.filter_title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #ccc;
+}
+
+.distance {
+  border-bottom: 2px solid #ccc;
+}
+
+.buttons {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.clear, .apply {
+  width: 38%;
+  padding: 3% 0;
+}
+
+.clear {
+  border: 1px solid #eee;
+  background-color: white;
+}
+
+.apply {
+  border: 0;
+  font-weight: bold;
+}
+
+button a {
+  color: white;
+}
+
+p, h1, h2, h3, h4, h5, div, li, ul, a, body {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+button {
+  border-radius: 10px;
+}
+
+select {
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
