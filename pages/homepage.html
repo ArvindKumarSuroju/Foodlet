@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="homepage.css">
+    <script text="javascript" src="homescript.js" defer></script>
     <title>Main Page</title>
 </head>
-
 <body>
     <header>
-        <ul class="header">
-            <li class="hamburger"><img src="" alt=""></li>
-            <li class="header_title">FOODLET</li>
+        <ul class="header_mobile">
+            <li class="hamburger">menu</li>
+            <li class="logo"></li>
             <li class="search_icon"><img src="" alt=""></li>
         </ul>
+        <div class="header_desktop">
+        <ul class="header_nav inner">
+            
+                <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
+                <li><a href="">Favourite</a></li>
+                <li><a href="">Cart</a></li>
+                <li><a href="">Orders</a></li>
+                <li><a href="">My Rewards</a></li>
+                <li><a href="">Settings</a></li>
+                <li><a href="">About</a></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><button class="logout">Log Out</button></li>
+            </div>
+        </div>
+        </ul>
+        <div id="sidebar" > <!--Sidebar-->
+            <h2 class="sidelogo"></h2>
+            <a class="side_close"><img src="" >close</a>
+            <ul class="sidebar_menu">
+                <li>
+                    <img src="" alt="">Hi, Use Name
+                    <p>your-email@gmail.com</p>
+                </li>
+                <li><a href=""><img src="" alt="">Favourite</a></li>
+                <li><a href=""><img src="" alt="">Cart</a></li>
+                <li><a href=""><img src="" alt="">Orders</a></li>
+                <li><a href=""><img src="" alt="">My Rewards</a></li>
+                <li><a href=""><img src="" alt="">Settings</a></li>
+                <li><a href=""><img src="" alt="">About</a></li>
+                <li><a href=""><img src="" alt="">Log Out</a></li>
+            </ul>
+        </div>
     </header>
     <main>
-        <div id="main_page" class="page inner">
-            <select name="" id="" class="location_select">
-                <option value="">Metro Vancouver</option>
-                <option value="">West Vancouver</option>
-                <option value="">North Vancouver</option>
-                <option value="">East Vancouver</option>
-            </select>
-            <button class="filter">Filter</button>
-            <div class="map">
-                <h1>Work in Progress</h1>
+        <div id="main_page" class="page inner"> 
+            <div class="search">
+                <select name="" id="" class="location_select">
+                    <option value="">Metro Vancouver</option>
+                    <option value="">West Vancouver</option>
+                    <option value="">North Vancouver</option>
+                    <option value="">East Vancouver</option>
+                </select>
+                <a href="#" class="filter">Filter</a>
             </div>
-            <h4>Availables Stores Nearby</h4>
-            <!--store part 500%-->
-            <div class="store_part">
-                <!--store list -->
-                <ul class="stores">
-                    <!--store detail-->
+        <div class="map">
+            map
+        </div>
+        <h4 class="available_title">Availables Stores Nearby</h4>
+        <!--store part 500%-->
+        <div class="store_part">
+            <!--store list -->
+            <ul class="stores">
+                <!--store detail-->
                     <li id="store" class="store1">
                         <ul class="store_detail">
                             <li>
@@ -42,7 +77,7 @@
                             </li>
                             <li>
                                 <h5 class="store_name">Store Name1</h5>
-                                <p class="store_cate">Categoty- Rating</p>
+                                <p class="store_cate">Categoty</p><img class="start"><span class="rate">rating</span>
                                 <p class="store_dis">Distance</p>
                             </li>
                             <li><img src="" alt="" class="heart"></li>
@@ -51,16 +86,16 @@
                             <li><img src="" class="clock">pick up time</li>
                             <li>6 left from<span class="price">$4.99</span></li>
                         </ul>
-                    </li>
+                    </li> 
                     <li id="store" class="store2">
                         <ul class="store_detail">
                             <li>
                                 <img src="" alt="" class="store_img">
                             </li>
                             <li>
-                                <h5 class="store_name">Store Name1</h5>
-                                <p class="store_cate">Categoty- Rating</p>
-                                <p class="store_dis">Distance</p>
+                            <h5 class="store_name">Store Name1</h5>
+                            <p class="store_cate">Categoty- Rating</p>
+                            <p class="store_dis">Distance</p>
                             </li>
                             <li><img src="" alt="" class="heart"></li>
                         </ul>
@@ -75,9 +110,9 @@
                                 <img src="" alt="" class="store_img">
                             </li>
                             <li>
-                                <h5 class="store_name">Store Name1</h5>
-                                <p class="store_cate">Categoty- Rating</p>
-                                <p class="store_dis">Distance</p>
+                            <h5 class="store_name">Store Name1</h5>
+                            <p class="store_cate">Categoty- Rating</p>
+                            <p class="store_dis">Distance</p>
                             </li>
                             <li><img src="" alt="" class="heart"></li>
                         </ul>
@@ -92,9 +127,9 @@
                                 <img src="" alt="" class="store_img">
                             </li>
                             <li>
-                                <h5 class="store_name">Store Name1</h5>
-                                <p class="store_cate">Categoty- Rating</p>
-                                <p class="store_dis">Distance</p>
+                            <h5 class="store_name">Store Name1</h5>
+                            <p class="store_cate">Categoty- Rating</p>
+                            <p class="store_dis">Distance</p>
                             </li>
                             <li><img src="" alt="" class="heart"></li>
                         </ul>
@@ -109,9 +144,9 @@
                                 <img src="" alt="" class="store_img">
                             </li>
                             <li>
-                                <h5 class="store_name">Store Name1</h5>
-                                <p class="store_cate">Categoty- Rating</p>
-                                <p class="store_dis">Distance</p>
+                            <h5 class="store_name">Store Name1</h5>
+                            <p class="store_cate">Categoty- Rating</p>
+                            <p class="store_dis">Distance</p>
                             </li>
                             <li><img src="" alt="" class="heart"></li>
                         </ul>
@@ -119,107 +154,11 @@
                             <li><img src="" class="clock">pick up time</li>
                             <li>6 left from<span class="price">$4.99</span></li>
                         </ul>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-        <div id="filter" class="page">
-            <h2 class="subbar_title">FILTER</h2>
-            <div class="filter_title">
-                <h3 class="category">Category</h3>
-                <a href="">select all</a>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Restaurant</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Cafe</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Bakery</label>
-            </div>
-            <div class="filter_title">
-                <h3 class="dietary">Dietary</h3>
-                <a href="">select all</a>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Non- vegetarian</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Vegatarian</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Vegan</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Gluten Free</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label>Halal</label>
-            </div>
-            <h3 class="distance">Distance</h3>
-            <div><input type="radio" checked>
-                <label>1km</label>
-            </div>
-            <div><input type="radio">
-                <label>3km</label>
-            </div>
-            <div><input type="radio">
-                <label>5km</label>
-            </div>
-            <div><input type="radio">
-                <label>10km</label>
-            </div>
-            <div><input type="radio">
-                <label>15km</label>
-            </div>
-            <div><input type="radio">
-                <label>30km</label>
-            </div>
-            <div class="buttons">
-                <button class="clear">Clear all</button>
-                <button class="apply">APPLY FILTER</button>
-            </div>
-        </div>
-        <div id="sub_bar">
-            <h2><img src="" alt="">Foodlet Logo</h2>
-            <ul>
-                <li>
-                    <img src="" alt="">Hi, Use Name
-                    <p>your-email@gmail.com</p>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">Favourite</a>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">Cart</a>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">Orders</a>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">My Rewards</a>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">Settings</a>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">About</a>
-                </li>
-                <li>
-                    <a href=""><img src="" alt="">Log Out</a>
-                </li>
+                    </li> 
             </ul>
+
         </div>
+    </div>
     </main>
     <footer class="copyright">
         <span>
@@ -227,5 +166,4 @@
         </span>
     </footer>
 </body>
-
 </html>
