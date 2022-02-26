@@ -71,18 +71,18 @@
     text-align: center;
   }
   
-  .clear, .apply {
+  .white_btn, .green_btn {
     width: 38%;
     padding: 3% 0;
     color: #2e8b56;
   }
   
-  .clear {
+  .white_btn {
     border: 1px solid #eee;
     background-color: white;
   }
   
-  .apply {
+  .green_btn {
     border: 0;
     font-weight: bold;
     background-color: #cbe2d5;
@@ -183,12 +183,7 @@
         text-align: center;
       }
     
-      .clear, .apply {
-        width: 30%;
-        padding: 1.5% 0;
-        color: #2e8b56;
-        margin-bottom: 15px;
-      }
+      
     
     
     
