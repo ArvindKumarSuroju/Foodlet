@@ -1,0 +1,36 @@
+main>p {
+    text-align:center;
+}
+
+.pickup_info {
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pickup_info h4 {
+    background-color:#FCE1C4;
+}
+
+.menu_detail ul>li {
+    display:block;
+}
+
+.pay {
+    display:flex;
+    justify-content:space-between;
+}
+
+/* .price {
+    text-align:right;
+    width:50%;
+} */
+
+
+.total>p {
+    border-top:0 !important;
+    padding:0 !important;
+}
+
+.save>p {
+    padding:0 !important;
+}

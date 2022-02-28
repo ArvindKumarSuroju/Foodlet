@@ -1,0 +1,57 @@
+
+.restaurant img {
+    border:1px solid blue;
+}
+/* .restaurant_detail {
+    justify-content: space-between;
+} */
+main ul>li:first-child {
+    width:20%;
+    border:1px solid black;
+
+}
+
+main ul>li:nth-child(2) {
+    width:70%;
+    padding:5px;
+    /* border:1px solid green; */
+
+}
+
+main ul>li:nth-child(3) {
+    width:10%;
+    /* border:1px solid red; */
+    margin-left:10%;
+}
+
+/* .menu {
+    border-top: 2px solid #51cf67;
+}
+
+.menu_list {
+    border:1px solid hotpink;
+}
+
+.menu_info {
+    justify-content: flex-end;
+} */
+
+/* .menu_info {
+    position:absolute;
+} */
+
+.menus {
+    border-top: 2px solid #51cf67;
+    padding:3% 0;
+}
+.save, .total, .pay {
+    display:flex;
+    justify-content:space-between;
+}
+
+
+.save>p, .total>p, .pay>p{
+    width:100%;
+    border-top: 2px solid #51cf67;
+    padding:3% 0;
+}
