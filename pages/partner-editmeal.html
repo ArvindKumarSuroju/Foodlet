@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodlet - Partner Home / Add Meals</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="partner-home-addmeals-editmeals.css">
+</head>
+<body>
+    <div class="partner-editmeal">
+        <header>
+            <i class="fas fa-bars mobile-view"></i>
+            <nav>
+                <ul>
+                    <li class="partner-navbar-partnername">Hello, XYZ Restaurant</li>
+
+                    <li class><a href="#">Available Meals</a></li>
+
+                    <li><a href="#">Profile</a></li>
+
+                    <li class="partner-navbar-search"><a href="#"><i class="fas fa-search">    </i></a></li>
+
+                    <li class="logout-button"><button id="partner-logout" class="button logoutbutton">Log Out</button></li>
+                    
+                </ul>
+            </nav>
+            
+            <div class="site-branding">
+                <h1>FOODLET Partner</h1>
+                <img src="images/Foodlet_Partner_Logo (1).png" alt="">
+            </div>
+
+            <a class="mobile-view" href="#"><i class="fas fa-search"></i></a>
+        </header>
+
+        <main>
+            <h2>Edit Meals</h2>
+            <form action="">
+                <div class="inside-form">
+                    <label for="menu-name" class="form-subject">Menu Name</label>
+                    <input id="menu-name" name="menu-name" type="text" placeholder="Italian Spaghetti ">
+                </div>
+                <div class="two-columns">
+                    <div class="inside-form">
+                        <label for="original-price" class="form-subject">Original Price</label>
+                        <input id="original-price" name="original-price" type="number" placeholder="$ 10.00">
+                    </div>
+                    <div class="inside-form">
+                        <label for="sale-price" class="form-subject">Sale Price</label>
+                        <input id="sale-price" name="sale-price" type="number" placeholder="$ 7.99">
+                    </div>
+                </div>
+                <div class="inside-form">
+                    <label for="menu-details" class="form-subject">Menu Details</label>
+                    <textarea id="menu-details" name="menu-details" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate etiam sed et quis dolor nec pharetra. Faucibus eget turpis mattis enim non tempus, arcu."></textarea>
+                </div>
+
+                <div class="dietary-checkbox">
+                    <label for="dietary" class="form-subject">Dietary</label>
+                    <div class="checkbox">
+                        <input id="non-vegetarian" name="dietary" type="checkbox">
+                        <label for="non-vegetarian">Non-Vegetarian</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="vegetarian" name="vegetarian" type="checkbox">
+                        <label for="vegetarian">Vegetarian</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="vegan" name="vegan" type="checkbox">
+                        <label for="vegan">Vegan</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="gluten-free" name="gluten-free" type="checkbox">
+                        <label for="gluten-free">Gluten Free</label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="halal" name="halal" type="checkbox">
+                        <label for="halal">Halal</label>
+                    </div>
+                </div>
+                <div class="two-columns">
+                    <div class="inside-form">
+                        <label for="pickup-date" class="form-subject">Pick-up Date</label>
+                        <input id="pickup-date" name="pickup-date" type="date" placeholder="February 14, 2022">
+                    </div>
+                    <div class="inside-form">
+                        <label for="pickup-time" class="form-subject">Pick-up Time</label>
+                        <input id="pickup-time" name="pickup-time" type="time" placeholder="08:00 PM - 10:00 PM">
+                    </div>
+                    <div class="inside-form food-weight">
+                        <label for="food-weight" class="form-subject">Food Weight</label>
+                        <input id="food-weight" name="food-weight" type="number" placeholder="250 gr">
+                    </div>
+                
+                    <div class="inside-form2 quantity">
+                        <label for="quantity" class="form-subject">Quantity</label>
+                        <div class="quantity-input">
+                            <button class="minusbutton">-</button>
+                            <input id="quantity" name="quantity" type="number" placeholder="5">
+                            <button class="plusbutton">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edit-photo">
+                    <input id="edit-photo" name="edit-photo" type="image" src="#" alt="">
+                    <span>edit photo</span>
+                </div>
+                
+            </form>
+            <div class="two-columns">
+                <div class="button clearallbutton">Clear All</div>
+                <div class="button savechangebutton">Save Change</div>
+            </div>
+            
+        </main>
+
+        <footer>
+            &copy; 2022 FOODLET, RIGHT RESERVED.
+        </footer>
+
+    </div>
+</body>
+</html>
