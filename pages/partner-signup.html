@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodlet: Partner's Log-in & Sign-up Page</title>
 
-    <link rel="stylesheet" href="../css/partner-login-signup.css">
+    <link rel="stylesheet" href="partner-login-signup.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
 </head>
-
 <body>
-
-
-    <section class="partner-signup">
+    <div class="desktop-view">
         <header>
-            <h1>Foodlet Partner</h1>
+            <div class="site-branding">
+                <h1>FOODLET Partner</h1>
+                <img src="images/Foodlet_Partner_Logo (1).png" alt="">
+            </div>
         </header>
 
-        <main>
-            <aside>
-                <img src="" alt="" scr="https://picsum.photos/500/500/?random=1">
-                <img src="" alt="" scr="https://picsum.photos/500/500/?random=2">
-                <img src="" alt="" scr="https://picsum.photos/500/500/?random=3">
-            </aside>
+        <div class="aside">
 
+        </div>
+
+        <main>
+            <h2>Create a Partner Account</h2>
+            
             <div class="partner-signup-form">
-                <h2>Create a Partner Account</h2>
+                <div class="partner-signup-coverimage" id="partner-signup-coverimage">
+                    <span><i class="fa-solid fa-pen"></i></span>
+                </div>
+                <div class="partner-signup-editpicture">
+                    <img src="https://picsum.photos/200/200/?random=88" id="partner-signup-profilepicture">
+                    <span><a href="#">edit picture</a></span>
+                </div>
                 <form action="">
+                    
                     <div class="inside-form">
                         <label for="partner-signup-fullname">Full Name*</label>
                         <input type="text" id="partner-signup-fullname" name="partner-signup-fullname">
@@ -65,23 +76,20 @@
                     <p>*Required field</p>
                     <div class="checkbox">
                         <input type="checkbox" id="partner-signup-termsagreement" name="partner-signup-termsagreement">
-                        <label for="partner-signup-termasgreement">By signing up, you agree with Foodlet's <a href="#">Terms of Service & Privacy Policy</a></label>
+                        <label for="partner-signup-termsagreement">By signing up, you agree with Foodlet's <a href="#">Terms of Service & Privacy Policy</a></label>
                     </div>
+                    <button  type="button" id="partner-signup-button" class="button">Sign up</button>
                 </form>
+            </div>
 
-
-
-                <button id="partner-signup-button" class="button"><a href="#registration-successful">SIGN UP</a></button>
-                <div class="bottom-link">
-                    <p>I already have a partner account. <a href="#">Log in</a></p>
-                </div>
-
+            <div class="bottom-link">
+                <p>I already have a partner account. <a href="#">Log in</a></p>
             </div>
 
         </main>
+    </div>
 
-        <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
-    </section>
+    <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
+
 </body>
-
 </html>
