@@ -77,3 +77,44 @@ body {
       border:0;
       margin:3% 0;
   }
+
+  .text_title {
+    /* Mobile-Titles */
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #000000;
+  }
+
+  .text_body_text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #323232;
+  }
+
+  .text_color_primary {
+    color: #313131;
+  }
+
+  .text_color_secondary {
+    color: #616161;
+  }
+
+  /* Desktop */
+  @media screen and (min-width:1000px){
+    .text_title {
+      font-size: 20px;
+    }
+    .text_body_text {
+      font-size: 20px;
+    }
+    
+}
+
