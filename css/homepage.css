@@ -204,7 +204,7 @@ a {
 
 #sidebar {
   width: 91%;
-  background-color: #cbe2d5;
+  background-color: #00615b;
   position: absolute;
   left: -1000px;
   top: 0;
@@ -241,6 +241,7 @@ a {
 .sidebar_menu li {
   border-bottom: 1px solid black;
   margin: 0 5%;
+  color: white;
 }
 
 .sidebar_menu li:last-child {
@@ -248,15 +249,14 @@ a {
 }
 
 .sidebar_menu li a {
-  color: black;
+  color: white;
 }
 
 .sidebar_menu img {
-  width: 10px;
-  height: 10px;
-  border: 1px solid red;
-  line-height: 10px;
-  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  margin: auto 10px;
+  vertical-align: middle;
 }
 
 li.heart {
