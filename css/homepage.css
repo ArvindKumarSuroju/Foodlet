@@ -176,11 +176,16 @@
   justify-content: space-around;
 }
 
+.pickup_detail li * {
+  display: inline-block;
+}
+
 .clock {
   height: 100%;
   vertical-align: middle;
   width: 16px;
   height: 16px;
+  background: center/cover url("../resources/Icons/PickUpTime.png") no-repeat;
 }
 
 .price {
@@ -204,6 +209,7 @@ a {
   left: -1000px;
   top: 0;
   transition: left 0.3s ease-in-out;
+  z-index: 10;
 }
 
 #sidebar.on {
@@ -226,6 +232,11 @@ a {
   color:blue;
   cursor: pointer;
 
+}
+
+.sidebar_menu {
+  display: flex;
+  flex-flow: column;
 }
 .sidebar_menu li {
   border-bottom: 1px solid black;
@@ -319,7 +330,7 @@ div.heart_active {
   }
 
   .stores_slide {
-    width: 125%;
+    width: 150%;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
