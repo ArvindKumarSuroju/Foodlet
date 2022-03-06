@@ -68,9 +68,17 @@ button {
   color: #f19737;
 }
 
-header {
-  height: 50px;
+.login_form .header, .signup_form .header {
+  height: 48px;
   background-color: #00615b;
+  text-align: center;
+}
+
+.login_form .header img, .signup_form .header img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%;
 }
 
 /*Log in screen*/
@@ -78,8 +86,11 @@ header {
   text-align: center;
 }
 
-.login_form, .signup_form {
+.inner {
   margin-top: 20px;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*sign up screen*/
@@ -156,19 +167,17 @@ footer {
     background-color: #ecf1f4;
   }
 
-  .login_form {
+  .login_form, .signup_form {
     width: 50%;
     box-sizing: border-box;
+  }
+
+  .login_form .header, .signup_form .header {
+    height: 95px;
   }
 
   .signup_page {
     display: flex;
-  }
-
-  .signup_form {
-    width: 50%;
-    box-sizing: border-box;
-    padding: 0 8%;
   }
 
   .complete_page {
