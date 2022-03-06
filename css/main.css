@@ -68,13 +68,13 @@ button {
   color: #f19737;
 }
 
-.login_form .header, .signup_form .header {
+.login_form .header, .signup_form .header, .complete_form .header {
   height: 48px;
   background-color: #00615b;
   text-align: center;
 }
 
-.login_form .header img, .signup_form .header img {
+.login_form .header img, .signup_form .header img, .complete_form .header img {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -116,11 +116,12 @@ select {
 }
 
 .complete_icon {
-  height: 150px;
-  width: 150px;
-  background-color: #2e8b56;
-  border-radius: 50%;
-  margin: 20% auto;
+  margin: 5% auto;
+}
+
+.complete_icon img {
+  width: 100%;
+  height: 100%;
 }
 
 .complete_t {
@@ -167,12 +168,12 @@ footer {
     background-color: #ecf1f4;
   }
 
-  .login_form, .signup_form {
+  .login_form, .signup_form, .complete_form {
     width: 50%;
     box-sizing: border-box;
   }
 
-  .login_form .header, .signup_form .header {
+  .login_form .header, .signup_form .header, .complete_form .header {
     height: 95px;
   }
 
@@ -184,17 +185,8 @@ footer {
     display: flex;
   }
 
-  .complete_form {
-    width: 50%;
-    box-sizing: border-box;
-  }
-
-  .complete_icon {
-    margin-top: 20%;
-  }
-
   .complete_t {
-    padding: 60px 0 40px 0;
+    padding: 0 0 0px 0;
   }
 
   input {
