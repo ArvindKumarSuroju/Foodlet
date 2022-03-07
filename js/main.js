@@ -35,22 +35,22 @@ closeBtn.addEventListener('click',()=>{
     sidebar.classList.remove('on');
 });
 
-//Geolocation//
-if ( navigator.geolocation ) {
-          	navigator.geolocation.getCurrentPosition( 
-             ( position ) => {  // success callback
-            		console.log("latitude = " + position.coords.latitude);
-            		console.log("longitude = " + position.coords.longitude);
-          	}, 
-            ( error ) => {    // failure callback
-                console.log( error );
-                if (	error.code == error.PERMISSION_DENIED ) {
-                    window.alert("geolocation permission denied");
-                }
-             });
-        } else {  // no geolocation in navigator. in the case of old browsers
-          console.log("Geolocation is not supported by this browser.");
-        };
+// //Geolocation//
+// if ( navigator.geolocation ) {
+//           	navigator.geolocation.getCurrentPosition( 
+//              ( position ) => {  // success callback
+//             		console.log("latitude = " + position.coords.latitude);
+//             		console.log("longitude = " + position.coords.longitude);
+//           	}, 
+//             ( error ) => {    // failure callback
+//                 console.log( error );
+//                 if (	error.code == error.PERMISSION_DENIED ) {
+//                     window.alert("geolocation permission denied");
+//                 }
+//              });
+//         } else {  // no geolocation in navigator. in the case of old browsers
+//           console.log("Geolocation is not supported by this browser.");
+//         };
     
 //Slider //
  

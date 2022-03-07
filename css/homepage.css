@@ -70,6 +70,10 @@
   border-bottom: 2px solid black;
 }
 
+#map {
+  height:500px;
+}
+
 /*select location*/
 .search {
   width:100%;
