@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodlet - Store Info</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/storeinfo.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <nav>
+                <i class="fas fa-bars"></i>
+                <ul>
+                    <li><img src="images/foodlet-primary-logo.png" alt="Foodlet-Primary-Logo"></li>
+                    <li>
+                        <i class="far fa-user"></i>
+                        <div>
+                            <strong>Hi, < ? User Name ? > </strong>
+                            <p> < ? user-email@gmail.com ? > </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <i class="far fa-heart"></i>
+                        <p>Favorite</p>
+                    </li>
+
+                    <li>
+                        <i class="far fa-clipboard"></i>
+                        <p>Orders</p>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-cog"></i>
+                        <p>Settings</p>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <p>About</p>
+                    </li>
+
+                    <li><button class="logout-button" id="logout-button">Log Out</button></li>
+                </ul>
+            </nav>
+
+            <div class="site-branding">
+                <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
+                <h1>Foodlet</h1>
+            </div>
+
+        </div>
+
+        <div class="header-right">
+            <ul>
+                <li><i class="fas fa-search"></i></li>
+                <li><i class="fas fa-shopping-cart"></i></li>
+                <li><i class="far fa-bell"></i></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="storeinfo-images">
+            <div class="partner-signup-coverimage"><img src="https://picsum.photos/2400/1000/?random=01" alt="partner-signup-coverimage" ></div>
+            <div class="partner-signup-profilepicture"><img src="https://picsum.photos/500/500/?random=02" alt="partner-signup-profilepicture" ></div>
+        </section>
+
+        <section class="storeinfo-basicinfo">
+            <h2>< ? #partner-signup-fullname ? ></h2>
+            <div class="two-columns">
+                <p id="partner-signup-storetype-output">< ? #partner-signup-storetype ? ></p>
+                <p id="sTorE-aVeragE-rAtinG-output"><i class="fas fa-star"></i> < ? sTorE-aVeragE-rAtinG ? > </p>
+            
+                <p id="pickup-time-output"><i class="far fa-clock"></i> Pick up < ? #pickup-date ? > by < ? #pickup-time ? ></p>
+
+                <p id="partner-signup-storeaddress-output"><i class="fas fa-map-marker-alt"></i> < ? #partner-signup-storeaddress ? ></p>
+            </div>
+        </section>
+
+        <section class="storeinfo-availablemeallist">
+            <h3>Available Meals</h3>
+            <div class="availablemeal">
+                <div class="mealinfo-layout">
+                    <img src="https://picsum.photos/500/500/?random=03" alt="addmeal-photo">
+                    <div class="mealinfo-text">
+                        <p id="menu-name"><strong>Sample Menu</strong></p>
+                        <span class="original-price" id="original-price-output">$ 14.99</span>
+                        <span id="sale-price-output">$ 7.99</span>
+                        <div class="two-columns">
+                            <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> 3 left</p>
+                            <form>
+                                <div class="quantity-input">
+                                    <button class="minusbutton" id="storeinfo-minusbutton">-</button>
+                                    <input id="storeinfo-quantity" name="tobuyquantity" type="number" placeholder="0">
+                                    <button id="storeinfo-plusbutton" class="plusbutton">+</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <p class="menu-details-output">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates architecto, error nostrum neque impedit cum cupiditate vel atque aperiam.</p>
+            </div>
+
+            <div class="availablemeal">
+                <div class="mealinfo-layout">
+                    <img src="https://picsum.photos/500/500/?random=04" alt="addmeal-photo">
+                    <div class="mealinfo-text">
+                        <p id="menu-name"><strong>< ? #menu-name ? ></strong></p>
+                        <span class="original-price" id="original-price-output">$ < ? #original-price ? ></span>
+                        <span id="sale-price-output">$ < ? #sale-price ? ></span>
+                        <div class="two-columns">
+                            <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> < ? #updated-availability ? > left</p>
+                            <form>
+                                <div class="quantity-input">
+                                    <button class="minusbutton" id="storeinfo-minusbutton">-</button>
+                                    <input id="storeinfo-quantity" name="tobuyquantity" type="number" placeholder="0">
+                                    <button id="storeinfo-plusbutton" class="plusbutton">+</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <p class="menu-details-output">< ? #menu-details ? ></p>
+            </div>
+
+            <div class="availablemeal">
+                <div class="mealinfo-layout">
+                    <img src="https://picsum.photos/500/500/?random=05" alt="addmeal-photo">
+                    <div class="mealinfo-text">
+                        <p id="menu-name"><strong>< ? #menu-name ? ></strong></p>
+                        <span class="original-price" id="original-price-output">$ < ? #original-price ? ></span>
+                        <span id="sale-price-output">$ < ? #sale-price ? ></span>
+                        <div class="two-columns">
+                            <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> < ? #updated-availability ? > left</p>
+                            <form>
+                                <div class="quantity-input">
+                                    <button class="minusbutton" id="storeinfo-minusbutton">-</button>
+                                    <input id="storeinfo-quantity" name="tobuyquantity" type="number" placeholder="0">
+                                    <button id="storeinfo-plusbutton" class="plusbutton">+</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <p class="menu-details-output">< ? #menu-details ? ></p>
+            </div>
+
+            <div class="availablemeal">
+                <div class="mealinfo-layout">
+                    <img src="https://picsum.photos/500/500/?random=06" alt="addmeal-photo">
+                    <div class="mealinfo-text">
+                        <p id="menu-name"><strong>< ? #menu-name ? ></strong></p>
+                        <span class="original-price" id="original-price-output">$ < ? #original-price ? ></span>
+                        <span id="sale-price-output">$ < ? #sale-price ? ></span>
+                        <div class="two-columns">
+                            <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> < ? #updated-availability ? > left</p>
+                            <form>
+                                <div class="quantity-input">
+                                    <button class="minusbutton" id="storeinfo-minusbutton">-</button>
+                                    <input id="storeinfo-quantity" name="tobuyquantity" type="number" placeholder="0">
+                                    <button id="storeinfo-plusbutton" class="plusbutton">+</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <p class="menu-details-output">< ? #menu-details ? ></p>
+            </div>
+
+            <button class="storeinfo-addtocartbutton" id="storeinfo-addtocartbutton">Add to Cart</button>
+        </section>
+
+        <section class="storeinfo-reviews">
+            <h3>Reviews</h3>
+            <p id="sTorE-aVeragE-rAtinG2-output"><i class="fas fa-star"></i> < ? sTorE-aVeragE-rAtinG ? > (< ? #numberofrating ? > ratings)</p>
+            <p id="sTorE-aVeragE-pUrchasEaGaiN"><i class="far fa-smile"></i> < ? sTorE-aVeragE-pUrchasEaGaiN ? > of people would like to purchase again</p>
+            <a href="#">read more...</a>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2022 FOODLET, RIGHT RESERVED.
+    </footer>
+</body>
+</html>

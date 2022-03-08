@@ -6,6 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="app.webmanifest">
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth-compat.js"></script>
+
+
+    <script>
+        const firebaseApp = firebase.initializeApp({
+            apiKey: "AIzaSyDhugHzhI0K6ms3vC0o012N9w_BGFjuZfw",
+            authDomain: "foodlet-b141c.firebaseapp.com",
+            databaseURL: "https://foodlet-b141c-default-rtdb.firebaseio.com",
+            projectId: "foodlet-b141c",
+            storageBucket: "foodlet-b141c.appspot.com",
+            messagingSenderId: "451799892208",
+            appId: "1:451799892208:web:b8c42a5a4ad80aa24bc235"
+        });
+        const auth = firebaseApp.auth();
+        const db = firebase.firestore();
+
+
+        db.settings({
+            timestampsInSnapshots: true
+        });
+    </script>
+    <!-- <script src="js/app.js" defer></script> -->
     <script>
         if ('serviceWorker' in navigator) { //if browser supports Service worker
             // register the service worker in sw.js
@@ -22,21 +46,14 @@
     </script>
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="js/main.js" defer></script>
+    <!-- <script src="js/main.js" defer></script> -->
 
 
     <title>Foodlet</title>
 </head>
 
 <body>
-    <div class="toolbar">
 
-        <a href="#login-customer">Login Customer| </a>
-        <a href="#on-boarding-customer">On boarding Customer|</a>
-        <a href="#signup-customer">Sign Up customer|</a>
-        <a href="#registration-successful">Registration Success|</a>
-        <a href="#partner-login">Partner Login|</a>
-        <a href="#partner-signup">Partner Signup|</a>
 
     </div>
     <div id="mainArea">

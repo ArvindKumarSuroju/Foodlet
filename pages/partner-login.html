@@ -8,51 +8,58 @@
     <title>Foodlet: Partner's Log-in & Sign-up Page</title>
 
     <link rel="stylesheet" href="../css/partner-login-signup.css">
+
+    <script src="../js/partner-login.js" defer></script>
 </head>
 
 <body>
-
-    <section class="partner-login">
+    <div class="desktop-view">
         <header>
-            <h1>Foodlet Partner</h1>
+            <div class="site-branding">
+                <h1>FOODLET Partner</h1>
+                <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
+            </div>
         </header>
 
-        <main>
 
-            <aside>
-                <img src="" alt="" scr="https://picsum.photos/500/500/?random=1">
-                <img src="" alt="" scr="https://picsum.photos/500/500/?random=2">
-                <img src="" alt="" scr="https://picsum.photos/500/500/?random=3">
-            </aside>
+
+        <div class="aside">
+
+        </div>
+
+
+        <main>
+            <h2>Log in</h2>
 
             <div class="partner-login-form">
-                <h2>Log in</h2>
                 <form action="">
                     <div class="inside-form">
-                        <label for="partner-login-username">Username</label>
-                        <input type="text" id="partner-login-username" name="partner-login-username">
+
+                        <label for="partner-login-email">Email</label>
+                        <input type="text" id="partner-login-email" name="partner-login-email">
+
                     </div>
                     <div class="inside-form">
                         <label for="partner-login-password">Password</label>
-                        <input type="text" id="partner-login-password" name="partner-login-password">
+                        <input id="password" type="password" id="partner-login-password" name="partner-login-password">
                     </div>
                     <a href="#" class="partner-login-forgetpassword">Forget your password?</a>
                     <div class="partner-login-rememberme checkbox">
                         <input type="checkbox" id="partner-login-rememberme" name="partner-login-rememberme">
                         <label for="partner-login-rememberme">Remember me</label>
                     </div>
+                    <button id="partnerLogin" class="button">Log in</button>
+                    <button id="googleSigninPartner">Google</button>
                 </form>
+            </div>
 
-                <div id="partner-login-button" class="button">Log in</div>
-
-                <div class="bottom-link">
-                    <p>New Partner? <a href="#partner-signup">Create Account</a></p>
-                </div>
+            <div class="bottom-link">
+                <p>New Partner? <a href="#partner-signup">Create Account</a></p>
             </div>
         </main>
+    </div>
+    <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
 
-        <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
-    </section>
 
 </body>
 
