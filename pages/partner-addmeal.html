@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
 
-    <!-- <link rel="stylesheet" href="partner-home-addmeals-editmeals.css"> -->
+
+    <link rel="stylesheet" href="../css/partner-home-addmeal.css">
+
+    <script src="../js/partner-addmeal.js" defer></script>
+
 </head>
 
 <body>
@@ -34,7 +38,7 @@
 
             <div class="site-branding">
                 <h1>FOODLET Partner</h1>
-                <img src="images/Foodlet_Partner_Logo (1).png" alt="">
+                <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
             </div>
 
             <a class="mobile-view" href="#"><i class="fas fa-search"></i></a>
@@ -45,59 +49,59 @@
                 <h2>Add Meals</h2>
                 <form action="" id="addMeal">
                     <div class="inside-form">
-                        <label for="menu-name" class="form-subject">Menu Name</label>
-                        <input id="menu-name" name="menu-name" type="text">
+                        <label for="menu_name" class="form-subject">Menu Name</label>
+                        <input id="menu_name" name="menu-name" type="text">
                     </div>
                     <div class="two-columns">
                         <div class="inside-form">
-                            <label for="original-price" class="form-subject">Original Price</label>
-                            <input id="original-price" name="original-price" type="number">
+                            <label for="original_price" class="form-subject">Original Price</label>
+                            <input id="original_price" name="original-price" type="number">
                         </div>
                         <div class="inside-form">
-                            <label for="sale-price" class="form-subject">Sale Price</label>
-                            <input id="sale-price" name="sale-price" type="number">
+                            <label for="sale_price" class="form-subject">Sale Price</label>
+                            <input id="sale_price" name="sale-price" type="number">
                         </div>
                     </div>
                     <div class="inside-form">
-                        <label for="menu-details" class="form-subject">Menu Details</label>
-                        <textarea id="menu-details" name="menu-details"></textarea>
+                        <label for="menu_details" class="form-subject">Menu Details</label>
+                        <textarea id="menu_details" name="menu-details"></textarea>
                     </div>
 
                     <div class="dietary-checkbox">
                         <label for="dietary" class="form-subject">Dietary</label>
                         <div class="checkbox">
-                            <input id="non-vegetarian" name="non-vegetarian" type="checkbox">
-                            <label for="non-vegetarian">Non-Vegetarian</label>
+                            <input id="non_vegetarian" value="non_vegetarian" name="dietary" type="checkbox">
+                            <label for="non_vegetarian">Non-Vegetarian</label>
                         </div>
                         <div class="checkbox">
-                            <input id="vegetarian" name="vegetarian" type="checkbox">
+                            <input id="vegetarian" value="vegatarian" name="dietary" type="checkbox">
                             <label for="vegetarian">Vegetarian</label>
                         </div>
                         <div class="checkbox">
-                            <input id="vegan" name="vegan" type="checkbox">
+                            <input id="vegan" value="vegan" name="dietary" type="checkbox">
                             <label for="vegan">Vegan</label>
                         </div>
                         <div class="checkbox">
-                            <input id="gluten-free" name="gluten-free" type="checkbox">
-                            <label for="gluten-free">Gluten Free</label>
+                            <input id="gluten_free" value="gluten_free" name="dietary" type="checkbox">
+                            <label for="gluten_free">Gluten Free</label>
                         </div>
                         <div class="checkbox">
-                            <input id="halal" name="halal" type="checkbox">
+                            <input id="halal" value="halal" name="dietary" type="checkbox">
                             <label for="halal">Halal</label>
                         </div>
                     </div>
                     <div class="two-columns">
                         <div class="inside-form">
-                            <label for="pickup-date" class="form-subject">Pick-up Date</label>
-                            <input id="pickup-date" name="pickup-date" type="date">
+                            <label for="pickup_date" class="form-subject">Pick-up Date</label>
+                            <input id="pickup_date" name="pickup-date" type="date">
                         </div>
                         <div class="inside-form">
-                            <label for="pickup-time" class="form-subject">Pick-up Time</label>
-                            <input id="pickup-time" name="pickup-time" type="time">
+                            <label for="pickup_time" class="form-subject">Pick-up Time</label>
+                            <input id="pickup_time" name="pickup-time" type="time">
                         </div>
                         <div class="inside-form food-weight">
-                            <label for="food-weight" class="form-subject">Food Weight</label>
-                            <input id="food-weight" name="food-weight" type="number">
+                            <label for="food_weight" class="form-subject">Food Weight</label>
+                            <input id="food_weight" name="food-weight" type="number">
                         </div>
 
                         <div class="inside-form2 quantity">
@@ -109,11 +113,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="add-photo">
-                        <input id="addmeal-photo" name="addmeal-photo" type="image" src="img_submit.gif" alt="">
-                        <span>Add Photo</span>
-                    </div>
-                    <button type="submit" class="button publishbutton">Publish</button>
+
+                        <div class="add-photo">
+                            <input id="addmeal_photo" name="addmeal-photo" type="image" src="img_submit.gif" alt="">
+                            <span>Add Photo</span>
+                        </div>
+                    <button class="button publishbutton" id="addMealsButton">Publish</button>
+
                 </form>
 
         </main>
