@@ -17,6 +17,7 @@
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .hamburger {
@@ -185,7 +186,7 @@
   vertical-align: middle;
   width: 16px;
   height: 16px;
-  background: center/cover url("../resources/Icons/PickUpTime.png") no-repeat;
+  background: center/cover url("../resources/Icons/pickUpTime.png") no-repeat;
 }
 
 .price {
@@ -264,14 +265,33 @@ li.heart {
 }
 
 div.heart {
-  background: center/cover url("../resources/Icons/Favourite.png") no-repeat;
+  background: center/cover url("../resources/Icons/fav.png") no-repeat;
   width: 13px;
   height: 13px;
   margin: 0 auto;
 }
 
 div.heart_active {
-  background: center/cover url("../resources/Icons/FavouriteActive.png") no-repeat;
+  background: center/cover url("../resources/Icons/favFilled.png") no-repeat;
+}
+
+.header_mobile .menu_item, .header_desktop .menu_item {
+  width: 20px;
+  height: 20px;
+}
+
+.header_mobile .cart, .header_desktop .cart {
+  background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
+}
+.header_mobile .cart_active, .header_nav .cart_active {
+  background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
+}
+
+.header_mobile .notification, .header_nav .notification {
+  background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
+}
+.header_mobile .notification_active, .header_nav .notification_active {
+  background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
 }
 
 /*Desktop version*/
@@ -298,6 +318,7 @@ div.heart_active {
   .header_nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .header_nav a {
@@ -334,6 +355,11 @@ div.heart_active {
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
+  }
+
+  .header_mobile .menu_item, .header_desktop .menu_item {
+    width: 32px;
+    height: 32px;
   }
 }
 /*# sourceMappingURL=style.css.map */
