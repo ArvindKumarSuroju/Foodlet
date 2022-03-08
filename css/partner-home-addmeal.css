@@ -34,6 +34,7 @@ header {
 h1 {
     margin: 0;
     font-size: 24px;
+    display: none;
 }
 
 header a {
@@ -126,24 +127,6 @@ footer {
     justify-content: space-between;
 }
 
-
-
-
-/* =============================== */
-
-.partner-home, .partner-editmeal {
-    /* display: none; */
-}
-
-.partner-addmeal, .partner-editmeal {
-    display: none;
-}
-
-.partner-home, .partner-addmeal {
-    /* display: none; */
-}
-
-/*  =============================== */
 
 
 
@@ -310,6 +293,4 @@ input[type="image"] {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .dietary-checkbox {
-    }
 }
