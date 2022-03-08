@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/common.css">
     <script text="javascript" src="../js/main.js" defer></script>
+    <script text="javascript" src="../js/homescript.js" defer></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&region=CA&language=en&callback=initMap">
+</script>
     <title>Main Page</title>
 </head>
 
@@ -42,36 +46,124 @@
         <div id="sidebar">
             <!--Sidebar-->
             <h2 class="sidelogo"></h2>
-            <a class="side_close"><img src="">close</a>
+
+            <a class="side_close"><img src="" >X</a>
             <ul class="sidebar_menu">
                 <li>
-                    <img src="../resources/Icons/profile.png" alt="">Hi, Use Name
+                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
                     <p>your-email@gmail.com</p>
                 </li>
-                <li><a href=""><img class="menu_icon" src="../resources/Icons/fav.png" alt="">Favourite</a></li>
-                <li><a href=""><img class="menu_icon" src="../resources/Icons/cartWhite.png" alt="">Cart</a></li>
-                <li><a href=""><img class="menu_icon" src="../resources/Icons/orderWhite.png" alt="">Orders</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Favourite.png" alt="">Favourite</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</a></li>
                 <li><a href=""><img class="menu_icon" src="" alt="">My Rewards</a></li>
-                <li><a href=""><img class="menu_icon" src="../resources/Icons/setting.png" alt="">Settings</a></li>
-                <li><a href=""><img class="menu_icon" src="../resources/Icons/about.png" alt="">About</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Setting.png" alt="">Settings</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/About.png" alt="">About</a></li>
+
                 <li><a href=""><img class="menu_icon" src="" alt="">Log Out</a></li>
             </ul>
         </div>
     </header>
     <main>
-        <div id="main_page" class="page">
-            <div class="search">
-                <select name="location" id="location" class="location_select">
-                    <option value="">Metro Vancouver</option>
-                    <option value="">West Vancouver</option>
-                    <option value="">North Vancouver</option>
-                    <option value="">East Vancouver</option>
-                </select>
-                <a href="#" class="filter">Filter</a>
-            </div>
 
-        <div class="map"><!--map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192245!2d-123.11073828433608!3d49.22477278279314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2z656R6rCA6528IOuMgO2VmQ!5e0!3m2!1sko!2sca!4v1645593899843!5m2!1sko!2sca" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div id="main_page" class="page"> 
+            <form class="citySelection">
+                <fieldset>
+                  <label>
+                    Cities
+                  </label>
+                  <select id="myCity" name="myCity" onchange="changeMap(this.value)">
+                    <option value="None">Select a City</option>
+                    <option value="VAN">Vancouver</option>
+                    <option value="BUR">Burnaby</option>
+                    <option value="RIC">Richmond</option>
+                    <option value="SUR">Surrey</option>
+                  </select>
+                </fieldset>
+              </form>
+                <a href="#" class="filterBtn">Filter</a>
+            </div>
+            <!--Filter-->
+              <div id="filter" class="page">
+                <h2 class="subbar_title">Filter</h2><a class="close">close</a>
+                <div class="inner">
+                    <ul class="filter_cate">
+                       <li> 
+                           <div class="filter_title">
+                            <h3 class="category">Category</h3>
+                            <a href="">select all</a>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox">
+                            <label>Restaurant</label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label>Cafe</label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label>Bakery</label>
+                        </div>
+                    </li>
+                    <li>
+                    <div class="filter_title">
+                        <h3 class="dietary">Dietary</h3>
+                        <a href="">select all</a>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <label>Non- vegetarian</label>
+                    </div>
+                    <div>
+                        <input type="checkbox"  checked>
+                        <label>Vegatarian</label>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <label>Vegan</label>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <label>Gluten Free</label>
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <label>Halal</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_title">
+                        <h3 class="distance">Distance</h3>
+                    </div>
+                    <div><input type="radio" checked>
+                        <label>1km</label>
+                    </div>
+                    <div><input type="radio">
+                        <label>3km</label>
+                    </div>
+                    <div><input type="radio">
+                        <label>5km</label>
+                    </div>
+                    <div><input type="radio">
+                        <label>10km</label>
+                    </div>
+                    <div><input type="radio">
+                        <label>15km</label>
+                    </div>
+                    <div><input type="radio">
+                        <label>30km</label>
+                    </div>
+                </li>
+                </ul>
+                <div class="buttons">
+                    <button class="white_btn">Clear all</button>
+                    <button class="green_btn">APPLY FILTER</button>
+                </div>
+            </div>
+            </div>
+        <div id="map" class="map"><!--map -->
+
         </div>
         <div class="inner">
         <h4 class="available_title">Availables Stores Nearby</h4>
@@ -175,6 +267,11 @@
                         <li class="heart">
                             <div class="heart">
                         </li>
+
+                        <li class="heart">
+                            <div class="heart">
+                        </li>
+
                     </ul>
                     <ul class="pickup_detail">
                         <li>
