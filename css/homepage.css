@@ -17,6 +17,7 @@
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .hamburger {
@@ -317,6 +318,7 @@ div.heart_active {
   .header_nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .header_nav a {
