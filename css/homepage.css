@@ -185,7 +185,7 @@
   vertical-align: middle;
   width: 16px;
   height: 16px;
-  background: center/cover url("../resources/Icons/PickUpTime.png") no-repeat;
+  background: center/cover url("../resources/Icons/pickUpTime.png") no-repeat;
 }
 
 .price {
@@ -264,14 +264,14 @@ li.heart {
 }
 
 div.heart {
-  background: center/cover url("../resources/Icons/Favourite.png") no-repeat;
+  background: center/cover url("../resources/Icons/fav.png") no-repeat;
   width: 13px;
   height: 13px;
   margin: 0 auto;
 }
 
 div.heart_active {
-  background: center/cover url("../resources/Icons/FavouriteActive.png") no-repeat;
+  background: center/cover url("../resources/Icons/favFilled.png") no-repeat;
 }
 
 /*Desktop version*/
