@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <script text="javascript" src="../js/main.js" defer></script>
     <title>Main Page</title>
 </head>
+
 <body>
     <header>
         <ul class="header_mobile">
@@ -30,13 +32,14 @@
                 <li><img src="" alt=""></li>
                 <li><img src="" alt=""></li>
                 <li><img src="" alt=""></li>
-                <li><button class="logout">Log Out</button></li>
-            </div>
+                <li><button class="logout" id="logoutOfApp">Log Out</button></li>
+        </div>
         </div>
         </ul>
-        <div id="sidebar" > <!--Sidebar-->
+        <div id="sidebar">
+            <!--Sidebar-->
             <h2 class="sidelogo"></h2>
-            <a class="side_close"><img src="" >X</a>
+            <a class="side_close"><img src="">close</a>
             <ul class="sidebar_menu">
                 <li>
                     <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
@@ -53,7 +56,7 @@
         </div>
     </header>
     <main>
-        <div id="main_page" class="page"> 
+        <div id="main_page" class="page">
             <div class="search">
                 <select name="location" id="location" class="location_select">
                     <option value="">Metro Vancouver</option>
@@ -63,6 +66,7 @@
                 </select>
                 <a href="#" class="filter">Filter</a>
             </div>
+
         <div class="map"><!--map -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192245!2d-123.11073828433608!3d49.22477278279314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2z656R6rCA6528IOuMgO2VmQ!5e0!3m2!1sko!2sca!4v1645593899843!5m2!1sko!2sca" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
@@ -77,12 +81,94 @@
                     <ul class="store_detail">
                         <li class="store_img">
                             <img src="../resources/Logo/Favicon.png" alt="" class="round">
+
                         </li>
-                        <li>
-                        <h5 class="store_name">Store Name5</h5>
-                        <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
-                        <p class="store_dis">Distance</p>
+                        <li class="store1 store_list">
+                            <ul class="store_detail">
+                                <li>
+                                    <img src="" alt="" class="store_img">
+                                </li>
+                                <li>
+                                    <h5 class="store_name">Store Name1</h5>
+                                    <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                                    <p class="store_dis">Distance</p>
+                                </li>
+                                <li><img src="" alt="" class="heart"></li>
+                            </ul>
+                            <ul class="pickup_detail">
+                                <li><img src="" class="clock">pick up time</li>
+                                <li>6 left from<span class="price">$4.99</span></li>
+                            </ul>
                         </li>
+                        <li class="store2 store_list">
+                            <ul class="store_detail">
+                                <li>
+                                    <img src="" alt="" class="store_img">
+                                </li>
+                                <li>
+                                    <h5 class="store_name">Store Name2</h5>
+                                    <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                                    <p class="store_dis">Distance</p>
+                                </li>
+                                <li><img src="" alt="" class="heart"></li>
+                            </ul>
+                            <ul class="pickup_detail">
+                                <li><img src="" class="clock">pick up time</li>
+                                <li>6 left from<span class="price">$4.99</span></li>
+                            </ul>
+                        </li>
+                        <li class="store3 store_list">
+                            <ul class="store_detail">
+                                <li>
+                                    <img src="" alt="" class="store_img">
+                                </li>
+                                <li>
+                                    <h5 class="store_name">Store Name3</h5>
+                                    <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                                    <p class="store_dis">Distance</p>
+                                </li>
+                                <li><img src="" alt="" class="heart"></li>
+                            </ul>
+                            <ul class="pickup_detail">
+                                <li><img src="" class="clock">pick up time</li>
+                                <li>6 left from<span class="price">$4.99</span></li>
+                            </ul>
+                        </li>
+                        <li class="store4 store_list">
+                            <ul class="store_detail">
+                                <li>
+                                    <img src="" alt="" class="store_img">
+                                </li>
+                                <li>
+                                    <h5 class="store_name">Store Name4</h5>
+                                    <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                                    <p class="store_dis">Distance</p>
+                                </li>
+                                <li><img src="" alt="" class="heart"></li>
+                            </ul>
+                            <ul class="pickup_detail">
+                                <li><img src="" class="clock">pick up time</li>
+                                <li>6 left from<span class="price">$4.99</span></li>
+                            </ul>
+                        </li>
+                        <li class="store5 store_list" id="first_clone">
+                            <ul class="store_detail">
+                                <li>
+                                    <img src="" alt="" class="store_img">
+                                </li>
+                                <li>
+                                    <h5 class="store_name">Store Name5</h5>
+                                    <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                                    <p class="store_dis">Distance</p>
+                                </li>
+                                <li><img src="" alt="" class="heart"></li>
+                            </ul>
+                            <ul class="pickup_detail">
+                                <li><img src="" class="clock">pick up time</li>
+                                <li>6 left from<span class="price">$4.99</span></li>
+                            </ul>
+                        </li>
+
                         <li class="heart">
                             <div class="heart">
                         </li>
@@ -209,8 +295,8 @@
         </div>
         <button id="prev">Prev</button>
         <button id="next">Next</button>
+
         </div>
-    </div>
     </main>
     <footer class="copyright">
         <span>
@@ -218,4 +304,5 @@
         </span>
     </footer>
 </body>
+
 </html>
