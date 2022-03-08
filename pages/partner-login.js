@@ -1,7 +1,5 @@
-loginCustomer.addEventListener('submit', (e) => {
-
+partnerLogin.addEventListener('click', (e) => {
     e.preventDefault();
-
     let mail = email.value;
     let passwordKey = password.value;
 
@@ -10,7 +8,7 @@ loginCustomer.addEventListener('submit', (e) => {
             // Signed in 
             const user = userCredential.user;
             console.log(user);
-            location.href = "#homepage";
+            location.href = "#partner-home";
 
         })
         .catch((error) => {
@@ -18,12 +16,14 @@ loginCustomer.addEventListener('submit', (e) => {
             const errorMessage = error.message;
             console.log(errorMessage);
         })
-
 });
 
 
 
-googleSignin.addEventListener('click', () => {
+
+
+
+googleSigninPartner.addEventListener('click', () => {
     let provider = new firebase.auth.GoogleAuthProvider();
     console.log(provider);
     firebase.auth()
@@ -37,7 +37,7 @@ googleSignin.addEventListener('click', () => {
             // The signed-in user info.
             var user = result.user;
             console.log(user);
-            location.href = "#homepage";
+            location.href = "#partner-home";
             // ...
         }).catch((error) => {
             // Handle Errors here.
