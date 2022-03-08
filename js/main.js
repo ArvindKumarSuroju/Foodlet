@@ -35,6 +35,25 @@ closeBtn.addEventListener('click',()=>{
     sidebar.classList.remove('on');
 });
 
+//Filter
+
+const filterBtn = document.querySelector(".filterBtn");
+const filter = document.querySelector("#filter");
+const ExitBtn = document.querySelector(".close");
+
+
+filterBtn.addEventListener('click',()=>{
+  if (filter.classList.contains('on')){
+        filter.classList.remove('on');
+  } else {
+      filter.classList.add('on');
+  }
+});
+
+ExitBtn.addEventListener('click',()=>{
+    filter.classList.remove('on');
+});
+
 // //Geolocation//
 // if ( navigator.geolocation ) {
 //           	navigator.geolocation.getCurrentPosition( 
@@ -97,4 +116,16 @@ carouselSlide.addEventListener('transitionend',()=>{
         counter = carouselStore.length - counter;
         carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
     }
-})
+});
+
+//cart 
+
+// let removeCartItemButtons = document.getElementsByClassName('btn-danger')
+// // console.log(deleteCartBtn)
+// for (let i=0; i < removeCartItemButtons.length; i++){
+//     let button = removeCartItemButtons[i]
+//     button.addEventListener('click',(event)=>{
+//         let buttonClicked = event.target
+//         buttonClicked.parentElement.parentElement.remove()
+//     })
+// }

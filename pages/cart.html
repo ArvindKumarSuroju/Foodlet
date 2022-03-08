@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/common.css">
+    <script text="javascript" src="../js/cart.js" defer></script>
     <script text="javascript" src="../js/main.js" defer></script>
     <title>Cart</title>
 </head>
@@ -85,9 +86,18 @@
             <div class="menu_list">
                 <ul class="menu_detail">
                     <li class="store_img">img</li>
-                    <li><b>Menu Name1</b><p>1pcs x $ 4.99</p></li>
-                    <li><span style="text-decoration:line-through">$8.99</span><p>$ 4.99</p></li>
-                    <li>icon</li>
+                    <li>
+                        <b>Menu Name1</b>
+                        <!-- button for changing quantity-->
+                        <p>
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="0" maxlength="4" size="2">
+                            <button class="plus">+</button>
+                        </p>
+                        
+                    </li>
+                    <li><span class="menu-price" style="text-decoration:line-through">$8.99</span><p>$ 4.99</p></li>
+                    <li><button class="btn-danger">remove</button></li>
                 </ul>
             </div>
             <div class="menu_list">
@@ -95,17 +105,13 @@
                     <li class="store_img">img</li>
                     <li><b>Menu Name2</b><p>1pcs x $ 4.99</p></li>
                     <li><span style="text-decoration:line-through">$8.99</span><p>$ 4.99</p></li>
-                    <li>icon</li>
+                    <li><a>remove</a></li>
                 </ul>
             </div>
         </div>
-        <div class="save">
-            <p>You will save</p>
-            <p class="price">$ 10.00</p>
-        </div>
         <div class="total">
-            <p>Total Order</p>
-            <p class="price">$ 9.98</p>
+            <p>Total</p>
+            <p class="totalPrice"></p>
         </div>
         <div class="bottons">
         <button class="white_btn">Edit My Order</button> <!--same with filter button-->
