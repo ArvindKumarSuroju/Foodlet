@@ -274,6 +274,25 @@ div.heart_active {
   background: center/cover url("../resources/Icons/favFilled.png") no-repeat;
 }
 
+.header_mobile .menu_item, .header_desktop .menu_item {
+  width: 20px;
+  height: 20px;
+}
+
+.header_mobile .cart, .header_desktop .cart {
+  background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
+}
+.header_mobile .cart_active, .header_nav .cart_active {
+  background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
+}
+
+.header_mobile .notification, .header_nav .notification {
+  background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
+}
+.header_mobile .notification_active, .header_nav .notification_active {
+  background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
+}
+
 /*Desktop version*/
 @media (min-width: 1000px) {
   body {
@@ -334,6 +353,11 @@ div.heart_active {
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
+  }
+
+  .header_mobile .menu_item, .header_desktop .menu_item {
+    width: 32px;
+    height: 32px;
   }
 }
 /*# sourceMappingURL=style.css.map */
