@@ -1,60 +1,41 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const storeList = document.querySelector('#availableStoreNearby');
+const form = document.querySelector('#')
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDhugHzhI0K6ms3vC0o012N9w_BGFjuZfw",
-  authDomain: "foodlet-b141c.firebaseapp.com",
-  databaseURL: "https://foodlet-b141c-default-rtdb.firebaseio.com",
-  projectId: "foodlet-b141c",
-  storageBucket: "foodlet-b141c.appspot.com",
-  messagingSenderId: "451799892208",
-  appId: "1:451799892208:web:b8c42a5a4ad80aa24bc235"
-};
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+function renderStore(doc){
+    let li1 = document.createElement('li');
+    let ul = document.createElement('ul');
+    let li2 = document.createElement('li');
+    let li3 = document.createElement('li');
+    let storeName = document.createElement('h5');
+    let storeType = document.createElement('p');
+    let rating = document.createElement('span');
+    let storeDistance = document.createElement('p');
 
-var database = firebase.database();
+    li.setAttribute('data-id', doc.id);
+    storeName.textContent = doc.data().storeName;
+    storeType.textContent = doc.data().storeType;
+    rating.textContent = doc.data().rating;
+    storeDistance.textContent = doc.data().storeDistance;
 
-var partnersRef = database.ref('partners');
-var mealsRef = database.ref('partnersAddMeals');
+    li1.appendChild(ul);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+    li3.appendChild(storeName);
 
-partnersRef.on('value', function(snapshot){
-    console.log(snapshot.val());
-});
+    storeList.appendChild(li1);
+}
 
-// partnerRef.on('value', function(snapshot){
-//     console.log(snapshot.val());
-// })
+db.collection('partners').get().then((snapshot) => {
+    snapshot.docs.forEach( doc => {
+        console.log(doc.data());
+        renderStore(doc);
+    })
+})
+
 
 console.log("hi from filter.js");
 
-
-// import { doc, getDoc } from "firebase/firestore";
-
-
-// import {initializeApp} from "firebase/app";
-// import { getFirestore, collection, query, where } from "firebase/firestore";
-
-// const firebaseApp = initializeApp({
-//     apiKey: "AIzaSyDhugHzhI0K6ms3vC0o012N9w_BGFjuZfw",
-//     authDomain: "foodlet-b141c.firebaseapp.com",
-//     databaseURL: "https://foodlet-b141c-default-rtdb.firebaseio.com",
-//     projectId: "foodlet-b141c",
-//     storageBucket: "foodlet-b141c.appspot.com",
-//     messagingSenderId: "451799892208",
-//     appId: "1:451799892208:web:b8c42a5a4ad80aa24bc235"
-// });
-
-// const db = getFirestore(firebaseApp);
-// const partnersRef = collection(db, "partners")
-// console.log(partnersRef);
-
-
-// const q = query(partnersRef, where("termsAndConditions", "==", "on"));
 
 
 // applyFilterButton.addEventListener('click',()=>{
@@ -82,28 +63,28 @@ console.log("hi from filter.js");
 
 //     }
 
-// });
+// // });
 
-function filterByDietary(data) {
+// function filterByDietary(data) {
     
-    if (nonvegetarianCheckbox.value == "on") {
+//     if (nonvegetarianCheckbox.value == "on") {
 
-    }
+//     }
 
-    if (vegetarianCheckbox.value == "on") {
+//     if (vegetarianCheckbox.value == "on") {
         
-    }
+//     }
 
-    if (veganCheckbox.value == "on") {
+//     if (veganCheckbox.value == "on") {
         
-    }
+//     }
 
-    if (glutenfreeCheckbox.value == "on") {
+//     if (glutenfreeCheckbox.value == "on") {
         
-    }
+//     }
 
-    if (halalCheckbox.value == "on") {
+//     if (halalCheckbox.value == "on") {
         
-    }
+//     }
 
-}
+// }
