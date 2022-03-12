@@ -327,16 +327,15 @@ div.heart_active {
 
   .header_nav img {
     width: 50%;
-    padding-top: 5%;
+    vertical-align: middle;
   }
 
   .logout {
-    padding: 5px 10px;
     background-color: #2e8b56;
     border: 0;
     color: white;
     padding: 5px 20px;
-    margin-top: 12%;
+    margin: auto 0;
   }
 
   
