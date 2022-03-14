@@ -28,7 +28,6 @@ body {
   .inner {
     width: 90%;
     margin: 0 auto;
-    border:1px solid yellow;
   }
   
   button {
@@ -40,6 +39,7 @@ body {
   }
 .title {
     text-align:center;
+    font-size: 32px;
 }
 
 .icon {
@@ -66,6 +66,13 @@ body {
     background-color: #cbe2d5;
   }
 
+  .button_green {
+    background-color: #2e8b56;
+    border: 0;
+    color: white;
+    border-radius: 10px;
+  }
+  
   .buttons {
       text-align:center;
   }
@@ -77,3 +84,56 @@ body {
       border:0;
       margin:3% 0;
   }
+
+  img.round {
+    border-radius: 50%;
+  }
+
+  .text_title {
+    /* Mobile-Titles */
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #000000;
+  }
+
+  .text_body_text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #323232;
+  }
+
+  .text_color_primary {
+    color: #313131;
+  }
+
+  .text_color_secondary {
+    color: #616161;
+  }
+
+  .text_color_tertiary {
+    color: #00615b;
+  }
+
+  .text_center {
+    text-align: center;
+  }
+
+  /* Desktop */
+  @media screen and (min-width:1000px){
+    .text_title {
+      font-size: 20px;
+    }
+    .text_body_text {
+      font-size: 20px;
+    }
+    
+}
+

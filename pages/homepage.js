@@ -1,11 +1,6 @@
-'use strict';
 
-// function init() {
-//     if (is_partner == true) {
-//         window.location.href = "#filter";
-//     } 
-//     console.log(" initializing rod.js :" + new Date());
-//     const storeList = document.querySelector('#availableStoreNearby');
+
+
 
     // filterBtn.addEventListener("click", () => {
     //     filter.style.display = "block";
@@ -205,3 +200,12 @@
 
 
 init();
+logoutOfApp.addEventListener('click', () => {
+    auth.signOut().then(() => {
+
+        location.href = "#login-customer";
+    }).catch((error) => {
+        // An error happened.
+    })
+})
+

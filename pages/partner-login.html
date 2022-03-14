@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
 
     <script src="../js/partner-login.js" defer></script>
 </head>
+
 <body>
     <div class="desktop-view">
         <header>
@@ -19,42 +21,46 @@
             </div>
         </header>
 
-        
-            
+
+
         <div class="aside">
-           
+
         </div>
 
 
-        <main>  
+        <main>
             <h2>Log in</h2>
 
             <div class="partner-login-form">
                 <form action="">
                     <div class="inside-form">
+
                         <label for="partner-login-email">Email</label>
                         <input type="text" id="partner-login-email" name="partner-login-email">
+
                     </div>
                     <div class="inside-form">
                         <label for="partner-login-password">Password</label>
-                        <input type="text" id="partner-login-password" name="partner-login-password">
+                        <input id="password" type="password" id="partner-login-password" name="partner-login-password">
                     </div>
                     <a href="#" class="partner-login-forgetpassword">Forget your password?</a>
                     <div class="partner-login-rememberme checkbox">
                         <input type="checkbox" id="partner-login-rememberme" name="partner-login-rememberme">
                         <label for="partner-login-rememberme">Remember me</label>
                     </div>
-                    <button id="partner-login-button" class="button"><a href="partner-home.html">Log in</a></button>
+                    <button id="partnerLogin" class="button">Log in</button>
+                    <button id="googleSigninPartner">Google</button>
                 </form>
             </div>
 
             <div class="bottom-link">
-                <p>New Partner? <a href="partner-signup.html">Create Account</a></p>
-            </div>   
+                <p>New Partner? <a href="#partner-signup">Create Account</a></p>
+            </div>
         </main>
     </div>
     <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
 
 
 </body>
+
 </html>
