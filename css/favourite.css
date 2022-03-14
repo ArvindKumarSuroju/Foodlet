@@ -2,61 +2,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
-/* TYPOGRAPHY */
-
-h1 {
-  font-size: 24px;
-  color: #313131;
-}
-
-.noti {
-  font-size: 16px;
-  font-weight: 400;
-  color: #313131;
-}
-
-.store_name{
-  font-size: 16px;
-  font-weight: bold;
-  color: #313131;
-}
-
-.store_cate {
-  font-size: 16px;
-  color: #313131;
-}
-
-.store_dis {
-  font-size: 14px;
-  color: #616161;
-}
-
-.pickup_detail p {
-  font-size: 16px;
-  color: #313131;
-}
-
-.secondhead {
-  font-size: 16px;
-  font-weight: bold;
-  color: #00615B;
-}
-
-.thirdhead {
-  font-size: 16px;
-  font-weight: 400;
-  color:#313131;
-  line-height: 150%;
-}
-
 body {
   width: 100vw;
   font-family: "Poppins", sans-serif;
   height: 100%;
 }
-
-/* ====================================================*/
-
 main{
   min-height: calc(100vh - 80px);
   text-align: center;
@@ -98,7 +48,7 @@ select {
   box-sizing: border-box;
 }
 
-/* HEADER =================================================*/
+
 .header_mobile {
   height: 50px;
   background-color: #00615b;
@@ -158,7 +108,11 @@ select {
   border-radius: 20px;
 }
 
+
+
+
 .available_title {
+
   text-align: center;
   padding: 5px 0;
 }
@@ -174,28 +128,27 @@ select {
 .header_desktop {
   display: none;
 }
-
 .mainhead{
-    padding: 30px 15px;
+    padding: 15px;
+    padding-bottom: 30px;
+    padding-top: 60px;
 }
  
 .notfic{
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: left;
     padding-bottom: 30px;
-    padding-left:15px;
-    padding-right:15px;
 }
 
-/* SWITCH TOGGLE ================================================= */
+/**Switch**/
+
 .switch{
    position: relative;
    display: inline-block;  
    width: 60px;
    height: 30px;
-   margin: 0 15px;
+   margin: 0 10px;
 }
 .slider{
     position: absolute;
@@ -207,7 +160,6 @@ select {
     background-color: #cbe2d5;
     transition: .4s;
     border-radius: 34px;
-    width:60px;
 }
 .switch input {display: none;}
 
@@ -229,109 +181,81 @@ input:checked + .slider{
 input:checked + .slider:before{
     transform: translateX(30px);
 }
-
-/* FAV EMPTY ============================================ */
-.fav-empty {
-  padding:0 15px;
-  display:none;
-}
-
-.fav-empty img {
-  max-width:100%;
-  margin: auto;
-}
-
 .secondhead{
     padding: 10px;
+    color: #2e8b56;
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 700;
 }
 .thirdhead{
     text-align: center;
     padding-bottom: 20px;
-}
-button{
-  display: inline-block;
-    border: none;
-    border-radius:10px;
-    padding: 1rem 2rem;
-    margin: 0;
-    text-decoration: none;
-    background: #2e8b56;
-    color: #ffffff;
-    font-family: "Poppins",sans-serif;
     font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    line-height: 24px;
 }
-
-/* STORE ================================================= */
+.dbutton{
+    background: #2e8b56;
+    color: white;
+    width: 200px;
+    height: 48px;
+}
 .store_part{
-    max-width: 750px;
-    margin: auto;
+    text-align: center;
 }
 
 #store {
-  border: 1px solid #CBE2D5;
+  border: 1px solid #ccc;
   min-width: 350px;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .stores {
   border-radius: 10px;
   display: grid;
+  grid-template-columns: 320px;
   justify-content: center;
   gap: 1.2rem;
+  padding-right: 20px;
+
 }
 
 .store_detail {
   display: flex;
-  /* padding: 5px; */
-  margin:16px;
-  justify-content: space-between;
-}
-
-.store-detail img {
-  border-radius: 50%;
+  padding: 10px;
+  min-height: 80px;
+  box-sizing: border-box;
 }
 
 .store_detail li:first-child {
-  width: 72px;
-  height: 72px;
-  /* border: 1px solid black; */
-}
-
-img.store_img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+  width: 20%;
+  border: 1px solid black;
+  text-align: left;
 }
 
 .store_detail li:nth-child(2) {
   width: 65%;
-  text-align: left;
-  padding-left: 16px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
+
 }
 
 .store_detail li:last-child {
   width: 15%;
-  text-align: right;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
-img.heart {
-  width: 24px;
-  height: 24px;
-}
-
-.pickup_detail li:first-child{
-  display: flex;
-  align-items: center;
+.store_cate, .store_dis {
+  font-size: 13px;
 }
 
 .store_cate {
   display: inline-block;
+}
+
+.rate {
+  font-size: 13px;
+  margin-left: 50%;
 }
 
 .pickup_detail {
@@ -344,17 +268,16 @@ img.heart {
 }
 
 .clock {
-  width: 24px;
-  height: 24px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid black;
   line-height: 8px;
   margin: 0 5px;
-  /* border: 1px solid black; */
 }
 
 .price {
   font-weight: bold;
 }
-
 label {
   font-size: 13px;
 }
@@ -417,8 +340,6 @@ a {
   margin-right: 10px;
 }
 
-/* MEDIA QUERIES =============================================== */
-
 @media (min-width: 1000px) {
   body {
     width: 100%;
@@ -469,22 +390,13 @@ a {
     padding: 1% 0;
     width: 45%;
   }
-
-  .notfic{
-    max-width: 750px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+  .noti{
+    padding-right: 280px;
 }
-
-.fav-empty img {
-  max-width:320PX;
-  margin: auto;
-}
-
   #store {
     width: 25%;
     border: 1px solid #ccc;
+   
   }
 
   .stores {
@@ -494,7 +406,5 @@ a {
     justify-content: center;
     gap: 1.2rem;
   }
-
-
 }
 /*# sourceMappingURL=style.css.map */

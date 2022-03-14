@@ -34,3 +34,12 @@ main>p {
 .save>p {
     padding:0 !important;
 }
+
+.store_img {
+    text-align: center;
+}
+
+.store_img img {
+    width: 88px;
+    height: 88px;
+}

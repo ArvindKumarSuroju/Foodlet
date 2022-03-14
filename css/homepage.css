@@ -17,6 +17,7 @@
   line-height: 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .hamburger {
@@ -105,8 +106,8 @@
 
 .store_list {
   width:100%;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  border: 1px solid #CBE2D5;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
@@ -125,14 +126,14 @@
   
 .store_detail {
   display: flex;
-  padding: 5px;
+  /* padding: 5px; */
+  margin: 16px 16px 0px 16px;
+  justify-content: space-between;
 }
 
 .store_detail li:first-child {
-
   width: 72px;
   height: 72px;
-
 }
 
 .store_detail li:nth-child(2) {
@@ -140,19 +141,17 @@
 }
 
 .store_detail li:last-child {
-
   /* width: 15%; */
   width: 13px;
-
 }
 
 .store_cate, .store_dis {
   font-size: 13px;
 }
-.store_img {
-  width: 50px;
-  height:50px;
-  border:1px solid blue;
+
+.store_img img {
+  width: 100%;
+  height: 100%;
 }
 
 .store_cate {
@@ -173,12 +172,16 @@
   justify-content: space-around;
 }
 
+.pickup_detail li * {
+  display: inline-block;
+}
+
 .clock {
-  width: 8px;
-  height: 8px;
-  border: 1px solid black;
-  line-height: 8px;
-  margin: 0 5px;
+  height: 100%;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background: center/cover url("../resources/Icons/pickUpTime.png") no-repeat;
 }
 
 .price {
@@ -197,11 +200,12 @@ a {
 
 #sidebar {
   width: 91%;
-  background-color: #cbe2d5;
+  background-color: #00615b;
   position: absolute;
   left: -1000px;
   top: 0;
   transition: left 0.3s ease-in-out;
+  z-index: 10;
 }
 
 #sidebar.on {
@@ -225,9 +229,15 @@ a {
   cursor: pointer;
 
 }
+
+.sidebar_menu {
+  display: flex;
+  flex-flow: column;
+}
 .sidebar_menu li {
   border-bottom: 1px solid black;
   margin: 0 5%;
+  color: white;
 }
 
 .sidebar_menu li:last-child {
@@ -235,16 +245,50 @@ a {
 }
 
 .sidebar_menu li a {
-  color: black;
+  color: white;
 }
 
 .sidebar_menu img {
-  width: 10px;
-  height: 10px;
-  border: 1px solid red;
-  line-height: 10px;
-  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  margin: auto 10px;
+  vertical-align: middle;
 }
+
+li.heart {
+  text-align: center;
+}
+
+div.heart {
+  background: center/cover url("../resources/Icons/fav.png") no-repeat;
+  width: 13px;
+  height: 13px;
+  margin: 0 auto;
+}
+
+div.heart_active {
+  background: center/cover url("../resources/Icons/favFilled.png") no-repeat;
+}
+
+.header_mobile .menu_item, .header_desktop .menu_item {
+  width: 20px;
+  height: 20px;
+}
+
+.header_mobile .cart, .header_desktop .cart {
+  background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
+}
+.header_mobile .cart_active, .header_nav .cart_active {
+  background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
+}
+
+.header_mobile .notification, .header_nav .notification {
+  background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
+}
+.header_mobile .notification_active, .header_nav .notification_active {
+  background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
+}
+
 /*Desktop version*/
 @media (min-width: 1000px) {
   body {
@@ -269,6 +313,7 @@ a {
   .header_nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .header_nav a {
@@ -296,14 +341,18 @@ a {
   overflow:hidden;
 }
  .store_list {
-    border: 1px solid #ccc;
   }
 
   .stores_slide {
-    width: 125%;
+    width: 150%;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
+  }
+
+  .header_mobile .menu_item, .header_desktop .menu_item {
+    width: 32px;
+    height: 32px;
   }
 }
 /*# sourceMappingURL=style.css.map */
