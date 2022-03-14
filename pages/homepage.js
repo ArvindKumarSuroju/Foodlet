@@ -7,86 +7,167 @@
 //     console.log(" initializing rod.js :" + new Date());
 //     const storeList = document.querySelector('#availableStoreNearby');
 
-//     filterBtn.addEventListener("click", () => {
-//         filter.style.display = "block";
-//     })
+    // filterBtn.addEventListener("click", () => {
+    //     filter.style.display = "block";
+    // })
+
+
     const storeList = document.querySelector('#availableStoreNearby');
     const cityArea = document.getElementById('#location');
+    let priceFrom;
 
-    function renderStore(doc){
+    function renderStoreInfo(doc){
 
         storeList.innerHTML += `
         <li id="${doc.id}" class="store_list">
             <ul class="store_detail">
-                <li><img src="${doc.data().partnerSignupProfilePicture}"></li>
+                <li><img src="${doc.data().partnerSignupProfilePicture}" width="50px"></li>
                 <li>
-                    <h5 class="store_name">${doc.data().partner.storeName}</h5>
+                    <h5 class="store_name">${doc.data().storeName}</h5>
                     <p class="store_cate">${doc.data().storeType}</p>
                     <span class="rate"><i class="fas fa-star">x.x</i></span>
                 </li>
                 <li><i class="far fa-heart"></i></li>
             </ul>
-            <ul class="pickup_detail">
+            <ul class="pickup_detail" id="pickupDetail">
                 <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
-                <li>
-                    <span>${doc.data().quantity} left</span>
-                    <span>from ${doc.data().salePrice}</span>
+                <li>from $ ${doc.data().salePrice}
                 </li>
             </ul>
         </li>
         `
     }
 
-    db.collection('partnerAddMeals').get().then((snapshot) => {
+    
+
+    db.collection('partners').get().then((snapshot) => {
         snapshot.docs.forEach( doc => {
             console.log(doc.data());
+
             let a = doc;
-            renderStore(a);
+            renderStoreInfo(a);
+
+            lowestSalePriceInStore(doc.id);
+            
         })
     });
 
+    function lowestSalePriceInStore (id) {
+        let salePriceArray = [];
+        
+        db.collection('partners').doc(id).collection('availableMeals').get().then((snapshot) => {
+            snapshot.docs.forEach( doc => {
+                salePriceArray.push(doc.data().salePrice);
+                
+            })
+            console.log(salePriceArray);
+        
+            console.log(Math.min(...salePriceArray));
+
+            pickupDetail.innerHTML += `<li>from $ ${Math.min(...salePriceArray)}
+            </li>`;
+        });
+
+        // const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
+        
+        // snapshot.docs.forEach( doc => {
+        //     salePriceArray.push(parseFloat(doc.data().salePrice));
+            
+        // })
+        // console.log(salePriceArray);
+
+        // console.log(Math.min(...salePriceArray));
+        
+    }
+
+
     function cityAreaSelection() {
         storeList.innerHTML = "";
+        let cityArea = document.getElementById('locationSelection');
 
-        db.collection('partners').get().then((snapshot) => {
-            snapshot.docs.forEach( doc => {
-                if(doc.data().city == cityArea) {
-                    renderStore(doc);
-                }
+        db.collection('partners').where('city', '==', cityArea.value).get().then((snapshot) => {
+            snapshot.forEach( (doc) => {
+
+                    renderStoreInfo(doc);
+
             })
         });
+
     }
+
+
+    db.collection('partners').get().then((snapshot) => {
+        snapshot.docs.forEach( doc => {
+            console.log(doc.data());
+        })
+    });
+
+
+
+
+
+    const applyFilterButton = document.getElementById("applyFilterButton");
+
+
+    applyFilterButton.addEventListener('click', (data) => {
+
+        let storeTypeArray = [restaurantCheckbox.value, cafeCheckbox.value, bakeryCheckbox.value];
+
+    });
+
+
 
 
     function storeTypeFilter() {
-        db.collection('partnerAddMeals').get().then((snapshot) => {
+        db.collection('partners').get().then((snapshot) => {
             snapshot.docs.forEach( doc => {
-            let storeTypeArray = [doc.data().restaurant, doc.data().cafe, doc.data().bakery];
 
-            if(howManyOns(storeTypeArray) == 1) {
-                if (doc.data().restaurant == 'on') {
-                    renderStore(doc);
-                } else if (doc.data().cafe == 'on') {
-                    renderStore(doc);
-                } else if (doc.data().bakery == 'on') {
-                    renderStore(doc);
+                let store_type = doc.data().storeType;
+
+                console.log(doc.data().storeType);
+            
+                if (store_type == 'Restaurant') {
+                    renderStoreInfo(doc);
+                } else if (store_type == 'cafe') {
+                    renderStoreInfo(doc);
+                } else if (store_type == 'bakery') {
+                    renderStoreInfo(doc);
                 }
-
-            } else if(howManyOns(storeTypeArray) == 2) {
-                if (doc.data().restaurant == 'on' && doc.data().cafe == 'on') {
-                    renderStore(doc);
-                } else if (doc.data().cafe == 'on' && doc.data().bakery == 'on') {
-                    renderStore(doc);
-                } else if (doc.data().bakery == 'on' && doc.data().restaurant == 'on') {
-                    renderStore(doc);
-                }
-
-            } else {
-                renderStore(doc);
-
-            }})
-        })        
+            
+            })        
+        })
     }
+
+
+    // function storeTypeFilter() {
+    //     db.collection('partnerAddMeals').get().then((snapshot) => {
+    //         snapshot.docs.forEach( doc => {
+    //         let storeTypeArray = [doc.data().restaurant, doc.data().cafe, doc.data().bakery];
+
+    //         if(howManyOns(storeTypeArray) == 1) {
+    //             if (doc.data().restaurant == 'on') {
+    //                 renderStoreInfo(doc);
+    //             } else if (doc.data().cafe == 'on') {
+    //                 renderStoreInfo(doc);
+    //             } else if (doc.data().bakery == 'on') {
+    //                 renderStoreInfo(doc);
+    //             }
+
+    //         } else if(howManyOns(storeTypeArray) == 2) {
+    //             if (doc.data().restaurant == 'on' && doc.data().cafe == 'on') {
+    //                 renderStoreInfo(doc);
+    //             } else if (doc.data().cafe == 'on' && doc.data().bakery == 'on') {
+    //                 renderStoreInfo(doc);
+    //             } else if (doc.data().bakery == 'on' && doc.data().restaurant == 'on') {
+    //                 renderStoreInfo(doc);
+    //             }
+
+    //         } else {
+    //             renderStoreInfo(doc);
+
+    //         }})
+    //     })        
+    // }
 
     function howManyOns(array) {
         let count = 0;

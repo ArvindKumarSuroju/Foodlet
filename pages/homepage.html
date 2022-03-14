@@ -144,13 +144,16 @@
     <main>
         <div id="main_page" class="page"> 
             <div class="search">
-                <select name="location" id="location" class="location_select" onchange="cityAreaSelection()">
-                    <option value="">Metro Vancouver</option>
-                    <option value="">West Vancouver</option>
-                    <option value="">North Vancouver</option>
-                    <option value="">East Vancouver</option>
-                </select>
-                <div id="filterBtn" class="filter">Filter</div>
+                <form id="locationForm">
+                    <select name="locationSelection" id="locationSelection" class="location_select" onchange="cityAreaSelection()">
+                        <option>Select an Area</option>
+                        <option value="Metro Vancouver">Metro Vancouver</option>
+                        <option value="West Vancouver">West Vancouver</option>
+                        <option value="North Vancouver">North Vancouver</option>
+                        <option value="East Vancouver">East Vancouver</option>
+                    </select>
+                </form>
+            <div id="filterBtn" class="filter">Filter</div>
             </div>
         <div class="map"><!--map -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192245!2d-123.11073828433608!3d49.22477278279314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2z656R6rCA6528IOuMgO2VmQ!5e0!3m2!1sko!2sca!4v1645593899843!5m2!1sko!2sca" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
