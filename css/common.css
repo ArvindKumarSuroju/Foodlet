@@ -39,6 +39,7 @@ body {
   }
 .title {
     text-align:center;
+    font-size: 32px;
 }
 
 .icon {
@@ -115,6 +116,14 @@ body {
 
   .text_color_secondary {
     color: #616161;
+  }
+
+  .text_color_tertiary {
+    color: #00615b;
+  }
+
+  .text_center {
+    text-align: center;
   }
 
   /* Desktop */
