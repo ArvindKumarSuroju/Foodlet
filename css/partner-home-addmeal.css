@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
 * {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
@@ -14,7 +12,6 @@ body {
     margin: 0;
     text-align: center;
     width: 100vw;
-
 }
 
 header {
@@ -22,11 +19,9 @@ header {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-
     background: #00615B;
     color: white;
     padding: 12px 15px;
-
     position: sticky;
     top: 0;
 }
@@ -39,7 +34,6 @@ h1 {
 
 header a {
     color: white;
-    
     text-decoration: none;
 }
 
@@ -47,18 +41,16 @@ header i {
     font-size: 24px;
 }
 
-main, html {
+main,
+html {
     max-width: 100vw;
 }
-
-
 
 article {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-
-    border: #CBE2D5 solid 1px ;
+    border: #CBE2D5 solid 1px;
     border-radius: 10px;
     padding: 16px;
     margin: 16px;
@@ -74,7 +66,6 @@ article img {
     padding: 0 18px;
     text-align: left;
     align-self: center;
-
     font-size: 16px;
 }
 
@@ -89,14 +80,12 @@ article i {
 }
 
 .addmeal-button {
-    border: #CBE2D5 solid 1px ;
+    border: #CBE2D5 solid 1px;
     border-radius: 10px;
     color: #2E8B56;
-
     margin: 24px 16px;
     padding: 16px;
     font-weight: 700;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,47 +93,38 @@ article i {
 
 .addmeal-button i {
     font-size: 24px;
-
     padding-right: 12px;
 }
-
-
 
 footer {
     background: #00615B;
     color: white;
-
     font-weight: 600;
     font-size: 11px;
     padding: 5.75px 16px;
 }
 
-.partner-home, .partner-editmeal, .partner-addmeal {
+.partner-home,
+.partner-editmeal,
+.partner-addmeal {
     height: 100vh;
-
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
 }
 
-
-
-
-
 .inside-form {
     display: flex;
     flex-flow: column nowrap;
-
     text-align: left;
-    margin: 8px 15px ;
+    margin: 8px 15px;
 }
 
 .inside-form2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin: 8px 15px ;
+    margin: 8px 15px;
 }
 
 .form-subject {
@@ -152,30 +132,27 @@ footer {
     font-size: 16px;
 }
 
-input[type="text"], input[type="number"], input[type="date"], input[type="time"] {
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
     background: #EEF2F5;
-
     border: none;
     border-radius: 10px;
-
     height: 40px;
 }
 
 textarea {
     background: #EEF2F5;
-
     border: none;
     border-radius: 10px;
-
     height: 119px;
 }
 
 input[type="checkbox"] {
     background: #EEF2F5;
-
     border: none;
     border-radius: 10px;
-
     height: 24px;
     width: 24px;
 }
@@ -186,17 +163,18 @@ input[type="checkbox"] {
     grid-gap: 17px;
 }
 
-.two-columns .inside-form:nth-child(odd){
+.two-columns .inside-form:nth-child(odd) {
     margin-right: 0;
 }
 
-.two-columns .inside-form:nth-child(even){
+.two-columns .inside-form:nth-child(even) {
     margin-left: 0;
 }
 
 #quantity {
     width: 3rem;
 }
+
 
 /* #quantity::before, #quantity::after {
     font-family: "Font Awesome 5 Free";
@@ -229,8 +207,6 @@ input[type="checkbox"] {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-
-    
     border: black dashed 1px;
     border-radius: 10px;
     margin: 15px;
@@ -244,13 +220,9 @@ input[type="image"] {
     padding-bottom: 10px;
 }
 
-
-
-
 .button {
     padding: 13px 0;
     margin: 20px 15px;
-
     font-weight: 600;
     border-radius: 10px;
     font-size: 16px;
@@ -275,22 +247,20 @@ input[type="image"] {
     margin-left: 0;
 }
 
-
-
+#quantity {
+    width: 100% !important;
+}
 
 @media screen and (min-width: 700px) {
     main {
         width: 700px !important;
-
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-end;
         align-self: center;
     }
-
     .available-meals {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-
 }

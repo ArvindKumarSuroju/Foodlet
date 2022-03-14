@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,13 @@
 
     <link rel="stylesheet" href="../css/partner-login-signup.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
     <script src="../js/partner-signup.js" defer></script>
-        
+
 </head>
+
 <body>
     <div class="desktop-view">
         <header>
@@ -30,7 +31,7 @@
 
         <main>
             <h2>Create a Partner Account</h2>
-            
+
             <div class="partner-signup-form">
                 <div class="partner-signup-coverimage" id="partner-signup-coverimage">
                     <span><i class="fa-solid fa-pen"></i></span>
@@ -39,13 +40,13 @@
                     <img src="https://picsum.photos/200/200/?random=88" id="partner-signup-profilepicture">
                     <span><a href="#">edit picture</a></span>
                 </div>
-                <form action="">
+                <form action="" id="addPartner">
 
-                    <div class="inside-form">
+                    <!-- <div class="inside-form">
                         <label for="partner_signup_profileimage">Full Name*</label>
                         <input type="file" id="partner_signup_profileimage" name="partner-signup-fullname">
-                    </div>
-                    
+                    </div> -->
+
                     <div class="inside-form">
                         <label for="partner_signup_fullname">Full Name*</label>
                         <input type="text" id="partner_signup_fullname" name="partner-signup-fullname">
@@ -80,17 +81,17 @@
                         <label for="partner_signup_email">Email*</label>
                         <input type="text" id="partner_signup_email" name="partner-signup-email">
                     </div>
-                    <p>*Required field</p>
+                    <!-- <p>*Required field</p> -->
                     <div class="checkbox">
                         <input type="checkbox" id="partner_signup_termsagreement" name="partner-signup-termsagreement">
                         <label for="partner_signup_termsagreement">By signing up, you agree with Foodlet's <a href="#">Terms of Service & Privacy Policy</a></label>
                     </div>
-                    <button  type="button" id="partnerSignupButton" class="button"><a href="partner-home.html">Sign up</a></button>
+                    <button type="submit" id="partnerSignupButton" class="button">Sign up</button>
                 </form>
             </div>
 
             <div class="bottom-link">
-                <p>I already have a partner account. <a href="partner-login.html">Log in</a></p>
+                <p>I already have a partner account. <a href="#partner-login">Log in</a></p>
             </div>
 
         </main>
@@ -99,4 +100,5 @@
     <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
 
 </body>
+
 </html>
