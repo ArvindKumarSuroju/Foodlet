@@ -1,58 +1,39 @@
-// const allPages = document.querySelectorAll('div.page');
-// allPages[0].style.display = 'block';
+// // const allPages = document.querySelectorAll('div.page');
+// // allPages[0].style.display = 'block';
 
-// function navigateToPage(event) {
-//   const pageId = location.hash ? location.hash : '#login';
-//   for (let page of allPages) {
-//     if (pageId === '#' + page.id) {
-//       page.style.display = 'block';
+// // function navigateToPage(event) {
+// //   const pageId = location.hash ? location.hash : '#login';
+// //   for (let page of allPages) {
+// //     if (pageId === '#' + page.id) {
+// //       page.style.display = 'block';
+// //     } else {
+// //       page.style.display = 'none';
+// //     }
+// //   }
+// //   return;
+// // }
+// // navigateToPage();
+
+// // //init handler for hash navigation
+// // window.addEventListener('hashchange', navigateToPage);
+
+// //hamburger menu //
+
+// const menuBtn = document.querySelector(".hamburger");
+// const sidebar = document.querySelector("#sidebar");
+// const closeBtn = document.querySelector(".side_close");
+
+// menuBtn.addEventListener('click',()=>{
+//     if (sidebar.classList.contains('on')){
+//         sidebar.classList.remove('on');
 //     } else {
-//       page.style.display = 'none';
+//         sidebar.classList.add('on');
 //     }
-//   }
-//   return;
-// }
-// navigateToPage();
+// });
 
-// //init handler for hash navigation
-// window.addEventListener('hashchange', navigateToPage);
-
-//hamburger menu //
-
-const menuBtn = document.querySelector(".hamburger");
-const sidebar = document.querySelector("#sidebar");
-const closeBtn = document.querySelector(".side_close");
-
-menuBtn.addEventListener('click',()=>{
-    if (sidebar.classList.contains('on')){
-        sidebar.classList.remove('on');
-    } else {
-        sidebar.classList.add('on');
-    }
-});
-
-closeBtn.addEventListener('click',()=>{
-    sidebar.classList.remove('on');
-});
-
-//Filter
-
-const filterBtn = document.querySelector(".filterBtn");
-const filter = document.querySelector("#filter");
-const ExitBtn = document.querySelector(".close");
-
-
-filterBtn.addEventListener('click',()=>{
-  if (filter.classList.contains('on')){
-        filter.classList.remove('on');
-  } else {
-      filter.classList.add('on');
-  }
-});
-
-ExitBtn.addEventListener('click',()=>{
-    filter.classList.remove('on');
-});
+// closeBtn.addEventListener('click',()=>{
+//     sidebar.classList.remove('on');
+// });
 
 // //Geolocation//
 // if ( navigator.geolocation ) {
@@ -70,62 +51,50 @@ ExitBtn.addEventListener('click',()=>{
 //         } else {  // no geolocation in navigator. in the case of old browsers
 //           console.log("Geolocation is not supported by this browser.");
 //         };
-    
-//Slider //
- 
-const carouselSlide = document.querySelector(".stores_slide");
-const carouselStore = document.querySelectorAll(".stores_slide>li");
 
-//Buttons
-const prevBtn = document.querySelector("#prev");
-const nextBtn = document.querySelector("#next");
+// //Slider //
 
-//Counter 
+// const carouselSlide = document.querySelector(".stores_slide");
+// const carouselStore = document.querySelectorAll(".stores_slide>li");
 
-let counter = 1;
-const size = carouselStore[0].clientWidth;
+// //Buttons
+// const prevBtn = document.querySelector("#prev");
+// const nextBtn = document.querySelector("#next");
 
-carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+// //Counter 
 
+// let counter = 1;
+// const size = carouselStore[0].clientWidth;
 
-//Button Listener
-
-nextBtn.addEventListener('click',()=>{
-    if (counter >= carouselStore.length -1 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-})
-
-prevBtn.addEventListener('click',()=>{
-    if (counter <= 0 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-})
+// carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
 
 
-carouselSlide.addEventListener('transitionend',()=>{
-    if(carouselStore[counter].id === 'last_clone'){
-        carouselSlide.style.transition = "none";
-        counter = carouselStore.length -2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-    }
-    if(carouselStore[counter].id === 'first_clone'){
-        carouselSlide.style.transition = "none";
-        counter = carouselStore.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-    }
-});
+// //Button Listener
 
-//cart 
+// nextBtn.addEventListener('click',()=>{
+//     if (counter >= carouselStore.length -1 ) return;
+//     carouselSlide.style.transition = "transform 0.4s ease-in-out";
+//     counter++;
+//     carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+// })
 
-// let removeCartItemButtons = document.getElementsByClassName('btn-danger')
-// // console.log(deleteCartBtn)
-// for (let i=0; i < removeCartItemButtons.length; i++){
-//     let button = removeCartItemButtons[i]
-//     button.addEventListener('click',(event)=>{
-//         let buttonClicked = event.target
-//         buttonClicked.parentElement.parentElement.remove()
-//     })
-// }
+// prevBtn.addEventListener('click',()=>{
+//     if (counter <= 0 ) return;
+//     carouselSlide.style.transition = "transform 0.4s ease-in-out";
+//     counter--;
+//     carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+// })
+
+
+// carouselSlide.addEventListener('transitionend',()=>{
+//     if(carouselStore[counter].id === 'last_clone'){
+//         carouselSlide.style.transition = "none";
+//         counter = carouselStore.length -2;
+//         carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+//     }
+//     if(carouselStore[counter].id === 'first_clone'){
+//         carouselSlide.style.transition = "none";
+//         counter = carouselStore.length - counter;
+//         carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+//     }
+// })

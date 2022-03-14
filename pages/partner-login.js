@@ -1,4 +1,4 @@
-partnerLogin.addEventListener('click', (e) => {
+partnerLogin.addEventListener('submit', (e) => {
     e.preventDefault();
     let mail = email.value;
     let passwordKey = password.value;
@@ -17,9 +17,6 @@ partnerLogin.addEventListener('click', (e) => {
             console.log(errorMessage);
         })
 });
-
-
-
 
 
 

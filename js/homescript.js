@@ -1,25 +1,32 @@
-//Map//
-var map;
-function myMap() {
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {  
-    center: new google.maps.LatLng(49.27883133919559,  -123.13434156509084), 
-    zoom: 12 
+// const allPages = document.querySelectorAll('div.page');
+// allPages[0].style.display = 'block';
 
-  };
-  map = new google.maps.Map(mapCanvas, mapOptions);
-}
+// function navigateToPage(event) {
+//   const pageId = location.hash ? location.hash : '#main_page';
+//   for (let page of allPages) {
+//     if (pageId === '#' + page.id) {
+//       page.style.display = 'block';
+//     } else {
+//       page.style.display = 'none';
+//     }
+//   }
+//   return;
+// }
+// navigateToPage();
 
-myMap();
+// //init handler for hash navigation
+// window.addEventListener('hashchange', navigateToPage);
 
-var coords = {
-  'VAN': '49.27883133919559, -123.13434156509084',
-  'BUR': '49.247165406526435, -122.98247547491722',
-  'RIC': '49.17147782913937, -123.13133664398394',
-  'SUR': '49.1932788458098, -122.84774023807589'
-};
+//click 
+// const button = document.querySelector(".filter");
+// const filterPage = document.querySelector("#filter");
+// button.addEventListener('click',()=>{
+//     filterPage.style.display="block";
+// });
 
-function changeMap(city) {
-  var c = coords[city].split(',');
-  map.setCenter(new google.maps.LatLng(c[0], c[1]));
-}
+// const closeBtn = document.querySelector(".close");
+// closeBtn.addEventListener('click',()=>{
+//     filterPage.style.display="none";
+// });
+
+//SIDEMENU BUTTON

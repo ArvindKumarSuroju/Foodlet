@@ -68,17 +68,9 @@ button {
   color: #f19737;
 }
 
-.login_form .header, .signup_form .header, .complete_form .header {
-  height: 48px;
+header {
+  height: 50px;
   background-color: #00615b;
-  text-align: center;
-}
-
-.login_form .header img, .signup_form .header img, .complete_form .header img {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 50%;
 }
 
 /*Log in screen*/
@@ -86,11 +78,8 @@ button {
   text-align: center;
 }
 
-.inner {
+.login_form, .signup_form {
   margin-top: 20px;
-  width: 65%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /*sign up screen*/
@@ -116,12 +105,11 @@ select {
 }
 
 .complete_icon {
-  margin: 5% auto;
-}
-
-.complete_icon img {
-  width: 100%;
-  height: 100%;
+  height: 150px;
+  width: 150px;
+  background-color: #2e8b56;
+  border-radius: 50%;
+  margin: 20% auto;
 }
 
 .complete_t {
@@ -168,25 +156,36 @@ footer {
     background-color: #ecf1f4;
   }
 
-  .login_form, .signup_form, .complete_form {
+  .login_form {
     width: 50%;
     box-sizing: border-box;
-  }
-
-  .login_form .header, .signup_form .header, .complete_form .header {
-    height: 95px;
   }
 
   .signup_page {
     display: flex;
   }
 
+  .signup_form {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 8%;
+  }
+
   .complete_page {
     display: flex;
   }
 
+  .complete_form {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .complete_icon {
+    margin-top: 20%;
+  }
+
   .complete_t {
-    padding: 0 0 0px 0;
+    padding: 60px 0 40px 0;
   }
 
   input {
