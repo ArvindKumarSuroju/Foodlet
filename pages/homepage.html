@@ -61,13 +61,18 @@
     <main>
         <div id="main_page" class="page">
             <div class="search">
-                <select name="location" id="location" class="location_select">
-                    <option value="">Metro Vancouver</option>
-                    <option value="">West Vancouver</option>
-                    <option value="">North Vancouver</option>
-                    <option value="">East Vancouver</option>
-                </select>
-                <a href="#" class="filter">Filter</a>
+
+                <form id="locationForm">
+                    <select name="locationSelection" id="locationSelection" class="location_select" onchange="cityAreaSelection()">
+                        <option>Select an Area</option>
+                        <option value="Metro Vancouver">Metro Vancouver</option>
+                        <option value="West Vancouver">West Vancouver</option>
+                        <option value="North Vancouver">North Vancouver</option>
+                        <option value="East Vancouver">East Vancouver</option>
+                    </select>
+                </form>
+            <div id="filterBtn" class="filter">Filter</div>
+
             </div>
 
         <div class="map"><!--map -->
