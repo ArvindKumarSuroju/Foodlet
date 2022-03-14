@@ -55,3 +55,18 @@ main ul>li:nth-child(3) {
     border-top: 2px solid #51cf67;
     padding:3% 0;
 }
+
+.buttons {
+    text-align: center;
+    margin: auto;
+}
+.button_reserve {
+    width: 244px;
+    height: 48px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+.inner {
+    margin: 20px auto !important;
+}
