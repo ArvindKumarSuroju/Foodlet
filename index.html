@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="app.webmanifest">
+
+    <!-- All css file needs to be link from here-->
+    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/homepage.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+
     <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth-compat.js"></script>
 
 
     <script>
+        // let is_partner = false; //this is how we can split to two page layout
+
         const firebaseApp = firebase.initializeApp({
             apiKey: "AIzaSyDhugHzhI0K6ms3vC0o012N9w_BGFjuZfw",
             authDomain: "foodlet-b141c.firebaseapp.com",
@@ -24,11 +35,11 @@
         const auth = firebaseApp.auth();
         const db = firebase.firestore();
 
-
-        db.settings({
-            timestampsInSnapshots: true
-        });
+        // db.settings({
+        //     timestampsInSnapshots: true
+        // });
     </script>
+
     <!-- <script src="js/app.js" defer></script> -->
     <script>
         if ('serviceWorker' in navigator) { //if browser supports Service worker
@@ -46,21 +57,32 @@
     </script>
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- <script src="js/main.js" defer></script> -->
+    <script src="js/main.js" defer></script>
 
 
     <title>Foodlet</title>
 </head>
 
 <body>
+    <div class="toolbar">
 
+        <!-- <a href="#login-customer">Login Customer| </a>
+        <a href="#on-boarding-customer">On boarding Customer|</a>
+        <a href="#signup-customer">Sign Up customer|</a>
+        <a href="#registration-successful">Registration Success|</a>
+        <a href="#partner-login">Partner Login|</a>
+        <a href="#partner-signup">Partner Signup|</a>
+        <a href="#partner-home">Partner Home |</a>
+        <a href="#partner-addmeal">Partner Add Meal |</a>
+        <a href="#filter">Filter |</a>
+        <a href="#homepage">Home Page |</a> -->
 
     </div>
     <div id="mainArea">
         <!-- the main part will be dynamically updated as each page loads -->
     </div>
-    <script src="routing.js"></script>
-    <script src="script.js"></script>
+    <script src="routing.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
