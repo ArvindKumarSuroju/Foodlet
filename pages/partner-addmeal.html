@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodlet - Partner Home / Add Meals</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="../css/partner-home-addmeal.css">
 
     <script src="../js/partner-addmeal.js" defer></script>
 </head>
+
 <body>
     <div class="partner-addmeal">
         <header>
@@ -27,10 +30,10 @@
                     <li class="partner-navbar-search"><a href="#"><i class="fas fa-search">    </i></a></li>
 
                     <li class="logout-button"><button id="partner-logout" class="button logoutbutton">Log Out</button></li>
-                    
+
                 </ul>
             </nav>
-            
+
             <div class="site-branding">
                 <h1>FOODLET Partner</h1>
                 <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
@@ -42,7 +45,7 @@
         <main>
             <section class="add-meal-form">
                 <h2>Add Meals</h2>
-                <form action="">
+                <form action="" id="addMeal">
                     <div class="inside-form">
                         <label for="menu_name" class="form-subject">Menu Name</label>
                         <input id="menu_name" name="menu-name" type="text">
@@ -98,28 +101,34 @@
                             <label for="food_weight" class="form-subject">Food Weight</label>
                             <input id="food_weight" name="food-weight" type="number">
                         </div>
-                    
-                        <div class="inside-form2 quantity">
+
+                        <div class="inside-form food-weight">
+                            <label for="quantity" class="form-subject">Quantity</label>
+                            <div class="quantity-input">
+                                <input id="quantity" name="quantity-input" type="number">
+                            </div>
+                            <!-- <div class="inside-form2 quantity">
                             <label for="quantity" class="form-subject">Quantity</label>
                             <div class="quantity-input">
                                 <button class="minusbutton">-</button>
                                 <input id="quantity" name="quantity" type="number">
                                 <button class="plusbutton">+</button>
                             </div>
+                        </div> -->
                         </div>
-                    </div>
-                        <div class="add-photo">
-                            <input id="addmeal_photo" name="addmeal-photo" type="image" src="img_submit.gif" alt="">
-                            <span>Add Photo</span>
-                        </div>
-                    <button class="button publishbutton" id="addMealsButton">Publish</button>
+                        <!-- <div class="add-photo">
+                        <input id="addmeal_photo" name="addmeal-photo" type="image" src="img_submit.gif" alt="">
+                        <span>Add Photo</span>
+                    </div> -->
+                        <div class="publishMealsBtn"><button type="submit" class="button publishbutton" id="addMealsButton">Publish</button></div>
                 </form>
-            
+
         </main>
 
         <footer>
             &copy; 2022 FOODLET, RIGHT RESERVED.
         </footer>
-    </div>
+        </div>
 </body>
+
 </html>

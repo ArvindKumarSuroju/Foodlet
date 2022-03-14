@@ -1,4 +1,5 @@
-loginCustomer.addEventListener('click', (e) => {
+loginCustomer.addEventListener('submit', (e) => {
+    console.log("check");
     e.preventDefault();
     let mail = email.value;
     let passwordKey = password.value;
@@ -16,4 +17,5 @@ loginCustomer.addEventListener('click', (e) => {
             const errorMessage = error.message;
             console.log(errorMessage);
         })
+
 });
