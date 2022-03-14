@@ -61,12 +61,7 @@ async function initMap() {
 //bring store's zipcode and covert to lat and long
 
 //push them to array
-  let stores = [
-    ['bakery', 49.242021, -123.083775],
-    ['grocery', 49.242021, -123.083775],
-    ['church', 49.264967, -123.168716],
-    ['church', 49.256763, -123.161881]
-  ];
+ 
 
   map.addEventListener('DOMContentLoadedM', (e)=>{
     initMap();
@@ -85,7 +80,12 @@ async function initMap() {
 }
   
 }
-
+var stores = [
+  // ['bakery', 49.242021, -123.083775],
+  // ['grocery', 49.242021, -123.083775],
+  // ['church', 49.264967, -123.168716],
+  // ['church', 49.256763, -123.161881]
+];
 
 //chagne location by selection
 async function changeMap(city) {
@@ -110,6 +110,9 @@ function renderData(doc){
   name.textContent = doc.data().partner.storeName;
   zipcode.textContent = doc.data().partner.zipcode;
 
+  var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);
+ 
+
   li.appendChild(name);
   li.appendChild(zipcode);
 
@@ -128,23 +131,28 @@ initMap();
 
 //Convert zipcode to lat, long 
 
-// function getCoordinates(address){
-//   fetch("https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places")
-//     .then(response => response.json())
-//     .then(data => {
-//       const latitude = data.results.geometry.location.lat;
-//       const longitude = data.results.geometry.location.lng;
-//       console.log({latitude, longitude})
-//     })
-// }
-
-const addressApi = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places"
-async function getapi(url){
-  const responce = await fetch(url);
-
-  var data = await response.json();
-
+function getCoordinates(name, zipcode){
+  var coordinate = [];
+  fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address="+zipcode)
+    .then(response => {
+      return response.json();
+    }).then(data => {
+      const latitude = data.results.geometry.location.lat;
+      const longitude = data.results.geometry.location.lng;
+      coordinate = [latitude, longtitude];
+      stores.push(name, coordinates);
+      return coordinate;
+      console.log({latitude, longitude})
+    })
 }
+
+// const addressApi = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places"
+// async function getapi(url){
+//   const responce = await fetch(url);
+
+//   var data = await response.json();
+
+// }
 
 
 
