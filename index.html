@@ -18,6 +18,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js"></script>
 
 
     <script>
@@ -34,6 +35,8 @@
         });
         const auth = firebaseApp.auth();
         const db = firebase.firestore();
+        var storage = firebase.storage();
+
 
         // db.settings({
         //     timestampsInSnapshots: true
