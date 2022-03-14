@@ -77,7 +77,6 @@
   box-sizing: border-box;
   left:5%;
   top:8%;
-  border:1px solid red;
   position:absolute;
 }
 
@@ -122,7 +121,6 @@
 
 .store_container {
   width: 100%;
-  border:5px solid blue;
   overflow:hidden;
 }
   
@@ -136,18 +134,15 @@
 .store_detail li:first-child {
   width: 72px;
   height: 72px;
-  border: 1px solid black;
 }
 
 .store_detail li:nth-child(2) {
   width: 65%;
-  border: 1px solid black;
 }
 
 .store_detail li:last-child {
   /* width: 15%; */
   width: 13px;
-  border: 1px solid black;
 }
 
 .store_cate, .store_dis {
@@ -343,7 +338,6 @@ div.heart_active {
 
 .store_container {
   width: 100%;
-  border:5px solid blue;
   overflow:hidden;
 }
  .store_list {

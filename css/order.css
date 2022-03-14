@@ -5,30 +5,24 @@
 .order_review>li>img {
     width:30px;
     height:30px;
-    border:1px solid red;
 }
 
 .order_review>li {
     width:70% !important;
-    border:1px solid blue;
     margin-left:0 !important;
 }
 
 .menu_detail>li:nth-child(2){
     width:70%;
-    border:1px solid purple;
 }
 
 .menu_detail>li:nth-child(3){
-    border:1px solid pink;
-
     margin-left:0 !important;
 }
 
 
 .price {
     text-align:right;
-    border:1px solid orange;
 }
 
 .store_img {

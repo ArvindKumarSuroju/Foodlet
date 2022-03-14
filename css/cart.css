@@ -7,7 +7,6 @@
 } */
 main ul>li:first-child {
     width:20%;
-    border:1px solid black;
 
 }
 
@@ -41,7 +40,7 @@ main ul>li:nth-child(3) {
 } */
 
 .menus {
-    border-top: 2px solid #51cf67;
+    border-top: 1px solid #68B63E;
     padding:3% 0;
 }
 .save, .total, .pay {
@@ -52,7 +51,7 @@ main ul>li:nth-child(3) {
 
 .save>p, .total>p, .pay>p{
     width:100%;
-    border-top: 2px solid #51cf67;
+    border-top: 1px solid #68B63E;
     padding:3% 0;
 }
 
