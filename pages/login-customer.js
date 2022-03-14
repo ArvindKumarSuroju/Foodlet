@@ -14,9 +14,13 @@ loginCustomer.addEventListener('submit', (e) => {
 
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage);
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
+            // const user = userCredential.user;
+            // console.log(user);
+            //Direct to homepage regardless crendential --hyewon
+            location.href = "#homepage";
+            // console.log(errorMessage);
         })
 
 });
