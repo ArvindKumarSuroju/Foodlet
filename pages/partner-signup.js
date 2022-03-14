@@ -1,14 +1,8 @@
-const addPartner = document.getElementById('addPartner');
-// console.log(addPartner);
 addPartner.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-
-
     let mail = partner_signup_email.value;
     let passwordKey = partner_signup_password.value;
-
-
 
     auth.createUserWithEmailAndPassword(mail, passwordKey)
         .then(async(userCredential) => {
@@ -41,6 +35,27 @@ async function addUserMeta(user) {
         phoneNumber: addPartner.partner_signup_phonenumber.value,
         emailAddress: addPartner.partner_signup_email.value,
         termsAndConditions: addPartner.partner_signup_termsagreement.value,
-    }, { merge: true });
+    }, { merge: true }); <<
+    << << < HEAD
+        ===
+        === =
+        console.log("new partner added");
+    location.href = "#partner-login";
+}
+
+let storageRef = firebase.storage().ref('partnerImages');
+
+function uploadData() {
+    let file = document.getElementById('files').files[0];
+    console.log(file);
+
+    let thisRef = storageRef.child(file.name);
+    thisRef.put(file).then(res => {
+            console.log("upload success");
+            alert("upload success");
+        }).catch(e => {
+            console.log('Error for image upload  ' + e)
+        }) >>>
+        >>> > 402e9755 d65822ed963b7ead0e6ef8cc50e9771a
 
 }
