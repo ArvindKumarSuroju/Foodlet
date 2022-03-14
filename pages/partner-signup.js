@@ -35,11 +35,8 @@ async function addUserMeta(user) {
         phoneNumber: addPartner.partner_signup_phonenumber.value,
         emailAddress: addPartner.partner_signup_email.value,
         termsAndConditions: addPartner.partner_signup_termsagreement.value,
-    }, { merge: true }); <<
-    << << < HEAD
-        ===
-        === =
-        console.log("new partner added");
+    }, { merge: true });
+    console.log("new partner added");
     location.href = "#partner-login";
 }
 
@@ -51,11 +48,10 @@ function uploadData() {
 
     let thisRef = storageRef.child(file.name);
     thisRef.put(file).then(res => {
-            console.log("upload success");
-            alert("upload success");
-        }).catch(e => {
-            console.log('Error for image upload  ' + e)
-        }) >>>
-        >>> > 402e9755 d65822ed963b7ead0e6ef8cc50e9771a
+        console.log("upload success");
+        alert("upload success");
+    }).catch(e => {
+        console.log('Error for image upload  ' + e)
+    })
 
 }
