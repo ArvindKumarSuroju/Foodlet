@@ -59,6 +59,24 @@
     </script>
     <link rel="stylesheet" href="css/main.css">
 
+    <script>
+        async function getSignedInUser() {
+            if (!auth.currentUser) {
+                await getAuthenticatedUser();
+                return auth.currentUser;
+            } else {
+                return auth.currentUser;
+            }
+        }
+        async function getAuthenticatedUser() {
+            return new Promise((resolve, reject) => {
+                auth.onAuthStateChanged(user => {
+                    resolve(user);
+                })
+            })
+        }
+    </script>
+
     <!-- <script src="js/main.js" defer></script> -->
 
 
