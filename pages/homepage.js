@@ -1,5 +1,8 @@
 // //Log out 
 // logoutOfApp.addEventListener('click', () => {
+// filterBtn.addEventListener("click", () => {
+//     filter.style.display = "block";
+// })
 
 // console.error("Error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 //   auth.signOut().then(() => {
@@ -14,6 +17,15 @@
 // filterBtn.addEventListener("click", () => {
 //     filter.style.display = "block";
 // })
+logoutOfApp.addEventListener('click', () => {
+    console.log("logout check");
+    auth.signOut().then(() => {
+
+        location.href = "#login-customer";
+    }).catch((error) => {
+        // An error happened.
+    })
+})
 
 
 const storeList = document.querySelector('#availableStoreNearby');
@@ -208,12 +220,6 @@ howManyOns(['on', 'on', 'off', 'on', 'off']);
 
 
 
-init();
-logoutOfApp.addEventListener('click', () => {
-    auth.signOut().then(() => {
-
-    })
-})
 
 // document.addEventListener('DOMContentLoaded', initMap )
 
@@ -489,3 +495,5 @@ async function getCoordinates(name, zipcode) {
 // .then((snapshot)=>{
 //   console.log(snapshot.docs)
 // })
+
+init();
