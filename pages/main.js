@@ -35,24 +35,7 @@ closeBtn.addEventListener('click',()=>{
     sidebar.classList.remove('on');
 });
 
-//Filter
 
-const filterBtn = document.querySelector(".filterBtn");
-const filter = document.querySelector("#filter");
-const ExitBtn = document.querySelector(".close");
-
-
-filterBtn.addEventListener('click',()=>{
-  if (filter.classList.contains('on')){
-        filter.classList.remove('on');
-  } else {
-      filter.classList.add('on');
-  }
-});
-
-ExitBtn.addEventListener('click',()=>{
-    filter.classList.remove('on');
-});
 
 // //Geolocation//
 // if ( navigator.geolocation ) {
@@ -71,52 +54,7 @@ ExitBtn.addEventListener('click',()=>{
 //           console.log("Geolocation is not supported by this browser.");
 //         };
     
-//Slider //
- 
-const carouselSlide = document.querySelector(".stores_slide");
-const carouselStore = document.querySelectorAll(".stores_slide>li");
 
-//Buttons
-const prevBtn = document.querySelector("#prev");
-const nextBtn = document.querySelector("#next");
-
-//Counter 
-
-let counter = 1;
-const size = carouselStore[0].clientWidth;
-
-carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-
-
-//Button Listener
-
-nextBtn.addEventListener('click',()=>{
-    if (counter >= carouselStore.length -1 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-})
-
-prevBtn.addEventListener('click',()=>{
-    if (counter <= 0 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-})
-
-
-carouselSlide.addEventListener('transitionend',()=>{
-    if(carouselStore[counter].id === 'last_clone'){
-        carouselSlide.style.transition = "none";
-        counter = carouselStore.length -2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-    }
-    if(carouselStore[counter].id === 'first_clone'){
-        carouselSlide.style.transition = "none";
-        counter = carouselStore.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-    }
-});
 
 //cart 
 
