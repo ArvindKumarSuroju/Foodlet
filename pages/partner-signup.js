@@ -40,13 +40,70 @@ async function addUserMeta(user) {
     location.href = "#partner-login";
 }
 
+
+
+// var files = [];
+// var reader = new FileReader();
+
+// var nameBox = document.getElementById('namebox');
+// var extLab = document.getElementById('extlab');
+// var myImg = document.getElementById('myimg');
+// var progLab = document.getElementById('upprogress');
+// var selfBtn = document.getElementById('selfbtn');
+// var upBtn = document.getElementById('upbtn');
+// var downBtn = document.getElementById('downbtn');
+
+// var input = document.createElement('input');
+// input.type = 'file';
+
+// input.onChange = e => {
+//     files = e.target.files;
+
+//     var extension = GetFileExt(files[0]);
+//     var name = GetFileName(files[0]);
+
+//     nameBox.value = name;
+//     extLab.innerHTML = extension;
+
+//     reader.readAsDataURL(files[0]);
+
+
+// }
+
+// reader.onload = function() {
+//     myImg.src = reader.result;
+// }
+
+
+// function GetFileExt(file) {
+
+//     var temp = file.name.split('.');
+//     var ext = temp.slice((temp.length - 1), (temp.length));
+//     return '.' + ext[0];
+// }
+
+// function GetFileName(file) {
+
+//     var temp = file.name.split('.');
+//     var fName = temp.slice(0, -1).join('.');
+//     return fName;
+// }
+
+
+
+
 let storageRef = firebase.storage().ref('partnerImages');
+
+
+
 
 function uploadData() {
     let file = document.getElementById('files').files[0];
     console.log(file);
 
-    let thisRef = storageRef.child(file.name);
+    let currentDate = new Date();
+
+    let thisRef = storageRef.child(currentDate.toISOString());
     thisRef.put(file).then(res => {
         console.log("upload success");
         alert("upload success");
