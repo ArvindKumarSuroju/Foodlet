@@ -11,6 +11,209 @@
 // })
 
 
+// filterBtn.addEventListener("click", () => {
+//     filter.style.display = "block";
+// })
+
+
+const storeList = document.querySelector('#availableStoreNearby');
+const cityArea = document.getElementById('#location');
+let priceFrom;
+
+function renderStoreInfo(doc) {
+
+    storeList.innerHTML += `
+        <li id="${doc.id}" class="store_list">
+            <ul class="store_detail">
+                <li><img src="${doc.data().partnerSignupProfilePicture}" width="50px"></li>
+                <li>
+                    <h5 class="store_name">${doc.data().storeName}</h5>
+                    <p class="store_cate">${doc.data().storeType}</p>
+                    <span class="rate"><i class="fas fa-star">x.x</i></span>
+                </li>
+                <li><i class="far fa-heart"></i></li>
+            </ul>
+            <ul class="pickup_detail" id="pickupDetail">
+                <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
+                <li>from $ ${doc.data().salePrice}
+                </li>
+            </ul>
+        </li>
+        `
+}
+
+
+
+db.collection('partners').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data());
+
+        let a = doc;
+        renderStoreInfo(a);
+
+        lowestSalePriceInStore(doc.id);
+
+    })
+});
+
+function lowestSalePriceInStore(id) {
+    let salePriceArray = [];
+
+    db.collection('partners').doc(id).collection('availableMeals').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            salePriceArray.push(doc.data().salePrice);
+
+        })
+        console.log(salePriceArray);
+
+        console.log(Math.min(...salePriceArray));
+
+        pickupDetail.innerHTML += `<li>from $ ${Math.min(...salePriceArray)}
+            </li>`;
+    });
+
+    // const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
+
+    // snapshot.docs.forEach( doc => {
+    //     salePriceArray.push(parseFloat(doc.data().salePrice));
+
+    // })
+    // console.log(salePriceArray);
+
+    // console.log(Math.min(...salePriceArray));
+
+}
+
+
+function cityAreaSelection() {
+    storeList.innerHTML = "";
+    let cityArea = document.getElementById('locationSelection');
+
+    db.collection('partners').where('city', '==', cityArea.value).get().then((snapshot) => {
+        snapshot.forEach((doc) => {
+
+            renderStoreInfo(doc);
+
+        })
+    });
+
+}
+
+
+db.collection('partners').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data());
+    })
+});
+
+
+
+
+
+const applyFilterButton = document.getElementById("applyFilterButton");
+
+
+applyFilterButton.addEventListener('click', (data) => {
+
+    let storeTypeArray = [restaurantCheckbox.value, cafeCheckbox.value, bakeryCheckbox.value];
+
+});
+
+
+
+
+function storeTypeFilter() {
+    db.collection('partners').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+
+            let store_type = doc.data().storeType;
+
+            console.log(doc.data().storeType);
+
+            if (store_type == 'Restaurant') {
+                renderStoreInfo(doc);
+            } else if (store_type == 'cafe') {
+                renderStoreInfo(doc);
+            } else if (store_type == 'bakery') {
+                renderStoreInfo(doc);
+            }
+
+        })
+    })
+}
+
+
+// function storeTypeFilter() {
+//     db.collection('partnerAddMeals').get().then((snapshot) => {
+//         snapshot.docs.forEach( doc => {
+//         let storeTypeArray = [doc.data().restaurant, doc.data().cafe, doc.data().bakery];
+
+//         if(howManyOns(storeTypeArray) == 1) {
+//             if (doc.data().restaurant == 'on') {
+//                 renderStoreInfo(doc);
+//             } else if (doc.data().cafe == 'on') {
+//                 renderStoreInfo(doc);
+//             } else if (doc.data().bakery == 'on') {
+//                 renderStoreInfo(doc);
+//             }
+
+//         } else if(howManyOns(storeTypeArray) == 2) {
+//             if (doc.data().restaurant == 'on' && doc.data().cafe == 'on') {
+//                 renderStoreInfo(doc);
+//             } else if (doc.data().cafe == 'on' && doc.data().bakery == 'on') {
+//                 renderStoreInfo(doc);
+//             } else if (doc.data().bakery == 'on' && doc.data().restaurant == 'on') {
+//                 renderStoreInfo(doc);
+//             }
+
+//         } else {
+//             renderStoreInfo(doc);
+
+//         }})
+//     })        
+// }
+
+function howManyOns(array) {
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == 'on') {
+            count = count + 1;
+        }
+    }
+    console.log(count);
+}
+
+howManyOns(['on', 'on', 'off', 'on', 'off']);
+
+
+/* GOOGLE API */
+// google.maps.event.addDomListener(window, 'load', initialize);
+// function initialize() {
+
+//     var input = document.getElementById('address');
+//     var autocomplete = new google.maps.places.Autocomplete(input);
+//     autocomplete.addListener('place_changed', function () {
+//         var place = autocomplete.getPlace();
+//         // place variable will have all the information you are looking for.
+
+//         var latitude = place.geometry['location'].lat();
+//         var longitude = place.geometry['location'].lng();
+//     });
+
+// }
+
+
+
+// }
+
+
+
+init();
+logoutOfApp.addEventListener('click', () => {
+    auth.signOut().then(() => {
+
+    })
+})
 
 // document.addEventListener('DOMContentLoaded', initMap )
 
@@ -42,20 +245,20 @@ const filter = document.querySelector("#filter");
 const ExitBtn = document.querySelector(".close");
 
 
-filterBtn.addEventListener('click',()=>{
-  if (filter.classList.contains('on')){
+filterBtn.addEventListener('click', () => {
+    if (filter.classList.contains('on')) {
         filter.classList.remove('on');
-  } else {
-      filter.classList.add('on');
-  }
+    } else {
+        filter.classList.add('on');
+    }
 });
 
-ExitBtn.addEventListener('click',()=>{
+ExitBtn.addEventListener('click', () => {
     filter.classList.remove('on');
 });
 
 //Slider //
- 
+
 const carouselSlide = document.querySelector(".stores_slide");
 const carouselStore = document.querySelectorAll(".stores_slide>li");
 
@@ -68,36 +271,36 @@ const nextBtn = document.querySelector("#next");
 let counter = 1;
 const size = carouselStore[0].clientWidth;
 
-carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
 
 //Button Listener
 
-nextBtn.addEventListener('click',()=>{
-    if (counter >= carouselStore.length -1 ) return;
+nextBtn.addEventListener('click', () => {
+    if (counter >= carouselStore.length - 1) return;
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 })
 
-prevBtn.addEventListener('click',()=>{
-    if (counter <= 0 ) return;
+prevBtn.addEventListener('click', () => {
+    if (counter <= 0) return;
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 })
 
 
-carouselSlide.addEventListener('transitionend',()=>{
-    if(carouselStore[counter].id === 'last_clone'){
+carouselSlide.addEventListener('transitionend', () => {
+    if (carouselStore[counter].id === 'last_clone') {
         carouselSlide.style.transition = "none";
-        counter = carouselStore.length -2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+        counter = carouselStore.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
-    if(carouselStore[counter].id === 'first_clone'){
+    if (carouselStore[counter].id === 'first_clone') {
         carouselSlide.style.transition = "none";
         counter = carouselStore.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
 });
 
@@ -107,35 +310,35 @@ let mainMap;
 
 //First display of map
 async function initMap() {
- 
-  
-  var mapCanvas = document.getElementById("map");
-  const mapTest = document.getElementById("map");
-  var mapOptions = {
-    // center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
-    center: await new google.maps.LatLng(49.2167199, -123.1182953),
-    zoom: 12
-  };
-  mainMap = await new google.maps.Map(mapCanvas, mapOptions);
 
-  var marker, i;
-  for (i =0; i < stores.length; i++){
-    marker =  new google.maps.Marker({
-      position: new google.maps.LatLng(stores[i][1], stores[i][2]),
-      mapTest,
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-      title: "Hello World!",
-    });
-    
-  }  
+
+    var mapCanvas = document.getElementById("map");
+    const mapTest = document.getElementById("map");
+    var mapOptions = {
+        // center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
+        center: await new google.maps.LatLng(49.2167199, -123.1182953),
+        zoom: 12
+    };
+    mainMap = await new google.maps.Map(mapCanvas, mapOptions);
+
+    var marker, i;
+    for (i = 0; i < stores.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(stores[i][1], stores[i][2]),
+            mapTest,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            title: "Hello World!",
+        });
+
+    }
     var firstStoreCode = stores[0];
     mainMap.setCenter(new google.maps.LatLng(firstStoreCode[1], firstStoreCode[2]));
 
-  // map.addEventListener('DOMContentLoadedM', (e)=>{
-  //   initMap();
-  // })
+    // map.addEventListener('DOMContentLoadedM', (e)=>{
+    //   initMap();
+    // })
 
-  // addMarker();
+    // addMarker();
 
 
 }
@@ -156,83 +359,83 @@ async function initMap() {
 
 //change the location
 var locationSelect = {
-  'Vancouver': '49.27883133919559, -123.13434156509084',
-  'Burnaby': '49.247165406526435, -122.98247547491722',
-  'Richmond': '49.17147782913937, -123.13133664398394',
-  'Surrey': '49.1932788458098, -122.84774023807589'
-}; 
+    'Vancouver': '49.27883133919559, -123.13434156509084',
+    'Burnaby': '49.247165406526435, -122.98247547491722',
+    'Richmond': '49.17147782913937, -123.13133664398394',
+    'Surrey': '49.1932788458098, -122.84774023807589'
+};
 
 async function changeMap(city) {
 
-  var coords = locationSelect[city].split(',');
-  await new google.maps.Marker({
-    position: await new google.maps.LatLng(coords[0], coords[1]),
-    map: mainMap,
-    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    title: city
-  });
-  await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
+    var coords = locationSelect[city].split(',');
+    await new google.maps.Marker({
+        position: await new google.maps.LatLng(coords[0], coords[1]),
+        map: mainMap,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        title: city
+    });
+    await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
 
 }
 var stores = [
-  // ['bakery', 49.242021, -123.083775],
-  // ['grocery', 49.242021, -123.083775],
-  // ['church', 49.264967, -123.168716],
-  // ['church', 49.256763, -123.161881]
+    // ['bakery', 49.242021, -123.083775],
+    // ['grocery', 49.242021, -123.083775],
+    // ['church', 49.264967, -123.168716],
+    // ['church', 49.256763, -123.161881]
 ];
 
 
 
-var storeDataList =  document.querySelector("#dataTemplate");
+var storeDataList = document.querySelector("#dataTemplate");
 
 //create element and render data
 
-function renderData(doc){
-  // let li = document.createElement('li');
-  // let name  = document.createElement('span');
-  // let zipcode = document.createElement('span');
+function renderData(doc) {
+    // let li = document.createElement('li');
+    // let name  = document.createElement('span');
+    // let zipcode = document.createElement('span');
 
-  // li.setAttribute('data-id', doc.id);
-  // name.textContent = doc.data().partner.storeName;
-  // zipcode.textContent = doc.data().partner.zipcode;
+    // li.setAttribute('data-id', doc.id);
+    // name.textContent = doc.data().partner.storeName;
+    // zipcode.textContent = doc.data().partner.zipcode;
 
-  var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);
- 
+    var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);
 
-  // li.appendChild(name);
-  // li.appendChild(zipcode);
 
-  // storeDataList.appendChild(li);
+    // li.appendChild(name);
+    // li.appendChild(zipcode);
+
+    // storeDataList.appendChild(li);
 }
 
-db.collection('partnerAddMeals').get().then((snapshot)=>{
-  snapshot.docs.forEach(doc =>{
-    renderData(doc);
-  })
+db.collection('partnerAddMeals').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        renderData(doc);
+    })
 
-  
-  initMap();
-  // addMarker();
+
+    initMap();
+    // addMarker();
 });
 
 
 
 //Convert zipcode to lat, long 
 
-async function getCoordinates(name, zipcode){
-  var coordinate = [];
-  fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address="+zipcode)
-    .then(response => {
-      return response.json();
-    }).then(data => {
-      const latitude = data.results[0].geometry.location.lat;
-      const longitude = data.results[0].geometry.location.lng;
-      coordinate = [latitude, longitude];
-      stores.push([name, latitude, longitude] );
-      initMap();
-      return coordinate;
-      console.log({latitude, longitude})
-    })
+async function getCoordinates(name, zipcode) {
+    var coordinate = [];
+    fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode)
+        .then(response => {
+            return response.json();
+        }).then(data => {
+            const latitude = data.results[0].geometry.location.lat;
+            const longitude = data.results[0].geometry.location.lng;
+            coordinate = [latitude, longitude];
+            stores.push([name, latitude, longitude]);
+            initMap();
+            return coordinate;
+            console.log({ latitude, longitude })
+        })
 }
 
 // const addressApi = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places"
@@ -252,7 +455,7 @@ async function getCoordinates(name, zipcode){
 // autocomplete.addListener('place_changed', function () {
 // var place = autocomplete.getPlace();
 // // place variable will have all the information you are looking for.
- 
+
 //   document.getElementById("latitude").value = place.geometry['location'].lat();
 //   document.getElementById("longitude").value = place.geometry['location'].lng();
 // });

@@ -40,12 +40,15 @@
                     <img src="https://picsum.photos/200/200/?random=88" id="partner-signup-profilepicture">
                     <span><a href="#">edit picture</a></span>
                 </div>
+
+
+
                 <form action="" id="addPartner">
 
-                    <!-- <div class="inside-form">
-                        <label for="partner_signup_profileimage">Full Name*</label>
-                        <input type="file" id="partner_signup_profileimage" name="partner-signup-fullname" required>
-                    </div> -->
+                    <div class="inside-form">
+                        <label for="Files[]">Add Image*</label>
+                        <input type="file" onChange="uploadData()" id="files" name="Files[]" multiple>
+                    </div>
 
                     <div class="inside-form">
                         <label for="partner_signup_fullname">Full Name*</label>

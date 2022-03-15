@@ -23,15 +23,15 @@ const menuBtn = document.querySelector(".hamburger");
 const sidebar = document.querySelector("#sidebar");
 const closeBtn = document.querySelector(".side_close");
 
-menuBtn.addEventListener('click',()=>{
-    if (sidebar.classList.contains('on')){
+menuBtn.addEventListener('click', () => {
+    if (sidebar.classList.contains('on')) {
         sidebar.classList.remove('on');
     } else {
         sidebar.classList.add('on');
     }
 });
 
-closeBtn.addEventListener('click',()=>{
+closeBtn.addEventListener('click', () => {
     sidebar.classList.remove('on');
 });
 
@@ -53,7 +53,7 @@ closeBtn.addEventListener('click',()=>{
 //         } else {  // no geolocation in navigator. in the case of old browsers
 //           console.log("Geolocation is not supported by this browser.");
 //         };
-    
+
 
 
 //cart 
@@ -67,3 +67,33 @@ closeBtn.addEventListener('click',()=>{
 //         buttonClicked.parentElement.parentElement.remove()
 //     })
 // }
+
+//Button Listener
+
+nextBtn.addEventListener('click', () => {
+    if (counter >= carouselStore.length - 1) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+})
+
+prevBtn.addEventListener('click', () => {
+    if (counter <= 0) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+})
+
+
+carouselSlide.addEventListener('transitionend', () => {
+    if (carouselStore[counter].id === 'last_clone') {
+        carouselSlide.style.transition = "none";
+        counter = carouselStore.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+    if (carouselStore[counter].id === 'first_clone') {
+        carouselSlide.style.transition = "none";
+        counter = carouselStore.length - counter;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+})
