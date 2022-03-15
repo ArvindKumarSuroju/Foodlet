@@ -113,7 +113,7 @@ async function initMap() {
   const mapTest = document.getElementById("map");
   var mapOptions = {
     // center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
-    center: await new google.maps.LatLng(49.2167199, -123.1182953),
+    center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
     zoom: 12
   };
   mainMap = await new google.maps.Map(mapCanvas, mapOptions);
