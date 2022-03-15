@@ -126,6 +126,10 @@ body {
     text-align: center;
   }
 
+  .text_weight_700 {
+    font-weight: 700;
+  }
+
   /* Desktop */
   @media screen and (min-width:1000px){
     .text_title {

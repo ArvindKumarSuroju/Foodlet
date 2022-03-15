@@ -18,8 +18,14 @@
 
 .menu_detail>li:nth-child(3){
     margin-left:0 !important;
+    width: 200px;
 }
 
+.price_crossout {
+    text-decoration: line-through;
+    text-decoration-color: #F38814;
+    color: #616161;
+}
 
 .price {
     text-align:right;
