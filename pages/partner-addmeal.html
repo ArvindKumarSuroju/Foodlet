@@ -104,21 +104,29 @@
                             <input id="food_weight" name="food-weight" type="number">
                         </div>
 
-                        <div class="inside-form2 quantity">
+                        <div class="inside-form food-weight">
+                            <label for="quantity" class="form-subject">Quantity</label>
+                            <input id="quantity" name="quantity" type="number">
+                        </div>
+                        <!-- <div class="inside-form2 quantity">
                             <label for="quantity" class="form-subject">Quantity</label>
                             <div class="quantity-input">
                                 <button class="minusbutton">-</button>
                                 <input id="quantity" name="quantity" type="number">
                                 <button class="plusbutton">+</button>
                             </div>
-                        </div>
+                        </div> -->
+                    </div>
+                    <!-- <div class="add-phot">
+                        <label for="Files[]">Add Image</label>
+                        <input type="file" id="files" name="Files[]" multiple required>
+                    </div> -->
+                    <div class="add-photo">
+                        <input type="file" id="addmeal_photo" name="addmeal-photo" src="img_submit.gif" alt="">
+                        <span>Add Photo</span>
                     </div>
 
-                        <div class="add-photo">
-                            <input id="addmeal_photo" name="addmeal-photo" type="image" src="img_submit.gif" alt="">
-                            <span>Add Photo</span>
-                        </div>
-                    <button class="button publishbutton" id="addMealsButton">Publish</button>
+                    <button type="submit" class="button publishbutton" id="addMealsButton">Publish</button>
 
                 </form>
 
