@@ -246,6 +246,23 @@ howManyOns(['on', 'on', 'off', 'on', 'off']);
 //     timestampsInSnapshots: true
 // });
 
+//hamburger menu //
+
+const menuBtn = document.querySelector(".hamburger");
+const sidebar = document.querySelector("#sidebar");
+const closeBtn = document.querySelector(".side_close");
+
+menuBtn.addEventListener('click', () => {
+    if (sidebar.classList.contains('on')) {
+        sidebar.classList.remove('on');
+    } else {
+        sidebar.classList.add('on');
+    }
+});
+
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('on');
+});
 //Filter
 
 const filterBtn = document.querySelector(".filterBtn");
@@ -324,7 +341,7 @@ async function initMap() {
     const mapTest = document.getElementById("map");
     var mapOptions = {
         // center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
-        center: await new google.maps.LatLng(49.2167199, -123.1182953),
+        center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
         zoom: 12
     };
     mainMap = await new google.maps.Map(mapCanvas, mapOptions);
@@ -407,95 +424,139 @@ function renderData(doc) {
     // name.textContent = doc.data().partner.storeName;
     // zipcode.textContent = doc.data().partner.zipcode;
 
-    var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);
-
-
-    // li.appendChild(name);
-    // li.appendChild(zipcode);
-
-    // storeDataList.appendChild(li);
+    <<
+    << << < HEAD
+    if (doc.data().partner.coordinate == null ||
+        doc.data().partner.coordinate[0] == "") { var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode); } else {
+        coordinate = [latitude, longitude];
+        stores.push([doc.data().partner.storeName, doc.data().partner.coordinate[0], doc.data().partner.coordinate[1]]);
+    }
+    doc.data().partner.coordinate = coordi;
 }
+// li.appendChild(name);
+// li.appendChild(zipcode);
 
+// storeDataList.appendChild(li);
+
+db.partner
 db.collection('partnerAddMeals').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        renderData(doc);
-    })
+            snapshot.docs.forEach(doc => {
+                    renderData(doc);
+                    doc.update();
 
 
-    initMap();
-    // addMarker();
-});
+                }) ===
+                === =
+                var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);
 
 
+            // li.appendChild(name);
+            // li.appendChild(zipcode);
 
-//Convert zipcode to lat, long 
+            // storeDataList.appendChild(li);
+        }
 
-async function getCoordinates(name, zipcode) {
-    var coordinate = [];
-    fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode)
-        .then(response => {
-            return response.json();
-        }).then(data => {
-            const latitude = data.results[0].geometry.location.lat;
-            const longitude = data.results[0].geometry.location.lng;
-            coordinate = [latitude, longitude];
-            stores.push([name, latitude, longitude]);
+        db.collection('partnerAddMeals').get().then((snapshot) => {
+            snapshot.docs.forEach(doc => {
+                renderData(doc);
+            })
+
+            >>>
+            >>> > main
+
             initMap();
-            return coordinate;
-            console.log({ latitude, longitude })
-        })
-}
-
-// const addressApi = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places"
-// async function getapi(url){
-//   const responce = await fetch(url);
-
-//   var data = await response.json();
-
-// }
+            // addMarker();
+        });
 
 
 
-// google.maps.event.addDomListener(window, 'load', initialize);
-// function initialize() {
-// var input = document.getElementById('address');
-// var autocomplete = new google.maps.places.Autocomplete(input);
-// autocomplete.addListener('place_changed', function () {
-// var place = autocomplete.getPlace();
-// // place variable will have all the information you are looking for.
+        //Convert zipcode to lat, long 
 
-//   document.getElementById("latitude").value = place.geometry['location'].lat();
-//   document.getElementById("longitude").value = place.geometry['location'].lng();
-// });
-// }
+        <<
+        << << < HEAD async function getCoordinates(name, zipcode) {
+            var coordinate = [];
+            fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    const latitude = data.results[0].geometry.location.lat;
+                    const longitude = data.results[0].geometry.location.lng;
+                    coordinate = [latitude, longitude];
+                    stores.push([name, latitude, longitude]);
+                    initMap();
+                    console.info({ latitude, longitude });
+                    return coordinate;
+
+                }) ===
+                === =
+                async function getCoordinates(name, zipcode) {
+                    var coordinate = [];
+                    fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode)
+                        .then(response => {
+                            return response.json();
+                        }).then(data => {
+                            const latitude = data.results[0].geometry.location.lat;
+                            const longitude = data.results[0].geometry.location.lng;
+                            coordinate = [latitude, longitude];
+                            stores.push([name, latitude, longitude]);
+                            initMap();
+                            return coordinate;
+                            console.log({ latitude, longitude })
+                        }) >>>
+                        >>> > main
+                }
+
+            // const addressApi = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places"
+            // async function getapi(url){
+            //   const responce = await fetch(url);
+
+            //   var data = await response.json();
+
+            // }
 
 
 
-//  //Marker//
-// await new google.maps.Marker({
-//     position: db['store1'],
-//     map: mappy,
-//     icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-//     title: city
-//   });
+            // google.maps.event.addDomListener(window, 'load', initialize);
+            // function initialize() {
+            // var input = document.getElementById('address');
+            // var autocomplete = new google.maps.places.Autocomplete(input);
+            // autocomplete.addListener('place_changed', function () {
+            // var place = autocomplete.getPlace();
+            // // place variable will have all the information you are looking for.
 
-//get a data
+            //   document.getElementById("latitude").value = place.geometry['location'].lat();
+            //   document.getElementById("longitude").value = place.geometry['location'].lng();
+            // });
+            // }
 
-// import {
-//   getFirestore
-// } from 'firebase/firestore'
 
-// //init service
-// const data = getFirestore()
 
-// //colleciton ref
-// const colRef = collection(data, 'partnerAddMeals')
+            //  //Marker//
+            // await new google.maps.Marker({
+            //     position: db['store1'],
+            //     map: mappy,
+            //     icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            //     title: city
+            //   });
 
-// //get collection data
+            //get a data
 
-// getDocs(colRef)
-// .then((snapshot)=>{
-//   console.log(snapshot.docs)
-// })
+            // import {
+            //   getFirestore
+            // } from 'firebase/firestore'
 
-init();
+            // //init service
+            // const data = getFirestore()
+
+            // //colleciton ref
+            // const colRef = collection(data, 'partnerAddMeals')
+
+            // //get collection data
+
+            // getDocs(colRef)
+            // .then((snapshot)=>{
+            //   console.log(snapshot.docs)
+            // })
+
+            init();
