@@ -69,3 +69,9 @@ main ul>li:nth-child(3) {
 .inner {
     margin: 20px auto !important;
 }
+
+.menu_detail .cart {
+    background: center/cover url("../resources/Icons/deleteOrange.png") no-repeat;
+    width: 32px;
+    height: 32px;
+}
