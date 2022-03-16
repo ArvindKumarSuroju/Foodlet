@@ -59,11 +59,11 @@
     z-index: 20;
     background-color: white;
     height:100vh;
-    /* display: none; */
+    display: none;
   }
   
   #filter.on {
-    left: 0;
+    display: block;;
   }
   
   .filterBtn {
@@ -128,14 +128,21 @@
   
   
   .store_list {
-    width:100%;
+    width: 320px;
+    height: 144px;
+    flex-shrink: 0;
+
     border: 1px solid #CBE2D5;
     border-radius: 10px;
     margin-bottom: 20px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
   }
   
   .stores_slide {
-    width: 500%;
+    width: 100%;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
@@ -144,8 +151,7 @@
   
   .store_container {
     width: 100%;
-    border:5px solid blue;
-    overflow:hidden;
+    overflow-x: auto;
   }
     
   .store_detail {
@@ -153,9 +159,10 @@
     /* padding: 5px; */
     margin: 16px 16px 0px 16px;
     justify-content: space-between;
+    
   }
   
-  .store_detail li:first-child {
+  /* .store_detail li:first-child {
     width: 72px;
     height: 72px;
     border: 1px solid black;
@@ -167,18 +174,18 @@
   }
   
   .store_detail li:last-child {
-    /* width: 15%; */
+    width: 15%;
     width: 13px;
     border: 1px solid black;
-  }
+  } */
   
   .store_cate, .store_dis {
     font-size: 13px;
   }
   
   .store_img img {
-    width: 100%;
-    height: 100%;
+    width: 72px;
+    height: auto;
   }
   
   .store_cate {
@@ -370,18 +377,17 @@
     
     
   
-  .store_container {
-    width: 100%;
-    border:5px solid blue;
-    overflow:hidden;
-  }
+    .store_container {
+      width: 100%;
+      overflow-x: auto;
+    }
   
   
     .stores_slide {
-      width: 150%;
+      width: 100%;
       border-radius: 10px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
     }
   
   

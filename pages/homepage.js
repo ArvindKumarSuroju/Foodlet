@@ -38,6 +38,7 @@
 //     timestampsInSnapshots: true
 // });
 
+//Hyewon's code
 //hamburger menu //
 
 const menuBtn = document.querySelector(".hamburger");
@@ -85,27 +86,27 @@ const nextBtn = document.querySelector("#next");
 
 //Counter 
 
-let counter = 1;
-const size = carouselStore[0].clientWidth;
+// let counter = 1;
+// const size = carouselStore[0].clientWidth;
 
-carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+// carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
 
 
 //Button Listener
 
-nextBtn.addEventListener('click',()=>{
-    if (counter >= carouselStore.length -1 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-})
+// nextBtn.addEventListener('click',()=>{
+//     if (counter >= carouselStore.length -1 ) return;
+//     carouselSlide.style.transition = "transform 0.4s ease-in-out";
+//     counter++;
+//     carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+// })
 
-prevBtn.addEventListener('click',()=>{
-    if (counter <= 0 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
-})
+// prevBtn.addEventListener('click',()=>{
+//     if (counter <= 0 ) return;
+//     carouselSlide.style.transition = "transform 0.4s ease-in-out";
+//     counter--;
+//     carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+// })
 
 
 carouselSlide.addEventListener('transitionend',()=>{
@@ -192,6 +193,8 @@ async function changeMap(city) {
     title: city
   });
   await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
+
+  cityAreaSelection(city);
 
 }
 var stores = [
@@ -331,19 +334,42 @@ logoutOfApp.addEventListener('click', () => {
 })
 
 
+var filterOpenButton = document.getElementById('filterBtn');
+var filterCloseButton = document.getElementById('filter-close');
+var filterList = document.getElementById("filter");
+
+filterOpenButton.addEventListener ("click", () => {
+
+    filterList.classList.toggle("show-filter");
+})
+
+filterCloseButton.addEventListener ("click", () => {
+
+    filterList.classList.toggle("show-filter");
+})
+
+
 const storeList = document.querySelector('#availableStoreNearby');
 const cityArea = document.getElementById('#location');
 let priceFrom;
 
-function renderStoreInfo(doc) {
+function renderStoreInfo(doc){
+
+    let p = doc.data().partnerSignupProfilePicture;
+
+    if (p != undefined) {
+        p = doc.data().partnerSignupProfilePicture;
+    } else {
+        p = "../resources/Logo/Favicon.png";
+    }
 
     storeList.innerHTML += `
         <li id="${doc.id}" class="store_list">
             <ul class="store_detail">
-                <li><img src="${doc.data().partnerSignupProfilePicture}" width="50px"></li>
+                <li class="store_img"><img src="${p}" width="50px" class="round"></li>
                 <li>
-                    <h5 class="store_name">${doc.data().storeName}</h5>
-                    <p class="store_cate">${doc.data().storeType}</p>
+                    <h5 class="text_title text_color_primary store_name">${doc.data().storeName}</h5>
+                    <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
                     <span class="rate"><i class="fas fa-star">x.x</i></span>
                 </li>
                 <li><i class="far fa-heart"></i></li>
@@ -354,40 +380,38 @@ function renderStoreInfo(doc) {
                 </li>
             </ul>
         </li>
-        `
+    `;
 }
 
 
 
-
-
 db.collection('partners').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
+    snapshot.docs.forEach( doc => {
         console.log(doc.data());
 
         let a = doc;
         renderStoreInfo(a);
 
-        lowestSalePriceInStore(doc.id);
-
+        // lowestSalePriceInStore(doc.id);
+        
     })
 });
 
-function lowestSalePriceInStore(id) {
-    let salePriceArray = [];
+// function lowestSalePriceInStore(id) {
+//     let salePriceArray = [];
 
-    db.collection('partners').doc(id).collection('availableMeals').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-            salePriceArray.push(doc.data().salePrice);
+//     db.collection('partners').doc(id).collection('availableMeals').get().then((snapshot) => {
+//         snapshot.docs.forEach(doc => {
+//             salePriceArray.push(doc.data().salePrice);
 
-        })
-        console.log(salePriceArray);
+//         })
+//         console.log(salePriceArray);
 
-        console.log(Math.min(...salePriceArray));
+//         console.log(Math.min(...salePriceArray));
 
-        pickupDetail.innerHTML += `<li>from $ ${Math.min(...salePriceArray)}
-            </li>`;
-    });
+//         pickupDetail.innerHTML += `<li>from $ ${Math.min(...salePriceArray)}
+//             </li>`;
+//     });
 
     // const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
 
@@ -399,15 +423,15 @@ function lowestSalePriceInStore(id) {
 
     // console.log(Math.min(...salePriceArray));
 
-}
+// }
 
 
-function cityAreaSelection() {
+function cityAreaSelection(city) {
     storeList.innerHTML = "";
-    let cityArea = document.getElementById('locationSelection');
+    // let cityArea = document.getElementById('locationSelection');
 
-    db.collection('partners').where('city', '==', cityArea.value).get().then((snapshot) => {
-        snapshot.forEach((doc) => {
+    db.collection('partners').where('city', '==', city).get().then((snapshot) => {
+        snapshot.forEach( (doc) => {
 
             renderStoreInfo(doc);
 
