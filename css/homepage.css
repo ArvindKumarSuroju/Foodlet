@@ -143,11 +143,6 @@
   gap:0 .5rem;
 }
 
-.store_container {
-  width: 100%;
-  border:5px solid blue;
-  overflow:hidden;
-}
   
 .store_detail {
   display: flex;
@@ -373,7 +368,7 @@ div.heart_active {
 
 .store_container {
   width: 100%;
-  border:5px solid blue;
+  /* border:5px solid blue; */
   overflow:hidden;
 }
 
