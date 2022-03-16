@@ -34,11 +34,19 @@ let priceFrom;
 
 function renderStoreInfo(doc) {
 
+    let p = doc.data().partnerSignupProfilePicture;
+
+    if (p != undefined) {
+        p = doc.data().partnerSignupProfilePicture;
+    } else {
+        p = "../resources/Logo/Favicon.png";
+    }
+
     storeList.innerHTML += `
         <li id="${doc.id}" class="store_list">
             <ul class="store_detail">
-                <li><img src="${doc.data().partnerSignupProfilePicture}" width="50px"></li>
-                <li>
+                <li><img src="${p}" width="72px"></li>
+                <li class="store_detail_text">
                     <h5 class="store_name">${doc.data().storeName}</h5>
                     <p class="store_cate">${doc.data().storeType}</p>
                     <span class="rate"><i class="fas fa-star">x.x</i></span>
@@ -47,7 +55,7 @@ function renderStoreInfo(doc) {
             </ul>
             <ul class="pickup_detail" id="pickupDetail">
                 <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
-                <li>from $ ${doc.data().salePrice}
+                <li>from <strong>$ ${doc.data().salePrice}</strong>
                 </li>
             </ul>
         </li>
@@ -101,7 +109,7 @@ function lowestSalePriceInStore(id) {
 
 function cityAreaSelection() {
     storeList.innerHTML = "";
-    let cityArea = document.getElementById('locationSelection');
+    let cityArea = document.getElementById('myCity');
 
     db.collection('partners').where('city', '==', cityArea.value).get().then((snapshot) => {
         snapshot.forEach((doc) => {
@@ -373,9 +381,34 @@ var locationSelect = {
     'Surrey': '49.1932788458098, -122.84774023807589'
 };
 
-async function changeMap(city) {
+async function changeMap(selectedCity) {
 
-    var coords = locationSelect[city].split(',');
+    let cityArea = document.getElementById('myCity');
+
+    storeList.innerHTML = "";
+
+    console.log(cityArea.value);
+
+    if (cityArea.value == "All"){
+        db.collection('partners').get().then((snapshot) => {
+            snapshot.docs.forEach(doc => {
+
+                renderStoreInfo(doc);
+        
+            })
+        })
+
+    } else { 
+        db.collection('partners').where('city', '==', cityArea.value).get().then((snapshot) => {
+            snapshot.forEach((doc) => {
+
+                renderStoreInfo(doc);
+
+            })
+        })
+    }
+    
+    var coords = locationSelect[selectedCity].split(',');
     await new google.maps.Marker({
         position: await new google.maps.LatLng(coords[0], coords[1]),
         map: mainMap,
@@ -383,6 +416,8 @@ async function changeMap(city) {
         title: city
     });
     await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
+
+    
 
 }
 var stores = [
