@@ -213,18 +213,27 @@ function renderData(doc){
   // name.textContent = doc.data().partner.storeName;
   // zipcode.textContent = doc.data().partner.zipcode;
 
-  var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);
- 
-
+  if (doc.data().partner.coordinate == null || 
+      doc.data().partner.coordinate[0] == "")
+      {var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);}
+  else {
+      coordinate = [latitude, longitude];
+      stores.push([doc.data().partner.storeName, doc.data().partner.coordinate[0], doc.data().partner.coordinate[1]] );
+  }
+  doc.data().partner.coordinate = coordi;
+  }
   // li.appendChild(name);
   // li.appendChild(zipcode);
 
   // storeDataList.appendChild(li);
-}
 
+db.partner
 db.collection('partnerAddMeals').get().then((snapshot)=>{
   snapshot.docs.forEach(doc =>{
     renderData(doc);
+    doc.update();
+    
+    
   })
 
   
@@ -241,14 +250,16 @@ async function getCoordinates(name, zipcode){
   fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address="+zipcode)
     .then(response => {
       return response.json();
-    }).then(data => {
+    })
+      .then(data => {
       const latitude = data.results[0].geometry.location.lat;
       const longitude = data.results[0].geometry.location.lng;
       coordinate = [latitude, longitude];
       stores.push([name, latitude, longitude] );
       initMap();
+      console.info({latitude, longitude});
       return coordinate;
-      console.log({latitude, longitude})
+  
     })
 }
 
