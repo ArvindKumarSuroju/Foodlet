@@ -1,110 +1,117 @@
+/*MAR 15th - by Hyewon */
+
+
+/*map css exist*/
 
 .copyright {
-  background-color: #00615b;
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  line-height: 30px;
-  height: 30px;
-  font-weight: light;
-  box-sizing: border-box;
+    background-color: #00615b;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    line-height: 30px;
+    height: 30px;
+    font-weight: light;
+    box-sizing: border-box;
 }
 
-
 .header_mobile {
-  height: 50px;
-  background-color: #00615b;
-  line-height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    height: 50px;
+    background-color: #00615b;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hamburger {
-  height: 40px;
-  width: 40px;
-  border: 1px solid black;
-  cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 .header_icon {
-  height: 40px;
-  width: 40px;
-  border: 1px solid black;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
 }
 
 .logo {
-  width: 80%;
-  height: 100%;
-  background-image: url("/images/Foodlet Logo.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size:160px;
-  margin-left:2%;
+    width: 80%;
+    height: 100%;
+    background-image: url("/images/Foodlet Logo.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 160px;
+    margin-left: 2%;
 }
 
-
 #filter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  background-color: white;
-  display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background-color: white;
+    display: none;
 }
 
 .filter {
-  background-color: #cbe2d5;
-  border: 0;
-  color: #00615b;
-  padding: .5rem 5%;
-  margin-left: 1.2rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.map {
-  text-align: center;
-  font-size: 20px;
-  width: 100%;
-  /* height: 400px; */
-  border-bottom: 2px solid black;
+    background-color: #cbe2d5;
+    border: 0;
+    color: #00615b;
+    padding: .5rem 5%;
+    margin-left: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
+.map {
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    /* height: 400px; */
+    border-bottom: 2px solid black;
+}
+
+
 /*select location*/
+
 .search {
-  width:100%;
-  box-sizing: border-box;
-  left:5%;
-  top:8%;
-  position:absolute;
+    width: 100%;
+    box-sizing: border-box;
+    left: 5%;
+    top: 8%;
+    position: absolute;
 }
 
 .location_select {
-  width: 70%;
-  padding: .5rem 0;
+    width: 70%;
+    padding: .5rem 0;
 }
 
 .available_title {
-  text-align: center;
-  padding: 5px 0;
+    text-align: center;
+    padding: 5px 0;
 }
 
 .close {
-  position: absolute;
-  right: 6%;
-  top: 5px;
-  color: black;
-  cursor: pointer;
+    position: absolute;
+    right: 6%;
+    top: 5px;
+    color: black;
+    cursor: pointer;
 }
 
 .header_desktop {
-  display: none;
+    display: none;
 }
+
+
 /*slider*/
 
-
 .store_list {
+
   width:320px;
   height: 144px;
   flex-shrink: 0;
@@ -126,14 +133,30 @@
   gap:0 .5rem;
   overflow-x: scroll;
   padding: 0 2%;
+/*
+    width: 100%;
+    border: 1px solid #CBE2D5;
+    border-radius: 10px;
+    margin-bottom: 20px;*/
 }
+/*
+.stores_slide {
+    width: 500%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 0 .5rem;
+
+}
+*/
 
 .store_container {
-  width: 100%;
-  overflow:hidden;
+    width: 100%;
+    overflow: hidden;
 }
-  
+
 .store_detail {
+
   display: grid;
   width: 252px;
   grid-template-columns: 1fr 2fr;
@@ -164,196 +187,156 @@ h5.store_name {
   width: 13px;
 } */
 
-.store_cate, .store_dis {
-  font-size: 13px;
+
+.store_cate,
+.store_dis {
+    font-size: 13px;
 }
 
 .store_img img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .store_cate {
-  display: inline-block;
+    display: inline-block;
 }
 
 .rate {
-  font-size: 13px;
-  margin-left: 50%;
+    font-size: 13px;
+    margin-left: 50%;
 }
 
 .pickup_detail {
-  background-color: #fce1ca;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  padding: 5px 0;
-  display: flex;
-  justify-content: space-around;
+    background-color: #fce1ca;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .pickup_detail li * {
-  display: inline-block;
+    display: inline-block;
 }
 
 .clock {
-  height: 100%;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  background: center/cover url("../resources/Icons/pickUpTime.png") no-repeat;
+    height: 100%;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background: center/cover url("../resources/Icons/pickUpTime.png") no-repeat;
 }
 
 .price {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 label {
-  font-size: 13px;
+    font-size: 13px;
 }
 
 a {
-  font-size: 12px;
-  text-decoration: none;
-  color: #ccc;
-  line-height: 50px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #ccc;
+    line-height: 50px;
 }
 
 #sidebar {
-  width: 91%;
-  background-color: #00615b;
-  position: absolute;
-  left: -1000px;
-  top: 0;
-  transition: left 0.3s ease-in-out;
-  z-index: 10;
+    width: 91%;
+    background-color: #00615b;
+    position: absolute;
+    left: -1000px;
+    top: 0;
+    transition: left 0.3s ease-in-out;
+    z-index: 10;
 }
 
 #sidebar.on {
-  left: 0;
+    left: 0;
 }
 
 .sidelogo {
-  position:relative;
-  background-image: url("/images/Foodlet Logo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  padding: 10% 0;
+    position: relative;
+    background-image: url("/images/Foodlet Logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    padding: 10% 0;
 }
-.side_close {
-  position:absolute;
-  right:3.2%;
-  top:1%;
-  color:blue;
-  cursor: pointer;
 
+.side_close {
+    position: absolute;
+    right: 3.2%;
+    top: 1%;
+    color: blue;
+    cursor: pointer;
 }
 
 .sidebar_menu {
-  display: flex;
-  flex-flow: column;
+    display: flex;
+    flex-flow: column;
 }
+
 .sidebar_menu li {
-  border-bottom: 1px solid black;
-  margin: 0 5%;
-  color: white;
+    border-bottom: 1px solid black;
+    margin: 0 5%;
+    color: white;
 }
 
 .sidebar_menu li:last-child {
-  padding-bottom: 55%;
+    padding-bottom: 55%;
 }
 
 .sidebar_menu li a {
-  color: white;
+    color: white;
 }
 
 .sidebar_menu img {
-  width: 24px;
-  height: 24px;
-  margin: auto 10px;
-  vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: auto 10px;
+    vertical-align: middle;
 }
 
 li.heart {
-  text-align: center;
+    text-align: center;
 }
 
 div.heart {
-  background: center/cover url("../resources/Icons/fav.png") no-repeat;
-  width: 13px;
-  height: 13px;
-  margin: 0 auto;
+    background: center/cover url("../resources/Icons/fav.png") no-repeat;
+    width: 13px;
+    height: 13px;
+    margin: 0 auto;
 }
 
 div.heart_active {
-  background: center/cover url("../resources/Icons/favFilled.png") no-repeat;
+    background: center/cover url("../resources/Icons/favFilled.png") no-repeat;
 }
 
-.header_mobile .menu_item, .header_desktop .menu_item {
-  width: 20px;
-  height: 20px;
+.header_mobile .menu_item,
+.header_desktop .menu_item {
+    width: 20px;
+    height: 20px;
 }
 
-.header_mobile .cart, .header_desktop .cart {
-  background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
-}
-.header_mobile .cart_active, .header_nav .cart_active {
-  background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
+.header_mobile .cart,
+.header_desktop .cart {
+    background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
 }
 
-.header_mobile .notification, .header_nav .notification {
-  background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
-}
-.header_mobile .notification_active, .header_nav .notification_active {
-  background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
+.header_mobile .cart_active,
+.header_nav .cart_active {
+    background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
 }
 
-/*Desktop version*/
-@media (min-width: 1000px) {
-  body {
-    width: 100%;
-  }
+.header_mobile .notification,
+.header_nav .notification {
+    background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
+}
 
-  #sidebar {
-    display: none;
-  }
-
-  .header_mobile {
-    display: none;
-  }
-
-  .header_desktop {
-    display: block;
-    height: 50px;
-    background-color: #00615b;
-    position:relative;
-  }
-
-  .header_nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header_nav a {
-    color: white;
-  }
-
-  .header_nav img {
-    width: 50%;
-    vertical-align: middle;
-  }
-
-  .logout {
-    background-color: #2e8b56;
-    border: 0;
-    color: white;
-    padding: 5px 20px;
-    margin: auto 0;
-  }
-
-  
-  
 
 .store_container {
   width: 100%;
@@ -373,9 +356,65 @@ div.heart_active {
     padding: 0 2%;
   }
 
-  .header_mobile .menu_item, .header_desktop .menu_item {
-    width: 32px;
-    height: 32px;
-  }
+.header_mobile .notification_active,
+.header_nav .notification_active {
+    background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
 }
-/*# sourceMappingURL=style.css.map */
+
+
+
+/*Desktop version*/
+
+@media (min-width: 1000px) {
+    body {
+        width: 100%;
+    }
+    #sidebar {
+        display: none;
+    }
+    .header_mobile {
+        display: none;
+    }
+    .header_desktop {
+        display: block;
+        height: 50px;
+        background-color: #00615b;
+        position: relative;
+    }
+    .header_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_nav a {
+        color: white;
+    }
+    .header_nav img {
+        width: 50%;
+        vertical-align: middle;
+    }
+    .logout {
+        background-color: #2e8b56;
+        border: 0;
+        color: white;
+        padding: 5px 20px;
+        margin: auto 0;
+    }
+    .store_container {
+        width: 100%;
+        /* border:5px solid blue; */
+        overflow: hidden;
+    }
+    .store_list {}
+    .stores_slide {
+        width: 150%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .header_mobile .menu_item,
+    .header_desktop .menu_item {
+        width: 32px;
+        height: 32px;
+    }
+}
