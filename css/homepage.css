@@ -123,8 +123,9 @@
   
   .header_desktop {
     display: none;
+/*
   }
-  /*slider*/
+ 
   
   
   .store_list {
@@ -135,10 +136,49 @@
   }
   
   .stores_slide {
+*/
+}
+
+
+/*slider*/
+
+.store_list {
+
+  width:320px;
+  height: 144px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  border: 1px solid #CBE2D5;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.stores_slide {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  gap:0 .5rem;
+  overflow-x: scroll;
+  padding: 0 2%;
+/*
+    width: 100%;
+    border: 1px solid #CBE2D5;
+    border-radius: 10px;
+    margin-bottom: 20px;*/
+}
+/*
+.stores_slide {
+
     width: 500%;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
+
     gap:0 .5rem;
   }
   
@@ -150,7 +190,7 @@
     
   .store_detail {
     display: flex;
-    /* padding: 5px; */
+   
     margin: 16px 16px 0px 16px;
     justify-content: space-between;
   }
@@ -167,12 +207,59 @@
   }
   
   .store_detail li:last-child {
-    /* width: 15%; */
+  
     width: 13px;
     border: 1px solid black;
   }
   
   .store_cate, .store_dis {
+
+    gap: 0 .5rem;
+
+}
+*/
+
+.store_container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.store_detail {
+
+  display: grid;
+  width: 252px;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: .5rem;
+  margin: auto;
+}
+
+h5.store_name {
+  font-size: 16px;
+  display: block;
+}
+
+.store_detail_text {
+  display: inline;
+}
+
+/* .store_detail li:first-child {
+  width: 72px;
+  height: 72px;
+}
+
+.store_detail li:nth-child(2) {
+  width: 65%;
+} */
+
+/* .store_detail li:last-child {
+  width: 15%;
+  width: 13px;
+} */
+
+
+.store_cate,
+.store_dis {
+
     font-size: 13px;
   }
   
@@ -316,6 +403,7 @@
   
   .header_mobile .notification, .header_nav .notification {
     background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
+
   }
   .header_mobile .notification_active, .header_nav .notification_active {
     background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
@@ -324,6 +412,39 @@
   
   /*Desktop version*/
   @media (min-width: 1000px) {
+
+
+
+
+.store_container {
+  width: 100%;
+  overflow: hidden;
+}
+ .store_list {
+   width: 320px;
+   flex-shrink: 0;
+  }
+
+  .stores_slide {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 0 2%;
+  }
+
+.header_mobile .notification_active,
+.header_nav .notification_active {
+    background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
+}
+
+
+
+/*Desktop version*/
+
+@media (min-width: 1000px) {
+
     body {
       width: 100%;
     }
