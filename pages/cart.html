@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/common.css">
+    <script text="javascript" src="../js/cart.js" defer></script>
     <script text="javascript" src="../js/main.js" defer></script>
     <title>Cart</title>
 </head>
@@ -61,17 +62,42 @@
         <div class="restaurant">
             <ul class="restaurant_detail">
                 <li class="store_img"><img src="#" ></li>
-                <li><b>Amare Restaurant</b><p>Pick Up today by </p>
+                <li><b>Amare Restaurant</b><p>Address</p><p>Pick Up today by </p>
+                    <form action="" class="timeSlection">
+                        <select>
+                            <option value="">3:00</option>
+                            <option value="">4:00</option>
+                            <option value="">5:00</option>
+                            <option value="">6:00</option>
+                            <option value="">7:00</option>
+                            <option value="">8:00</option>
+                            <option value="">9:00</option>
+                            <option value="">10:00</option>
+                        </select>
+                        <select>
+                            <option value="">AM</option>
+                            <option value="">PM</option>
+                        </select>
+                    </form>
                 </li>
-                <li class="icon"><img src="#" alt=""></li>
             </ul>
         </div>
         <div class="menus">
             <div class="menu_list">
                 <ul class="menu_detail">
                     <li class="store_img">img</li>
-                    <li><b>Menu Name1</b><p>1pcs x $ 4.99</p></li>
-                    <li><span style="text-decoration:line-through">$8.99</span><p>$ 4.99</p></li>
+                    <li>
+                        <b>Menu Name1</b>
+                        <!-- button for changing quantity-->
+                        <p>
+                            <button class="minus">-</button>
+                            <input class="quantity" type="text" value="0" maxlength="4" size="2">
+                            <button class="plus">+</button>
+                        </p>
+                        
+                    </li>
+                    <li><span class="menu-price" style="text-decoration:line-through">$8.99</span><p>$ 4.99</p></li>
+                    <li><button class="btn-danger">remove</button></li>
                 </ul>
             </div>
             <div class="menu_list">
@@ -79,16 +105,13 @@
                     <li class="store_img">img</li>
                     <li><b>Menu Name2</b><p>1pcs x $ 4.99</p></li>
                     <li><span style="text-decoration:line-through">$8.99</span><p>$ 4.99</p></li>
+                    <li><a>remove</a></li>
                 </ul>
             </div>
         </div>
-        <div class="save">
-            <p>You will save</p>
-            <p class="price">$ 10.00</p>
-        </div>
         <div class="total">
-            <p>Total Order</p>
-            <p class="price">$ 9.98</p>
+            <p>Total</p>
+            <p class="totalPrice"></p>
         </div>
         <div class="bottons">
         <button class="white_btn">Edit My Order</button> <!--same with filter button-->

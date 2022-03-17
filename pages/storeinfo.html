@@ -76,14 +76,14 @@
         </section>
 
         <section class="storeinfo-basicinfo">
-            <h2>XYZ Restaurant</h2>
+            <h2>< ? #partner-signup-fullname ? ></h2>
             <div class="two-columns">
-                <p id="partner-signup-storetype-output">Restaurant</p>
-                <p id="sTorE-aVeragE-rAtinG-output"><i class="fas fa-star"></i> 4.3 </p>
+                <p id="partner-signup-storetype-output">< ? #partner-signup-storetype ? ></p>
+                <p id="sTorE-aVeragE-rAtinG-output"><i class="fas fa-star"></i> < ? sTorE-aVeragE-rAtinG ? > </p>
             
-                <p id="pickup-time-output"><i class="far fa-clock"></i> Pick up Today by 4:00 PM</p>
+                <p id="pickup-time-output"><i class="far fa-clock"></i> Pick up < ? #pickup-date ? > by < ? #pickup-time ? ></p>
 
-                <p id="partner-signup-storeaddress-output"><i class="fas fa-map-marker-alt"></i> 404 Granville Street, Vancouver</p>
+                <p id="partner-signup-storeaddress-output"><i class="fas fa-map-marker-alt"></i> < ? #partner-signup-storeaddress ? ></p>
             </div>
         </section>
 
@@ -93,7 +93,7 @@
                 <div class="mealinfo-layout">
                     <img src="https://picsum.photos/500/500/?random=03" alt="addmeal-photo">
                     <div class="mealinfo-text">
-                        <p id="menu-name"><strong>Sample Menu 1</strong></p>
+                        <p id="menu-name"><strong>Sample Menu</strong></p>
                         <span class="original-price" id="original-price-output">$ 14.99</span>
                         <span id="sale-price-output">$ 7.99</span>
                         <div class="two-columns">
@@ -117,11 +117,11 @@
                 <div class="mealinfo-layout">
                     <img src="https://picsum.photos/500/500/?random=04" alt="addmeal-photo">
                     <div class="mealinfo-text">
-                        <p id="menu-name"><strong>Sample Menu 2</strong></p>
-                        <span class="original-price" id="original-price-output">$ 3.99</span>
-                        <span id="sale-price-output">$ 2.99</span>
+                        <p id="menu-name"><strong>< ? #menu-name ? ></strong></p>
+                        <span class="original-price" id="original-price-output">$ < ? #original-price ? ></span>
+                        <span id="sale-price-output">$ < ? #sale-price ? ></span>
                         <div class="two-columns">
-                            <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> 5 left</p>
+                            <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> < ? #updated-availability ? > left</p>
                             <form>
                                 <div class="quantity-input">
                                     <button class="minusbutton" id="storeinfo-minusbutton">-</button>
@@ -132,10 +132,8 @@
                         </div>
                     </div>
                 </div>
-
                 <p class="menu-details-output">< ? #menu-details ? ></p>
                 
-
             </div>
 
             <div class="availablemeal">

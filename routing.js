@@ -24,8 +24,10 @@ class Router {
     static handleHashChange() {
         const urlHash = window.location.hash;
         if (urlHash.length > 0) {
+            console.log(urlHash);
             // If there is a hash in URL
             for (let i = 0; i < Router.pages.length; i++) {
+                console.log(Router.pages[i]);
                 // find which page matches the hash then navigate to it
                 if (urlHash === Router.pages[i].name) {
                     Router.goToPage(Router.pages[i]);

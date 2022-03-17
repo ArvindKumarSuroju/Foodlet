@@ -1,28 +1,30 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/common.css">
-
     <script text="javascript" src="../js/main.js" defer></script>
-    <script text="javascript" src="../js/filter.js" defer></script>
-
+    <script text="javascript" src="../js/homescript.js" defer></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&region=CA&language=en&callback=initMap">
+</script>
     <title>Main Page</title>
 </head>
+
 <body>
     <header>
         <ul class="header_mobile">
             <li class="hamburger">menu</li>
             <li class="logo"></li>
             <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-        </ul> -->
-        <!-- <div class="header_desktop">
+            <li><div class="menu_item cart"></div></li>
+            <li><div class="menu_item notification"></div></li>
+        </ul>
+        <div class="header_desktop">
             <ul class="header_nav inner">
                 <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
                 <li><a href="">Favourite</a></li>
@@ -32,89 +34,109 @@
                 <li><a href="">Settings</a></li>
                 <li><a href="">About</a></li>
                 <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><button class="logout">Log Out</button></li>
-            </ul>
-        </div>
 
-        <div id="sidebar" > Sidebar -->
-            <!-- <h2 class="sidelogo"></h2>
-            <a class="side_close"><img src="" >close</a>
+                <li><div class="menu_item cart"></div></li>
+                <li><div class="menu_item notification"></div></li>
+                <li><button class="logout" id="logoutOfApp">Log Out</button></li>
+            </div>
+
+
+        </div>
+        </ul>
+        <div id="sidebar">
+            <!--Sidebar-->
+            <h2 class="sidelogo"></h2>
+
+            <a class="side_close"><img src="" >X</a>
             <ul class="sidebar_menu">
                 <li>
-                    <img src="" alt="">Hi, Use Name
+                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
                     <p>your-email@gmail.com</p>
                 </li>
-                <li><a href=""><img src="" alt="">Favourite</a></li>
-                <li><a href=""><img src="" alt="">Cart</a></li>
-                <li><a href=""><img src="" alt="">Orders</a></li>
-                <li><a href=""><img src="" alt="">My Rewards</a></li>
-                <li><a href=""><img src="" alt="">Settings</a></li>
-                <li><a href=""><img src="" alt="">About</a></li>
-                <li><a href=""><img src="" alt="">Log Out</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Favourite.png" alt="">Favourite</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</a></li>
+                <li><a href=""><img class="menu_icon" src="" alt="">My Rewards</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/Setting.png" alt="">Settings</a></li>
+                <li><a href=""><img class="menu_icon" src="/resources/Icons/About.png" alt="">About</a></li>
+
+                <li><a href=""><img class="menu_icon" src="" alt="">Log Out</a></li>
             </ul>
-        </div> -->
+        </div>
+    </header>
+    <main>
 
-
-
-
-    <!-- </header> -->
-
-    <div id="filter" class="page">
-        <h2 class="subbar_title">Filter</h2><a class="close">close</a>
-        <div class="inner">
-            <form class="filter_cate">
-                <div> 
-                    <div class="filter_title">
-                        <h3 class="category">Category</h3>
-                        <button id="selectAllStoreTypeButton"onclick="selectAllStoreType()">select all</button>
-                    </div>
-                    <div>
-                        <input type="checkbox" class="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox">
-                        <label for="restaurantCheckbox">Restaurant</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="storeTypeCheckbox" id="cafeCheckbox">
-                        <label for="cafeCheckbox">Cafe</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox">
-                        <label for="bakeryCheckbox">Bakery</label>
-                    </div>
-                </div>
-
-                <div>
+        <div id="main_page" class="page"> 
+            <form class="citySelection">
+                <fieldset>
+                  <label>
+                    Cities
+                  </label>
+                  <select id="myCity" name="myCity" onchange="changeMap(this.value)">
+                    <option value="None">Select a City</option>
+                    <option value="VAN">Vancouver</option>
+                    <option value="BUR">Burnaby</option>
+                    <option value="RIC">Richmond</option>
+                    <option value="SUR">Surrey</option>
+                  </select>
+                </fieldset>
+              </form>
+                <a href="#" class="filterBtn">Filter</a>
+            </div>
+            <!--Filter-->
+              <div id="filter" class="page">
+                <h2 class="subbar_title">Filter</h2><a class="close">close</a>
+                <div class="inner">
+                    <ul class="filter_cate">
+                       <li> 
+                           <div class="filter_title">
+                            <h3 class="category">Category</h3>
+                            <a href="">select all</a>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox">
+                            <label>Restaurant</label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label>Cafe</label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label>Bakery</label>
+                        </div>
+                    </li>
+                    <li>
                     <div class="filter_title">
                         <h3 class="dietary">Dietary</h3>
-                        <button id="selectAllDietaryButton"onclick="selectAllDietary()">select all</button>
+                        <a href="">select all</a>
                     </div>
                     <div>
-                        <input type="checkbox" name="dietaryCheckbox" id="nonvegetarianCheckbox">
-                        <label for="nonvegetarianCheckbox">Non-vegetarian</label>
+                        <input type="checkbox">
+                        <label>Non- vegetarian</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="dietaryCheckbox" id="vegetarianCheckbox">
-                        <label for="vegetarianCheckbox">Vegatarian</label>
+                        <input type="checkbox"  checked>
+                        <label>Vegatarian</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="dietaryCheckbox" id="veganCheckbox">
-                        <label for="veganCheckbox">Vegan</label>
+                        <input type="checkbox">
+                        <label>Vegan</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="dietaryCheckbox" id="glutenfreeCheckbox">
-                        <label for="glutenfreeCheckbox">Gluten Free</label>
+                        <input type="checkbox">
+                        <label>Gluten Free</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="dietaryCheckbox" id="halalCheckbox">
-                        <label for="halalCheckbox">Halal</label>
+                        <input type="checkbox">
+                        <label>Halal</label>
                     </div>
-                </div>
-                <div>
+                </li>
+                <li>
                     <div class="filter_title">
                         <h3 class="distance">Distance</h3>
                     </div>
-                    <div><input type="radio">
+                    <div><input type="radio" checked>
                         <label>1km</label>
                     </div>
                     <div><input type="radio">
@@ -132,134 +154,145 @@
                     <div><input type="radio">
                         <label>30km</label>
                     </div>
+                </li>
+                </ul>
+                <div class="buttons">
+                    <button class="white_btn">Clear all</button>
+                    <button class="green_btn">APPLY FILTER</button>
                 </div>
-            </form>
-            <div class="buttons">
-                <button class="white_btn" id="clearAllButton">Clear all</button>
-                <button class="green_btn" id="applyFilterButton">APPLY FILTER</button>
             </div>
-        </div>
-    </div>
-    
-    <main>
-        <div id="main_page" class="page"> 
-            <div class="search">
-                <select name="location" id="location" class="location_select" onchange="cityAreaSelection()">
-                    <option value="">Metro Vancouver</option>
-                    <option value="">West Vancouver</option>
-                    <option value="">North Vancouver</option>
-                    <option value="">East Vancouver</option>
-                </select>
-                <div id="filterBtn" class="filter">Filter</div>
             </div>
-        <div class="map"><!--map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192245!2d-123.11073828433608!3d49.22477278279314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2z656R6rCA6528IOuMgO2VmQ!5e0!3m2!1sko!2sca!4v1645593899843!5m2!1sko!2sca" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div id="map" class="map"><!--map -->
+
         </div>
         <div class="inner">
         <h4 class="available_title">Availables Stores Nearby</h4>
         <!--store part 500%-->
         <div class="store_container">
             <!--store list -->
-            <ul class="stores_slide" id="availableStoreNearby">
-                <!--store detail-->
-
-                <!-- <li class="store1 store_list">
-                    <ul class="store_detail">
-                        <li>
-                            <img src="https://picsum.photos/80/80?random=7" alt="" class="store_img">
-                        </li>
-                        <li>
-                            <h5 class="store_name">Store Name1</h5>
-                            <p class="store_cate">Category</p><span class="rate">rating</span>
+            <ul class="stores_slide">
+                    <li class="store1 store_list">
+                        <ul class="store_detail">
+                            <li class="store_img">
+                                <img src="../resources/Logo/Favicon.png" alt="" class="round">
+                            </li>
+                            <li>
+                                <h5 class="text_title text_color_primary store_name">Store Name1</h5>
+                                <p class="text_body_text text_color_primary store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                                <p class="text_color_secondary store_dis">Distance</p>
+                            </li>
+                            <li class="heart">
+                                <div class="heart">
+                            </li>
+                        </ul>
+                        <ul class="pickup_detail">
+                            <li>
+                                <div class="clock"></div>
+                                <p>pick up time</p>
+                            </li>
+                            <li>6 left from<span class="price">$4.99</span></li>
+                        </ul>
+                    </li> 
+                    <li class="store2 store_list">
+                        <ul class="store_detail">
+                            <li class="store_img">
+                                <img src="../resources/Logo/Favicon.png" alt="" class="round">
+                            </li>
+                            <li>
+                            <h5 class="store_name">Store Name2</h5>
+                            <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
                             <p class="store_dis">Distance</p>
-                        </li>
-                        <li><i class="far fa-heart"></i></li>
-                    </ul>
-                    <ul class="pickup_detail">
-                        <li><i class="far fa-clock"></i>pick up time</li>
-                        <li>6 left from<span class="price">$4.99</span></li>
-                    </ul>
-                </li> 
-                
-                <li class="store2 store_list">
-                    <ul class="store_detail">
-                        <li>
-                            <img src="https://picsum.photos/80/80?random=1" alt="" class="store_img">
-                        </li>
-                        <li>
-                        <h5 class="store_name">Store Name2</h5>
-                        <p class="store_cate">Category</p><span class="rate">rating</span>
-                        <p class="store_dis">Distance</p>
-                        </li>
-                        <li><i class="far fa-heart"></i></li>
-                    </ul>
-                    <ul class="pickup_detail">
-                        <li><i class="far fa-clock"></i>pick up time</li>
-                        <li>6 left from<span class="price">$4.99</span></li>
-                    </ul>
-                </li>
-                <li class="store3 store_list">
-                    <ul class="store_detail">
-                        <li>
-                            <img src="https://picsum.photos/80/80?random=2" alt="" class="store_img">
-                        </li>
-                        <li>
-                        <h5 class="store_name">Store Name3</h5>
-                        <p class="store_cate">Category</p><span class="rate">rating</span>
-                        <p class="store_dis">Distance</p>
-                        </li>
-                        <li><i class="far fa-heart"></i></li>
-                    </ul>
-                    <ul class="pickup_detail">
-                        <li><i class="far fa-clock"></i>pick up time</li>
-                        <li>6 left from<span class="price">$4.99</span></li>
-                    </ul>
-                </li>
-                <li class="store4 store_list">
-                    <ul class="store_detail">
-                        <li>
-                            <img src="https://picsum.photos/80/80?random=3" alt="" class="store_img">
-                        </li>
-                        <li>
-                        <h5 class="store_name">Store Name4</h5>
-                        <p class="store_cate">Category</p><span class="rate">rating</span>
-                        <p class="store_dis">Distance</p>
-                        </li>
-                        <li><i class="far fa-heart"></i></li>
-                    </ul>
-                    <ul class="pickup_detail">
-                        <li><i class="far fa-clock"></i>pick up time</li>
-                        <li>6 left from<span class="price">$4.99</span></li>
-                    </ul>
-                </li>
-                <li class="store5 store_list" id="first_clone">
-                    <ul class="store_detail">
-                        <li>
-                            <img src="https://picsum.photos/80/80?random=4" alt="" class="store_img">
-                        </li>
-                        <li>
-                        <h5 class="store_name">Store Name5</h5>
-                        <p class="store_cate">Category</p><span class="rate">rating</span>
-                        <p class="store_dis">Distance</p>
-                        </li>
-                        <li><i class="far fa-heart"></i></li>
-                    </ul>
-                    <ul class="pickup_detail">
-                        <li><i class="far fa-clock"></i>pick up time</li>
-                        <li>6 left from<span class="price">$4.99</span></li>
-                    </ul>
-                </li>  -->
+                            </li>
+                            <li class="heart">
+                                <div class="heart heart_active">
+                            </li>
+                        </ul>
+                        <ul class="pickup_detail">
+                            <li>
+                                <div class="clock"></div>
+                                <p>pick up time</p>
+                            </li>
+                            <li>6 left from<span class="price">$4.99</span></li>
+                        </ul>
+                    </li>
+                    <li class="store3 store_list">
+                        <ul class="store_detail">
+                            <li class="store_img">
+                                <img src="../resources/Logo/Favicon.png" alt="" class="round">
+                            </li>
+                            <li>
+                            <h5 class="store_name">Store Name3</h5>
+                            <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                            <p class="store_dis">Distance</p>
+                            </li>
+                            <li class="heart">
+                                <div class="heart">
+                            </li>
+                        </ul>
+                        <ul class="pickup_detail">
+                            <li>
+                                <div class="clock"></div>
+                                <p>pick up time</p>
+                            </li>
+                            <li>6 left from<span class="price">$4.99</span></li>
+                        </ul>
+                    </li>
+                    <li class="store4 store_list">
+                        <ul class="store_detail">
+                            <li class="store_img">
+                                <img src="../resources/Logo/Favicon.png" alt="" class="round">
+                            </li>
+                            <li>
+                            <h5 class="store_name">Store Name4</h5>
+                            <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                            <p class="store_dis">Distance</p>
+                            </li>
+                            <li class="heart">
+                                <div class="heart">
+                            </li>
+                        </ul>
+                        <ul class="pickup_detail">
+                            <li>
+                                <div class="clock"></div>
+                                <p>pick up time</p>
+                            </li>
+                            <li>6 left from<span class="price">$4.99</span></li>
+                        </ul>
+                    </li>
+                    <li class="store5 store_list" id="first_clone">
+                        <ul class="store_detail">
+                            <li class="store_img">
+                                <img src="../resources/Logo/Favicon.png" alt="" class="round">
+                            </li>
+                            <li>
+                            <h5 class="store_name">Store Name5</h5>
+                            <p class="store_cate">Category</p><img class="start"><span class="rate">rating</span>
+                            <p class="store_dis">Distance</p>
+                            </li>
+                            <li class="heart">
+                                <div class="heart">
+                            </li>
+                        </ul>
+                        <ul class="pickup_detail">
+                            <li>
+                                <div class="clock"></div>
+                                <p>pick up time</p>
+                            </li>
+                            <li>6 left from<span class="price">$4.99</span></li>
+                        </ul>
+                    </li> 
             </ul>
         </div>
         <button id="prev">Prev</button>
         <button id="next">Next</button>
+
         </div>
-    </div>
     </main>
-    <!-- <footer class="copyright">
+    <footer class="copyright">
         <span>
             &copy;2022 FOODLET. ALL RIGHTS RESERVED.
         </span>
     </footer>
 </body>
-</html> -->
+
+</html>

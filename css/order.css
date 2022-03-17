@@ -30,3 +30,12 @@
     text-align:right;
     border:1px solid orange;
 }
+
+.store_img {
+    text-align: center;
+}
+
+.store_img img {
+    width: 88px;
+    height: 88px;
+}
