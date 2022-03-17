@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+@@ -1,
+110+1,
+106 @@ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -10,7 +11,8 @@ img {
     height: 100%;
 }
 
-nav ul, h1 {
+nav ul,
+h1 {
     display: none;
 }
 
@@ -27,16 +29,12 @@ a {
 }
 
 
-
-
-
 /*  HEADER */
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: #00615B;
     padding: 12px 15px;
 }
@@ -50,7 +48,8 @@ header i {
     margin-left: 12px;
 }
 
-.header-left, .header-right {
+.header-left,
+.header-right {
     display: flex;
 }
 
@@ -62,18 +61,14 @@ header i {
 
 .header-right li {
     display: inline;
-
     padding: 0 0 0 12px;
 }
 
 
-
-
-
 /*  STORE BASIC INFO */
+
 .storeinfo-images {
     text-align: center;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 4fr 1fr;
@@ -87,7 +82,6 @@ header i {
 .partner-signup-profilepicture img {
     width: 84px;
     height: 84px;
-
     border: #FAFCFE solid 2px;
     border-radius: 50%;
 }
@@ -95,17 +89,14 @@ header i {
 .partner-signup-profilepicture {
     grid-row: -1/1;
     grid-column: -1/1;
-
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 
 
-
-
-
 /*  STORE BASIC INFO */
+
 .storeinfo-basicinfo {
     text-align: center;
     margin: 0 13px;
@@ -115,7 +106,6 @@ header i {
     font-size: 32px;
     font-weight: 700;
     color: #00615B;
-
     margin: 0;
 }
 
@@ -128,14 +118,14 @@ main i {
     color: #2E8B56;
 }
 
-i.fa-star, i.fa-smile {
+i.fa-star,
+i.fa-smile {
     color: #F38814;
 }
 
 .two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     font-size: 16px;
     font-weight: 500
 }
@@ -144,32 +134,34 @@ i.fa-star, i.fa-smile {
     margin: 0;
 }
 
-#pickup-time-output, #partner-signup-storeaddress-output {
+#pickup-time-output,
+#partner-signup-storeaddress-output {
     grid-column: -1/1;
+    text-align: left;
 }
-
-
-
 
 
 /*  AVAILABLE MEAL LIST */
+
 .storeinfo-availablemeallist {
     border-top: #51CF67 solid 1px;
-    border-bottom: #51CF67 solid 1px;
-
-    padding: 13px 0;
-    margin: 18px 13px;
-
+    /* border-bottom: #51CF67 solid 1px; */
+    padding: 15px 0;
+    margin: 24px 15px;
     text-align: center;
+    display: grid;
+    flex-flow: column nowrap;
+    grid-gap: 1rem;
+    align-items: center;
 }
 
 .storeinfo-availablemeallist h3 {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
-
     margin: 0;
     text-align: left;
 }
+
 
 /* .storeinfo-availablemeallist .two-columns {
     width: 65vw;
@@ -184,13 +176,15 @@ i.fa-star, i.fa-smile {
 }
 
 .availablemeal {
-    padding: 13px;
-
+    padding: 15px;
     text-align: left;
+    border: 1px solid #CBE2D5;
+    border-radius: 10px;
 }
 
-.availablemeal p, .availablemeal span {
-    margin: 0;
+.availablemeal p,
+.availablemeal span {
+    margin: 0.25rem 0;
     font-size: 14px;
 }
 
@@ -198,24 +192,25 @@ i.fa-star, i.fa-smile {
     margin: 5px;
 }
 
-.availablemeal img{
+.availablemeal img {
     width: 72px;
     height: 72px;
-
     border-radius: 50%;
 }
 
 .availablemeal input {
     width: 39px;
     height: 32px;
-    
     background: #ECF1F4;
     border: none;
     border-radius: 10px;
 }
 
 .mealinfo-layout {
-    display: flex;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 72px 3fr;
+    align-items: center;
 }
 
 .mealinfo-text {
@@ -227,7 +222,8 @@ i.fa-star, i.fa-smile {
     font-weight: 700;
 }
 
-#original-price-output, #sale-price-output {
+#original-price-output,
+#sale-price-output {
     font-size: 16px;
 }
 
@@ -240,7 +236,8 @@ i.fa-star, i.fa-smile {
     font-weight: 700;
 }
 
-.minusbutton, .plusbutton {
+.minusbutton,
+.plusbutton {
     border-radius: 50%;
     width: 22.25px;
     height: 22.25px;
@@ -258,14 +255,28 @@ i.fa-star, i.fa-smile {
 }
 
 #storeinfo-addtocartbutton {
-    color: white;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #2e8b56;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* color: white;
     border: none;
     border-radius: 10px;
     background: #2E8B56;
     
     width: 187px;
     height: 48px;
-    margin: 9px;
+    margin: 9px; */
 }
 
 #storeinfo-quantity {
@@ -277,15 +288,20 @@ i.fa-star, i.fa-smile {
     align-items: center;
 }
 
-
-
+.dietary {
+    color: #2E8B56;
+    font-weight: 700;
+    font-size: 16px;
+}
 
 
 /*  Review Section */
+
 .storeinfo-reviews {
     margin: 0 13px;
     padding-bottom: 10px;
 }
+
 .storeinfo-reviews h3 {
     font-size: 16px;
     font-weight: 700;
@@ -298,7 +314,6 @@ i.fa-star, i.fa-smile {
 .storeinfo-reviews p {
     font-size: 16px;
     margin: 0;
-
     display: flex;
     gap: 5px;
 }
@@ -308,126 +323,101 @@ i.fa-star, i.fa-smile {
 }
 
 
-
-
-
 /*  FOOTER */
+
 footer {
-    background: #00615B;
+    background-color: #00615b;
     color: white;
     text-align: center;
-    padding: 5.75px;
+    font-size: 13px;
+    line-height: 30px;
+    height: 30px;
+    font-weight: light;
+    box-sizing: border-box;
 }
 
 
-
-
-
 /*  DESKTOP SCREEN */
-@media  screen and (min-width: 1000px) {
-    .storeinfo-basicinfo, .storeinfo-availablemeallist, .storeinfo-reviews {
+
+@media screen and (min-width: 1000px) {
+    .storeinfo-basicinfo,
+    .storeinfo-availablemeallist,
+    .storeinfo-reviews {
         max-width: 750px;
         margin-left: auto;
         margin-right: auto;
     }
-
-
-
-
     /*  STORE BASIC INFO */
     .storeinfo-images {
         grid-template-rows: 7fr 1fr;
     }
-
     .partner-signup-coverimage {
         height: 424px;
     }
-    
-
     .partner-signup-profilepicture img {
         width: 120px;
         height: 120px;
     }
-
-    .storeinfo-basicinfo {
+    /* .storeinfo-basicinfo {
         padding-bottom: 36px;
-    }
-
+    } */
     .storeinfo-basicinfo .two-columns {
-        padding: 0 50px;
+        /* padding: 0 50px; */
         text-align: left;
     }
-
     .storeinfo-basicinfo h2 {
         font-size: 32px;
     }
-
     .storeinfo-basicinfo p {
         font-size: 20px;
     }
-
     #pickup-time-output {
         grid-column: 1/2;
     }
-    
     #partner-signup-storeaddress-output {
         grid-column: 2/3;
     }
-
-
-
-
-
     /*  AVAILABLE MEALS */
     .storeinfo-availablemeallist {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
     }
-
-    .storeinfo-availablemeallist h3, #storeinfo-addtocartbutton {
+    .storeinfo-availablemeallist h3,
+    #storeinfo-addtocartbutton {
         grid-column: -1/1;
     }
-
     .storeinfo-availablemeallist h3 {
-        font-size: 32px;
-        margin: 30px 0;
+        font-size: 20px;
+        /* margin: 30px 0; */
     }
-
     #storeinfo-addtocartbutton {
         margin: auto;
         margin-top: 20px;
         margin-bottom: 20px;
-
         font-size: 20px;
-        font-weight: 700;
     }
-
     .menu-details-output {
         max-width: 324px;
         margin: 24px;
     }
-
-    .availablemeal p, .availablemeal span {
+    .availablemeal p,
+    .availablemeal span {
         font-size: 16px;
     }
-
-    #original-price-output, #sale-price-output, #menu-name {
+    #original-price-output,
+    #sale-price-output,
+    #menu-name {
         font-size: 20px;
     }
-
-
-
-
-
     /*  REVIEW SECTION */
     .storeinfo-reviews {
         padding: 32px 0 80px 0;
     }
-
-    .storeinfo-reviews h3, .storeinfo-reviews p {
+    .storeinfo-reviews h3,
+    .storeinfo-reviews p {
         font-size: 20px;
     }
-
     .storeinfo-reviews a {
         font-size: 16px;
     }
