@@ -31,13 +31,13 @@
     padding: 5px 0;
   }
   
-  .close {
+  /* .close {
     position: absolute;
     right: 6%;
     top: 5px;
     color: black;
     cursor: pointer;
-  }
+  } */
   .subbar_title {
     padding: 10px 0 20px 0;
     font-size: 15px;
@@ -72,9 +72,10 @@
   }
   
   .white_btn, .green_btn {
-    width: 38%;
-    padding: 3% 0;
+    display: inline;
+    width: 230px;
     color: #2e8b56;
+    margin: 0;
   }
   
   .white_btn {
@@ -131,6 +132,15 @@
     box-sizing: border-box;
   }
 
+  #selectAllStoreTypeButton, #selectAllDietaryButton {
+    width: max-content;
+    padding: .5rem;
+  }
+
+  fieldset {
+    border: none;
+  }
+
   /*Desktop*/
 @media screen and (min-width:1000px){
     .location_select {
@@ -163,20 +173,29 @@
         box-shadow: 5px 5px 5px grey;
         border-radius: 5px;
       }
+
+      #filter h2 {
+        font-size: 1.5rem;
+      }
+
+      #filter .button {
+        display: inline;
+      }
     
       .filter_cate {
         display: flex;
-        justify-content: space-around;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
       }
     
-      .filter_cate a {
+      /* .filter_cate a {
         line-height: 0;
         margin-top: 8%;
       }
     
       .filter_cate li {
         flex-basis: 32%;
-      }
+      } */
     
       .buttons {
         margin-top: 10%;

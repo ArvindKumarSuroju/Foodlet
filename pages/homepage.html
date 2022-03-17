@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/common.css">
-    <script text="javascript" src="../js/main.js" defer></script> -->
+    <script text="javascript" src="../js/main.js" defer></script>
     <title>Main Page</title>
 </head>
 
 
-
+ -->
 
 <body>
     <header>
@@ -90,9 +90,7 @@
         <div id="main_page" class="page">
             <form class="citySelection">
                 <fieldset>
-                    <label>
-                            Cities
-                        </label>
+                    <label>Select your city</label>
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
                             <option value="All">Select a City</option>
                             <option value="Vancouver">Vancouver</option>
@@ -102,12 +100,14 @@
                         </select>
                 </fieldset>
             </form>
-            <a href="#" class="filterBtn">Filter</a>
+            <div class="filterBtn" id="filterBtn">Filter</a>
         </div>
         <!--Filter-->
         <div id="filter" class="page">
-            <h2 class="subbar_title">Filter</h2><a class="close">close</a>
-            <div class="inner">
+
+            <h2 class="subbar_title">Filter</h2><a id="filter-close" class="close">close</a>
+            <div class="">
+
                 <form class="filter_cate">
                     <div> 
                         <div class="filter_title">
@@ -184,6 +184,7 @@
                 </div>
             </div>
         </div>
+
         <div id="map" class="map">
             <!--map -->
 
@@ -319,7 +320,7 @@
                     </li>
                     <li>6 left from<span class="price">$4.99</span></li>
                 </ul>
-                </li>
+                </li> -->
 
 
 
@@ -438,19 +439,19 @@
                     </li>  -->
 
 
-                </ul>
+                <!-- </ul>
                 </div>
                 
                 <button id="prev">Prev</button>
                 <button id="next">Next</button>
-                </div>
+                </div> -->
     </main>
     <!-- <footer class="copyright">
         <span>
                 &copy;2022 FOODLET. ALL RIGHTS RESERVED.
             </span>
     </footer>
-</body>
+<!-- </body>
 
 
 
