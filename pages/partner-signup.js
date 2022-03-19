@@ -3,7 +3,7 @@ addPartner.addEventListener('submit', async(e) => {
 
     let mail = partner_signup_email.value;
     let passwordKey = partner_signup_password.value;
-
+    
     auth.createUserWithEmailAndPassword(mail, passwordKey)
         .then(async(userCredential) => {
             // Signed in 

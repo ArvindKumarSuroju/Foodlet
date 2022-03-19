@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/common.css">
-    <script text="javascript" src="../js/main.js" defer></script> -->
+    <script text="javascript" src="../js/main.js" defer></script>
     <title>Main Page</title>
 </head>
 
 
-
+ -->
 
 <body>
     <header>
@@ -90,9 +90,7 @@
         <div id="main_page" class="page">
             <form class="citySelection">
                 <fieldset>
-                    <label>
-                            Cities
-                        </label>
+                    <label>Select your city</label>
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
                             <option value="None">Select a City</option>
                             <option value="Vancouver">Vancouver</option>
@@ -102,62 +100,63 @@
                         </select>
                 </fieldset>
             </form>
-            <a href="#" class="filterBtn">Filter</a>
+            <div class="filterBtn" id="filterBtn">Filter</a>
         </div>
         <!--Filter-->
         <div id="filter" class="page">
-            <h2 class="subbar_title">Filter</h2><a class="close">close</a>
-            <div class="inner">
-                <ul class="filter_cate">
-                    <li>
+            <h2 class="subbar_title">Filter</h2><a id="filter-close" class="close">close</a>
+            <div class="">
+                <form class="filter_cate">
+                    <div> 
                         <div class="filter_title">
                             <h3 class="category">Category</h3>
-                            <a href="">select all</a>
+                            <button id="selectAllStoreTypeButton"onclick="selectAllStoreType()">select all</button>
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox">
-                            <label>Restaurant</label>
+                            <input type="checkbox" class="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox">
+                            <label for="restaurantCheckbox">Restaurant</label>
                         </div>
                         <div>
-                            <input type="checkbox">
-                            <label>Cafe</label>
+                            <input type="checkbox" name="storeTypeCheckbox" id="cafeCheckbox">
+                            <label for="cafeCheckbox">Cafe</label>
                         </div>
                         <div>
-                            <input type="checkbox">
-                            <label>Bakery</label>
+                            <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox">
+                            <label for="bakeryCheckbox">Bakery</label>
                         </div>
-                    </li>
-                    <li>
+                    </div>
+    
+                    <div>
                         <div class="filter_title">
                             <h3 class="dietary">Dietary</h3>
-                            <a href="">select all</a>
+                            <button id="selectAllDietaryButton"onclick="selectAllDietary()">select all</button>
                         </div>
                         <div>
-                            <input type="checkbox">
-                            <label>Non- vegetarian</label>
+                            <input type="checkbox" name="dietaryCheckbox" id="nonvegetarianCheckbox">
+                            <label for="nonvegetarianCheckbox">Non-vegetarian</label>
                         </div>
                         <div>
-                            <input type="checkbox" checked>
-                            <label>Vegatarian</label>
+                            <input type="checkbox" name="dietaryCheckbox" id="vegetarianCheckbox">
+                            <label for="vegetarianCheckbox">Vegatarian</label>
                         </div>
                         <div>
-                            <input type="checkbox">
-                            <label>Vegan</label>
+                            <input type="checkbox" name="dietaryCheckbox" id="veganCheckbox">
+                            <label for="veganCheckbox">Vegan</label>
                         </div>
                         <div>
-                            <input type="checkbox">
-                            <label>Gluten Free</label>
+                            <input type="checkbox" name="dietaryCheckbox" id="glutenfreeCheckbox">
+                            <label for="glutenfreeCheckbox">Gluten Free</label>
                         </div>
                         <div>
-                            <input type="checkbox">
-                            <label>Halal</label>
+                            <input type="checkbox" name="dietaryCheckbox" id="halalCheckbox">
+                            <label for="halalCheckbox">Halal</label>
                         </div>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <div class="filter_title">
                             <h3 class="distance">Distance</h3>
                         </div>
-                        <div><input type="radio" checked>
+                        <div><input type="radio">
                             <label>1km</label>
                         </div>
                         <div><input type="radio">
@@ -175,14 +174,15 @@
                         <div><input type="radio">
                             <label>30km</label>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </form>
                 <div class="buttons">
-                    <button class="white_btn">Clear all</button>
-                    <button class="green_btn">APPLY FILTER</button>
+                    <button class="white_btn" id="clearAllButton">Clear all</button>
+                    <button class="green_btn" id="applyFilterButton">APPLY FILTER</button>
                 </div>
             </div>
         </div>
+
         <div id="map" class="map">
             <!--map -->
 
@@ -192,10 +192,10 @@
             <!--store part 500%-->
             <div class="store_container">
                 <!--store list -->
-                <ul class="stores_slide">
+                <ul class="stores_slide" id="availableStoreNearby">
 
 
-                    <li class="store1 store_list">
+                    <!-- <li class="store1 store_list">
                         <ul class="store_detail">
 
                             <li class="store_img">
@@ -318,7 +318,7 @@
                     </li>
                     <li>6 left from<span class="price">$4.99</span></li>
                 </ul>
-                </li>
+                </li> -->
 
 
 
@@ -437,18 +437,18 @@
                     </li>  -->
 
 
-                </ul>
+                <!-- </ul>
                 </div>
                 <button id="prev">Prev</button>
                 <button id="next">Next</button>
-                </div>
+                </div> -->
     </main>
     <footer class="copyright">
         <span>
                 &copy;2022 FOODLET. ALL RIGHTS RESERVED.
             </span>
     </footer>
-</body>
+<!-- </body>
 
 
 
