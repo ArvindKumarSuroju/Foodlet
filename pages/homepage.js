@@ -1,10 +1,18 @@
 
 
+    var filterOpenButton = document.getElementById('filterBtn');
+    var filterCloseButton = document.getElementById('filter-close');
+    var filterList = document.getElementById("filter");
 
+    filterOpenButton.addEventListener ("click", () => {
 
-    // filterBtn.addEventListener("click", () => {
-    //     filter.style.display = "block";
-    // })
+        filterList.classList.toggle("show-filter");
+    })
+
+    filterCloseButton.addEventListener ("click", () => {
+
+        filterList.classList.toggle("show-filter");
+    })
 
 
     const storeList = document.querySelector('#availableStoreNearby');
@@ -13,24 +21,32 @@
 
     function renderStoreInfo(doc){
 
+        let p = doc.data().partnerSignupProfilePicture;
+
+        if (p != undefined) {
+            p = doc.data().partnerSignupProfilePicture;
+        } else {
+            p = "../resources/Logo/Favicon.png";
+        }
+
         storeList.innerHTML += `
-        <li id="${doc.id}" class="store_list">
-            <ul class="store_detail">
-                <li><img src="${doc.data().partnerSignupProfilePicture}" width="50px"></li>
-                <li>
-                    <h5 class="store_name">${doc.data().storeName}</h5>
-                    <p class="store_cate">${doc.data().storeType}</p>
-                    <span class="rate"><i class="fas fa-star">x.x</i></span>
-                </li>
-                <li><i class="far fa-heart"></i></li>
-            </ul>
-            <ul class="pickup_detail" id="pickupDetail">
-                <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
-                <li>from $ ${doc.data().salePrice}
-                </li>
-            </ul>
-        </li>
-        `
+            <li id="${doc.id}" class="store_list">
+                <ul class="store_detail">
+                    <li class="store_img"><img src="${p}" width="50px" class="round"></li>
+                    <li>
+                        <h5 class="text_title text_color_primary store_name">${doc.data().storeName}</h5>
+                        <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
+                        <span class="rate"><i class="fas fa-star">x.x</i></span>
+                    </li>
+                    <li><i class="far fa-heart"></i></li>
+                </ul>
+                <ul class="pickup_detail" id="pickupDetail">
+                    <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
+                    <li>from $ ${doc.data().salePrice}
+                    </li>
+                </ul>
+            </li>
+        `;
     }
 
     
@@ -104,7 +120,7 @@
     const applyFilterButton = document.getElementById("applyFilterButton");
 
 
-    applyFilterButton.addEventListener('click', (data) => {
+    applyFilterButton.addEventListener('click', () => {
 
         let storeTypeArray = [restaurantCheckbox.value, cafeCheckbox.value, bakeryCheckbox.value];
 
@@ -114,6 +130,7 @@
 
 
     function storeTypeFilter() {
+
         db.collection('partners').get().then((snapshot) => {
             snapshot.docs.forEach( doc => {
 
@@ -131,6 +148,7 @@
             
             })        
         })
+
     }
 
 
@@ -209,3 +227,48 @@ logoutOfApp.addEventListener('click', () => {
     })
 })
 
+
+const carouselSlide = document.querySelector(".stores_slide");
+const carouselStore = document.querySelectorAll(".stores_slide>li");
+
+//Buttons
+const prevBtn = document.querySelector("#prev");
+const nextBtn = document.querySelector("#next");
+
+//Counter 
+
+let counter = 1;
+const size = carouselStore[0].clientWidth;
+
+carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+
+//Button Listener
+
+nextBtn.addEventListener('click', () => {
+    if (counter >= carouselStore.length - 1) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+})
+
+prevBtn.addEventListener('click', () => {
+    if (counter <= 0) return;
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+})
+
+
+carouselSlide.addEventListener('transitionend', () => {
+    if (carouselStore[counter].id === 'last_clone') {
+        carouselSlide.style.transition = "none";
+        counter = carouselStore.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+    if (carouselStore[counter].id === 'first_clone') {
+        carouselSlide.style.transition = "none";
+        counter = carouselStore.length - counter;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }
+});

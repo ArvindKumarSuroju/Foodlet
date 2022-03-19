@@ -63,6 +63,11 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+#filter.show-filter {
+  display: block;
+}
+
 .map {
   text-align: center;
   font-size: 20px;

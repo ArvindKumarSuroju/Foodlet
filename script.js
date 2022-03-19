@@ -17,7 +17,7 @@ Router.init('mainArea', [
     new Page('#favourite','pages/favourite.html'),
     new Page('#storeinfo','pages/storeinfo.html'),
     new Page('#notifications','pages/notifications.html'),
-    new Page('#filter','pages/filter.html')
+    new Page('#filter','pages/filter.html'),
 
     new Page('#partner-editmeal', 'pages/partner-editmeal.html')
 
