@@ -33,6 +33,7 @@ async function addUserMeta(user) {
         phoneNumber: addPartner.partner_signup_phonenumber.value,
         emailAddress: addPartner.partner_signup_email.value,
         termsAndConditions: addPartner.partner_signup_termsagreement.value,
+        storeType: addPartner.partner_signup_storetype,
         fileURL: await uploadData()
     }, { merge: true });
     console.log("new partner added");
