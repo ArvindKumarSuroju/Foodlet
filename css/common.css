@@ -1,143 +1,166 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-h1, h2, h3, h4, h5, h5, div, p, ul, li, body {
-  margin: 0;
-  padding: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+div,
+p,
+ul,
+li,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
     width: 100vw;
     font-family: "Poppins", sans-serif;
     height: 100vh;
-  }
-  
-  button a {
+}
+
+button a {
     color: white;
-  }
-  
-  p, h1, h2, h3, h4, h5, div, li, ul, a, body {
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+div,
+li,
+ul,
+a,
+body {
     margin: 0;
     padding: 0;
-  }
- ul {
-     display:flex;
- } 
-  li {
+}
+
+ul {
+    display: flex;
+}
+
+li {
     list-style: none;
-  }
-  
-  .inner {
-    width: 90%;
+}
+
+.inner {
+    width: 97vw;
     margin: 0 auto;
-  }
-  
-  button {
+    /* border:1px solid yellow; */
+}
+
+button {
     border-radius: 5px;
-  }
-  
-  select {
+}
+
+select {
     border-radius: 10px;
-  }
+}
+
 .title {
-    text-align:center;
+    text-align: center;
     font-size: 32px;
 }
 
 .icon {
-    width:50px;
-    height:50px;
-    border:1px solid blue;
+    width: 50px;
+    height: 50px;
+    border: 1px solid blue;
 }
 
-.white_btn, .green_btn {
+.white_btn,
+.green_btn {
     width: 38%;
     padding: 3% 0;
     color: #2e8b56;
-    text-align:center;
-  }
-  
-  .white_btn {
+    text-align: center;
+}
+
+.white_btn {
     border: 1px solid #eee;
     background-color: white;
-  }
-  
-  .green_btn {
+}
+
+.green_btn {
     border: 0;
     font-weight: bold;
     background-color: #cbe2d5;
-  }
+}
 
-  .button_green {
+.button_green {
     background-color: #2e8b56;
     border: 0;
     color: white;
     border-radius: 10px;
-  }
-  
-  .buttons {
-      text-align:center;
-  }
+}
 
-  .fill {
-      background-color:#2E8B56;
-      padding: 2% 8%;
-      color:white;
-      border:0;
-      margin:3% 0;
-  }
+.buttons {
+    text-align: center;
+}
 
-  img.round {
+.fill {
+    background-color: #2E8B56;
+    padding: 2% 8%;
+    color: white;
+    border: 0;
+    margin: 3% 0;
+}
+
+img.round {
     border-radius: 50%;
-  }
+}
 
-  .text_title {
+.text_title {
     /* Mobile-Titles */
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 140%;
-
     color: #000000;
-  }
+}
 
-  .text_body_text {
+.text_body_text {
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 140%;
-
     color: #323232;
-  }
-
-  .text_color_primary {
-    color: #313131;
-  }
-
-  .text_color_secondary {
-    color: #616161;
-  }
-
-  .text_color_tertiary {
-    color: #00615b;
-  }
-
-  .text_center {
-    text-align: center;
-  }
-
-  .text_weight_700 {
-    font-weight: 700;
-  }
-
-  /* Desktop */
-  @media screen and (min-width:1000px){
-    .text_title {
-      font-size: 20px;
-    }
-    .text_body_text {
-      font-size: 20px;
-    }
-    
 }
 
+.text_color_primary {
+    color: #313131;
+}
+
+.text_color_secondary {
+    color: #616161;
+}
+
+.text_color_tertiary {
+    color: #00615b;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_weight_700 {
+    font-weight: 700;
+}
+
+
+/* Desktop */
+
+@media screen and (min-width:1000px) {
+    .text_title {
+        font-size: 20px;
+    }
+    .text_body_text {
+        font-size: 20px;
+    }
+}

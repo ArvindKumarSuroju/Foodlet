@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,53 +11,70 @@
     <script text="javascript" src="../js/main.js" defer></script>
     <title>Cart</title>
 </head>
+
 <body>
     <!--Header nav-->
     <header>
         <div class="header_mobile">
-        <ul class="inner">
-            <li class="hamburger">menu</li>
-            <li class="logo"></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-        </ul>
-        <div class="header_desktop">
-            <ul class="header_nav inner">
-                <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
-                <li><a href="">Favourite</a></li>
-                <li><a href="">Cart</a></li>
-                <li><a href="">Orders</a></li>
-                <li><a href="">My Rewards</a></li>
-                <li><a href="">Settings</a></li>
-                <li><a href="">About</a></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><button class="logout">Log Out</button></li>
+            <ul class="inner">
+                <li class="hamburger">menu</li>
+                <li class="logo"></li>
+                <li class="header_icon"><img src="" alt=""></li>
+                <li class="header_icon"><img src="" alt=""></li>
+                <li class="header_icon"><img src="" alt=""></li>
             </ul>
-        </div>
-        <div id="sidebar" > <!--Sidebar-->
-            <h2 class="sidelogo"></h2>
-            <a class="side_close"><img src="" >close</a>
-            <ul class="sidebar_menu">
-                <li>
-                    <img src="" alt="">Hi, Use Name
-                    <p>your-email@gmail.com</p>
-                </li>
-                <li><a href=""><img src="" alt="">Favourite</a></li>
-                <li><a href=""><img src="" alt="">Cart</a></li>
-                <li><a href=""><img src="" alt="">Orders</a></li>
-                <li><a href=""><img src="" alt="">My Rewards</a></li>
-                <li><a href=""><img src="" alt="">Settings</a></li>
-                <li><a href=""><img src="" alt="">About</a></li>
-                <li><a href=""><img src="" alt="">Log Out</a></li>
-            </ul>
-        </div>
+            <div class="header_desktop">
+                <ul class="header_nav inner">
+                    <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
+                    <li><a href="">Favourite</a></li>
+                    <li><a href="">Cart</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="">My Rewards</a></li>
+                    <li><a href="">Settings</a></li>
+                    <li><a href="">About</a></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><button class="logout">Log Out</button></li>
+                </ul>
+            </div>
+            <div id="sidebar">
+                <!--Sidebar-->
+                <h2 class="sidelogo"></h2>
+                <a class="side_close"><img src="">close</a>
+                <ul class="sidebar_menu">
+                    <li>
+                        <img src="" alt="">Hi, Use Name
+                        <p>your-email@gmail.com</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">Favourite</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">Cart</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">Orders</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">My Rewards</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">Settings</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">About</a>
+                    </li>
+                    <li>
+                        <a href=""><img src="" alt="">Log Out</a>
+                    </li>
+                </ul>
+            </div>
     </header>
- <!--Cart screen-->
+    <!--Cart screen-->
     <main>
         <div class="inner">
+            <!-- 
         <h2 class="title">My Cart</h2>
         <div class="restaurant">
             <ul class="restaurant_detail">
@@ -86,21 +104,64 @@
                         <div class="cart"></div>
                     </li>
                 </ul>
+ -->
+            <h2 class="title">My Cart</h2>
+            <div class="restaurant">
+                <ul class="restaurant_detail">
+                    <li class="store_img"><img src="#"></li>
+                    <li><b>Amare Restaurant</b>
+                        <p>Pick Up today by </p>
+                    </li>
+                    <li class="icon"><img src="#" alt=""></li>
+                </ul>
+            </div>
+            <div class="menus">
+                <div class="menu_list">
+                    <ul class="menu_detail">
+                        <li class="store_img">img</li>
+                        <li>
+                            <b>Menu Name1</b>
+                            <!-- button for changing quantity-->
+                            <p>
+                                <button class="minus">-</button>
+                                <input class="quantity" type="text" value="0" maxlength="4" size="2">
+                                <button class="plus">+</button>
+                            </p>
+
+                        </li>
+                        <li><span class="menu-price" style="text-decoration:line-through">$8.99</span>
+                            <p>$ 4.99</p>
+                        </li>
+                        <li><a class="btn-danger">delete icon</a></li>
+                    </ul>
+                </div>
+                <div class="menu_list">
+                    <ul class="menu_detail">
+                        <li class="store_img">img</li>
+                        <li><b>Menu Name2</b>
+                            <p>1pcs x $ 4.99</p>
+                        </li>
+                        <li><span style="text-decoration:line-through">$8.99</span>
+                            <p>$ 4.99</p>
+                        </li>
+                        <li><a class="btn-danger">delete icon</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="save">
+                <p>You will save</p>
+                <p class="price">$ 10.00</p>
+            </div>
+            <div class="total">
+                <p>Total Order</p>
+                <p class="price">$ 9.98</p>
+            </div>
+            <div class="buttons">
+                <button class="button_green button_reserve">Reserve</button>
+
             </div>
         </div>
-        <div class="save">
-            <p>You will save</p>
-            <p class="price">$ 10.00</p>
         </div>
-        <div class="total">
-            <p>Total Order</p>
-            <p class="price">$ 9.98</p>
-        </div>
-        <div class="buttons">
-            <button class="button_green button_reserve">Reserve</button>
-        </div>
-    </div>
-    </div>
     </main>
     <footer class="copyright">
         <span>
@@ -108,4 +169,5 @@
         </span>
     </footer>
 </body>
+
 </html>
