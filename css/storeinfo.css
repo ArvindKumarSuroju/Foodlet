@@ -1,4 +1,4 @@
-@@ -1,
+/* @@ -1,
 110+1,
 106 @@ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 * {
@@ -27,17 +27,11 @@ i {
 a {
     color: #F38814;
 }
-
+ */
 
 /*  HEADER */
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #00615B;
-    padding: 12px 15px;
-}
+
 
 header i {
     color: white;
@@ -144,13 +138,14 @@ i.fa-smile {
 /*  AVAILABLE MEAL LIST */
 
 .storeinfo-availablemeallist {
-    border-top: #51CF67 solid 1px;
+    /* border-top: #51CF67 solid 1px; */
     /* border-bottom: #51CF67 solid 1px; */
     padding: 15px 0;
     margin: 24px 15px;
     text-align: center;
     display: grid;
-    flex-flow: column nowrap;
+    grid-template-columns: 1fr 1fr;
+  
     grid-gap: 1rem;
     align-items: center;
 }
