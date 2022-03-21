@@ -370,7 +370,7 @@ function renderStoreInfo(doc){
                 <li>
                     <h5 class="text_title text_color_primary store_name">${doc.data().storeName}</h5>
                     <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
-                    <span class="rate"><i class="fas fa-star">x.x</i></span>
+                    <span class="rate"><i class="fas fa-star"><a href="#storeinfo">x.x</a></i></span>
                 </li>
                 <li><i class="far fa-heart"></i></li>
             </ul>
@@ -396,6 +396,9 @@ db.collection('partners').get().then((snapshot) => {
         
     })
 });
+const reS = document.getElementsByClassName('store_detail');
+
+reS.addEventListener('click', ()=>{alert("clicked");});
 
 // function lowestSalePriceInStore(id) {
 //     let salePriceArray = [];
