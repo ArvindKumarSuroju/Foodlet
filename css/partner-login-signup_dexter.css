@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    margin: 0rem;
+    text-align: center;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+main {
+    display: flex;
+    flex-grow: 3;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background: #00615B;
+    color: white;
+
+    padding: 7px 60px;
+}
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -2%;
+
+    color: #51CF67;
+    display: none;
+}
+
+.site-branding img {
+    width: 223px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -2%;
+    margin: 0;
+}
+
+footer {
+    background: #00615B;
+    color: white;
+    font-weight: 600;
+    font-size: 11px;
+
+    padding: 5.5px 15.5px;
+}
+
+.button {
+    background: #2E8B56;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+
+    width: 174px;
+    padding: 13px;
+    margin: 23px auto;
+    border-radius: 10px;
+}
+
+a {
+    color: #F19737;
+    font-weight: 600;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.aside {
+    display: none;
+}
+
+.desktop-view {
+    display: flex;
+    flex-grow: 3;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+
+
+
+/*  FORMS */
+form {
+    padding: 0 18px;
+    margin: auto;
+    max-width: 500px;
+}
+
+form input {
+    background: #EEF2F5;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+}
+
+form input:focus{
+    border: 2px solid #51CF67;
+}
+
+form input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+}
+
+.checkbox {
+    text-align: left;
+    display: flex;
+}
+
+.checkbox label {
+    font-weight: 300;
+}
+
+.inside-form {
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin: 12px 0rem;
+}
+
+label {
+    text-align: left;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
+/*  BOTTOM LINK */
+.bottom-link {
+    margin: 1.5rem auto;
+}
+
+.bottom-link p {
+    margin: 0;
+}
+
+
+
+
+
+.onboarding {
+    display: none;
+}
+
+.onboarding-content {
+    padding: 0 20%;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column nowrap;
+    justify-content:space-evenly;
+}
+
+
+
+
+.partner-login-forgetpassword {
+    text-align: right;
+    display: block;
+}
+
+
+
+
+.partner-signup-coverimage {
+    background: url("https://picsum.photos/2500/500/?random=7");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 160px;
+}
+
+.partner-signup-coverimage span {
+    display: block;
+    text-align: right;
+    font-size: 24px;
+    padding: 12px;
+    text-shadow: 0 0 10px #F19737;
+}
+
+.partner-signup-editpicture {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    position: relative;
+    bottom: 60px;
+
+}
+
+.partner-signup-editpicture img {
+    width: 121px;
+    border-radius: 50%;
+}
+
+
+
+
+@media screen and (min-width: 1000px){
+    .aside {
+        display: block;
+        /* background: url("https://picsum.photos/2500/2500/?random=3"); */
+        background-size: cover;
+        grid-row: 1/3;
+    }
+
+    .desktop-view {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 10fr;
+    }
+
+    header {
+        height: min-content;
+    }
+
+    main {
+        grid-row: 2/3;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+
+
+    .partner-signup-coverimage {
+        width: 50vw;
+        height: 200px;
+    }
+
+
+    .site-branding img {
+        width: 443px;
+    }
+
+    .aside {
+        background-color: #CBE1D5;
+    }
+
+    .aside-title {
+    color: #275F5B;
+    font-weight: 700;
+    font-size: 45px;
+    letter-spacing: -2%;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+
+    .aside-text {
+        font-weight: bolder;
+        font-size: 18px;
+         
+    }
+
+    .tagline {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+ .requiredField {
+     text-align: right;
+    font-style: italic;
+ }
+
+ div > ::placeholder {
+     padding-left: .75rem;
+ }
+    
+     
+}
