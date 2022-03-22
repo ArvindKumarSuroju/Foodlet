@@ -21,13 +21,14 @@ async function myMeals() {
     });
 
 
+
     function getMeal(doc) {
 
         createMeals.innerHTML += `
-        <article>
+        <article class= "eachMealArticle">
     <img src="${doc.data().imageUrl}" alt="">
     <div class="meal-info">
-        <div class="meal-name">${doc.data().menuName}</div>
+        <div class="meal-name" onclick="goToMeal('${doc.id}')">${doc.data().menuName}</div>
         <div class="meal-price">${doc.data().salePrice}</div>
         <div class="availability">${doc.data().quantity} left</div>
     </div>
@@ -35,4 +36,12 @@ async function myMeals() {
     </article>`
     }
 
+}
+
+
+
+
+function goToMeal(docId) {
+    sharedDataId["partnerHomedocumentId"] = docId;
+    location.href = "#partner-addmeal"
 }
