@@ -1,6 +1,3 @@
-
-
-
 // //Log out 
 // logoutOfApp.addEventListener('click', () => {
 
@@ -44,6 +41,7 @@
 const menuBtn = document.querySelector(".hamburger");
 const sidebar = document.querySelector("#sidebar");
 const closeBtn = document.querySelector(".side_close");
+let displayAvailableStores = [];
 
 menuBtn.addEventListener('click',()=>{
     if (sidebar.classList.contains('on')){
@@ -127,28 +125,32 @@ let mainMap;
 
 
 //First display of map
-async function initMap() {
+ function initMap() {
  
   
   var mapCanvas = document.getElementById("map");
   const mapTest = document.getElementById("map");
   var mapOptions = {
     // center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
-    center: await new google.maps.LatLng(49.27883133919559, -123.13434156509084),
+    center: new google.maps.LatLng(49.27883133919559, -123.13434156509084),
     zoom: 12
   };
-  mainMap = await new google.maps.Map(mapCanvas, mapOptions);
+  mainMap = new google.maps.Map(mapCanvas, mapOptions);
 
-  var marker, i;
-  for (i =0; i < stores.length; i++){
-    marker =  new google.maps.Marker({
-      position: new google.maps.LatLng(stores[i][1], stores[i][2]),
-      mapTest,
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-      title: "Hello World!",
-    });
+  console.log('STORES ARRAY: ' +stores);
+
+
+//   var marker, i;
+//   for (i =0; i < stores.length; i++){
+//     marker =  new google.maps.Marker({
+//       position: new google.maps.LatLng(stores[i][1], stores[i][2]),
+//       map: mainMap,
+//       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+//       title: stores[i][0],
+//     });
     
-  }  
+//   }  
+    console.error("==============" + stores.length);
     var firstStoreCode = stores[0];
     mainMap.setCenter(new google.maps.LatLng(firstStoreCode[1], firstStoreCode[2]));
 
@@ -183,91 +185,235 @@ var locationSelect = {
   'Surrey': '49.1932788458098, -122.84774023807589'
 }; 
 
-async function changeMap(city) {
+async function fetchAvailableStores(city) {
 
-  var coords = locationSelect[city].split(',');
-  await new google.maps.Marker({
-    position: await new google.maps.LatLng(coords[0], coords[1]),
-    map: mainMap,
-    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    title: city
-  });
-  await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
+    console.log('INSIDE FUNCTION FETCH');
+    await db.collection('partners').where('city', '==', city).get().then((snapshot) => {
+        snapshot.forEach( (doc) => {
+
+            let availableMeals = 0;
+
+            // displayAvailableStores = [];
+            // displayAvailableStores.push(JSON.parse(doc.data()));
+
+            // console.log("2222222  " + JSON.stringify(doc.data()));
+
+            db.collection('partners').doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
+                snapshot2.docs.forEach( doc2 => {
+
+                    console.log("AVAILABLE MENU: " + JSON.stringify(doc2.data()));
+                    availableMeals = availableMeals + 1;
+                });
+
+                if (availableMeals > 0) {
+                    console.error("AVAILABLE STORES INFO: " + JSON.stringify(doc.data()));
+                    var marker;
+
+            //         displayAvailableStores = JSON.parse(doc.data());
+            //         console.log(">>>>>>>>>>" + displayAvailableStores);
+
+                    let point = doc.data();
+                    console.log(doc.data().storeName + "'s zipcode is " + doc.data().zipcode);
+
+                    let availableStoresCoord = [doc.data().storeName, doc.data().latitude, doc.data().longitude];
+                    displayAvailableStores.push(availableStoresCoord);
+
+                    new google.maps.Marker({
+                        position: new google.maps.LatLng(point.latitude, point.longitude),
+                        map: mainMap,
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                        title: point.storeName,
+                    });
+    
+                    
+                }
+
+            });
+
+        })
+    }); 
+}
+
+async function changeMap(city) {
+    stores.length = 0;
+    console.log('CHANGE MAP, ' + city);
+
+    // HYEWON HAS THE CODE
+    // await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1])); 
+
+    await fetchAvailableStores(city);
+
+//    await db.collection('partners').where('city', '==', city).get().then((snapshot) => {
+//         snapshot.forEach( (doc) => {
+
+//             renderData(doc);
+
+//         })
+//     }); 
+    
+
+    // var coords = locationSelect[city].split(',');
+    console.log(displayAvailableStores);
+
+//   for (var i=0; i < stores.length; i++ ){
+//     await new google.maps.Marker({
+//         position: await new google.maps.LatLng(stores[i][1], stores[i][2]),
+//         map: mainMap,
+//         icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+//         title: stores[i][0],
+//         });
+//     }
+//     if (stores.length > 0 ){
+//         await mainMap.setCenter(new google.maps.LatLng(stores[0][1], stores[0][2]));
+//     }
+
 
   cityAreaSelection(city);
 
 }
-var stores = [
-  // ['bakery', 49.242021, -123.083775],
-  // ['grocery', 49.242021, -123.083775],
-  // ['church', 49.264967, -123.168716],
-  // ['church', 49.256763, -123.161881]
-];
+var stores = [];
 
 
 
 var storeDataList =  document.querySelector("#dataTemplate");
 
-//create element and render data
+// //update lat and long to database
 
-function renderData(doc){
-  // let li = document.createElement('li');
-  // let name  = document.createElement('span');
-  // let zipcode = document.createElement('span');
+// async function renderData(doc){
 
-  // li.setAttribute('data-id', doc.id);
-  // name.textContent = doc.data().partner.storeName;
-  // zipcode.textContent = doc.data().partner.zipcode;
-
-  if (doc.data().partner.coordinate == null || 
-      doc.data().partner.coordinate[0] == "")
-      {var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode);}
-  else {
-      coordinate = [latitude, longitude];
-      stores.push([doc.data().partner.storeName, doc.data().partner.coordinate[0], doc.data().partner.coordinate[1]] );
-  }
-  doc.data().partner.coordinate = coordi;
-  }
-  // li.appendChild(name);
-  // li.appendChild(zipcode);
-
-  // storeDataList.appendChild(li);
-
-db.partner
-db.collection('partnerAddMeals').get().then((snapshot)=>{
-  snapshot.docs.forEach(doc =>{
-    renderData(doc);
-    doc.update();
-    
-    
-  })
+//   if (doc.data().coordinate == undefined){
+//       var coordi = await getCoordinates(doc.data().storeName, doc.data().zipcode);
+//       updateCoord(doc.id, coordi);
+//     }
+//   else {
+//     stores.push([doc.data().storeName, doc.data().latitude[0], doc.data().longitude[1]] );
+//     // doc.data().coordinate = coordi;
+// //   UpdateData(doc.data().partner.storeName);
+//         }
+//   initMap();
+//   // not a good way , it keeps bring data
+//   console.error("============partner=====");
+//   };
 
   
-  initMap();
-  // addMarker();
+//   function UpdateData(name) {
+
+//     update(ref(db, "partners/"+ rollbox.value), {
+//        NameOfStd: namebox.value,
+//        Section: secbox.value,
+//        Gender: genbox.value,
+//        Additional: addInfo.value
+//     })
+//     .then(()=>{
+//        alert("data stored successfully");
+//     })
+//     .catch((error)=>{
+//        alert( "unsuccessfule, error" + error);
+//     });
+//  }
+ 
+
+//Pull the 'partners' database
+async function getPartners(){
+await db.collection('partners').get().then((snapshot)=>{
+  snapshot.docs.forEach(doc =>{
+
+    let availableMeals = 0;
+
+    db.collection('partners').doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
+        snapshot2.docs.forEach(doc2 => {
+            console.log(doc2.data().menuName);
+            availableMeals = availableMeals + 1;
+        });
+
+        console.log(doc.data().storeName + ' has ' + availableMeals + ' available meals.');
+        
+
+
+        if (availableMeals > 0) {
+            console.error("RENDER DATA FUCTION IS WORKING");
+            renderData(doc)  
+        }
+
+    });
+    
+
+  })
+  
 });
-
-
-
+}
+getPartners();
 //Convert zipcode to lat, long 
 
 async function getCoordinates(name, zipcode){
-  var coordinate = [];
-  fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address="+zipcode)
-    .then(response => {
-      return response.json();
-    })
-      .then(data => {
-      const latitude = data.results[0].geometry.location.lat;
-      const longitude = data.results[0].geometry.location.lng;
-      coordinate = [latitude, longitude];
-      stores.push([name, latitude, longitude] );
-      initMap();
-      console.info({latitude, longitude});
-      return coordinate;
+    var coordinate = [];
+    
+    try{
+      const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address="+zipcode)
+      const data = await response.json();
   
+      if(data.result.length > 0 ){
+        const latitude = data.results[0].geometry.location.lat;
+        const longitude = data.results[0].geometry.location.lng;
+        coordinate = [latitude, longitude];
+        stores.push([name, latitude, longitude] );
+        console.info({latitude, longitude});
+    }
+        return coordinate;
+    }
+      catch (err) {
+          console.error(err);
+      }  
+  }
+
+
+function updateCoord(id, coordinate){
+    const partnersRef = db.collection("partners")
+
+    //
+    partnersRef.doc(id).set({
+    latitude: coordinate[0],
+    longitude: coordinate[1]
+    }, {merge: true})
+    .then((docRef) => {
+        if (docRef) {
+        console.error("Success edit user.");
+        }
     })
+    .catch((error) => {
+        console.error("Error edit user: ", error);
+    })
+
 }
+
+//update lat and long to database (0321 modified by hyewon)
+
+async function renderData(doc){
+    if (doc.data().zipcode != undefined && doc.data().zipcode != "" ){
+    
+        if (doc.data().latitude == undefined){
+            console.error(zipcode);
+            var coordi = await getCoordinates(doc.data().storeName, doc.data().zipcode);
+            console.error(coordi);
+            console.error(doc.data().storeName);
+            if(coordi.length > 0){
+            updateCoord(doc.id, coordi);
+            }
+        }
+        else {
+            
+        stores.push([doc.data().storeName, doc.data().latitude, doc.data().longitude]);
+
+        console.error(stores + " --> FROM function renderData()");
+        // doc.data().coordinate = coordi;
+    //   UpdateData(doc.data().partner.storeName);
+            }
+        
+        initMap();
+        // not a good way , it keeps bring data
+        console.error("============partner=====");
+        };
+    }   
 
 // const addressApi = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&libraries=places"
 // async function getapi(url){
@@ -349,9 +495,12 @@ filterCloseButton.addEventListener ("click", () => {
 })
 
 
+
+
 const storeList = document.querySelector('#availableStoreNearby');
 const cityArea = document.getElementById('#location');
-let priceFrom;
+let filterQuery;
+const partnersRef = db.collection('partners');
 
 function renderStoreInfo(doc){
 
@@ -376,8 +525,6 @@ function renderStoreInfo(doc){
             </ul>
             <ul class="pickup_detail" id="pickupDetail">
                 <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
-                <li>from $ ${doc.data().salePrice}
-                </li>
             </ul>
         </li>
     `;
@@ -385,22 +532,42 @@ function renderStoreInfo(doc){
 
 
 
-db.collection('partners').get().then((snapshot) => {
-    snapshot.docs.forEach( doc => {
-        console.log(doc.data());
+// partnersRef.get().then((snapshot) => {
+//     snapshot.docs.forEach( doc => {
+//         // console.log(doc.id);
 
-        let a = doc;
-        renderStoreInfo(a);
+//         availableStores(doc);
 
-        // lowestSalePriceInStore(doc.id);
+//         // lowestSalePriceInStore(doc);
         
-    })
-});
+//     })
+// });
+
+function availableStores(doc) {
+    let availableMeals = 0;
+
+    partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
+        snapshot2.docs.forEach(doc2 => {
+            console.log(doc2.data().menuName);
+            availableMeals = availableMeals + 1;
+        });
+
+        console.log(doc.data().storeName + ' has ' + availableMeals + ' available meals.');
+
+
+        if (availableMeals > 0) {
+            console.log(doc.data());
+            renderStoreInfo(doc);
+        }
+
+    });
+}
+
 
 // function lowestSalePriceInStore(id) {
 //     let salePriceArray = [];
 
-//     db.collection('partners').doc(id).collection('availableMeals').get().then((snapshot) => {
+//     partnersRef.doc(id).collection('partnerAddMeals').get().then((snapshot) => {
 //         snapshot.docs.forEach(doc => {
 //             salePriceArray.push(doc.data().salePrice);
 
@@ -409,9 +576,9 @@ db.collection('partners').get().then((snapshot) => {
 
 //         console.log(Math.min(...salePriceArray));
 
-//         pickupDetail.innerHTML += `<li>from $ ${Math.min(...salePriceArray)}
-//             </li>`;
-//     });
+//         pickupDetail.innerHTML += `<li>from $${Math.min(...salePriceArray)}</li>`;
+//     }).catch(error)
+//         console.log(error);
 
     // const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
 
@@ -430,98 +597,180 @@ function cityAreaSelection(city) {
     storeList.innerHTML = "";
     // let cityArea = document.getElementById('locationSelection');
 
-    db.collection('partners').where('city', '==', city).get().then((snapshot) => {
-        snapshot.forEach( (doc) => {
+    partnersRef.where('city', '==', city).get().then((snapshot) => {
+        snapshot.docs.forEach( doc => {
 
-            renderStoreInfo(doc);
-
+            availableStores(doc);
+            
         })
+
+    })
+    
+    if (city == 'All') {
+        partnersRef.get().then((snapshot2) => {
+            snapshot2.docs.forEach( doc => {
+    
+                availableStores(doc);
+                
+            })
+        })
+    }
+}
+
+
+
+
+
+
+/* APPLYING FILTERS */
+const applyFilterButton = document.getElementById("applyFilterButton");
+let storeTypeArray = [];
+let dietaryArray = [];
+
+
+applyFilterButton.addEventListener('click', (event) => {
+
+    console.log('I clicked #applyFilterButton')
+    
+    let storeTypes = document.querySelectorAll('input[name="storeTypeCheckbox"]:checked');
+    storeTypeArray = [];
+
+    let dietaries = document.querySelectorAll('input[name="dietaryCheckbox"]:checked');
+    dietaryArray = [];
+
+    
+    storeTypes.forEach((storeType) => {
+        storeTypeArray.push(storeType.value);
     });
 
-}
+    dietaries.forEach((dietary) => {
+        dietaryArray.push(dietary.value);
+    });
 
+    // console.log(dietaryArray);
 
-db.collection('partners').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data());
-    })
-});
+    storeTypeFilter(storeTypeArray);
 
-
-
-
-
-const applyFilterButton = document.getElementById("applyFilterButton");
-
-
-applyFilterButton.addEventListener('click', (data) => {
-
-    let storeTypeArray = [restaurantCheckbox.value, cafeCheckbox.value, bakeryCheckbox.value];
+    console.log('SELECTED STORE TYPE FILTERS: >>> ' + storeTypeArray + ' <<<');
 
 });
+  
 
 
+async function storeTypeFilter(a) {
 
+    console.log('SELECTED STORE TYPE FILTERS: ==> ' + a + ' <==');
 
-function storeTypeFilter() {
-    db.collection('partners').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
+    // db.collection('partners').where('storeType', 'in', ['Bakery', 'Restaurant', 'Cafe']).get().then((snapshot) => {
+    //     snapshot.docs.forEach( doc => {
 
-            let store_type = doc.data().storeType;
+    //         // console.log(a);
+    //         console.log(doc.data().storeType);
+    //         console.log(a[0]);
+    //         console.log(a.length);
 
-            console.log(doc.data().storeType);
+    //         for ( let i = 0; i < a.length; i++){
+    //             if (doc.data().storeType == a[i]){
+    //                 console.log(doc.data());
+    //                 console.log(doc.data().storeType);
 
-            if (store_type == 'Restaurant') {
-                renderStoreInfo(doc);
-            } else if (store_type == 'cafe') {
-                renderStoreInfo(doc);
-            } else if (store_type == 'bakery') {
-                renderStoreInfo(doc);
-            }
+    //                 renderStoreInfo(doc);
+                    
+    //             }
+    //         }
 
+            
+    //     })
+        
+
+    // })
+    
+    let query = `"storeType", "in", ${JSON.stringify(a)}`;
+    console.log("++++++  " + query);
+
+    let anArray = [];
+    for (let i = 0; i < a.length; i++) {
+        anArray.push(JSON.stringify(a[i]));
+    }
+
+    console.log('dskndcksd ' + anArray )
+
+    await partnersRef.where('storeType', 'in', anArray ).get()
+    .then((snapshot4) => {
+        // console.log('SNAPSHOT: '+JSON.stringify(snapshot));
+        snapshot4.docs.forEach( doc => {
+
+            // console.log(JSON.stringify(doc));
+            console.log("This is inside the " + JSON.stringify(doc.data().storeName) + "'s document.");
+
+            renderStoreInfo(doc);
+            
         })
+
     })
+    
+    // .catch( (error) => {
+    //     console.error(error);
+    // })
+
+
+
+    // db.collection('partners').where('storeType', 'in', a ).get().then((snapshot) => {
+    //     snapshot.docs.forEach( doc => {
+
+    //         console.log(doc.data());
+    //         renderStoreInfo(doc);
+            
+    //     })
+
+    // })
+
 }
 
+// function dietaryFilter() {
 
-// function storeTypeFilter() {
-//     db.collection('partnerAddMeals').get().then((snapshot) => {
-//         snapshot.docs.forEach( doc => {
-//         let storeTypeArray = [doc.data().restaurant, doc.data().cafe, doc.data().bakery];
+//     console.log(dietaryArray);
+//     console.log('processing dietaryFilter');
 
-//         if(howManyOns(storeTypeArray) == 1) {
-//             if (doc.data().restaurant == 'on') {
-//                 renderStoreInfo(doc);
-//             } else if (doc.data().cafe == 'on') {
-//                 renderStoreInfo(doc);
-//             } else if (doc.data().bakery == 'on') {
-//                 renderStoreInfo(doc);
-//             }
+//     db.collection('partners').where('storeType', 'in', storeTypeArray ).get().then((snapshot) => {
+//         snapshot.docs.forEach(doc3 => {
 
-//         } else if(howManyOns(storeTypeArray) == 2) {
-//             if (doc.data().restaurant == 'on' && doc.data().cafe == 'on') {
-//                 renderStoreInfo(doc);
-//             } else if (doc.data().cafe == 'on' && doc.data().bakery == 'on') {
-//                 renderStoreInfo(doc);
-//             } else if (doc.data().bakery == 'on' && doc.data().restaurant == 'on') {
-//                 renderStoreInfo(doc);
-//             }
+//             console.log('You did it!!');
 
-//         } else {
-//             renderStoreInfo(doc);
+//             console.log(doc3.data());
 
-//         }})
-//     })        
+//             renderStoreInfo(doc3);
+
+//         })
+        
+
+//     })
+
+
 // }
 
-function howManyOns(array) {
-    let count = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] == 'on') {
-            count = count + 1;
-        }
-    }
-    console.log(count);
+
+
+
+// SELECT ALL BUTTON
+function check(checked = true) {
+    let storeTypeCheckboxes = document.querySelectorAll('input[name="storeTypeCheckbox"]');
+    storeTypeCheckboxes.forEach((checkbox) => {
+        checkbox.checked = checked;
+    });
 }
 
-howManyOns(['on', 'on', 'off', 'on', 'off']);
+function checkAll() {
+    console.error('checkAll() is triggered');
+    check();
+    this.onclick = uncheckAll;
+}
+
+function uncheckAll() {
+    console.error('triggered uncheckAll()');
+    check(false);
+    this.onclick = checkAll;
+}
+
+const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
+allStoreTypeBtn.onclick = checkAll;
