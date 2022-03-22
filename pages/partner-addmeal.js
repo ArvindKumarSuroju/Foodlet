@@ -15,12 +15,6 @@ async function handleFormSubmit(e) {
             vegan: addMeal["vegan"].value,
             glutenFree: addMeal["gluten_free"].value,
             halal: addMeal["halal"].value,
-            pickUpDate: addMeal["pickup_date"].value,
-            vegan: addMeal["pickup_time"].value,
-            glutenFree: addMeal["gluten_free"].value,
-            halal: addMeal["halal"].value,
-            pickUpDate: addMeal["pickup_date"].value,
-            pickUpTime: addMeal["pickup_time"].value,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
             storeType: addMeal["storeType"].value,
@@ -38,12 +32,6 @@ async function handleFormSubmit(e) {
             vegan: addMeal["vegan"].value,
             glutenFree: addMeal["gluten_free"].value,
             halal: addMeal["halal"].value,
-            pickUpDate: addMeal["pickup_date"].value,
-            vegan: addMeal["pickup_time"].value,
-            glutenFree: addMeal["gluten_free"].value,
-            halal: addMeal["halal"].value,
-            pickUpDate: addMeal["pickup_date"].value,
-            pickUpTime: addMeal["pickup_time"].value,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
             storeType: addMeal["storeType"].value,
@@ -151,8 +139,6 @@ function setFormData(mealData) {
     addMeal["vegan"].value = mealData.vegan;
     addMeal["gluten_free"].value = mealData.glutenFree;
     addMeal["halal"].value = mealData.halal;
-    addMeal["pickup_date"].value = mealData.pickUpDate;
-    addMeal["pickup_time"].value = mealData.pickUpTime;
     addMeal["food_weight"].value = mealData.foodWeight;
     addMeal["storeType"].value = mealData.storeType;
     addMeal["quantity"].value = mealData.quantity;
