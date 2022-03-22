@@ -493,6 +493,7 @@ filterCloseButton.addEventListener ("click", () => {
 
     filterList.classList.toggle("show-filter");
 })
+ 
 
 
 
@@ -760,17 +761,21 @@ function check(checked = true) {
     });
 }
 
-function checkAll() {
-    console.error('checkAll() is triggered');
+function checkAllfn() {
+    
     check();
-    this.onclick = uncheckAll;
+    this.onclick = uncheckAllfn;
+
+    return (console.error('checkAll() is triggered'));
 }
 
-function uncheckAll() {
-    console.error('triggered uncheckAll()');
+function uncheckAllfn() {
+    
     check(false);
-    this.onclick = checkAll;
+    this.onclick = checkAllfn;
+
+    return (console.error('triggered uncheckAll()'));
 }
 
 const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
-allStoreTypeBtn.onclick = checkAll;
+allStoreTypeBtn.onclick = checkAllfn;
