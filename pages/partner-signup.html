@@ -37,8 +37,7 @@
                     <span><i class="fa-solid fa-pen"></i></span>
                 </div>
                 <div class="partner-signup-editpicture">
-                    <img src="https://picsum.photos/200/200/?random=88" id="partner-signup-profilepicture">
-                    <span><a href="#">edit picture</a></span>
+                    <img src="../images/app-icon.jpg" id="partner-signup-profilepicture">
                 </div>
 
 
@@ -55,6 +54,10 @@
                         <input type="text" id="partner_signup_fullname" name="partner-signup-fullname" required>
                     </div>
                     <div class="inside-form">
+                        <label for="partner_signup_email">Email*</label>
+                        <input type="text" id="partner_signup_email" name="partner-signup-email" required>
+                    </div>
+                    <div class="inside-form">
                         <label for="partner_signup_password">Password*</label>
                         <input type="password" id="partner_signup_password" name="partner-signup-password" required>
                     </div>
@@ -63,13 +66,33 @@
                         <input type="text" id="partner_signup_storename" name="partner-signup-storename" required>
                     </div>
                     <div class="inside-form">
+                        <label for="partner_signup_storetype">Store Type*</label>
+                        <select id="partner_signup_storetype" name="partner-signup-storetype" required>
+                            <option>Select a Store Type</option>
+                            <option value="Restaurant">Restaurant</option>
+                            <option value="Cafe">Cafe</option>
+                            <option value="Bakery">Bakery</option>
+                            <!-- <option value="Uncategorized">Uncategorized</option> -->
+                        </select>
+                    </div>
+                    <div class="inside-form">
+                        <label for="pickup_time" class="form-subject">Pick-up Time</label>
+                        <input id="pickup_time" name="pickup-time" type="time">
+                    </div>
+                    <div class="inside-form">
                         <label for="partner_signup_storeaddress">Store Address*</label>
                         <input type="text" id="partner_signup_storeaddress" name="partner-signup-storeaddress" required>
                     </div>
                     <div class="two-column">
                         <div class="inside-form">
                             <label for="partner_signup_city">City*</label>
-                            <input type="text" id="partner_signup_city" name="partner-signup-city" required>
+                            <select id="partner_signup_city" name="partner-signup-city">
+                                <option value="All">Select a City</option>
+                                <option value="Vancouver">Vancouver</option>
+                                <option value="Burnaby">Burnaby</option>
+                                <option value="Richmond">Richmond</option>
+                                <option value="Surrey">Surrey</option>
+                            </select>
                         </div>
                         <div class="inside-form">
                             <label for="partner_signup_zipcode">Zip Code*</label>
@@ -80,10 +103,7 @@
                         <label for="partner_signup_phonenumber">Phone Number*</label>
                         <input type="tel" id="partner_signup_phonenumber" name="partner-signup-phonenumber" required>
                     </div>
-                    <div class="inside-form">
-                        <label for="partner_signup_email">Email*</label>
-                        <input type="text" id="partner_signup_email" name="partner-signup-email" required>
-                    </div>
+                    
                     <p>*Required field</p>
                     <div class="checkbox">
                         <input type="checkbox" id="partner_signup_termsagreement" name="partner-signup-termsagreement" required>

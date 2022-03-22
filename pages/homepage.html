@@ -112,20 +112,21 @@
                     <div> 
                         <div class="filter_title">
                             <h3 class="category">Category</h3>
-                            <button id="selectAllStoreTypeButton"onclick="selectAllStoreType()">select all</button>
+                            <button id="selectAllStoreTypeButton" onclick="selectAllStoreType()">select all</button>
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox">
+                            <input type="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox" value="Restaurant">
                             <label for="restaurantCheckbox">Restaurant</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="storeTypeCheckbox" id="cafeCheckbox">
+                            <input type="checkbox" name="storeTypeCheckbox" id="cafeCheckbox" value="Cafe">
                             <label for="cafeCheckbox">Cafe</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox">
+                            <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox" value="Bakery">
                             <label for="bakeryCheckbox">Bakery</label>
                         </div>
+                        
                     </div>
     
                     <div>
@@ -325,7 +326,7 @@
 
 
 
-                <li class="store1 store_list">
+                <!-- <li class="store1 store_list">
                         <ul class="store_detail">
                             <li class="store_img">
                                 <img src="../resources/Logo/Favicon.png" alt="" class="round">
