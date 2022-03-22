@@ -37,8 +37,7 @@
                     <span><i class="fa-solid fa-pen"></i></span>
                 </div>
                 <div class="partner-signup-editpicture">
-                    <img src="https://picsum.photos/200/200/?random=88" id="partner-signup-profilepicture">
-                    <span><a href="#">edit picture</a></span>
+                    <img src="../images/app-icon.jpg" id="partner-signup-profilepicture">
                 </div>
 
 
@@ -77,13 +76,23 @@
                         </select>
                     </div>
                     <div class="inside-form">
+                        <label for="pickup_time" class="form-subject">Pick-up Time</label>
+                        <input id="pickup_time" name="pickup-time" type="time">
+                    </div>
+                    <div class="inside-form">
                         <label for="partner_signup_storeaddress">Store Address*</label>
                         <input type="text" id="partner_signup_storeaddress" name="partner-signup-storeaddress" required>
                     </div>
                     <div class="two-column">
                         <div class="inside-form">
                             <label for="partner_signup_city">City*</label>
-                            <input type="text" id="partner_signup_city" name="partner-signup-city" required>
+                            <select id="partner_signup_city" name="partner-signup-city">
+                                <option value="All">Select a City</option>
+                                <option value="Vancouver">Vancouver</option>
+                                <option value="Burnaby">Burnaby</option>
+                                <option value="Richmond">Richmond</option>
+                                <option value="Surrey">Surrey</option>
+                            </select>
                         </div>
                         <div class="inside-form">
                             <label for="partner_signup_zipcode">Zip Code*</label>
