@@ -81,12 +81,6 @@ footer {
     border-radius: 10px;
 }
 
-.button a {
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-}
-
 a {
     color: #F19737;
     font-weight: 600;
@@ -183,7 +177,7 @@ label {
     display: flex;
     flex-grow: 1;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
 }
 
 
@@ -307,5 +301,5 @@ label {
      padding-left: .75rem;
  }
     
-
+     
 }

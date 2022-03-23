@@ -18,7 +18,8 @@ Router.init('mainArea', [
     new Page('#storeinfo', 'pages/storeinfo.html'),
     new Page('#notifications', 'pages/notifications.html'),
     new Page('#filter', 'pages/filter.html'),
-
+    new Page('#cart', 'pages/cart.html'),
+    new Page('#orderConfirm', 'pages/orderConfirm.html'),
     new Page('#partner-editmeal', 'pages/partner-editmeal.html')
 
 ]);

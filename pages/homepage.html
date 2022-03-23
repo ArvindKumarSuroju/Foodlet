@@ -92,7 +92,7 @@
                 <fieldset>
                     <label>Select your city</label>
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
-                            <option value="None">Select a City</option>
+                            <option value="All">Select a City</option>
                             <option value="Vancouver">Vancouver</option>
                             <option value="Burnaby">Burnaby</option>
                             <option value="Richmond">Richmond</option>
@@ -104,26 +104,31 @@
         </div>
         <!--Filter-->
         <div id="filter" class="page">
+
+
             <h2 class="subbar_title">Filter</h2><a id="filter-close" class="close">close</a>
             <div class="">
+
                 <form class="filter_cate">
                     <div> 
                         <div class="filter_title">
-                            <h3 class="category">Category</h3>
-                            <button id="selectAllStoreTypeButton"onclick="selectAllStoreType()">select all</button>
+                            <h3 class="category">Store Type</h3>
+                            <button id="selectAllStoreTypeButton">select all</button>
                         </div>
                         <div>
-                            <input type="checkbox" class="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox">
+                            <input type="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox" value="Restaurant">
                             <label for="restaurantCheckbox">Restaurant</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="storeTypeCheckbox" id="cafeCheckbox">
+                            <input type="checkbox" name="storeTypeCheckbox" id="cafeCheckbox" value="Cafe">
                             <label for="cafeCheckbox">Cafe</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox">
+                            <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox" value="Bakery">
                             <label for="bakeryCheckbox">Bakery</label>
                         </div>
+                        
+
                     </div>
     
                     <div>
@@ -156,11 +161,13 @@
                         <div class="filter_title">
                             <h3 class="distance">Distance</h3>
                         </div>
-                        <div><input type="radio">
-                            <label>1km</label>
+
+                        <div><input type="radio" name="distanceCheckbox" id="oneKM" value="1">
+                            <label for="oneKM">1km</label>
+
                         </div>
-                        <div><input type="radio">
-                            <label>3km</label>
+                        <div><input type="radio" name="distanceCheckbox" id="threeKM" value="3">
+                            <label for="threeKM">3km</label>
                         </div>
                         <div><input type="radio">
                             <label>5km</label>
@@ -187,7 +194,7 @@
             <!--map -->
 
         </div>
-        <div class="inner">
+        <div class="">
             <h4 class="available_title">Availables Stores Nearby</h4>
             <!--store part 500%-->
             <div class="store_container">
@@ -439,11 +446,12 @@
 
                 <!-- </ul>
                 </div>
+                
                 <button id="prev">Prev</button>
                 <button id="next">Next</button>
                 </div> -->
     </main>
-    <footer class="copyright">
+    <!-- <footer class="copyright">
         <span>
                 &copy;2022 FOODLET. ALL RIGHTS RESERVED.
             </span>
