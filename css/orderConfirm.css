@@ -43,3 +43,11 @@ main>p {
     width: 88px;
     height: 88px;
 }
+
+/*Desktop version*/
+@media (min-width: 1000px) {
+    .inner {
+        width: 80%;
+        max-width: 800px;
+    }
+}

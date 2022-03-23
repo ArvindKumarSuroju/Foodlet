@@ -43,15 +43,15 @@ const sidebar = document.querySelector("#sidebar");
 const closeBtn = document.querySelector(".side_close");
 let displayAvailableStores = [];
 
-menuBtn.addEventListener('click',()=>{
-    if (sidebar.classList.contains('on')){
+menuBtn.addEventListener('click', () => {
+    if (sidebar.classList.contains('on')) {
         sidebar.classList.remove('on');
     } else {
         sidebar.classList.add('on');
     }
 });
 
-closeBtn.addEventListener('click',()=>{
+closeBtn.addEventListener('click', () => {
     sidebar.classList.remove('on');
 });
 //Filter
@@ -61,20 +61,20 @@ const filter = document.querySelector("#filter");
 const ExitBtn = document.querySelector(".close");
 
 
-filterBtn.addEventListener('click',()=>{
-  if (filter.classList.contains('on')){
+filterBtn.addEventListener('click', () => {
+    if (filter.classList.contains('on')) {
         filter.classList.remove('on');
-  } else {
-      filter.classList.add('on');
-  }
+    } else {
+        filter.classList.add('on');
+    }
 });
 
-ExitBtn.addEventListener('click',()=>{
+ExitBtn.addEventListener('click', () => {
     filter.classList.remove('on');
 });
 
 //Slider //
- 
+
 const carouselSlide = document.querySelector(".stores_slide");
 const carouselStore = document.querySelectorAll(".stores_slide>li");
 
@@ -107,16 +107,16 @@ const nextBtn = document.querySelector("#next");
 // })
 
 
-carouselSlide.addEventListener('transitionend',()=>{
-    if(carouselStore[counter].id === 'last_clone'){
+carouselSlide.addEventListener('transitionend', () => {
+    if (carouselStore[counter].id === 'last_clone') {
         carouselSlide.style.transition = "none";
-        counter = carouselStore.length -2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+        counter = carouselStore.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
-    if(carouselStore[counter].id === 'first_clone'){
+    if (carouselStore[counter].id === 'first_clone') {
         carouselSlide.style.transition = "none";
         counter = carouselStore.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter )+ 'px)';
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
 });
 
@@ -125,6 +125,7 @@ let mainMap;
 
 
 //First display of map
+
  function initMap() {
  
   
@@ -151,14 +152,15 @@ let mainMap;
     
 //   }  
     console.error("==============" + stores.length);
+
     var firstStoreCode = stores[0];
     mainMap.setCenter(new google.maps.LatLng(firstStoreCode[1], firstStoreCode[2]));
 
-  // map.addEventListener('DOMContentLoadedM', (e)=>{
-  //   initMap();
-  // })
+    // map.addEventListener('DOMContentLoadedM', (e)=>{
+    //   initMap();
+    // })
 
-  // addMarker();
+    // addMarker();
 
 
 }
@@ -179,11 +181,11 @@ let mainMap;
 
 //change the location
 var locationSelect = {
-  'Vancouver': '49.27883133919559, -123.13434156509084',
-  'Burnaby': '49.247165406526435, -122.98247547491722',
-  'Richmond': '49.17147782913937, -123.13133664398394',
-  'Surrey': '49.1932788458098, -122.84774023807589'
-}; 
+    'Vancouver': '49.27883133919559, -123.13434156509084',
+    'Burnaby': '49.247165406526435, -122.98247547491722',
+    'Richmond': '49.17147782913937, -123.13133664398394',
+    'Surrey': '49.1932788458098, -122.84774023807589'
+};
 
 async function fetchAvailableStores(city) {
 
@@ -268,16 +270,30 @@ async function changeMap(city) {
 //     }
 
 
-  cityAreaSelection(city);
+    var coords = locationSelect[city].split(',');
+    await new google.maps.Marker({
+        position: await new google.maps.LatLng(coords[0], coords[1]),
+        map: mainMap,
+        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        title: city
+    });
+    await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
+
+
+    cityAreaSelection(city);
 
 }
+
 var stores = [];
 
 
 
-var storeDataList =  document.querySelector("#dataTemplate");
+
+
+var storeDataList = document.querySelector("#dataTemplate");
 
 // //update lat and long to database
+
 
 // async function renderData(doc){
 
@@ -340,6 +356,41 @@ await db.collection('partners').get().then((snapshot)=>{
 
   })
   
+
+function renderData(doc) {
+    // let li = document.createElement('li');
+    // let name  = document.createElement('span');
+    // let zipcode = document.createElement('span');
+
+    // li.setAttribute('data-id', doc.id);
+    // name.textContent = doc.data().partner.storeName;
+    // zipcode.textContent = doc.data().partner.zipcode;
+
+    if (doc.data().partner.coordinate == null ||
+        doc.data().partner.coordinate[0] == "") { var coordi = getCoordinates(doc.data().partner.storeName, doc.data().partner.zipcode); } else {
+        coordinate = [latitude, longitude];
+        stores.push([doc.data().partner.storeName, doc.data().partner.coordinate[0], doc.data().partner.coordinate[1]]);
+    }
+    doc.data().partner.coordinate = coordi;
+}
+// li.appendChild(name);
+// li.appendChild(zipcode);
+
+// storeDataList.appendChild(li);
+
+db.partner
+db.collection('partnerAddMeals').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        renderData(doc);
+        doc.update();
+
+
+    })
+
+
+    initMap();
+    // addMarker();
+
 });
 }
 getPartners();
@@ -370,6 +421,7 @@ async function getCoordinates(name, zipcode){
 function updateCoord(id, coordinate){
     const partnersRef = db.collection("partners")
 
+
     //
     partnersRef.doc(id).set({
     latitude: coordinate[0],
@@ -383,6 +435,7 @@ function updateCoord(id, coordinate){
     .catch((error) => {
         console.error("Error edit user: ", error);
     })
+
 
 }
 
@@ -432,7 +485,7 @@ async function renderData(doc){
 // autocomplete.addListener('place_changed', function () {
 // var place = autocomplete.getPlace();
 // // place variable will have all the information you are looking for.
- 
+
 //   document.getElementById("latitude").value = place.geometry['location'].lat();
 //   document.getElementById("longitude").value = place.geometry['location'].lng();
 // });
@@ -484,12 +537,12 @@ var filterOpenButton = document.getElementById('filterBtn');
 var filterCloseButton = document.getElementById('filter-close');
 var filterList = document.getElementById("filter");
 
-filterOpenButton.addEventListener ("click", () => {
+filterOpenButton.addEventListener("click", () => {
 
     filterList.classList.toggle("show-filter");
 })
 
-filterCloseButton.addEventListener ("click", () => {
+filterCloseButton.addEventListener("click", () => {
 
     filterList.classList.toggle("show-filter");
 })
@@ -503,7 +556,7 @@ const cityArea = document.getElementById('#location');
 let filterQuery;
 const partnersRef = db.collection('partners');
 
-function renderStoreInfo(doc){
+function renderStoreInfo(doc) {
 
     let p = doc.data().partnerSignupProfilePicture;
 
@@ -518,7 +571,7 @@ function renderStoreInfo(doc){
             <ul class="store_detail">
                 <li class="store_img"><img src="${p}" width="50px" class="round"></li>
                 <li>
-                    <h5 class="text_title text_color_primary store_name">${doc.data().storeName}</h5>
+                    <h5 class="text_title text_color_primary store_name" onclick="goToStoreInfo('${doc.id}')">${doc.data().storeName}</h5>
                     <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
                     <span class="rate"><i class="fas fa-star">x.x</i></span>
                 </li>
@@ -533,11 +586,16 @@ function renderStoreInfo(doc){
 
 
 
+
 // partnersRef.get().then((snapshot) => {
 //     snapshot.docs.forEach( doc => {
 //         // console.log(doc.id);
 
+
+
+
 //         availableStores(doc);
+
 
 //         // lowestSalePriceInStore(doc);
         
@@ -565,6 +623,7 @@ function availableStores(doc) {
 }
 
 
+
 // function lowestSalePriceInStore(id) {
 //     let salePriceArray = [];
 
@@ -581,15 +640,15 @@ function availableStores(doc) {
 //     }).catch(error)
 //         console.log(error);
 
-    // const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
+// const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
 
-    // snapshot.docs.forEach( doc => {
-    //     salePriceArray.push(parseFloat(doc.data().salePrice));
+// snapshot.docs.forEach( doc => {
+//     salePriceArray.push(parseFloat(doc.data().salePrice));
 
-    // })
-    // console.log(salePriceArray);
+// })
+// console.log(salePriceArray);
 
-    // console.log(Math.min(...salePriceArray));
+// console.log(Math.min(...salePriceArray));
 
 // }
 
@@ -598,8 +657,13 @@ function cityAreaSelection(city) {
     storeList.innerHTML = "";
     // let cityArea = document.getElementById('locationSelection');
 
+
     partnersRef.where('city', '==', city).get().then((snapshot) => {
         snapshot.docs.forEach( doc => {
+
+   
+
+          
 
             availableStores(doc);
             
@@ -777,5 +841,19 @@ function uncheckAllfn() {
     return (console.error('triggered uncheckAll()'));
 }
 
+
 const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
 allStoreTypeBtn.onclick = checkAllfn;
+
+howManyOns(['on', 'on', 'off', 'on', 'off']);
+
+
+
+// Arvind Code Store List trigger
+
+function goToStoreInfo(docIdStore) {
+    console.log(docIdStore);
+    sharedDataId["HomepageStoreDocumentId"] = docIdStore;
+    location.href = "#storeinfo"
+}
+
