@@ -287,7 +287,7 @@ async function changeMap(city) {
     await new google.maps.Marker({
         position: await new google.maps.LatLng(coords[0], coords[1]),
         map: mainMap,
-        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        icon: '',
         title: city
     });
     await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
@@ -943,10 +943,10 @@ async function storeTypeFilter(a) {
 
 // Arvind Code Store List trigger
 
-// function goToStoreInfo(docIdStore) {
-//     console.log(docIdStore);
-//     sharedDataId["HomepageStoreDocumentId"] = docIdStore;
-//     location.href = "#storeinfo";
-// }
+function goToStoreInfo(docIdStore) {
+    console.log(docIdStore);
+    sharedDataId["HomepageStoreDocumentId"] = docIdStore;
+    location.href = "#storeinfo";
+}
 
 
