@@ -108,7 +108,10 @@ header i {
 /*  STORE BASIC INFO */
 .storeinfo-basicinfo {
     text-align: center;
-    margin: 0 13px;
+    margin: 0 15px;
+    display: grid;
+    gap: 0.75rem;
+    margin-top:15px;
 }
 
 .storeinfo-basicinfo h2 {
@@ -135,7 +138,7 @@ i.fa-star, i.fa-smile {
 .two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    gap: 0.75rem;
     font-size: 16px;
     font-weight: 500
 }
@@ -146,21 +149,23 @@ i.fa-star, i.fa-smile {
 
 #pickup-time-output, #partner-signup-storeaddress-output {
     grid-column: -1/1;
+    text-align:left;
 }
-
-
-
-
 
 /*  AVAILABLE MEAL LIST */
 .storeinfo-availablemeallist {
     border-top: #51CF67 solid 1px;
-    border-bottom: #51CF67 solid 1px;
+    /* border-bottom: #51CF67 solid 1px; */
 
-    padding: 13px 0;
-    margin: 18px 13px;
+    padding: 15px 0;
+    margin: 24px 15px;
 
     text-align: center;
+
+    display: grid;
+    flex-flow:column nowrap;
+    grid-gap: 1rem;
+    align-items:center;
 }
 
 .storeinfo-availablemeallist h3 {
@@ -184,13 +189,15 @@ i.fa-star, i.fa-smile {
 }
 
 .availablemeal {
-    padding: 13px;
-
+    padding: 15px;
     text-align: left;
+    border: 1px solid #CBE2D5;
+    border-radius: 10px;
+    height: 100%;
 }
 
 .availablemeal p, .availablemeal span {
-    margin: 0;
+    margin: 0.25rem 0;
     font-size: 14px;
 }
 
@@ -215,7 +222,10 @@ i.fa-star, i.fa-smile {
 }
 
 .mealinfo-layout {
-    display: flex;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 72px 3fr;
+    align-items: center;
 }
 
 .mealinfo-text {
@@ -258,14 +268,31 @@ i.fa-star, i.fa-smile {
 }
 
 #storeinfo-addtocartbutton {
-    color: white;
+    display: inline-block;
+    border: none;
+    border-radius:10px;
+    padding: 1rem 2rem;
+    margin: auto;
+    width:200px;
+    text-decoration: none;
+    background: #2e8b56;
+    color: #ffffff;
+    font-family: "Poppins",sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* color: white;
     border: none;
     border-radius: 10px;
     background: #2E8B56;
     
     width: 187px;
     height: 48px;
-    margin: 9px;
+    margin: 9px; */
+
 }
 
 #storeinfo-quantity {
@@ -275,6 +302,12 @@ i.fa-star, i.fa-smile {
 #updated-availability-output {
     display: flex;
     align-items: center;
+}
+
+.dietary {
+    color: #2E8B56;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 
@@ -313,10 +346,14 @@ i.fa-star, i.fa-smile {
 
 /*  FOOTER */
 footer {
-    background: #00615B;
+    background-color: #00615b;
     color: white;
     text-align: center;
-    padding: 5.75px;
+    font-size: 13px;
+    line-height: 30px;
+    height: 30px;
+    font-weight: light;
+    box-sizing: border-box;
 }
 
 
@@ -349,12 +386,12 @@ footer {
         height: 120px;
     }
 
-    .storeinfo-basicinfo {
+    /* .storeinfo-basicinfo {
         padding-bottom: 36px;
-    }
+    } */
 
     .storeinfo-basicinfo .two-columns {
-        padding: 0 50px;
+        /* padding: 0 50px; */
         text-align: left;
     }
 
@@ -382,6 +419,7 @@ footer {
     .storeinfo-availablemeallist {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
     }
 
     .storeinfo-availablemeallist h3, #storeinfo-addtocartbutton {
@@ -389,8 +427,8 @@ footer {
     }
 
     .storeinfo-availablemeallist h3 {
-        font-size: 32px;
-        margin: 30px 0;
+        font-size: 20px;
+        /* margin: 30px 0; */
     }
 
     #storeinfo-addtocartbutton {
@@ -399,7 +437,6 @@ footer {
         margin-bottom: 20px;
 
         font-size: 20px;
-        font-weight: 700;
     }
 
     .menu-details-output {
