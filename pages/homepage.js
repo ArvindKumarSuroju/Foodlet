@@ -339,18 +339,19 @@ async function renderData(doc){
  
 
 
-async function getPartners(){
-await db.collection('partners').get().then((snapshot)=>{
-  snapshot.docs.forEach(doc =>{
+// async function getPartners(){
+// await db.collection('partners').get().then((snapshot)=>{
+//   snapshot.docs.forEach(doc =>{
     
-    renderData(doc)  
+//     renderData(doc)  
 
-  })
+//   })
   
-  // addMarker();
-});
-}
-getPartners();
+//   // addMarker();
+// });
+// }
+
+// getPartners();
 
 function updateCoord(id, coordinate){
 const partnersRef = db.collection("partners")
@@ -413,30 +414,32 @@ var storeDataList = document.querySelector("#dataTemplate");
 
 //Pull the 'partners' database
 async function getPartners(){
-await db.collection('partners').get().then((snapshot)=>{
-  snapshot.docs.forEach(doc =>{
+    await db.collection('partners').get().then((snapshot)=> {
+        snapshot.docs.forEach(doc =>{
 
-    let availableMeals = 0;
+            let availableMeals = 0;
 
-    db.collection('partners').doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
-        snapshot2.docs.forEach(doc2 => {
-            console.log(doc2.data().menuName);
-            availableMeals = availableMeals + 1;
-        });
+            db.collection('partners').doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
+                snapshot2.docs.forEach(doc2 => {
+                    console.log(doc2.data().menuName);
+                    availableMeals = availableMeals + 1;
+                });
 
-        console.log(doc.data().storeName + ' has ' + availableMeals + ' available meals.');
-        
+                console.log(doc.data().storeName + ' has ' + availableMeals + ' available meals.');
+                
 
 
-        if (availableMeals > 0) {
-            console.error("RENDER DATA FUCTION IS WORKING");
-            renderData(doc)  
-        }
+                if (availableMeals > 0) {
+                    console.error("RENDER DATA FUCTION IS WORKING");
+                    renderData(doc)  
+                }
 
-    });
-    
+            });
+            
 
-  })
+        })
+    })
+}
   
 
 function renderData(doc) {
@@ -475,7 +478,7 @@ db.collection('partnerAddMeals').get().then((snapshot) => {
     // addMarker();
 
 });
-}
+
 getPartners();
 //Convert zipcode to lat, long 
 
@@ -652,14 +655,6 @@ function renderStoreInfo(doc){
         p = "../resources/Logo/Favicon.png";
     }
 
-    let p = doc.data().partnerSignupProfilePicture;
-
-    if (p != undefined) {
-        p = doc.data().partnerSignupProfilePicture;
-    } else {
-        p = "../resources/Logo/Favicon.png";
-    }
-
     storeList.innerHTML += `
         <li id="${doc.id}" class="store_list">
             <ul class="store_detail">
@@ -758,17 +753,8 @@ function cityAreaSelection(city) {
     storeList.innerHTML = "";
     // let cityArea = document.getElementById('locationSelection');
 
-
-    db.collection('partners').where('city', '==', city).get().then((snapshot) => {
-        snapshot.forEach( (doc) => {
-
-
     partnersRef.where('city', '==', city).get().then((snapshot) => {
-        snapshot.docs.forEach( doc => {
-
-   
-
-          
+        snapshot.docs.forEach( doc => {         
 
             availableStores(doc);
             
@@ -923,44 +909,44 @@ async function storeTypeFilter(a) {
 
 
 // SELECT ALL BUTTON
-function check(checked = true) {
-    let storeTypeCheckboxes = document.querySelectorAll('input[name="storeTypeCheckbox"]');
-    storeTypeCheckboxes.forEach((checkbox) => {
-        checkbox.checked = checked;
-    });
-}
+// function check(checked = true) {
+//     let storeTypeCheckboxes = document.querySelectorAll('input[name="storeTypeCheckbox"]');
+//     storeTypeCheckboxes.forEach((checkbox) => {
+//         checkbox.checked = checked;
+//     });
+// }
 
-function checkAllfn() {
+// function checkAllfn() {
     
-    check();
-    this.onclick = uncheckAllfn;
+//     check();
+//     this.onclick = uncheckAllfn;
 
-    return (console.error('checkAll() is triggered'));
-}
+//     return (console.error('checkAll() is triggered'));
+// }
 
-function uncheckAllfn() {
+// function uncheckAllfn() {
     
-    check(false);
-    this.onclick = checkAllfn;
+//     check(false);
+//     this.onclick = checkAllfn;
 
-    return (console.error('triggered uncheckAll()'));
-}
+//     return (console.error('triggered uncheckAll()'));
+// }
 
 
-const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
-allStoreTypeBtn.onclick = checkAllfn;
+// const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
+// allStoreTypeBtn.onclick = checkAllfn;
 
-howManyOns(['on', 'on', 'off', 'on', 'off']);
+// howManyOns(['on', 'on', 'off', 'on', 'off']);
 
 
 
 
 // Arvind Code Store List trigger
 
-function goToStoreInfo(docIdStore) {
-    console.log(docIdStore);
-    sharedDataId["HomepageStoreDocumentId"] = docIdStore;
-    location.href = "#storeinfo"
-}
+// function goToStoreInfo(docIdStore) {
+//     console.log(docIdStore);
+//     sharedDataId["HomepageStoreDocumentId"] = docIdStore;
+//     location.href = "#storeinfo";
+// }
 
 
