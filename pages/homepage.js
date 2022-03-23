@@ -943,10 +943,10 @@ async function storeTypeFilter(a) {
 
 // Arvind Code Store List trigger
 
-// function goToStoreInfo(docIdStore) {
-//     console.log(docIdStore);
-//     sharedDataId["HomepageStoreDocumentId"] = docIdStore;
-//     location.href = "#storeinfo";
-// }
+function goToStoreInfo(docIdStore) {
+    console.log(docIdStore);
+    sharedDataId["HomepageStoreDocumentId"] = docIdStore;
+    location.href = "#storeinfo";
+}
 
 
