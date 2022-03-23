@@ -14,21 +14,18 @@ async function handleFormSubmit(e) {
         // const userData = await db.collection("partners").doc(auth.currentUser.uid).get();
         // // alert("test");
         // console.log('added meal');
+
     if (sharedDataId['partnerHomedocumentId']) {
         
         await db.collection("partners").doc(auth.currentUser.uid).collection('partnerAddMeals').doc(sharedDataId['partnerHomedocumentId']).set({
             menuName: addMeal["menu_name"].value,
             originalPrice: addMeal["original_price"].value,
             salePrice: addMeal["sale_price"].value,
-            // nonVegetarian: addMeal["non_vegetarian"].value,
-            // vegetarian: addMeal["vegetarian"].value,
-            // vegan: addMeal["vegan"].value,
-            // glutenFree: addMeal["gluten_free"].value,
-            // halal: addMeal["halal"].value,
+      
             dietary: dietaryArray,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
-            // storeType: addMeal["storeType"].value,
+         
             menuDetails: addMeal["menu_details"].value,
             imageUrl: document.getElementById('addmeal_photo').value ? await uploadData() : document.getElementById('mealImage').src
         })
@@ -41,17 +38,14 @@ async function handleFormSubmit(e) {
             menuName: addMeal["menu_name"].value,
             originalPrice: addMeal["original_price"].value,
             salePrice: addMeal["sale_price"].value,
-            // nonVegetarian: addMeal["non_vegetarian"].checked,
-            // vegetarian: addMeal["vegetarian"].checked,
-            // vegan: addMeal["vegan"].checked,
-            // glutenFree: addMeal["gluten_free"].checked,
-            // halal: addMeal["halal"].checked,
+            
             dietary: dietaryArray,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
-            // storeType: addMeal["storeType"].value,
+           
             menuDetails: addMeal["menu_details"].value,
             imageUrl: await uploadData()
+
 
         })
     }

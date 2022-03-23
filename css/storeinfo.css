@@ -99,7 +99,10 @@ header i {
 
 .storeinfo-basicinfo {
     text-align: center;
-    margin: 0 13px;
+    margin: 0 15px;
+    display: grid;
+    gap: 0.75rem;
+    margin-top:15px;
 }
 
 .storeinfo-basicinfo h2 {
@@ -126,6 +129,9 @@ i.fa-smile {
 .two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    gap: 0.75rem;
+
     font-size: 16px;
     font-weight: 500
 }
@@ -137,7 +143,7 @@ i.fa-smile {
 #pickup-time-output,
 #partner-signup-storeaddress-output {
     grid-column: -1/1;
-    text-align: left;
+    text-align:left;
 }
 
 
@@ -150,9 +156,10 @@ i.fa-smile {
     margin: 24px 15px;
     text-align: center;
     display: grid;
-    flex-flow: column nowrap;
+    flex-flow:column nowrap;
     grid-gap: 1rem;
-    align-items: center;
+    align-items:center;
+
 }
 
 .storeinfo-availablemeallist h3 {
@@ -180,10 +187,10 @@ i.fa-smile {
     text-align: left;
     border: 1px solid #CBE2D5;
     border-radius: 10px;
+    height: 100%;
 }
 
-.availablemeal p,
-.availablemeal span {
+.availablemeal p, .availablemeal span {
     margin: 0.25rem 0;
     font-size: 14px;
 }
@@ -257,18 +264,22 @@ i.fa-smile {
 #storeinfo-addtocartbutton {
     display: inline-block;
     border: none;
-    border-radius: 10px;
+
+    border-radius:10px;
     padding: 1rem 2rem;
-    margin: 0;
+    margin: auto;
+    width:200px;
     text-decoration: none;
     background: #2e8b56;
     color: #ffffff;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins",sans-serif;
+
     font-size: 16px;
     cursor: pointer;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
+
     /* color: white;
     border: none;
     border-radius: 10px;
@@ -277,6 +288,7 @@ i.fa-smile {
     width: 187px;
     height: 48px;
     margin: 9px; */
+
 }
 
 #storeinfo-quantity {
@@ -293,6 +305,7 @@ i.fa-smile {
     font-weight: 700;
     font-size: 16px;
 }
+
 
 
 /*  Review Section */
@@ -358,9 +371,13 @@ footer {
         width: 120px;
         height: 120px;
     }
+
+
     /* .storeinfo-basicinfo {
         padding-bottom: 36px;
     } */
+
+
     .storeinfo-basicinfo .two-columns {
         /* padding: 0 50px; */
         text-align: left;

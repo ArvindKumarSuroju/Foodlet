@@ -138,6 +138,19 @@ let mainMap;
   };
   mainMap = new google.maps.Map(mapCanvas, mapOptions);
 
+
+  var marker, i;
+  for (i =0; i < stores.length; i++){
+    marker =  new google.maps.Marker({
+      position: new google.maps.LatLng(stores[i][1], stores[i][2]),
+      map: mainMap,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      title: "Hello World!",
+    });
+    
+  }  
+    console.error("==============" + stores.length);
+
   console.log('STORES ARRAY: ' +stores);
 
 
@@ -151,8 +164,7 @@ let mainMap;
 //     });
     
 //   }  
-    console.error("==============" + stores.length);
-
+    
     var firstStoreCode = stores[0];
     mainMap.setCenter(new google.maps.LatLng(firstStoreCode[1], firstStoreCode[2]));
 
@@ -238,6 +250,7 @@ async function fetchAvailableStores(city) {
 
 async function changeMap(city) {
     stores.length = 0;
+
     console.log('CHANGE MAP, ' + city);
 
     // HYEWON HAS THE CODE
@@ -282,12 +295,81 @@ async function changeMap(city) {
 
     cityAreaSelection(city);
 
+
 }
 
 var stores = [];
 
 
 
+
+
+async function renderData(doc){
+
+  if (doc.data().coordinate == undefined){
+      var coordi = await getCoordinates(doc.data().storeName, doc.data().zipcode);
+      updateCoord(doc.id, coordi);
+    }
+  else {
+    stores.push([doc.data().storeName, doc.data().latitude[0], doc.data().longitude[1]] );
+    // doc.data().coordinate = coordi;
+//   UpdateData(doc.data().partner.storeName);
+        }
+  initMap();
+  // not a good way , it keeps bring data
+  console.error("============partner=====");
+  };
+
+  
+//   function UpdateData(name) {
+
+//     update(ref(db, "partners/"+ rollbox.value), {
+//        NameOfStd: namebox.value,
+//        Section: secbox.value,
+//        Gender: genbox.value,
+//        Additional: addInfo.value
+//     })
+//     .then(()=>{
+//        alert("data stored successfully");
+//     })
+//     .catch((error)=>{
+//        alert( "unsuccessfule, error" + error);
+//     });
+//  }
+ 
+
+
+async function getPartners(){
+await db.collection('partners').get().then((snapshot)=>{
+  snapshot.docs.forEach(doc =>{
+    
+    renderData(doc)  
+
+  })
+  
+  // addMarker();
+});
+}
+getPartners();
+
+function updateCoord(id, coordinate){
+const partnersRef = db.collection("partners")
+
+//
+partnersRef.doc(id).set({
+  latitude: coordinate[0],
+  longitude: coordinate[1]
+}, {merge: true})
+  .then((docRef) => {
+    if (docRef) {
+      console.error("Success edit user.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error edit user: ", error);
+  })
+
+}
 
 
 var storeDataList = document.querySelector("#dataTemplate");
@@ -388,6 +470,7 @@ db.collection('partnerAddMeals').get().then((snapshot) => {
     })
 
 
+
     initMap();
     // addMarker();
 
@@ -397,6 +480,7 @@ getPartners();
 //Convert zipcode to lat, long 
 
 async function getCoordinates(name, zipcode){
+
     var coordinate = [];
     
     try{
@@ -435,6 +519,7 @@ function updateCoord(id, coordinate){
     .catch((error) => {
         console.error("Error edit user: ", error);
     })
+
 
 
 }
@@ -537,17 +622,18 @@ var filterOpenButton = document.getElementById('filterBtn');
 var filterCloseButton = document.getElementById('filter-close');
 var filterList = document.getElementById("filter");
 
+
 filterOpenButton.addEventListener("click", () => {
 
-    filterList.classList.toggle("show-filter");
-})
-
-filterCloseButton.addEventListener("click", () => {
 
     filterList.classList.toggle("show-filter");
 })
- 
 
+
+filterCloseButton.addEventListener ("click", () => {
+
+    filterList.classList.toggle("show-filter");
+})
 
 
 
@@ -556,7 +642,15 @@ const cityArea = document.getElementById('#location');
 let filterQuery;
 const partnersRef = db.collection('partners');
 
-function renderStoreInfo(doc) {
+function renderStoreInfo(doc){
+
+    let p = doc.data().partnerSignupProfilePicture;
+
+    if (p != undefined) {
+        p = doc.data().partnerSignupProfilePicture;
+    } else {
+        p = "../resources/Logo/Favicon.png";
+    }
 
     let p = doc.data().partnerSignupProfilePicture;
 
@@ -571,7 +665,9 @@ function renderStoreInfo(doc) {
             <ul class="store_detail">
                 <li class="store_img"><img src="${p}" width="50px" class="round"></li>
                 <li>
+
                     <h5 class="text_title text_color_primary store_name" onclick="goToStoreInfo('${doc.id}')">${doc.data().storeName}</h5>
+
                     <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
                     <span class="rate"><i class="fas fa-star">x.x</i></span>
                 </li>
@@ -587,9 +683,14 @@ function renderStoreInfo(doc) {
 
 
 
+
+
+
 // partnersRef.get().then((snapshot) => {
 //     snapshot.docs.forEach( doc => {
-//         // console.log(doc.id);
+//         console.log(doc.id);
+
+
 
 
 
@@ -624,6 +725,7 @@ function availableStores(doc) {
 
 
 
+
 // function lowestSalePriceInStore(id) {
 //     let salePriceArray = [];
 
@@ -631,14 +733,12 @@ function availableStores(doc) {
 //         snapshot.docs.forEach(doc => {
 //             salePriceArray.push(doc.data().salePrice);
 
-//         })
-//         console.log(salePriceArray);
 
-//         console.log(Math.min(...salePriceArray));
 
 //         pickupDetail.innerHTML += `<li>from $${Math.min(...salePriceArray)}</li>`;
 //     }).catch(error)
 //         console.log(error);
+
 
 // const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
 
@@ -653,9 +753,14 @@ function availableStores(doc) {
 // }
 
 
+
 function cityAreaSelection(city) {
     storeList.innerHTML = "";
     // let cityArea = document.getElementById('locationSelection');
+
+
+    db.collection('partners').where('city', '==', city).get().then((snapshot) => {
+        snapshot.forEach( (doc) => {
 
 
     partnersRef.where('city', '==', city).get().then((snapshot) => {
@@ -849,6 +954,7 @@ howManyOns(['on', 'on', 'off', 'on', 'off']);
 
 
 
+
 // Arvind Code Store List trigger
 
 function goToStoreInfo(docIdStore) {
@@ -856,4 +962,5 @@ function goToStoreInfo(docIdStore) {
     sharedDataId["HomepageStoreDocumentId"] = docIdStore;
     location.href = "#storeinfo"
 }
+
 
