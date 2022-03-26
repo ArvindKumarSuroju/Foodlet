@@ -63,7 +63,7 @@ header{
   width: 50px;
  
 }
-
+ 
 .logo {
   width: 100%;
   height: 100%;
@@ -264,13 +264,14 @@ img.round {
 }
 
 .sidelogo {
-  position: relative;
-  background-image: url("/images/Foodlet Logo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  padding-top: 15%;
-  padding-bottom: 15%; 
+   /* position: relative;
+  width: 100%;  */
+  padding-top: 5%;
+  /* padding-bottom: 15%;  */
+} 
+.sidenav_img{
+      width:260px;
+      height:125px;
 }
 .side_close {
   position: absolute;

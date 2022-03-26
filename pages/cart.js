@@ -23,12 +23,12 @@
 
 // Building each Meal
 
-const menuBtbn = document.querySelector(".hamburger");
+const menueBtb = document.querySelector(".hamburger");
 const sidebbar = document.querySelector("#sidebar");
 const closeBtbn = document.querySelector(".side_close");
 let displayAvailablestores = [];
 
-menuBtbn.addEventListener('click', () => {
+menueBtb.addEventListener('click', () => {
     if (sidebbar.classList.contains('on')) {
         sidebbar.classList.remove('on');
     } else {
