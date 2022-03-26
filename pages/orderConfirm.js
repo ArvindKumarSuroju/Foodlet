@@ -1,3 +1,20 @@
+const menuBtan = document.querySelector(".hamburger");
+const sidebarr = document.querySelector("#sidebar");
+const closeBtan = document.querySelector(".side_close");
+let displayavailablestores = [];
+
+menuBtan.addEventListener('click', () => {
+    if (sidebarr.classList.contains('on')) {
+        sidebarr.classList.remove('on');
+    } else {
+        sidebarr.classList.add('on');
+    }
+});
+
+closeBtan.addEventListener('click', () => {
+    sidebarr.classList.remove('on');
+});
+
 async function showMeals() {
 
     const user = await getSignedInUser();

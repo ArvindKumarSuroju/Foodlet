@@ -9,23 +9,29 @@
 
     <link rel="stylesheet" href="../css/partner-login-signup.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="../js/partner-signup.js" defer></script>
 
 </head>
 
 <body>
-    <div class="desktop-view">
-        <header>
-            <div class="site-branding">
-                <h1>FOODLET Partner</h1>
-                <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
-            </div>
-        </header>
+
+        <div class="desktop-view">
+            <header>
+                <div class="site-branding">
+                    <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
+                </div>
+            </header>
 
         <div class="aside">
+            <img src="../resources/Images/Easy to Maintain.png" alt="">
+
+            <p class="aside-title">Easy to Maintain</p>
+
+            <p class="aside-text">Update available menu easily</p>
 
         </div>
 
@@ -39,9 +45,6 @@
                 <div class="partner-signup-editpicture">
                     <img src="../images/app-icon.jpg" id="partner-signup-profilepicture">
                 </div>
-
-
-
                 <form action="" id="addPartner">
 
                     <div class="inside-form">
@@ -51,7 +54,7 @@
 
                     <div class="inside-form">
                         <label for="partner_signup_fullname">Full Name*</label>
-                        <input type="text" id="partner_signup_fullname" name="partner-signup-fullname" required>
+                        <input type="text" id="partner_signup_fullname" name="partner-signup-fullname" required placeholder="Enter your full name">
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_email">Email*</label>
@@ -59,11 +62,11 @@
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_password">Password*</label>
-                        <input type="password" id="partner_signup_password" name="partner-signup-password" required>
+                        <input type="password" id="partner_signup_password" name="partner-signup-password" required placeholder="Create a password">
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_storename">Store Name*</label>
-                        <input type="text" id="partner_signup_storename" name="partner-signup-storename" required>
+                        <input type="text" id="partner_signup_storename" name="partner-signup-storename" required placeholder="Enter your store name">
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_storetype">Store Type*</label>
@@ -81,30 +84,40 @@
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_storeaddress">Store Address*</label>
-                        <input type="text" id="partner_signup_storeaddress" name="partner-signup-storeaddress" required>
+                        <input type="text" id="partner_signup_storeaddress" name="partner-signup-storeaddress" required placeholder="Enter your store location">
                     </div>
                     <div class="two-column">
                         <div class="inside-form">
                             <label for="partner_signup_city">City*</label>
-                            <select id="partner_signup_city" name="partner-signup-city">
+
+                          <!--  <input type="text" id="partner_signup_city" name="partner-signup-city" required placeholder="Enter your city"> -->
+
+                           <select id="partner_signup_city" name="partner-signup-city">
                                 <option value="All">Select a City</option>
                                 <option value="Vancouver">Vancouver</option>
                                 <option value="Burnaby">Burnaby</option>
                                 <option value="Richmond">Richmond</option>
                                 <option value="Surrey">Surrey</option>
-                            </select>
+                            </select> 
+
                         </div>
                         <div class="inside-form">
                             <label for="partner_signup_zipcode">Zip Code*</label>
-                            <input type="text" id="partner_signup_zipcode" name="partner-signup-zipcode" required>
+                            <input type="text" id="partner_signup_zipcode" name="partner-signup-zipcode" required placeholder="Enter your zip code" >
                         </div>
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_phonenumber">Phone Number*</label>
-                        <input type="tel" id="partner_signup_phonenumber" name="partner-signup-phonenumber" required>
+                        <input type="tel" id="partner_signup_phonenumber" name="partner-signup-phonenumber" required placeholder="Enter your business phone number">
                     </div>
-                    
-                    <p>*Required field</p>
+
+                    <div class="inside-form">
+                        <label for="partner_signup_email">Email*</label>
+                        <input type="text" id="partner_signup_email" name="partner-signup-email" required placeholder="Enter your email">
+                    </div>
+
+                    <p class="requiredField">*Required field</p>
+
                     <div class="checkbox">
                         <input type="checkbox" id="partner_signup_termsagreement" name="partner-signup-termsagreement" required>
                         <label for="partner_signup_termsagreement">By signing up, you agree with Foodlet's <a href="#">Terms of Service & Privacy Policy</a></label>
@@ -114,7 +127,7 @@
             </div>
 
             <div class="bottom-link">
-                <p>I already have a partner account. <a href="#partner-login.html">Log in</a></p>
+                <p>I already have a partner account. <a href="#partner-login">Log in</a></p>
             </div>
 
         </main>

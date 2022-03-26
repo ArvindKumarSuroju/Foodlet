@@ -1,4 +1,7 @@
+
 // Setting Up Store Data
+
+
 
 async function init() {
     // console.log(sharedDataId["HomepageStoreDocumentId"]);
@@ -134,3 +137,25 @@ function saveCartItem(mealId) {
 // Calling Functions
 init();
 showMeals();
+
+
+
+
+
+const menuBton = document.querySelector(".hamburger");
+const sidebaar = document.querySelector("#sidebar");
+const closeBt0n = document.querySelector(".side_close");
+let displayavailableStores = [];
+
+menuBton.addEventListener('click', () => {
+    if (sidebaar.classList.contains('on')) {
+        sidebaar.classList.remove('on');
+    } else {
+        sidebaar.classList.add('on');
+    }
+});
+
+closeBt0n.addEventListener('click', () => {
+    sidebaar.classList.remove('on');
+});
+

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodlet - Store Info</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../css/storeinfo.css">
 
@@ -16,60 +16,55 @@
 
 <body>
     <header>
-        <div class="header-left">
-            <nav>
-                <i class="fas fa-bars"></i>
-                <ul>
-                    <li><img src="images/foodlet-primary-logo.png" alt="Foodlet-Primary-Logo"></li>
-                    <li>
-                        <i class="far fa-user"></i>
-                        <div>
-                            <strong>Hi, < ? User Name ? > </strong>
-                            <p>
-                                < ? user-email@gmail.com ?>
-                            </p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <i class="far fa-heart"></i>
-                        <p>Favorite</p>
-                    </li>
-
-                    <li>
-                        <i class="far fa-clipboard"></i>
-                        <p>Orders</p>
-                    </li>
-
-                    <li>
-                        <i class="fas fa-cog"></i>
-                        <p>Settings</p>
-                    </li>
-
-                    <li>
-                        <i class="fas fa-info-circle"></i>
-                        <p>About</p>
-                    </li>
-
-                    <li><button class="logout-button" id="logout-button">Log Out</button></li>
-                </ul>
-            </nav>
-
-            <div class="site-branding">
-                <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
-                <h1>Foodlet</h1>
-            </div>
-
+        <ul class="header_mobile">
+            <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
+            <li class="logo"></li>
+            <li class="header_icon"></li>
+            <li>
+                <div class="menu_item cart"></div>
+            </li>
+            <li>
+                <div class="menu_i"></div>
+            </li>
+        </ul>
+        <div class="header_desktop">
+                <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+                <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
         </div>
 
-        <div class="header-right">
-            <ul>
-                <li><i class="fas fa-search"></i></li>
-                <li><i class="fas fa-shopping-cart"></i></li>
-                <li><i class="far fa-bell"></i></li>
+
+        </div>
+        </ul>
+        <div id="sidebar">
+            <!--Sidebar-->
+            <h2 class="sidelogo"></h2>
+
+            <a class="side_close"><img src="">X</a>
+            <ul class="sidebar_menu">
+                <li>
+                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
+                    <p>your-email@gmail.com</p>
+                </li>
+                <li>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
+                </li>
+                <li>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
+                </li>
+                <li>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
+                </li>
+
+
+                <li>
+                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+                </li>
             </ul>
         </div>
-
     </header>
 
     <main>

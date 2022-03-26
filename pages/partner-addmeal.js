@@ -1,42 +1,51 @@
 async function handleFormSubmit(e) {
     e.preventDefault();
 
+    let dietaries = document.querySelectorAll('input[name="dietary"]:checked');
+    let dietaryArray = [];
+
+    dietaries.forEach((dietary) => {
+        dietaryArray.push(dietary.value);
+    });
+
+    // console.log('DIETARY: '+ dietaryArray);
+
     console.log(auth.currentUser.uid)
         // const userData = await db.collection("partners").doc(auth.currentUser.uid).get();
         // // alert("test");
         // console.log('added meal');
+
     if (sharedDataId['partnerHomedocumentId']) {
+        
         await db.collection("partners").doc(auth.currentUser.uid).collection('partnerAddMeals').doc(sharedDataId['partnerHomedocumentId']).set({
             menuName: addMeal["menu_name"].value,
             originalPrice: addMeal["original_price"].value,
             salePrice: addMeal["sale_price"].value,
-            nonVegetarian: addMeal["non_vegetarian"].value,
-            vegetarian: addMeal["vegetarian"].value,
-            vegan: addMeal["vegan"].value,
-            glutenFree: addMeal["gluten_free"].value,
-            halal: addMeal["halal"].value,
+      
+            dietary: dietaryArray,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
-            storeType: addMeal["storeType"].value,
+         
             menuDetails: addMeal["menu_details"].value,
             imageUrl: document.getElementById('addmeal_photo').value ? await uploadData() : document.getElementById('mealImage').src
         })
         sharedDataId['partnerHomedocumentId'] = '';
     } else {
+        // console.log('This is the dietaryArray: ' + dietaryArray);
+
+
         await db.collection("partners").doc(auth.currentUser.uid).collection('partnerAddMeals').add({
             menuName: addMeal["menu_name"].value,
             originalPrice: addMeal["original_price"].value,
             salePrice: addMeal["sale_price"].value,
-            nonVegetarian: addMeal["non_vegetarian"].value,
-            vegetarian: addMeal["vegetarian"].value,
-            vegan: addMeal["vegan"].value,
-            glutenFree: addMeal["gluten_free"].value,
-            halal: addMeal["halal"].value,
+            
+            dietary: dietaryArray,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
-            storeType: addMeal["storeType"].value,
+           
             menuDetails: addMeal["menu_details"].value,
             imageUrl: await uploadData()
+
 
         })
     }
@@ -129,18 +138,45 @@ async function init() {
 }
 
 function setFormData(mealData) {
+
+    // console.log(mealData.dietary);
+
+    let a, b, c, d, e;
+
+    for (let i = 0; i < mealData.dietary.length; i++) {
+        if (mealData.dietary[i] == 'non_vegetarian') {
+            a = true;
+        } else if (mealData.dietary[i] == 'vegetarian') {
+            b = true;
+        } else if (mealData.dietary[i] == 'vegan') {
+            c = true;
+        } else if (mealData.dietary[i] == 'gluten_free') {
+            d = true;
+        } else if (mealData.dietary[i] == 'halal') {
+            e = true;
+        } else {
+            a = false;
+            b = false;
+            c = false;
+            d = false;
+            e = false;
+        }
+    }
+
+    // console.log(a +' '+ b +' '+ c +' '+ d +' '+ e);
+
     // console.log(mealData);
     addMeal["menu_name"].value = mealData.menuName;
     document.getElementById('mealImage').src = mealData.imageUrl;
     addMeal["original_price"].value = mealData.originalPrice;
     addMeal["sale_price"].value = mealData.salePrice;
-    addMeal["non_vegetarian"].value = mealData.nonVegetarian;
-    addMeal["vegetarian"].value = mealData.vegetarian;
-    addMeal["vegan"].value = mealData.vegan;
-    addMeal["gluten_free"].value = mealData.glutenFree;
-    addMeal["halal"].value = mealData.halal;
+    addMeal["non_vegetarian"].checked = a;
+    addMeal["vegetarian"].checked = b;
+    addMeal["vegan"].checked = c;
+    addMeal["gluten_free"].checked = d;
+    addMeal["halal"].checked = e;
     addMeal["food_weight"].value = mealData.foodWeight;
-    addMeal["storeType"].value = mealData.storeType;
+    // addMeal["storeType"].value = mealData.storeType;
     addMeal["quantity"].value = mealData.quantity;
     addMeal["menu_details"].value = mealData.menuDetails;
 }

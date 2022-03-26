@@ -1,263 +1,584 @@
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    * {
-        font-family: 'Poppins', sans-serif;
-        box-sizing: border-box;
-    }
-    
-    nav {
-        display: none;
-    }
-    
-    body {
-        margin: 0;
-        text-align: center;
-        width: 100vw;
-    }
-    
-    header {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        background: #00615B;
-        color: white;
-        padding: 12px 15px;
-        position: sticky;
-        top: 0;
-    }
-    
-    h1 {
-        margin: 0;
-        font-size: 24px;
-        display: none;
-    }
-    
-    header a {
-        color: white;
-        text-decoration: none;
-    }
-    
-    header i {
-        font-size: 24px;
-    }
-    
-    main,
-    html {
-        max-width: 100vw;
-    }
-    
-    article {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        border: #CBE2D5 solid 1px;
-        border-radius: 10px;
-        padding: 16px;
-        margin: 16px;
-    }
-    
-    article img {
-        width: 80px;
-        border-radius: 50%;
-    }
-    
-    .meal-info {
-        flex-grow: 1;
-        padding: 0 18px;
-        text-align: left;
-        align-self: center;
-        font-size: 16px;
-    }
-    
-    article i {
-        align-self: center;
-        color: #2E8B56;
-        width: 18px;
-    }
-    
-    .meal-name {
-        font-weight: 700;
-    }
-    
-    .addmeal-button {
-        border: #CBE2D5 solid 1px;
-        border-radius: 10px;
-        color: #2E8B56;
-        margin: 24px 16px;
-        padding: 16px;
-        font-weight: 700;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .addmeal-button i {
-        font-size: 24px;
-        padding-right: 12px;
-    }
-    
-    footer {
-        background: #00615B;
-        color: white;
-        font-weight: 600;
-        font-size: 11px;
-        padding: 5.75px 16px;
-    }
-    
-    .partner-home,
-    .partner-editmeal,
-    .partner-addmeal {
-        height: 100vh;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-    }
-    
-    .inside-form {
-        display: flex;
-        flex-flow: column nowrap;
-        text-align: left;
-        margin: 8px 15px;
-    }
-    
-    .inside-form2 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 8px 15px;
-    }
-    
-    .form-subject {
-        font-weight: 700;
-        font-size: 16px;
-    }
-    
-    input[type="text"],
-    input[type="number"],
-    input[type="date"],
-    input[type="time"] {
-        background: #EEF2F5;
-        border: none;
-        border-radius: 10px;
-        height: 40px;
-    }
-    
-    textarea {
-        background: #EEF2F5;
-        border: none;
-        border-radius: 10px;
-        height: 119px;
-    }
-    
-    input[type="checkbox"] {
-        background: #EEF2F5;
-        border: none;
-        border-radius: 10px;
-        height: 24px;
-        width: 24px;
-    }
-    
-    .two-columns {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 17px;
-    }
-    
-    .two-columns .inside-form:nth-child(odd) {
-        margin-right: 0;
-    }
-    
-    .two-columns .inside-form:nth-child(even) {
-        margin-left: 0;
-    }
-    
-    #quantity {
-        width: 3rem;
-    }
-    /* #quantity::before, #quantity::after {
-    font-family: "Font Awesome 5 Free";
-    display: inline;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
 
+nav {
+    display: none;
+}
+
+/* body {
+    margin: 0;
+    text-align: center;
+    width: 100vw;
+} */
+
+html,
+body {
+    height: 100%;
+    position: relative;
+    margin: 0;
+    text-align: center;
+    width: 100vw;
+}
+
+/* header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #00615B;
+    color: white;
+    padding: 12px 15px;
+    position: sticky;
+    top: 0;
+} */
+
+h1 {
+    margin: 0;
     font-size: 24px;
-    display: inline;
+    display: none;
+    /* padding: 30px 15px; */
+}
+
+h2 {
+    padding: 0px 0px;
+    margin: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header i {
+    font-size: 24px;
+}
+header.header_desktop{
+   display: none; 
+}
+
+.header_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    height: 50px;
+    background-color: #00615b;
+    /* position:relative; */
+  }
+  /* .mainlogo_img{
+    
+    margin-top: 5px;
+  } */
+  .mainlogo_img .nav_img{
+    min-height: 40px;
+    min-width: 200px;
+    max-height: 40px;
+    max-width: 200px;
+  }
+  .lout{
+    margin-left: 40%;
+      margin-bottom: 10px;
+    min-height: 45px;
+    min-width: 45px;
+    max-height: 45px;
+    max-width: 45px; 
+  }
+main {
+    padding:0 15px;
+    margin-bottom:30px;
+}
+
+#addMeal{
+    display: grid;
+    gap:1rem;
+}
+
+article {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border: #CBE2D5 solid 1px;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+article img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.meal-info {
+    flex-grow: 1;
+    padding: 0 18px;
+    text-align: left;
+    align-self: center;
+    font-size: 16px;
+}
+
+article i {
+    align-self: center;
+    color: #2E8B56;
+    width: 18px;
+}
+
+.meal-name {
+    font-weight: 700;
+}
+
+.available-meals {
+    display: grid;
+    gap:1rem;
+}
+
+/* button style =============================================== */
+
+#addMealsButton {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #2e8b56;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#clearAllButton {
+    display: inline-block;
+    border:#CBE2D5 solid 1px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 0;
+    background-color: #fff;
+    text-decoration: none;
+    color: #62A880;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+#saveChangeButton {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #CBE2D5;
+    color:#2E8B56;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+.addmealbutton.button{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: #CBE2D5 solid 1px;
+    border-radius: 10px;
+    padding:1rem 2rem;
+    margin-top: 1rem;
+    width:360px;
+    margin: auto;
+}
+
+.addmealbutton.button a {
+    color:#2E8B56;
+    text-decoration:none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+/* .addmeal-button {
+    border: #CBE2D5 solid 1px;
+    border-radius: 10px;
+    color: #2E8B56;
+    margin: 24px 16px;
+    padding: 16px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addmeal-button i {
+    font-size: 24px;
+    padding-right: 12px;
+} */
+
+footer {
+    background: #00615B;
+    color: white;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 5.75px 16px;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.partner-home{
+    height:100vh;
+    /* overflow: hidden; */
+    display: block;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.partner-editmeal,
+.partner-addmeal {
+    /* overflow: hidden; */
+    display: block;
+    position: relative;
+    padding-bottom: 16px;
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between; */
+}
+
+.inside-form {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: left;
+    /* margin: 8px 15px; */
+}
+
+.inside-form2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 15px;
+}
+
+.form-subject {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+    background: #EEF2F5;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    padding:8px;
+}
+
+textarea {
+    background: #EEF2F5;
+    border: none;
+    border-radius: 10px;
+    height: 119px;
+    padding:8px;
+}
+
+/* .checkbox {
+    display: flex;
+    align-items: center;
+} */
+
+/* CHECKBOX STYLE  ==============================*/
+.checkbox {
+display: block;
+position: relative;
+/* padding-left: 35px; */
+margin-bottom: 12px;
+cursor: pointer;
+font-size: 16px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+input[type="checkbox"] {
+/* position: absolute; */
+/* opacity: 0; */
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 24px;
+width: 24px;
+background-color: #eee;
+border-radius:5px;
+border:#CBE2D5 solid 1px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input[type="checkbox"]:checked ~ .checkmark {
+background-color:#77BD51;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+left: 7px;
+top: 3px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+/* checkbox style end here ============================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.two-columns .inside-form:nth-child(odd) {
+    margin-right: 0;
+}
+
+.two-columns .inside-form:nth-child(even) {
+    margin-left: 0;
+}
+
+#quantity {
+    width: 3rem;
+}
+/* #quantity::before, #quantity::after {
+font-family: "Font Awesome 5 Free";
+display: inline;
+font-style: normal;
+font-variant: normal;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+
+font-size: 24px;
+display: inline;
 }
 
 #quantity::before {
-    content: "\f055";
-    color: #2E8B56;
+content: "\f055";
+color: #2E8B56;
 }
 
 #quantity::after {
-    content: "\f056";
-    color: unset;
+content: "\f056";
+color: unset;
 } */
-    
-    .dietary-checkbox {
-        text-align: left;
-        margin: 0 15px;
-    }
-    
-    .add-photo {
-        display: flex;
+
+.dietary-checkbox {
+    text-align: left;
+}
+
+.add-photo-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border:#CBE2D5 solid 1px;
+    border-radius: 10px;
+}
+
+input[type="image"] {
+    padding-top: 10px;
+}
+
+.add-photo span {
+    padding-bottom: 10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.add-photo {
+    /* border:#CBE2D5 solid 2px; */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    color:#2E8B56;
+    border-radius: 10px;
+}
+
+.add-photo img {
+    width:32px;
+    height:auto;
+}
+
+.added-photo-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border:#CBE2D5 solid 1px;
+    border-radius: 10px;
+}
+
+/* .added-photo{
+    width:72px;
+    height:72px;
+    background-size: cover;
+    background-position: center;
+} */
+
+/* .button {
+    padding: 13px;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 16px;
+} */
+
+.publish {
+    border: none;
+    color: white;
+    background: #2E8B56;
+}
+
+.clear-all {
+    border: solid 1px #CBE2D5;
+    color: #62A880;
+    margin-right: 0;
+}
+
+.save-change {
+    border: none;
+    color: #2E8B56;
+    background: #CBE2D5;
+    margin-left: 0;
+}
+
+#quantity {
+    width: 100% !important;
+}
+
+.navpart_img{
+    min-height: 27px;
+    min-width: 139px;
+    max-height: 27px;
+    max-width: 139px;
+}
+
+
+@media screen and (min-width: 1000px) {
+    main {
+        width: 750px !important;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:30px;
+        /* display: flex;
         flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-self: center; */
+    }
+    .available-meals {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dietary-checkbox {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .dietary-checkbox .form-subject {
+        grid-column: 1/-1;
+    }
+
+    .header_mobile{
+        display: none;
+    }
+    .header_desktop {
+        display: flex;
         align-items: center;
-        border: black dashed 1px;
-        border-radius: 10px;
-        margin: 15px;
-    }
-    
-    input[type="image"] {
-        padding-top: 10px;
-    }
-    
-    .add-photo span {
-        padding-bottom: 10px;
-    }
-    
-    .button {
-        padding: 13px;
-        font-weight: 600;
-        border-radius: 10px;
-        font-size: 16px;
-    }
-    
-    .publish {
-        border: none;
-        color: white;
-        background: #2E8B56;
-    }
-    
-    .clear-all {
-        border: solid 1px #CBE2D5;
-        color: #62A880;
-        margin-right: 0;
-    }
-    
-    .save-change {
-        border: none;
-        color: #2E8B56;
-        background: #CBE2D5;
-        margin-left: 0;
-    }
-    
-    #quantity {
-        width: 100% !important;
-    }
-    
-    @media screen and (min-width: 700px) {
-        main {
-            width: 700px !important;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: flex-end;
-            align-self: center;
-        }
-        .available-meals {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        height: 40px;
+        background-color: #00615b;
+       
+        /* position:relative; */
+      }
+      .mainlogo_img{
+        margin-right: 10%;
+        margin-top: 5px;
+      }
+      .mainlogo_img .nav_img{
+        min-height: 40px;
+        min-width: 200px;
+        max-height: 40px;
+        max-width: 200px;
+      }
+
+      .cart_opt{
+       margin-left: 45%;
+      }
+      .orders_opt{
+        min-height: 40px;
+        min-width: 140px;
+        max-height: 40px;
+        max-width: 140px; 
+        margin-bottom: 10px; 
+        margin-left: 4%;
+      }
+      .logout_butt{
+       margin-left: 2%;
+       min-height: 40px;
+       min-width: 100px;
+       max-height: 40px;
+       max-width: 100px; 
+       margin-bottom: 26px;
+      }
+
+
+}

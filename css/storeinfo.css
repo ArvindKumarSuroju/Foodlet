@@ -1,6 +1,4 @@
-@@ -1,
-110+1,
-106 @@ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -26,42 +24,6 @@ i {
 
 a {
     color: #F38814;
-}
-
-
-/*  HEADER */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #00615B;
-    padding: 12px 15px;
-}
-
-header i {
-    color: white;
-}
-
-.site-branding img {
-    height: 24px;
-    margin-left: 12px;
-}
-
-.header-left,
-.header-right {
-    display: flex;
-}
-
-.header-right ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.header-right li {
-    display: inline;
-    padding: 0 0 0 12px;
 }
 
 
@@ -349,8 +311,32 @@ footer {
     }
     /*  STORE BASIC INFO */
     .storeinfo-images {
-        grid-template-rows: 7fr 1fr;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr 1fr;
     }
+    
+    .partner-signup-coverimage {
+        grid-column: 1/1;
+        grid-row: 1/2;
+    }
+    
+    .partner-signup-profilepicture img {
+        width: 84px;
+        height: 84px;
+        border: #FAFCFE solid 2px;
+        border-radius: 50%;
+    }
+    
+    .partner-signup-profilepicture {
+        grid-row: -1/1;
+        grid-column: -1/1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+/* //////////////////////////////////////////////// */
     .partner-signup-coverimage {
         height: 424px;
     }
