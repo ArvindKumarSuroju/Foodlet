@@ -128,7 +128,6 @@ let mainMap;
 
  function initMap() {
  
-  
   var mapCanvas = document.getElementById("map");
   const mapTest = document.getElementById("map");
   var mapOptions = {
@@ -137,7 +136,6 @@ let mainMap;
     zoom: 12
   };
   mainMap = new google.maps.Map(mapCanvas, mapOptions);
-
 
   var marker, i;
   for (i =0; i < stores.length; i++){
@@ -193,6 +191,7 @@ let mainMap;
 
 //change the location
 var locationSelect = {
+    'All': '49.27883133919559, -123.13434156509084',
     'Vancouver': '49.27883133919559, -123.13434156509084',
     'Burnaby': '49.247165406526435, -122.98247547491722',
     'Richmond': '49.17147782913937, -123.13133664398394',
@@ -287,14 +286,12 @@ async function changeMap(city) {
     await new google.maps.Marker({
         position: await new google.maps.LatLng(coords[0], coords[1]),
         map: mainMap,
-        icon: '',
+        icon: ' ',
         title: city
     });
     await mainMap.setCenter(new google.maps.LatLng(coords[0], coords[1]));
 
-
     cityAreaSelection(city);
-
 
 }
 
@@ -480,7 +477,7 @@ db.collection('partnerAddMeals').get().then((snapshot) => {
 });
 
 getPartners();
-//Convert zipcode to lat, long 
+//Convert zipcode to lat, long
 
 async function getCoordinates(name, zipcode){
 
@@ -508,8 +505,6 @@ async function getCoordinates(name, zipcode){
 function updateCoord(id, coordinate){
     const partnersRef = db.collection("partners")
 
-
-    //
     partnersRef.doc(id).set({
     latitude: coordinate[0],
     longitude: coordinate[1]
@@ -645,7 +640,7 @@ const cityArea = document.getElementById('#location');
 let filterQuery;
 const partnersRef = db.collection('partners');
 
-function renderStoreInfo(doc){
+function renderStoreInfo(doc, lsp){
 
     let p = doc.data().partnerSignupProfilePicture;
 
@@ -664,12 +659,12 @@ function renderStoreInfo(doc){
                     <h5 class="text_title text_color_primary store_name" onclick="goToStoreInfo('${doc.id}')">${doc.data().storeName}</h5>
 
                     <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
-                    <span class="rate"><i class="fas fa-star">x.x</i></span>
                 </li>
                 <li><i class="far fa-heart"></i></li>
             </ul>
             <ul class="pickup_detail" id="pickupDetail">
                 <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
+                <li><i class="far fa-clock">starting from $${lsp}</i></li>
             </ul>
         </li>
     `;
@@ -698,21 +693,29 @@ function renderStoreInfo(doc){
 //     })
 // });
 
-function availableStores(doc) {
+async function availableStores(doc) {
     let availableMeals = 0;
+    let salePriceArray = [];
 
-    partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
+    await partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot2) => {
         snapshot2.docs.forEach(doc2 => {
             console.log(doc2.data().menuName);
             availableMeals = availableMeals + 1;
+
+            salePriceArray.push(doc2.data().salePrice);
+
         });
 
         console.log(doc.data().storeName + ' has ' + availableMeals + ' available meals.');
 
 
         if (availableMeals > 0) {
+            console.log(salePriceArray);
+            let lowestSalePrice = Math.min(...salePriceArray);
+            console.log(lowestSalePrice);
+            
             console.log(doc.data());
-            renderStoreInfo(doc);
+            renderStoreInfo(doc, lowestSalePrice);
         }
 
     });
@@ -721,48 +724,12 @@ function availableStores(doc) {
 
 
 
-// function lowestSalePriceInStore(id) {
-//     let salePriceArray = [];
-
-//     partnersRef.doc(id).collection('partnerAddMeals').get().then((snapshot) => {
-//         snapshot.docs.forEach(doc => {
-//             salePriceArray.push(doc.data().salePrice);
-
-
-
-//         pickupDetail.innerHTML += `<li>from $${Math.min(...salePriceArray)}</li>`;
-//     }).catch(error)
-//         console.log(error);
-
-
-// const snapshot = await db.collection('partners').doc(id).collection('availableMeals').get();
-
-// snapshot.docs.forEach( doc => {
-//     salePriceArray.push(parseFloat(doc.data().salePrice));
-
-// })
-// console.log(salePriceArray);
-
-// console.log(Math.min(...salePriceArray));
-
-// }
-
-
-
 function cityAreaSelection(city) {
     storeList.innerHTML = "";
     // let cityArea = document.getElementById('locationSelection');
-
-    partnersRef.where('city', '==', city).get().then((snapshot) => {
-        snapshot.docs.forEach( doc => {         
-
-            availableStores(doc);
-            
-        })
-
-    })
+    console.log('x0x0x0x0x0x' + selectedCity.value)
     
-    if (city == 'All') {
+    if (selectedCity.value == 'All') {
         partnersRef.get().then((snapshot2) => {
             snapshot2.docs.forEach( doc => {
     
@@ -770,16 +737,36 @@ function cityAreaSelection(city) {
                 
             })
         })
+
+    } else {
+
+        partnersRef.where('city', '==', city).get().then((snapshot) => {
+            snapshot.docs.forEach( doc => {         
+    
+                availableStores(doc);
+                
+            })
+    
+        })
     }
 }
 
 
+partnersRef.get().then((snapshot4) => {
+    snapshot4.docs.forEach( doc => {
 
+        console.log("This is inside the " + JSON.stringify(doc.data().storeName) + "'s document.");
 
+        availableStores(doc);
+    
+    })
+
+})
 
 
 /* APPLYING FILTERS */
 const applyFilterButton = document.getElementById("applyFilterButton");
+let selectedCity = document.getElementById("myCity");
 let storeTypeArray = [];
 let dietaryArray = [];
 
@@ -805,110 +792,243 @@ applyFilterButton.addEventListener('click', (event) => {
 
     // console.log(dietaryArray);
 
-    storeTypeFilter(storeTypeArray);
+    storeFilter(storeTypeArray, dietaryArray);
 
     console.log('SELECTED STORE TYPE FILTERS: >>> ' + storeTypeArray + ' <<<');
+    console.log('SELECTED DIETARY FILTERS: >>> ' + dietaryArray + ' <<<');
 
 });
   
 
 
-async function storeTypeFilter(a) {
+async function storeFilter(a, b) {
+    storeList.innerHTML = "";
 
-    console.log('SELECTED STORE TYPE FILTERS: ==> ' + a + ' <==');
-
-    // db.collection('partners').where('storeType', 'in', ['Bakery', 'Restaurant', 'Cafe']).get().then((snapshot) => {
-    //     snapshot.docs.forEach( doc => {
-
-    //         // console.log(a);
-    //         console.log(doc.data().storeType);
-    //         console.log(a[0]);
-    //         console.log(a.length);
-
-    //         for ( let i = 0; i < a.length; i++){
-    //             if (doc.data().storeType == a[i]){
-    //                 console.log(doc.data());
-    //                 console.log(doc.data().storeType);
-
-    //                 renderStoreInfo(doc);
-                    
-    //             }
-    //         }
-
-            
-    //     })
-        
-
-    // })
+    // console.log('SELECTED STORE TYPE FILTERS: ==> ' + a + ' <==');
     
-    let query = `"storeType", "in", ${JSON.stringify(a)}`;
-    console.log("++++++  " + query);
+    let anArray1 = [];
+    let anArray2 = [];
+    let filteredStores = 0;
 
-    let anArray = [];
     for (let i = 0; i < a.length; i++) {
-        anArray.push(JSON.stringify(a[i]));
+        anArray1.push(a[i]);
     }
 
-    console.log('dskndcksd ' + anArray )
+    for (let j = 0; j < b.length; j++) {
+        anArray2.push(b[j]);
+    }
 
-    await partnersRef.where('storeType', 'in', anArray ).get()
-    .then((snapshot4) => {
-        // console.log('SNAPSHOT: '+JSON.stringify(snapshot));
-        snapshot4.docs.forEach( doc => {
 
-            // console.log(JSON.stringify(doc));
-            console.log("This is inside the " + JSON.stringify(doc.data().storeName) + "'s document.");
+    console.log('selected storeType: ' + anArray1 );
+    console.log('selected dietary: ' + anArray2 );
 
-            renderStoreInfo(doc);
-            
-        })
-
-    })
     
+
+    if (selectedCity.value == 'All') {
+        if (anArray1.length > 0) {
+            partnersRef.where('storeType', 'in', anArray1).get().then((snapshot2) => {
+                snapshot2.docs.forEach( doc => {
+
+                    if (anArray2.length > 0) {
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').where('dietary', 'array-contains-any', anArray2).get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+                    } else {
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+                    }
+
+                })
+            })
+        } else {
+            partnersRef.get().then((snapshot2) => {
+                snapshot2.docs.forEach( doc => {
+
+                    if (anArray2.length > 0) {
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').where('dietary', 'array-contains-any', anArray2).get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+                    } else {
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+                    }
+                    
+                })
+            })
+        }
+    } 
+    else {
+        if (anArray1.length > 0) {
+            partnersRef.where('city', '==', selectedCity.value).where('storeType', 'in', anArray1).get().then((snapshot2) => {
+                snapshot2.docs.forEach( doc => {
+
+                    if (anArray2.length > 0) {
+
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').where('dietary', 'array-contains-any', anArray2).get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+
+                    } else {
+
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+
+                        })
+
+                    }
+
+                })
+            })
+        } else {
+            partnersRef.where('city', '==', selectedCity.value).get().then((snapshot2) => {
+                snapshot2.docs.forEach( doc => {
+
+                    if (anArray2.length > 0) {
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').where('dietary', 'array-contains-any', anArray2).get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+                    } else {
+                        partnersRef.doc(doc.id).collection('partnerAddMeals').get().then((snapshot5) => {
+                            snapshot5.docs.forEach( doc3 => {
+                                filteredStores = 0;
+
+                                console.log(doc3.data().menuName +": "+ doc3.data().dietary);
+                                filteredStores = filteredStores + 1;
+
+                            })
+                        
+                            if (filteredStores > 0) {
+                                availableStores(doc);
+                            } else {
+                                console.log(doc.data().storeName + "has no matched results");
+                            }
+                        })
+                    }
+                    
+                })
+            })
+        }
+
+    }
+
+
+
+
     // .catch( (error) => {
     //     console.error(error);
     // })
-
-
-
-    // db.collection('partners').where('storeType', 'in', a ).get().then((snapshot) => {
-    //     snapshot.docs.forEach( doc => {
-
-    //         console.log(doc.data());
-    //         renderStoreInfo(doc);
-            
-    //     })
-
-    // })
-
 }
 
-// function dietaryFilter() {
-
-//     console.log(dietaryArray);
-//     console.log('processing dietaryFilter');
-
-//     db.collection('partners').where('storeType', 'in', storeTypeArray ).get().then((snapshot) => {
-//         snapshot.docs.forEach(doc3 => {
-
-//             console.log('You did it!!');
-
-//             console.log(doc3.data());
-
-//             renderStoreInfo(doc3);
-
-//         })
-        
-
-//     })
-
-
-// }
 
 
 
 
 // SELECT ALL BUTTON
+
+function selectAll(filterCheckbox){
+    var items=document.getElementsByName(filterCheckbox);
+    for ( var i=0; i<items.length; i++ ) {
+        if(items[i].type=='checkbox')
+            items[i].checked=true;
+    }
+
+}
+
+function unselectAll(filterCheckbox){
+    var items=document.getElementsByName(filterCheckbox);
+    for ( var i=0; i<items.length; i++ ) {
+        if(items[i].type=='checkbox')
+            items[i].checked=false;
+    }
+}
+
 // function check(checked = true) {
 //     let storeTypeCheckboxes = document.querySelectorAll('input[name="storeTypeCheckbox"]');
 //     storeTypeCheckboxes.forEach((checkbox) => {
@@ -936,7 +1056,6 @@ async function storeTypeFilter(a) {
 // const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
 // allStoreTypeBtn.onclick = checkAllfn;
 
-// howManyOns(['on', 'on', 'off', 'on', 'off']);
 
 
 
