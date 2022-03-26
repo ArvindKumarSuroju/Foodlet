@@ -23,7 +23,7 @@ body {
     width: 100vw;
 }
 
-header {
+/* header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -33,17 +33,17 @@ header {
     padding: 12px 15px;
     position: sticky;
     top: 0;
-}
+} */
 
 h1 {
     margin: 0;
     font-size: 24px;
     display: none;
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
 }
 
 h2 {
-    padding: 30px 15px;
+    padding: 0px 0px;
     margin: 0;
 }
 
@@ -55,7 +55,37 @@ header a {
 header i {
     font-size: 24px;
 }
+header.header_desktop{
+   display: none; 
+}
 
+.header_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    height: 50px;
+    background-color: #00615b;
+    /* position:relative; */
+  }
+  /* .mainlogo_img{
+    
+    margin-top: 5px;
+  } */
+  .mainlogo_img .nav_img{
+    min-height: 40px;
+    min-width: 200px;
+    max-height: 40px;
+    max-width: 200px;
+  }
+  .lout{
+    margin-left: 40%;
+      margin-bottom: 10px;
+    min-height: 45px;
+    min-width: 45px;
+    max-height: 45px;
+    max-width: 45px; 
+  }
 main {
     padding:0 15px;
     margin-bottom:30px;
@@ -473,8 +503,15 @@ input[type="file"] {
     width: 100% !important;
 }
 
+.navpart_img{
+    min-height: 27px;
+    min-width: 139px;
+    max-height: 27px;
+    max-width: 139px;
+}
 
-@media screen and (min-width: 700px) {
+
+@media screen and (min-width: 1000px) {
     main {
         width: 750px !important;
         margin-left:auto;
@@ -498,5 +535,50 @@ input[type="file"] {
     .dietary-checkbox .form-subject {
         grid-column: 1/-1;
     }
+
+    .header_mobile{
+        display: none;
+    }
+    .header_desktop {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        height: 40px;
+        background-color: #00615b;
+       
+        /* position:relative; */
+      }
+      .mainlogo_img{
+        margin-right: 10%;
+        margin-top: 5px;
+      }
+      .mainlogo_img .nav_img{
+        min-height: 40px;
+        min-width: 200px;
+        max-height: 40px;
+        max-width: 200px;
+      }
+
+      .cart_opt{
+       margin-left: 45%;
+      }
+      .orders_opt{
+        min-height: 40px;
+        min-width: 140px;
+        max-height: 40px;
+        max-width: 140px; 
+        margin-bottom: 10px; 
+        margin-left: 4%;
+      }
+      .logout_butt{
+       margin-left: 2%;
+       min-height: 40px;
+       min-width: 100px;
+       max-height: 40px;
+       max-width: 100px; 
+       margin-bottom: 26px;
+      }
+
 
 }
