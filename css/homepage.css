@@ -1,85 +1,5 @@
 /*MAR 15th - by Hyewon */
-.copyright {
-    background-color: #00615b;
-    color: white;
-    text-align: center;
-    font-size: 13px;
-    line-height: 30px;
-    height: 30px;
-    font-weight: light;
-    box-sizing: border-box;
-  }
-  
-  
-  .header_mobile {
-    height: 50px;
-    background-color: #00615b;
-    line-height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .hamburger {
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
-    cursor: pointer;
-  }
-  
-  .header_icon {
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
-  }
-  
-  .logo {
-    width: 80%;
-    height: 100%;
-    background-image: url("/images/Foodlet Logo.png");
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size:160px;
-    margin-left:2%;
-  }
-  .citySelection {
-    position: absolute;
-    top:10%;
-    left:20%;
-    z-index:5;
-  }
-  
-  #filter {
-    position: absolute;
-    top: 0;
-    width:100vw;
-    left: -5000px;
-    transition: left 0.3s ease-in-out;
-    right: 0;
-    z-index: 20;
-    background-color: white;
-    height:100vh;
-    display: none;
-  }
-  
-  #filter.on {
-    display: block;;
-  }
-  
-  .filterBtn {
-    position: absolute;
-    top:10%;
-    right:10%;
-    z-index:10;
-    background-color: #cbe2d5;
-    border: 0;
-    color: #00615b;
-    padding: .5rem 3%;
-    margin-left: 1.2rem;
-    cursor: pointer;
-    box-shadow: 9px 12px 24px #555;
-  }
-  
+
   
   /*Map*/
   #map {
@@ -227,156 +147,12 @@
     font-size: 13px;
   }
   
-  a {
-    font-size: 12px;
-    text-decoration: none;
-    color: #ccc;
-    line-height: 50px;
-  }
+
   
-  #sidebar {
-    width: 91%;
-    background-color: #00615b;
-    position: absolute;
-    left: -1000px;
-    top: 0;
-    transition: left 0.3s ease-in-out;
-    z-index: 10;
-  }
-  
-  #sidebar.on {
-    left: 0;
-  }
-  
-  .sidelogo {
-    position:relative;
-    background-image: url("/images/Foodlet Logo.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 100%;
-    height: 100%;
-    padding: 10% 0;
-  }
-  .side_close {
-    position:absolute;
-    right:3.2%;
-    top:1%;
-    color:blue;
-    cursor: pointer;
-  
-  }
-  
-  .sidebar_menu {
-    display: flex;
-    flex-flow: column;
-  }
-  .sidebar_menu li {
-    border-bottom: 1px solid black;
-    margin: 0 5%;
-    color: white;
-  }
-  
-  .sidebar_menu li:last-child {
-    padding-bottom: 55%;
-  }
-  
-  .sidebar_menu li a {
-    color: white;
-  }
-  
-  .sidebar_menu img {
-    width: 24px;
-    height: 24px;
-    margin: auto 10px;
-    vertical-align: middle;
-  }
-  
-  li.heart {
-    text-align: center;
-  }
-  
-  div.heart {
-  
-    background: center/cover url("../resources/Icons/Favourite.png") no-repeat;
-  
-    width: 13px;
-    height: 13px;
-    margin: 0 auto;
-  }
-  
-  div.heart_active {
-  
-    background: center/cover url("../resources/Icons/FavouriteActive.png") no-repeat;
-  
-  }
-  .header_mobile .menu_item, .header_desktop .menu_item {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .header_mobile .cart, .header_desktop .cart {
-    background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
-  }
-  .header_mobile .cart_active, .header_nav .cart_active {
-    background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
-  }
-  
-  .header_mobile .notification, .header_nav .notification {
-    background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
-  }
-  .header_mobile .notification_active, .header_nav .notification_active {
-    background: center/cover url("../resources/Icons/notificationOrange.png") no-repeat;
-  
-  }
+ 
   
   /*Desktop version*/
   @media (min-width: 1000px) {
-    body {
-      width: 100%;
-    }
-  
-    #sidebar {
-      display: none;
-    }
-  
-    .header_mobile {
-      display: none;
-    }
-  
-    .header_desktop {
-      display: block;
-      height: 50px;
-      background-color: #00615b;
-      position:relative;
-    }
-  
-    .header_nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .header_nav a {
-      color: white;
-    }
-  
-    .header_nav img {
-      width: 50%;
-      padding-top: 5%;
-    }
-  
-    .logout {
-      padding: 5px 10px;
-      background-color: #2e8b56;
-      border: 0;
-      color: white;
-      padding: 5px 20px;
-      margin-top: 12%;
-    }
-  
-    
-    
-  
     .store_container {
       width: 100%;
       overflow-x: auto;
@@ -396,11 +172,7 @@
       z-index:20;
       border:1px solid red;
     }
-    .header_mobile .menu_item, .header_desktop .menu_item {
-      width: 32px;
-      height: 32px;
-  
-    }
+
   }
   
   

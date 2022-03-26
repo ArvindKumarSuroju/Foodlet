@@ -14,44 +14,53 @@
 <body>
     <!--Header nav-->
     <header>
-        <div class="header_mobile">
-        <ul class="inner">
-            <li class="hamburger">menu</li>
+        <ul class="header_mobile">
+            <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
             <li class="logo"></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
+            <li class="header_icon"></li>
+            <li>
+                <div class="menu_item cart"></div>
+            </li>
+            <li>
+                <div class="menu_i"></div>
+            </li>
         </ul>
         <div class="header_desktop">
-            <ul class="header_nav inner">
-                <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
-                <li><a href="">Favourite</a></li>
-                <li><a href="">Cart</a></li>
-                <li><a href="">Orders</a></li>
-                <li><a href="">My Rewards</a></li>
-                <li><a href="">Settings</a></li>
-                <li><a href="">About</a></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><button class="logout">Log Out</button></li>
-            </ul>
+            <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+            <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+            <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+            <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+            <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+            <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
+    </div>
+
+
         </div>
-        <div id="sidebar" > <!--Sidebar-->
+        </ul>
+        <div id="sidebar">
+            <!--Sidebar-->
             <h2 class="sidelogo"></h2>
-            <a class="side_close"><img src="" >close</a>
+
+            <a class="side_close"><img src="">X</a>
             <ul class="sidebar_menu">
                 <li>
-                    <img src="" alt="">Hi, Use Name
+                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
                     <p>your-email@gmail.com</p>
                 </li>
-                <li><a href=""><img src="" alt="">Favourite</a></li>
-                <li><a href=""><img src="" alt="">Cart</a></li>
-                <li><a href=""><img src="" alt="">Orders</a></li>
-                <li><a href=""><img src="" alt="">My Rewards</a></li>
-                <li><a href=""><img src="" alt="">Settings</a></li>
-                <li><a href=""><img src="" alt="">About</a></li>
-                <li><a href=""><img src="" alt="">Log Out</a></li>
+                <li>
+                    <a href=""><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</a>
+                </li>
+                <li>
+                    <a href=""><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</a>
+                </li>
+                <li>
+                    <a href=""><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</a>
+                </li>
+
+
+                <li>
+                    <a href=""><img class="menu_icon" src="/resources/Icons/LogOut.png" alt="">Log Out</a>
+                </li>
             </ul>
         </div>
     </header>
