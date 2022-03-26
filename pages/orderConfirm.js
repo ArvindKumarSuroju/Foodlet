@@ -39,8 +39,8 @@ function renderEachMealData(doc) {
         </li>
         <li>
             <p class="price">
-                <span class="price_crossout text_body_text text_color_secondary">$ ${doc.data().originalPrice}</span>
-                <span class="text_body_text text_color_primary text_weight_700">&nbsp;&nbsp;$ ${doc.data().salePrice}</span>
+                <span class="price_crossout text_body_text text_color_secondary">$ ${doc.data().eachMealTotlOriginalPrice}</span>
+                <span class="text_body_text text_color_primary text_weight_700">&nbsp;&nbsp;$ ${doc.data().eachMealTotalSalePrice}</span>
             </p>
         </li>
     </ul>

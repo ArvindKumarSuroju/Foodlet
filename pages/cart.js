@@ -80,6 +80,12 @@ function calculatePrices(mealData) {
         originalMealCost = +originalMealCost + (+item.Quantity * +item.originalPrice);
         document.getElementById("givenOriginalPrice" + i).innerHTML = (+item.originalPrice * +item.Quantity).toFixed(2);
         document.getElementById("givenSalePrice" + i).innerHTML = (+item.salePrice * +item.Quantity).toFixed(2);
+        console.log("cart meals : " + sharedDataId.cartMeals);
+
+        db.collection('customers').doc(auth.currentUser.uid).collection('cart').doc(item.mealId).update({
+            eachMealTotlOriginalPrice: (+item.originalPrice * +item.Quantity).toFixed(2),
+            eachMealTotalSalePrice: (+item.salePrice * +item.Quantity).toFixed(2)
+        })
     })
     let savedAmount = (originalMealCost - totalMealCost);
     // console.log("totalMealCost : " + totalMealCost);
@@ -95,9 +101,11 @@ async function cart() {
     document.getElementById('reserveMeal').disabled = true;
     if (sharedDataId.cartMeals) {
         sharedDataId.cartMeals.forEach((item) => {
+
             db.collection('customers').doc(auth.currentUser.uid).collection('cart').doc(item.mealId).set(item);
         });
     }
+    calculatePrices(sharedDataId.cartMeals);
     location.href = "#orderConfirm";
 }
 
