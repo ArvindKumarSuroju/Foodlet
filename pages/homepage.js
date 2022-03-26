@@ -1011,6 +1011,24 @@ async function storeFilter(a, b) {
 
 
 // SELECT ALL BUTTON
+
+function selectAll(filterCheckbox){
+    var items=document.getElementsByName(filterCheckbox);
+    for ( var i=0; i<items.length; i++ ) {
+        if(items[i].type=='checkbox')
+            items[i].checked=true;
+    }
+
+}
+
+function unselectAll(filterCheckbox){
+    var items=document.getElementsByName(filterCheckbox);
+    for ( var i=0; i<items.length; i++ ) {
+        if(items[i].type=='checkbox')
+            items[i].checked=false;
+    }
+}
+
 // function check(checked = true) {
 //     let storeTypeCheckboxes = document.querySelectorAll('input[name="storeTypeCheckbox"]');
 //     storeTypeCheckboxes.forEach((checkbox) => {
@@ -1038,7 +1056,6 @@ async function storeFilter(a, b) {
 // const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
 // allStoreTypeBtn.onclick = checkAllfn;
 
-// howManyOns(['on', 'on', 'off', 'on', 'off']);
 
 
 
