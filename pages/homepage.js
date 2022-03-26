@@ -615,6 +615,16 @@ logoutOfApp.addEventListener('click', () => {
     })
 })
 
+logoutOfApp2.addEventListener('click', () => {
+    console.log("logout check");
+    auth.signOut().then(() => {
+
+        location.href = "#login-customer";
+    }).catch((error) => {
+        // An error happened.
+    })
+})
+
 
 var filterOpenButton = document.getElementById('filterBtn');
 var filterCloseButton = document.getElementById('filter-close');
