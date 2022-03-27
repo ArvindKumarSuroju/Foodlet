@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +12,11 @@
     <script text="javascript" src="../js/main.js" defer></script>
     <title>Order Confirm</title>
 </head>
+
 <body>
-    <!--Header nav-->
+
     <header>
+
         <div class="inner">
             <ul class="header_mobile">
                 <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
@@ -25,6 +28,7 @@
                 <!-- <li>
                     <div class="header_icon"></div>
                 </li> -->
+
             </ul>
             <div class="header_desktop">
                     <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
@@ -78,9 +82,10 @@
                 <h4>Store Information</h4>
                 <div class="storeInfoBox">
                     <ul>
-                        <li class="store_img">
-                            <img src="../resources/Logo/Favicon.png" alt="" class="round">
+                        <li class="store_img" id="storeImage">
+
                         </li>
+
                         <li>
                             <ul class="order_review">
                                 <li><b>Amare Restaurant</b></li>
@@ -91,16 +96,19 @@
                             
                         </li>
                        
+
                     </ul>
                 </div>
             </div>
-            <div class="menus_picker">
-                <div class="menu_list">
+            <div class="menus_picker" id="eachmeal">
+                <!-- <div class="menu_list">
                     <ul class="menu_detail">
                         <li class="store_img">
                             <img src="../resources/Logo/Favicon.png" alt="" class="round">
                         </li>
+
                         <li><b>Menu Name1</b><p>1pcs x $ 4.99</p><p class="saveweight">500 gr of food was saved</p></li>
+
                         <li>
                             <p class="price">
                                 <span class="price_crossout text_body_text text_color_secondary" style="text-decoration:line-through">$ 8.99</span>
@@ -114,7 +122,9 @@
                         <li class="store_img">
                             <img src="../resources/Logo/Favicon.png" alt="" class="round">
                         </li>
-                        <li><b>Menu Name2</b><p>1pcs x $ 4.99</p></li>
+                        <li><b>Menu Name2</b>
+                            <p>1pcs x $ 4.99</p>
+                        </li>
                         <li>
                             <p class="price">
                                 <span class="price_crossout text_body_text text_color_secondary">$ 8.99</span>
@@ -122,7 +132,11 @@
                             </p>
                         </li>
                     </ul>
-                </div>
+                </div> -->
+            </div>
+            <div class="pay">
+                <p><b>Need to pay</b></p>
+                <p class="price" id="originalAmount"></p>
             </div>
             <div class="needtopay">
                 <p><b>Need to pay</b></p>
@@ -130,15 +144,19 @@
             </div>
             <div class="save">
                 <p>You will save</p>
+
                 <p class="price"><span>$ 10.00</span> </p>
+
             </div>
             <div class="weight">
                 <p>You will reduce food waste by</p>
+
                 <p class="totalWeight">1000 gr</p>
             </div>
            
+
             <div class="buttons">
-                <button class="fill">Discover More Store</button> 
+                <button class="fill"><a href="#homepage">Discover More Store</a></button>
             </div>
         </div>
     </main>

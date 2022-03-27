@@ -1,4 +1,5 @@
 /*MAR 15th - by Hyewon */
+
 .copyright {
     background-color: #00615b;
     color: white;
@@ -53,6 +54,7 @@
     border-radius: 5px;
   }
   
+
   
   /*Map*/
   #map {
@@ -209,6 +211,7 @@
     font-size: 13px;
   }
   
+
   a {
     font-size: 12px;
     text-decoration: none;
@@ -235,55 +238,10 @@
     background: center/cover url("../resources/Icons/FavouriteActive.png") no-repeat;
   
   }
+
   
   /*Desktop version*/
   @media (min-width: 1000px) {
-    body {
-      width: 100%;
-    }
-  
-    #sidebar {
-      display: none;
-    }
-  
-    .header_mobile {
-      display: none;
-    }
-  
-    .header_desktop {
-      display: block;
-      height: 50px;
-      background-color: #00615b;
-      position:relative;
-    }
-  
-    .header_nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .header_nav a {
-      color: white;
-    }
-  
-    .header_nav img {
-      width: 50%;
-      padding-top: 5%;
-    }
-  
-    .logout {
-      padding: 5px 10px;
-      background-color: #2e8b56;
-      border: 0;
-      color: white;
-      padding: 5px 20px;
-      margin-top: 12%;
-    }
-  
-    
-    
-  
     .store_container {
       width: 100%;
       overflow-x: auto;
@@ -303,11 +261,7 @@
       z-index:20;
       border:1px solid red;
     }
-    .header_mobile .menu_item, .header_desktop .menu_item {
-      width: 32px;
-      height: 32px;
-  
-    }
+
   }
   
   

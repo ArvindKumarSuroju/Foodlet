@@ -26,15 +26,17 @@ body {
 
 
 
+
+
 h1 {
     margin: 0;
     font-size: 24px;
     display: none;
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
 }
 
 h2 {
-    padding: 30px 15px;
+    padding: 0px 0px;
     margin: 0;
 }
 
@@ -46,10 +48,15 @@ header a {
 header i {
     font-size: 24px;
 }
+header.header_desktop{
+   display: none; 
+}
+
 
 .header_mobile .header_mobile_partner{
     width:100%;
     height:100%;
+
 }
 
 .header_mobile .menu_item .logout {
@@ -296,6 +303,8 @@ textarea {
 } */
 
 
+
+
 .two-columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -493,8 +502,16 @@ input[type="image"] {
     width: 100% !important;
 }
 
+.navpart_img{
+    min-height: 27px;
+    min-width: 139px;
+    max-height: 27px;
+    max-width: 139px;
+}
+
 
 @media screen and (min-width: 1000px) {
+
     .desktop-view {
         background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
     
@@ -523,6 +540,7 @@ input[type="image"] {
         height:44px;
     }
     .available-meals {
+
         width: 750px !important;
         margin-left:auto;
         margin-right:auto;
@@ -539,7 +557,5 @@ input[type="image"] {
     .dietary-checkbox .form-subject {
         grid-column: 1/-1;
     }
-
-    
 
 }

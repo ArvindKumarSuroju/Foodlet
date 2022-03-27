@@ -30,10 +30,10 @@ img {
     height: auto;
 }
 
-header {
+header{
     background: #00615B;
     color: white;
-    /* padding: 7px 60px; */
+
 }
 
 h1 {
@@ -59,17 +59,19 @@ h2 {
     margin: 0;
 }
 
-footer {
+
+
+footer{
+    padding: 5.5px 15.5px;
     background: #00615B;
     color: white;
     font-weight: 600;
     font-size: 11px;
-
-    padding: 5.5px 15.5px;
 }
 .name-field {
     display:block;
 }
+
 
 .input-field #email {
     padding:3%;
@@ -93,10 +95,12 @@ footer {
 }
 
 
+
 a {
+
     color: #F19737;
     font-weight: 600;
-}
+} 
 
 .two-column {
     display: grid;
@@ -108,12 +112,12 @@ a {
     display: none;
 }
 
-.desktop-view {
+/* .desktop-view {
     display: flex;
     flex-grow: 3;
     flex-flow: column nowrap;
     justify-content: center;
-}
+} */
 
 
 
@@ -306,10 +310,7 @@ label {
         /* grid-template-rows: 1fr 10fr; */
     }
 
-    header {
-        height: min-content;
-    }
-
+   
     main {
         grid-row: 2/3;
     }

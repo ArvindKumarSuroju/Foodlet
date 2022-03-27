@@ -20,28 +20,19 @@
 <body>
     <div class="partner-addmeal">
         <header>
-            <i class="fas fa-bars mobile-view"></i>
-            <nav>
-                <ul>
-                    <li class="partner-navbar-partnername">Hello, XYZ Restaurant</li>
-
-                    <li class><a href="#">Available Meals</a></li>
-
-                    <li><a href="#">Profile</a></li>
-
-                    <li class="partner-navbar-search"><a href="#"><i class="fas fa-search">    </i></a></li>
-
-                    <li class="logout-button"><button id="partner-logout" class="button logoutbutton">Log Out</button></li>
-
+    
+                <ul class="header_mobile">
+                    <div class="mainlogo_img"><img src="/images/Foodlet_Partner_Logo_W.png" alt="" class="navpart_img"></div>
+                    <div><a href=""><img class="menu_icon" src="/resources/Icons/LogOut.png" alt="">Discover</a></div>  
                 </ul>
-            </nav>
-
-            <div class="site-branding">
-                <h1>FOODLET Partner</h1>
-                <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
-            </div>
-
-            <a class="mobile-view" href="#"><i class="fas fa-search"></i></a>
+                <div class="header_desktop">
+                        <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                        <div class="cart_opt"><img src="" alt="" class="usr_img"></div>
+                        <div class="orders_opt"><a class="cpagea" href="">Hello User</a></div>
+                        <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
+                </div>
+        
+            
         </header>
 
         <main>
@@ -69,26 +60,30 @@
 
                     <div class="dietary-checkbox">
                         <label for="dietary" class="form-subject">Dietary</label>
-                        <div class="checkbox">
-                            <input id="non_vegetarian" value="non_vegetarian" name="dietary" type="checkbox">
-                            <label for="non_vegetarian">Non-Vegetarian</label>
-                        </div>
-                        <div class="checkbox">
-                            <input id="vegetarian" value="vegatarian" name="dietary" type="checkbox">
-                            <label for="vegetarian">Vegetarian</label>
-                        </div>
-                        <div class="checkbox">
-                            <input id="vegan" value="vegan" name="dietary" type="checkbox">
-                            <label for="vegan">Vegan</label>
-                        </div>
-                        <div class="checkbox">
-                            <input id="gluten_free" value="gluten_free" name="dietary" type="checkbox">
-                            <label for="gluten_free">Gluten Free</label>
-                        </div>
-                        <div class="checkbox">
-                            <input id="halal" value="halal" name="dietary" type="checkbox">
-                            <label for="halal">Halal</label>
-                        </div>
+                        <label class="checkbox" for="nonvegetarian"> Non-Vegetarian
+                            <input type="checkbox" name="dietary" id="nonvegetarian" value="nonvegetarian"> 
+                            <!-- <span class="checkmark"></span> -->
+                        </label>
+    
+                        <label class="checkbox" for="vegetarian"> Vegetarian
+                            <input type="checkbox" name="dietary" id="vegetarian" value="vegetarian"> 
+                            <!-- <span class="checkmark"></span> -->
+                        </label>
+    
+                        <label class="checkbox" for="vegan"> Vegan
+                            <input type="checkbox" name="dietary" id="vegan" value="vegan"> 
+                            <!-- <span class="checkmark"></span> -->
+                        </label>
+    
+                        <label class="checkbox" for="glutenfree"> Gluten-Free
+                            <input type="checkbox" name="dietary" id="glutenfree" value="glutenfree"> 
+                            <!-- <span class="checkmark"></span> -->
+                        </label>
+    
+                        <label class="checkbox" for="halal"> Halal
+                            <input type="checkbox" name="dietary" id="halal" value="halal"> 
+                            <!-- <span class="checkmark"></span> -->
+                        </label>
                     </div>
 
                     <!-- <div class="inside-form">

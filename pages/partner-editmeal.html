@@ -15,28 +15,20 @@
 <body>
     <div class="partner-editmeal">
         <header>
-            <i class="fas fa-bars mobile-view"></i>
-            <nav>
-                <ul>
-                    <li class="partner-navbar-partnername">Hello, XYZ Restaurant</li>
-
-                    <li class><a href="#">Available Meals</a></li>
-
-                    <li><a href="#">Profile</a></li>
-
-                    <li class="partner-navbar-search"><a href="#"><i class="fas fa-search">    </i></a></li>
-
-                    <li class="logout-button"><button id="partner-logout" class="button logoutbutton">Log Out</button></li>
-                    
+  
+            <header>
+                <ul class="header_mobile">
+                    <div class="mainlogo_img"><img src="/images/Foodlet_Partner_Logo_W.png" alt="" class="nav_img"></div>
+                    <div><a href=""><img class="menu_icon" src="/resources/Icons/LogOut.png" alt="">Discover</a></div>  
                 </ul>
-            </nav>
-            
-            <div class="site-branding">
-                <h1>FOODLET Partner</h1>
-                <img src="images/Foodlet_Partner_Logo (1).png" alt="">
-            </div>
-
-            <a class="mobile-view" href="#"><i class="fas fa-search"></i></a>
+                <div class="header_desktop">
+                        <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                        <div class="cart_opt"><img src="" alt="" class="usr_img"></div>
+                        <div class="orders_opt"><a class="cpagea" href="">Hello User</a></div>
+                        <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
+                </div>
+        
+            </header>
         </header>
 
         <main>
@@ -47,6 +39,7 @@
                         <label for="menu-name" class="form-subject">Menu Name</label>
                         <input id="menu-name" name="menu-name" type="text" placeholder="Italian Spaghetti ">
                     </div>
+
                     <div class="two-columns">
                         <div class="inside-form">
                             <label for="original-price" class="form-subject">Original Price</label>
@@ -56,6 +49,7 @@
                             <label for="sale-price" class="form-subject">Sale Price</label>
                             <input id="sale-price" name="sale-price" type="number" placeholder="$ 7.99">
                         </div>
+
                     </div>
                     <div class="inside-form">
                         <label for="menu-details" class="form-subject">Menu Details</label>

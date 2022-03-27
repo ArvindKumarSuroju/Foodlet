@@ -16,7 +16,11 @@
 
 <body>
     <!--Header nav-->
+
+
+
     <header>
+
         <div class="inner">
             <ul class="header_mobile">
                 <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
@@ -64,6 +68,7 @@
                     </li>
                 </ul>
             </div>
+
     </header>
     <!--Cart screen-->
     <main>
@@ -102,6 +107,7 @@
             <div class="wrap">
             <h2 class="title">My Cart</h2>
             <div class="restaurant">
+
                 <div class="restaurant_detail">
                             <p><img src="/resources/Icons/storeName.png" class="cartIcon"><span>Amare Restaurant</span></p>
                             <p><img src="/resources/Icons/location.png" alt="icon" class="cartIcon"><span>address</span></p>
@@ -110,13 +116,15 @@
                             </p>
                   
                 </div>
+
             </div>
-            <div class="menus">
-                <div class="menu_list">
+            <div class="menus" id="menuItems">
+                <!-- <div class="menu_list">
                     <ul class="menu_detail">
                         <li class="store_img"><img src="">img</li>
                         <li>
                             <b>Menu Name1</b>
+
                             <!-- button for changing quantity-->
                             <p class="adjust">
                                 <a class="minus">-</a>
@@ -149,9 +157,10 @@
                 <p class="totalPrice">
                     <span>$ 9.98</span>
                 </p>
+
             </div>
             <div class="buttons">
-                <button class="button_green button_reserve">Reserve</button>
+                <button class="button_green button_reserve" id="reserveMeal" onclick="cart()">Reserve</button>
 
             </div>
         </div>
