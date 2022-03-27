@@ -6,75 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/orderConfirm.css">
     <link rel="stylesheet" href="../css/cart.css">
-    <link rel="stylesheet" href="../css/pickup.css">
     <script text="javascript" src="../js/main.js" defer></script>
-    <title>Pick up</title>
+    <title>Order Confirm</title>
 </head>
 <body>
     <!--Header nav-->
     <header>
-        <div class="header_mobile">
-        <ul class="inner">
-            <li class="hamburger">menu</li>
-            <li class="logo"></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-            <li class="header_icon"><img src="" alt=""></li>
-        </ul>
-        <div class="header_desktop">
-            <ul class="header_nav inner">
-                <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
-                <li><a href="">Favourite</a></li>
-                <li><a href="">Cart</a></li>
-                <li><a href="">Orders</a></li>
-                <li><a href="">My Rewards</a></li>
-                <li><a href="">Settings</a></li>
-                <li><a href="">About</a></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><button class="logout">Log Out</button></li>
-            </ul>
-        </div>
-        <div id="sidebar" > <!--Sidebar-->
-            <h2 class="sidelogo"></h2>
-            <a class="side_close"><img src="" >close</a>
-            <ul class="sidebar_menu">
+        <div class="inner">
+            <ul class="header_mobile">
+                <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
+                <li class="logo"></li>
+                <!-- <li class="header_icon"></li> -->
                 <li>
-                    <img src="" alt="">Hi, Use Name
-                    <p>your-email@gmail.com</p>
+                    <div class="menu_item cart"></div>
                 </li>
-                <li><a href=""><img src="" alt="">Favourite</a></li>
-                <li><a href=""><img src="" alt="">Cart</a></li>
-                <li><a href=""><img src="" alt="">Orders</a></li>
-                <li><a href=""><img src="" alt="">My Rewards</a></li>
-                <li><a href=""><img src="" alt="">Settings</a></li>
-                <li><a href=""><img src="" alt="">About</a></li>
-                <li><a href=""><img src="" alt="">Log Out</a></li>
+                <!-- <li>
+                    <div class="header_icon"></div>
+                </li> -->
             </ul>
-        </div>
+            <div class="header_desktop">
+                    <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                    <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                    <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                    <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                    <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+            </div>
+                    <div class="logout_butt">
+                        
+                        <button class="logouthead" id="logoutOfApp">Log Out</button>
+                    </div>
+                    
+            
+            </ul>
+             </div>
+            
+            <div id="sidebar">
+                <!--Sidebar-->
+                <h2 class="sidelogo"></h2>
+    
+                <a class="side_close"><img src="">X</a>
+                <ul class="sidebar_menu">
+                    <li>
+                        <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
+                        <p>your-email@gmail.com</p>
+                    </li>
+                    <li>
+                        <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
+                    </li>
+                    <li>
+                        <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
+                    </li>
+                    <li>
+                        <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
+                    </li>
+                  
+                    <li>
+                        <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+                    </li>
+                </ul>
+            </div>
+           
     </header>
     <main>
-        <div class="inner">
+        <div class="wrap">
             <h2 class="title">Your Order Has Been Confirmed</h2>
             <p class="text_title text_center text_color_tertiary">Waiting for pick up.</p>
             <p class="text_title text_center text_color_tertiary">Show this page to pick up and pay at the store.</p>
             <div class="pickup_info">
-                <h4>BC123AR 0930</h4>
-                <div>
+                <h4>Store Information</h4>
+                <div class="storeInfoBox">
                     <ul>
                         <li class="store_img">
                             <img src="../resources/Logo/Favicon.png" alt="" class="round">
                         </li>
-                        <li><b>Amare Restaurant</b>
-                        <ul class="order_review">
-                            <li>Pick up today by 3:30pm</li>
-                            <li>Knight St, Vancouver</li>
-                            <li><a>get direction</a></li>
-                            <li>Reserverd on 11st Feb 2022 5:00pm</li>
-                        </ul>
+                        <li>
+                            <ul class="order_review">
+                                <li><b>Amare Restaurant</b></li>
+                                <li>Pick up today by 3:30pm</li>
+                                <li>Knight St, Vancouver</li>
+                                <li class="reserveTime">Reserverd on 11st Feb 2022 5:00pm</li>
+                            </ul>
+                            
+                        </li>
+                       
                     </ul>
                 </div>
             </div>
@@ -84,10 +100,10 @@
                         <li class="store_img">
                             <img src="../resources/Logo/Favicon.png" alt="" class="round">
                         </li>
-                        <li><b>Menu Name1</b><p>1pcs x $ 4.99</p></li>
+                        <li><b>Menu Name1</b><p>1pcs x $ 4.99</p><p class="saveweight">500 gr of food was saved</p></li>
                         <li>
                             <p class="price">
-                                <span class="price_crossout text_body_text text_color_secondary">$ 8.99</span>
+                                <span class="price_crossout text_body_text text_color_secondary" style="text-decoration:line-through">$ 8.99</span>
                                 <span class="text_body_text text_color_primary text_weight_700">&nbsp;&nbsp;$ 4.99</span>
                             </p>
                         </li>
@@ -108,25 +124,26 @@
                     </ul>
                 </div>
             </div>
+            <div class="needtopay">
+                <p><b>Need to pay</b></p>
+                <p class="price"><span>$ 9.98</span></p>
+            </div>
             <div class="save">
                 <p>You will save</p>
-                <p class="price">$ 10.00</p>
+                <p class="price"><span>$ 10.00</span> </p>
             </div>
-            <div class="total">
+            <div class="weight">
                 <p>You will reduce food waste by</p>
-                <p class="price">1000 gr</p>
+                <p class="totalWeight">1000 gr</p>
             </div>
-            <div class="pay">
-                <p><b>Need to pay</b></p>
-                <p class="price">$ 9.98</p>
-            </div>
+           
             <div class="buttons">
                 <button class="fill">Discover More Store</button> 
             </div>
         </div>
     </main>
-    <footer class="copyright">
+    <!-- <footer class="copyright">
         <span>
             &copy;2022 FOODLET. ALL RIGHTS RESERVED.
         </span>
-    </footer>
+    </footer> -->

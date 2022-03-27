@@ -16,40 +16,34 @@
 
 <body>
     <header>
+        <div class="inner">
         <ul class="header_mobile">
-            <li class="hamburger">menu</li>
+            <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
             <li class="logo"></li>
-            <li class="header_icon"><img src="" alt=""></li>
+            <!-- <li class="header_icon"></li> -->
             <li>
                 <div class="menu_item cart"></div>
             </li>
-            <li>
-                <div class="menu_item notification"></div>
-            </li>
+            <!-- <li>
+                <div class="header_icon"></div>
+            </li> -->
         </ul>
         <div class="header_desktop">
-            <ul class="header_nav inner">
-                <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
-                <li><a href="">Favourite</a></li>
-                <li><a href="">Cart</a></li>
-                <li><a href="">Orders</a></li>
-                <li><a href="">My Rewards</a></li>
-                <li><a href="">Settings</a></li>
-                <li><a href="">About</a></li>
-                <li><img src="" alt=""></li>
-
-                <li>
-                    <div class="menu_item cart"></div>
-                </li>
-                <li>
-                    <div class="menu_item notification"></div>
-                </li>
-                <li><button class="logout" id="logoutOfApp">Log Out</button></li>
+                <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
         </div>
-
-
-        </div>
+                <div class="logout_butt">
+                    
+                    <button class="logouthead" id="logoutOfApp">Log Out</button>
+                </div>
+                
+        
         </ul>
+         </div>
+        
         <div id="sidebar">
             <!--Sidebar-->
             <h2 class="sidelogo"></h2>
@@ -61,36 +55,28 @@
                     <p>your-email@gmail.com</p>
                 </li>
                 <li>
-                    <a href=""><img class="menu_icon" src="/resources/Icons/Favourite.png" alt="">Favourite</a>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
                 </li>
                 <li>
-                    <a href=""><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</a>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
                 </li>
                 <li>
-                    <a href=""><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</a>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
                 </li>
+              
                 <li>
-                    <a href=""><img class="menu_icon" src="" alt="">My Rewards</a>
-                </li>
-                <li>
-                    <a href=""><img class="menu_icon" src="/resources/Icons/Setting.png" alt="">Settings</a>
-                </li>
-                <li>
-                    <a href=""><img class="menu_icon" src="/resources/Icons/About.png" alt="">About</a>
-                </li>
-
-                <li>
-                    <a href=""><img class="menu_icon" src="" alt="">Log Out</a>
+                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
                 </li>
             </ul>
         </div>
+       
     </header>
     <main>
 
         <div id="main_page" class="page">
             <form class="citySelection">
                 <fieldset>
-                    <label>Select your city</label>
+                    <!-- <label>Select your city</label> -->
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
                             <option value="All">Select a City</option>
                             <option value="Vancouver">Vancouver</option>

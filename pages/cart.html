@@ -8,36 +8,39 @@
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
     <script text="javascript" src="../js/main.js" defer></script>
+    <script text="javascript" src="homepage.js" defer></script>
     <title>Cart</title>
 </head>
 
 <body>
     <!--Header nav-->
     <header>
-        <div class="header_mobile">
-            <ul class="inner">
-                <li class="hamburger">menu</li>
+        <div class="inner">
+            <ul class="header_mobile">
+                <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
                 <li class="logo"></li>
-                <li class="header_icon"><img src="" alt=""></li>
-                <li class="header_icon"><img src="" alt=""></li>
-                <li class="header_icon"><img src="" alt=""></li>
+                <!-- <li class="header_icon"></li> -->
+                <li>
+                    <div class="menu_item cart"></div>
+                </li>
+                <!-- <li>
+                    <div class="header_icon"></div>
+                </li> -->
             </ul>
             <div class="header_desktop">
-                <ul class="header_nav inner">
-                    <li><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></li>
-                    <li><a href="">Favourite</a></li>
-                    <li><a href="">Cart</a></li>
-                    <li><a href="">Orders</a></li>
-                    <li><a href="">My Rewards</a></li>
-                    <li><a href="">Settings</a></li>
-                    <li><a href="">About</a></li>
-                    <li><img src="" alt=""></li>
-                    <li><img src="" alt=""></li>
-                    <li><img src="" alt=""></li>
-                    <li><button class="logout">Log Out</button></li>
-                </ul>
+                    <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                    <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                    <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                    <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                    <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
             </div>
+                    <div class="logout_butt">
+                        
+                        <button class="logouthead" id="logoutOfApp">Log Out</button>
+                    </div>
+             </div>
             <div id="sidebar">
                 <!--Sidebar-->
                 <h2 class="sidelogo"></h2>
@@ -48,22 +51,13 @@
                         <p>your-email@gmail.com</p>
                     </li>
                     <li>
-                        <a href=""><img src="" alt="">Favourite</a>
+                        <a href=""><img src="" alt="">Discover</a>
                     </li>
                     <li>
                         <a href=""><img src="" alt="">Cart</a>
                     </li>
                     <li>
                         <a href=""><img src="" alt="">Orders</a>
-                    </li>
-                    <li>
-                        <a href=""><img src="" alt="">My Rewards</a>
-                    </li>
-                    <li>
-                        <a href=""><img src="" alt="">Settings</a>
-                    </li>
-                    <li>
-                        <a href=""><img src="" alt="">About</a>
                     </li>
                     <li>
                         <a href=""><img src="" alt="">Log Out</a>
@@ -73,7 +67,7 @@
     </header>
     <!--Cart screen-->
     <main>
-        <div class="inner">
+        
             <!-- 
         <h2 class="title">My Cart</h2>
         <div class="restaurant">
@@ -104,57 +98,57 @@
                         <div class="cart"></div>
                     </li>
                 </ul>
- -->
+ -->    
+            <div class="wrap">
             <h2 class="title">My Cart</h2>
             <div class="restaurant">
-                <ul class="restaurant_detail">
-                    <li class="store_img"><img src="#"></li>
-                    <li><b>Amare Restaurant</b>
-                        <p>Pick Up today by </p>
-                    </li>
-                    <li class="icon"><img src="#" alt=""></li>
-                </ul>
+                <div class="restaurant_detail">
+                            <p><img src="/resources/Icons/storeName.png" class="cartIcon"><span>Amare Restaurant</span></p>
+                            <p><img src="/resources/Icons/location.png" alt="icon" class="cartIcon"><span>address</span></p>
+                            <p><img src="/resources/Icons/pickUpTime.png" alt="icon" class="cartIcon">Pick Up today by 
+                                <input type="time" class="time">
+                            </p>
+                  
+                </div>
             </div>
             <div class="menus">
                 <div class="menu_list">
                     <ul class="menu_detail">
-                        <li class="store_img">img</li>
+                        <li class="store_img"><img src="">img</li>
                         <li>
                             <b>Menu Name1</b>
                             <!-- button for changing quantity-->
-                            <p>
-                                <button class="minus">-</button>
+                            <p class="adjust">
+                                <a class="minus">-</a>
                                 <input class="quantity" type="text" value="0" maxlength="4" size="2">
-                                <button class="plus">+</button>
+                                <a class="plus">+</a>
                             </p>
 
                         </li>
                         <li><span class="menu-price" style="text-decoration:line-through">$8.99</span>
-                            <p>$ 4.99</p>
+                            <p><b>$ 4.99</b></p>
                         </li>
-                        <li><a class="btn-danger">delete icon</a></li>
+                        <li><a class="btn-danger"><img src="/resources/Icons/deleteOrange.png"></a></li>
                     </ul>
                 </div>
                 <div class="menu_list">
                     <ul class="menu_detail">
-                        <li class="store_img">img</li>
+                        <li class="store_img"><img src="">img</li>
                         <li><b>Menu Name2</b>
-                            <p>1pcs x $ 4.99</p>
+                            <!-- <p>1pcs x $ 4.99</p> -->
                         </li>
                         <li><span style="text-decoration:line-through">$8.99</span>
-                            <p>$ 4.99</p>
+                            <p><b>$ 4.99</b></p>
                         </li>
-                        <li><a class="btn-danger">delete icon</a></li>
+                        <li><a class="btn-danger"><img src="/resources/Icons/deleteOrange.png"></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="save">
-                <p>You will save</p>
-                <p class="price">$ 10.00</p>
-            </div>
             <div class="total">
                 <p>Total Order</p>
-                <p class="price">$ 9.98</p>
+                <p class="totalPrice">
+                    <span>$ 9.98</span>
+                </p>
             </div>
             <div class="buttons">
                 <button class="button_green button_reserve">Reserve</button>
@@ -162,6 +156,7 @@
             </div>
         </div>
         </div>
+    </div>
     </main>
     <footer class="copyright">
         <span>

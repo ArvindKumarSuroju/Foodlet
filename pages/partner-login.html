@@ -7,25 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodlet: Partner's Log-in & Sign-up Page</title>
 
-    <link rel="stylesheet" href="../css/partner-login-signup.css">
+    
 
-    <script src="../js/partner-login.js" defer></script>
+
 </head>
 
 <body>
     <div class="desktop-view">
-        <header>
+        <header style="padding:7px 60px">
             <div class="site-branding">
                 <h1>FOODLET Partner</h1>
                 <img src="..\images\Foodlet_Partner_Logo_W.png" alt="Foodlet_Partner_Logo_W">
             </div>
         </header>
 
-        
-            
-        <div class="aside">
-
-            <img src="../resources/Images/Generate Money.png" alt="">
+    
 
 
         <div class="aside">
@@ -41,6 +37,7 @@
 
 
         <main>
+            <div class="loginMain">
             <h2>Log in</h2>
 
             <div class="partner-login-form">
@@ -53,12 +50,12 @@
                         <label for="partner-login-password">Password</label>
                         <input id="password" type="password" id="partner-login-password" name="partner-login-password" placeholder="Enter your password">
                     </div>
-                    <a href="#" class="partner-login-forgetpassword">Forget your password?</a>
+                    <!-- <a href="#" class="partner-login-forgetpassword">Forget your password?</a>
                     <div class="partner-login-rememberme checkbox">
                         <input type="checkbox" id="partner-login-rememberme" name="partner-login-rememberme">
                         <label for="partner-login-rememberme">Remember me</label>
-                    </div>
-                    <button type="submit" class="button">Log in</button>
+                    </div> -->
+                    <button type="submit" class="loginButton">Log in</button>
                     <!-- <button id="googleSigninPartner">Google</button> -->
                 </form>
             </div>
@@ -66,6 +63,7 @@
             <div class="bottom-link">
                 <p>New Partner? <a href="#partner-signup">Create Account</a></p>
             </div>
+        </div>
         </main>
     </div>
     <footer>&copy; 2022 FOODLET, RIGHT RESERVED.</footer>
