@@ -2,16 +2,19 @@
 
 <body>
     <header>
+        <div class="inner">
         <ul class="header_mobile">
             <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
             <li class="logo"></li>
-            <li class="header_icon"></li>
+
+            <!-- <li class="header_icon"></li> -->
             <li>
                 <div class="menu_item cart"></div>
             </li>
-            <li>
-                <div class="menu_i"></div>
-            </li>
+            <!-- <li>
+                <div class="header_icon"></div>
+            </li> -->
+
         </ul>
         <div class="header_desktop">
                 <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
@@ -19,12 +22,22 @@
                 <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
                 <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
                 <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+
                 <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
         </div>
 
 
+
         </div>
+                <div class="logout_butt">
+                    
+                    <button class="logouthead" id="logoutOfApp">Log Out</button>
+                </div>
+                
+        
         </ul>
+         </div>
+        
         <div id="sidebar">
             <!--Sidebar-->
             <h2 class="sidelogo"><img src="/images/Foodlet-Logo-primary-colorbg.png" alt="" class="sidenav_img"></h2>
@@ -37,27 +50,31 @@
                 </li>
                 <li>
                     <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
+
                 </li>
                 <li>
                     <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
                 </li>
                 <li>
                     <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
+
                 </li>
-
-
+              
                 <li>
-                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp2"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+
+                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+
                 </li>
             </ul>
         </div>
+       
     </header>
     <main>
 
         <div id="main_page" class="page">
             <form class="citySelection">
                 <fieldset>
-                    <label>Select your city</label>
+                    <!-- <label>Select your city</label> -->
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
                         <option value="All">Select a City</option>
                         <option value="Vancouver">Vancouver</option>
