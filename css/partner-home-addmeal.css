@@ -14,10 +14,10 @@ nav {
     width: 100vw;
 } */
 
-html,
+
 body {
     height: 100vh;
-    position: relative;
+    /* position: relative; */
     margin: 0;
     text-align: center;
     width: 100vw;
