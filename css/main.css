@@ -52,6 +52,18 @@ a {
 
 
 
+/* button {
+    margin: 10% auto;
+    display: block;
+    padding: 10px 60px;
+    text-align: center;
+    border: 0;
+    border-radius: 14px;
+    background-color: #2e8b56;
+    color: white;
+} */
+
+
 .question {
     display: inline-block;
 }

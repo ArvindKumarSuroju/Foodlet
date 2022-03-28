@@ -7,7 +7,7 @@
 img {
     width: 100%;
     height: 100%;
-} 
+}
 
 nav ul,
 h1 {
@@ -102,10 +102,10 @@ i.fa-smile {
     grid-column: -1/1;
     text-align: left;
 }
+
 .storeinfo-availablemeallist h3 {
     font-size: 16px;
     font-weight: 700;
-
     margin: 0;
     text-align: left;
 }
@@ -120,14 +120,13 @@ i.fa-smile {
     margin: 5px 15px;
     text-align: center;
     display: grid;
-    flex-flow:column nowrap;
+    flex-flow: column nowrap;
     grid-gap: 1rem;
     justify-content: center;
     /* align-items:center; */
     /* min-width: 352px;
     max-width: 352px; */
 }
-
 
 
 /* .storeinfo-availablemeallist .two-columns {
@@ -153,7 +152,8 @@ i.fa-smile {
     /* align-self: center; */
 }
 
-.availablemeal p, .availablemeal span {
+.availablemeal p,
+.availablemeal span {
     margin: 0.25rem 0;
     font-size: 14px;
 }
@@ -162,24 +162,24 @@ i.fa-smile {
     margin: 5px;
 }
 
-.availablemeal img{
+.availablemeal img {
     width: 72px;
     height: 72px;
-
     border-radius: 50%;
 }
 
 .availablemeal input {
     width: 39px;
     height: 32px;
-    
     background: #ECF1F4;
     border: none;
     border-radius: 10px;
 }
-form.formclass{
-    min-width:150px;
+
+form.formclass {
+    min-width: 150px;
 }
+
 .mealinfo-layout {
     /* display: flex; */
     display: grid;
@@ -196,7 +196,8 @@ form.formclass{
     font-weight: 700;
 }
 
-#original-price-output, #sale-price-output {
+#original-price-output,
+#sale-price-output {
     font-size: 16px;
 }
 
@@ -209,7 +210,8 @@ form.formclass{
     font-weight: 700;
 }
 
-.minusbutton, .plusbutton {
+.minusbutton,
+.plusbutton {
     border-radius: 100%;
     min-width: 22.25px;
     max-width: 22.25px;
@@ -230,21 +232,20 @@ form.formclass{
 #storeinfo-addtocartbutton {
     display: inline-block;
     border: none;
-    border-radius:10px;
+    border-radius: 10px;
     padding: 1rem 2rem;
     margin: auto;
-    width:200px;
+    width: 200px;
     text-decoration: none;
     background: #2e8b56;
     color: #ffffff;
-    font-family: "Poppins",sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
     margin-bottom: 30px;
-
     /* color: white;
     border: none;
     border-radius: 10px;
@@ -253,7 +254,6 @@ form.formclass{
     width: 187px;
     height: 48px;
     margin: 9px; */
-
 }
 
 #storeinfo-quantity {
@@ -271,6 +271,8 @@ form.formclass{
     font-weight: 700;
     font-size: 16px;
 }
+
+
 /*  Review Section */
 
 .storeinfo-reviews {
@@ -330,19 +332,15 @@ footer {
         grid-template-columns: 1fr;
         grid-template-rows: 8fr 1fr;
     }
-    
     .partner-signup-coverimage1 {
         grid-column: 1/1;
         grid-row: 1/2;
     }
-    
     .partner-signup-profilepicture img {
         width: 84px;
         height: 84px;
-
         border-radius: 50%;
     }
-    
     .partner-signup-profilepicture {
         grid-row: 4/1;
         grid-column: 1/1;
@@ -350,7 +348,7 @@ footer {
         justify-content: center;
         align-items: flex-end;
     }
-/* //////////////////////////////////////////////// */
+    /* //////////////////////////////////////////////// */
     .partner-signup-coverimage1 {
         height: 424px;
     }
@@ -383,39 +381,32 @@ footer {
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
     }
-
-    #eachmeal h3, #storeinfo-addtocartbutton {
+    #eachmeal h3,
+    #storeinfo-addtocartbutton {
         grid-column: -1/1;
     }
-
     #eachmeal h3 {
         font-size: 20px;
         /* margin: 30px 0; */
     }
-
     #storeinfo-addtocartbutton {
         margin: auto;
         margin-top: 20px;
         margin-bottom: 20px;
-
         font-size: 20px;
     }
-
     .menu-details-output {
         max-width: 324px;
         margin: 24px;
     }
-
-    .availablemeal p, .availablemeal span {
+    .availablemeal span {
         font-size: 16px;
     }
-
-    #original-price-output, #sale-price-output, #menu-name {
+    #original-price-output,
+    #sale-price-output,
+    #menu-name {
         font-size: 20px;
     }
-
-
-
     /*  REVIEW SECTION */
     .storeinfo-reviews {
         padding: 32px 0 80px 0;
