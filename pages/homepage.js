@@ -1033,32 +1033,6 @@ function unselectAll(filterCheckbox){
     }
 }
 
-// function check(checked = true) {
-//     let storeTypeCheckboxes = document.querySelectorAll('input[name="storeTypeCheckbox"]');
-//     storeTypeCheckboxes.forEach((checkbox) => {
-//         checkbox.checked = checked;
-//     });
-// }
-
-// function checkAllfn() {
-    
-//     check();
-//     this.onclick = uncheckAllfn;
-
-//     return (console.error('checkAll() is triggered'));
-// }
-
-// function uncheckAllfn() {
-    
-//     check(false);
-//     this.onclick = checkAllfn;
-
-//     return (console.error('triggered uncheckAll()'));
-// }
-
-
-// const allStoreTypeBtn = document.querySelector('#selectAllStoreTypeButton');
-// allStoreTypeBtn.onclick = checkAllfn;
 
 
 
