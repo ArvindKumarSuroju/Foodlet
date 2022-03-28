@@ -34,7 +34,7 @@ header{
     background: #00615B;
     color: white;
     padding: 7px 20px;
-    height: 60px;
+    height: 48px;
 }
 
 h1 {
@@ -241,6 +241,7 @@ label {
    
     main {
         grid-row: 2/3;
+        flex-grow: 1;
     }
 
     h2 {

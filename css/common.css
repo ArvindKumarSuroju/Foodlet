@@ -35,14 +35,23 @@ header{
 }
 
 .header_mobile {
-  height: 65px;
+  height: 48px;
   background-color: #00615b;
   line-height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
+
+.header_mobile li {
+  display: flex;
+  justify-content: center;
+}
+
+.gm-style-mtc, .gm-fullscreen-control, .gm-svpc {
+  display: none;
+}
+
 .mainlogo_img .nav_img{
 
   min-height: 36px;
@@ -65,26 +74,27 @@ header{
 }
  
 .logo {
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-image: url("/images/Foodlet Logo.png");
   background-repeat: no-repeat;
   background-position: left center;
-  background-size: 200px;
+  background-size: 138px;
   margin-left: 2%;
 }
+
+
 .citySelection {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  z-index: 5;
+  padding: 0;
+  margin: .5rem .5rem .5rem 0;
 }
 
+
+
 #filter {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
-  left: -5000px;
   transition: left 0.3s ease-in-out;
   right: 0;
   z-index: 20;
@@ -93,23 +103,72 @@ header{
   display: none;
 }
 
-#filter.on {
+#filter.show-filter {
   display: block;
 }
 
-.filterBtn {
+#filter div.buttons {
   position: absolute;
-  top: 10%;
-  right: 10%;
-  z-index: 10;
-  background-color: #cbe2d5;
-  border: 0;
-  color: #00615b;
-  padding: 0.5rem 3%;
-  margin-left: 1.2rem;
-  cursor: pointer;
-  box-shadow: 9px 12px 24px #555;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
 }
+
+.filter_cate div div {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.filter_cate > div:nth-child(2) {
+  margin-top: 1.5rem;
+}
+
+.filter_cate div div label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.filter_title {
+  margin-bottom: .25rem;
+}
+
+#filter h2 {
+  font-size: 24px;
+}
+
+.filterBtn {
+  /* position: absolute;
+  top: 10%;
+  right: 10%; */
+  
+  background-color: #cbe2d5;
+  color: #00615b;
+  /* box-shadow: 9px 12px 24px #555; */
+
+  border: 0;
+  padding: .5rem 0;
+  width: 80px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-right: 0.5rem;
+  height: auto;
+  z-index: 10;
+  border-radius: 10px;
+  
+  cursor: pointer;
+}
+
 .header_desktop {
   display: none;
 }
@@ -168,10 +227,14 @@ select {
 
 .white_btn,
 .green_btn {
-  width: 38%;
+  width: 164px;
+  height: 48px;
   padding: 3% 0;
   color: #2e8b56;
   text-align: center;
+
+  font-size: 16px;
+  text-transform: capitalize;
 }
 
 .white_btn {
@@ -378,6 +441,15 @@ footer {
   box-sizing: border-box;
 }
 
+#mainArea {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+#map {
+  flex-grow: 1;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1000px) {
@@ -393,7 +465,7 @@ footer {
   #sidebar {
     display: none;
   }
-
+  
   .header_mobile {
     display: none;
   }
@@ -401,14 +473,24 @@ footer {
   .header_desktop {
     display: flex;
     align-items: center;
-    vertical-align: middle;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
     height: 50px;
     background-color: #00615b;
-    padding-top: 7px;
-    /* position:relative; */
   }
+
+  .header_desktop > div:first-child {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .header_desktop > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   .mainlogo_img{
     margin-left: 2%;
     margin-top: 5px;
@@ -471,5 +553,18 @@ footer {
   .header_desktop .menu_item {
     width: 32px;
     height: 32px;
+  }
+
+  #filter.show-filter {
+    width: 500px;
+    height: 380px;
+  }
+
+  .filter_cate > div:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .white_btn, .green_btn {
+    padding: 0;
   }
 }
