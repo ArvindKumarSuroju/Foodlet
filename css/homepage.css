@@ -57,6 +57,12 @@
 
   
   /*Map*/
+<<<<<<< HEAD
+=======
+  #map {
+    height:430px;
+  }
+>>>>>>> 1f75f35859c97dc399be3382b83bbd233d23432a
   .map {
     text-align: center;
     font-size: 20px;
