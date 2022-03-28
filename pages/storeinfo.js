@@ -65,11 +65,11 @@ function renderEachMealData(doc) {
         <img src="${doc.data().imageUrl}" alt="addmeal-photo">
         <div class="mealinfo-text">
             <p id="menu-name"><strong>${doc.data().menuName}</strong></p>
-            <span class="original-price" id="original-price-output">${doc.data().originalPrice}</span>
-            <span id="sale-price-output">${doc.data().salePrice}</span>
+            <span class="original-price" id="original-price-output">$${doc.data().originalPrice}</span>
+            <span id="sale-price-output">$${doc.data().salePrice}</span>
             <div class="two-columns">
                 <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> ${doc.data().quantity} left</p>
-                <form>
+                <form class="formclass">
                     <div class="quantity-input">
                         <button class="minusbutton" id="storeinfo-minusbutton">-</button>
                         <input id="input${doc.id}" name="tobuyquantity" type="number" placeholder="0" onChange="saveCartItem('${doc.id}')">

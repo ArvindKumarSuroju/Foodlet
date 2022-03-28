@@ -1,6 +1,4 @@
-
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -9,7 +7,7 @@
 img {
     width: 100%;
     height: 100%;
-}
+} 
 
 nav ul,
 h1 {
@@ -38,7 +36,7 @@ a {
     grid-template-rows: 4fr 1fr;
 }
 
-.partner-signup-coverimage {
+.partner-signup-coverimage1 {
     grid-column: -1/1;
     grid-row: 1/2;
 }
@@ -69,8 +67,9 @@ a {
 .storeinfo-basicinfo h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #00615B;
+    color: #2E8B56;
     margin: 0;
+    margin-bottom: 30px;
 }
 
 #partner-signup-storetype-output {
@@ -103,39 +102,43 @@ i.fa-smile {
     grid-column: -1/1;
     text-align: left;
 }
+.storeinfo-availablemeallist h3 {
+    font-size: 16px;
+    font-weight: 700;
+
+    margin: 0;
+    text-align: left;
+}
 
 
 /*  AVAILABLE MEAL LIST */
 
-.storeinfo-availablemeallist {
+#eachmeal {
     border-top: #51CF67 solid 1px;
     /* border-bottom: #51CF67 solid 1px; */
     padding: 15px 0;
-    margin: 24px 15px;
+    margin: 5px 15px;
     text-align: center;
     display: grid;
-    flex-flow: column nowrap;
+    flex-flow:column nowrap;
     grid-gap: 1rem;
-    align-items: center;
+    justify-content: center;
+    /* align-items:center; */
+    /* min-width: 352px;
+    max-width: 352px; */
 }
 
-.storeinfo-availablemeallist h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0;
-    text-align: left;
-}
 
 
 /* .storeinfo-availablemeallist .two-columns {
     width: 65vw;
 } */
 
-.storeinfo-availablemeallist form {
+#eachmeal form {
     text-align: right;
 }
 
-.storeinfo-availablemeallist form button {
+#eachmeal form button {
     margin: 5px;
 }
 
@@ -144,10 +147,13 @@ i.fa-smile {
     text-align: left;
     border: 1px solid #CBE2D5;
     border-radius: 10px;
+    height: 100%;
+    min-width: 352px;
+    max-width: 352px;
+    /* align-self: center; */
 }
 
-.availablemeal p,
-.availablemeal span {
+.availablemeal p, .availablemeal span {
     margin: 0.25rem 0;
     font-size: 14px;
 }
@@ -156,20 +162,24 @@ i.fa-smile {
     margin: 5px;
 }
 
-.availablemeal img {
+.availablemeal img{
     width: 72px;
     height: 72px;
+
     border-radius: 50%;
 }
 
 .availablemeal input {
     width: 39px;
     height: 32px;
+    
     background: #ECF1F4;
     border: none;
     border-radius: 10px;
 }
-
+form.formclass{
+    min-width:150px;
+}
 .mealinfo-layout {
     /* display: flex; */
     display: grid;
@@ -186,8 +196,7 @@ i.fa-smile {
     font-weight: 700;
 }
 
-#original-price-output,
-#sale-price-output {
+#original-price-output, #sale-price-output {
     font-size: 16px;
 }
 
@@ -200,10 +209,10 @@ i.fa-smile {
     font-weight: 700;
 }
 
-.minusbutton,
-.plusbutton {
-    border-radius: 50%;
-    width: 22.25px;
+.minusbutton, .plusbutton {
+    border-radius: 100%;
+    min-width: 22.25px;
+    max-width: 22.25px;
     height: 22.25px;
 }
 
@@ -221,18 +230,21 @@ i.fa-smile {
 #storeinfo-addtocartbutton {
     display: inline-block;
     border: none;
-    border-radius: 10px;
+    border-radius:10px;
     padding: 1rem 2rem;
-    margin: 0;
+    margin: auto;
+    width:200px;
     text-decoration: none;
     background: #2e8b56;
     color: #ffffff;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins",sans-serif;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
+    margin-bottom: 30px;
+
     /* color: white;
     border: none;
     border-radius: 10px;
@@ -241,6 +253,7 @@ i.fa-smile {
     width: 187px;
     height: 48px;
     margin: 9px; */
+
 }
 
 #storeinfo-quantity {
@@ -250,6 +263,7 @@ i.fa-smile {
 #updated-availability-output {
     display: flex;
     align-items: center;
+    flex: nowrap;
 }
 
 .dietary {
@@ -257,8 +271,6 @@ i.fa-smile {
     font-weight: 700;
     font-size: 16px;
 }
-
-
 /*  Review Section */
 
 .storeinfo-reviews {
@@ -316,10 +328,10 @@ footer {
         text-align: center;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 4fr 1fr;
+        grid-template-rows: 8fr 1fr;
     }
     
-    .partner-signup-coverimage {
+    .partner-signup-coverimage1 {
         grid-column: 1/1;
         grid-row: 1/2;
     }
@@ -327,19 +339,19 @@ footer {
     .partner-signup-profilepicture img {
         width: 84px;
         height: 84px;
-        border: #FAFCFE solid 2px;
+
         border-radius: 50%;
     }
     
     .partner-signup-profilepicture {
-        grid-row: -1/1;
-        grid-column: -1/1;
+        grid-row: 4/1;
+        grid-column: 1/1;
         display: flex;
         justify-content: center;
         align-items: flex-end;
     }
 /* //////////////////////////////////////////////// */
-    .partner-signup-coverimage {
+    .partner-signup-coverimage1 {
         height: 424px;
     }
     .partner-signup-profilepicture img {
@@ -366,38 +378,44 @@ footer {
         grid-column: 2/3;
     }
     /*  AVAILABLE MEALS */
-    .storeinfo-availablemeallist {
+    #eachmeal {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
     }
-    .storeinfo-availablemeallist h3,
-    #storeinfo-addtocartbutton {
+
+    #eachmeal h3, #storeinfo-addtocartbutton {
         grid-column: -1/1;
     }
-    .storeinfo-availablemeallist h3 {
+
+    #eachmeal h3 {
         font-size: 20px;
         /* margin: 30px 0; */
     }
+
     #storeinfo-addtocartbutton {
         margin: auto;
         margin-top: 20px;
         margin-bottom: 20px;
+
         font-size: 20px;
     }
+
     .menu-details-output {
         max-width: 324px;
         margin: 24px;
     }
-    .availablemeal p,
-    .availablemeal span {
+
+    .availablemeal p, .availablemeal span {
         font-size: 16px;
     }
-    #original-price-output,
-    #sale-price-output,
-    #menu-name {
+
+    #original-price-output, #sale-price-output, #menu-name {
         font-size: 20px;
     }
+
+
+
     /*  REVIEW SECTION */
     .storeinfo-reviews {
         padding: 32px 0 80px 0;

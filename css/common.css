@@ -25,20 +25,7 @@ button a {
 }
 
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-div,
-li,
-ul,
-a,
-body {
-    margin: 0;
-    padding: 0;
-}
+
 
 ul {
     display: flex;
@@ -63,6 +50,7 @@ select {
     border-radius: 10px;
 }
 header {
+    vertical-align: middle;
     padding:10px 0;
     background-color:#00615b;
 }
@@ -72,6 +60,16 @@ header {
 
 main {
   height:100vh;
+}
+.copyright {
+  background-color: #00615b;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  line-height: 30px;
+  height: 30px;
+  font-weight: light;
+  box-sizing: border-box;
 }
 /*header*/
 
@@ -100,7 +98,14 @@ main {
     flex-flow: row nowrap;
   }
   
- 
+  .mainlogo_img .nav_img{
+
+    min-height: 36px;
+    min-width: 200px;
+    max-height: 36px;
+    max-width: 200px; 
+  }
+  
   .hamburger {
     height: 40px;
     width: 40px;
@@ -272,7 +277,7 @@ img.round {
 
 /*sidebar*/
   #sidebar {
-    width: 91%;
+    width: 81%;
     background-color: #00615b;
     position: absolute;
     left: -2000px;
@@ -280,6 +285,7 @@ img.round {
     transition: left 0.3s ease-in-out;
     z-index: 10;
     height:100vh;
+    box-sizing: border-box;
   }
   
   #sidebar.on {
@@ -287,20 +293,26 @@ img.round {
   }
   
   .sidelogo {
-    position:relative;
-    background-image: url("/images/Foodlet Logo.png");
+    /* position:relative; */
+    background-image: url("/resources/Logo/Foodlet-Logo-primary-colorbg.png");
+    background-size:300px 150px;
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
     /* height: 100%; */
-    padding: 10% 0;
+    padding: 20% 0;
   }
+  .sidenav_img{
+    width:260px;
+    height:125px;
+}
   .side_close {
     position:absolute;
     right:3.2%;
     top:1%;
-    color:blue;
+    color:white;
     cursor: pointer;
+    font-size:20px;
   
   }
   
@@ -309,31 +321,66 @@ img.round {
     flex-flow: column;
   }
   .sidebar_menu li {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     margin: 0 5%;
     color: white;
+
+    padding-top: 2%;
+    padding-bottom: 2%; 
+    align-content: left;
+    text-align:left;
+  }
+
+  .sidebar_menu li>p {
+    padding-left:45px;
   }
   
   .sidebar_menu li:last-child {
     padding-bottom: 55%;
+    border-bottom: 1px solid #00615b;
   }
   
   .sidebar_menu li a {
     color: white;
   }
-  
+  div.sideitemsleft{
+    align-content: flex-start;
+  }
+  .logoutsidebar {
+    display: flex;
+    align-items: center;
+  }
   .sidebar_menu img {
     width: 24px;
     height: 24px;
     margin: auto 10px;
     vertical-align: middle;
   }
+
+  /* .menu_icon {
+
+  } */
+
+  .logoutsidebar {
+    margin-top:40%;
+  }
   .logout_butt {
       display:none;
   }
-
+  footer {
+    background-color: #00615b;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    line-height: 30px;
+    height: 30px;
+    font-weight: light;
+    box-sizing: border-box;
+  }
 /* Desktop */
-
+.gm-style-mtc {
+  display:none;
+}
 @media screen and (min-width:1000px) {
     .wrap {
         padding:5% 0;
