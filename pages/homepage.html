@@ -1,12 +1,11 @@
 
 
-<body>
+<!-- <body> -->
     <header>
         <div class="inner">
         <ul class="header_mobile">
             <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
             <li class="logo"></li>
-
             <!-- <li class="header_icon"></li> -->
             <li>
                 <div class="menu_item cart"></div>
@@ -14,7 +13,6 @@
             <!-- <li>
                 <div class="header_icon"></div>
             </li> -->
-
         </ul>
         <div class="header_desktop">
                 <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
@@ -22,12 +20,6 @@
                 <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
                 <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
                 <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
-
-                <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
-        </div>
-
-
-
         </div>
                 <div class="logout_butt">
                     
@@ -40,30 +32,26 @@
         
         <div id="sidebar">
             <!--Sidebar-->
-            <h2 class="sidelogo"><img src="/images/Foodlet-Logo-primary-colorbg.png" alt="" class="sidenav_img"></h2>
+            <h2 class="sidelogo"></h2>
 
             <a class="side_close"><img src="">X</a>
             <ul class="sidebar_menu">
                 <li>
-                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
+                    <img src="../resources/Icons/profileWhite.png" alt="">Hi, Use Name
                     <p>your-email@gmail.com</p>
                 </li>
                 <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
-
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discoverWhite.png" alt="">Discover</div>
                 </li>
                 <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/cartWhite.png" alt="">Cart</div>
                 </li>
                 <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
-
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/orderWhite.png" alt="">Orders</div>
                 </li>
               
                 <li>
-
-                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
-
+                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><p>Log Out</p></button></div>
                 </li>
             </ul>
         </div>
@@ -76,12 +64,12 @@
                 <fieldset>
                     <!-- <label>Select your city</label> -->
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
-                        <option value="All">Select a City</option>
-                        <option value="Vancouver">Vancouver</option>
-                        <option value="Burnaby">Burnaby</option>
-                        <option value="Richmond">Richmond</option>
-                        <option value="Surrey">Surrey</option>
-                    </select>
+                            <option value="All">Select a City</option>
+                            <option value="Vancouver">Vancouver</option>
+                            <option value="Burnaby">Burnaby</option>
+                            <option value="Richmond">Richmond</option>
+                            <option value="Surrey">Surrey</option>
+                        </select>
                 </fieldset>
             </form>
             <div class="filterBtn" id="filterBtn">Filter</a>
@@ -97,8 +85,7 @@
                     <div> 
                         <div class="filter_title">
                             <h3 class="category">Store Type</h3>
-                            <!-- <button id="selectAllStoreTypeButton" onclick="selectAll('storeTypeCheckbox')">select all</button>
-                            <button id="unselectAllDietaryButton" onclick="unselectAll('storeTypeCheckbox')">unselect all</button> -->
+                            <button id="selectAllStoreTypeButton">select all</button>
                         </div>
                         <div>
                             <input type="checkbox" name="storeTypeCheckbox" id="restaurantCheckbox" value="Restaurant">
@@ -119,31 +106,30 @@
                     <div>
                         <div class="filter_title">
                             <h3 class="dietary">Dietary</h3>
-                            <!-- <button id="selectAllDietaryButton" onclick="selectAll('dietaryCheckbox')">select all</button>
-                            <button id="unselectAllDietaryButton" onclick="unselectAll('dietaryCheckbox')">unselect all</button> -->
+                            <button id="selectAllDietaryButton"onclick="selectAllDietary()">select all</button>
                         </div>
                         <div>
-                            <input type="checkbox" name="dietaryCheckbox" id="nonvegetarianCheckbox" value="nonvegetarian">
+                            <input type="checkbox" name="dietaryCheckbox" id="nonvegetarianCheckbox">
                             <label for="nonvegetarianCheckbox">Non-vegetarian</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="dietaryCheckbox" id="vegetarianCheckbox" value="vegetarian">
+                            <input type="checkbox" name="dietaryCheckbox" id="vegetarianCheckbox">
                             <label for="vegetarianCheckbox">Vegatarian</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="dietaryCheckbox" id="veganCheckbox" value="vegan">
+                            <input type="checkbox" name="dietaryCheckbox" id="veganCheckbox">
                             <label for="veganCheckbox">Vegan</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="dietaryCheckbox" id="glutenfreeCheckbox" value="glutenfree">
+                            <input type="checkbox" name="dietaryCheckbox" id="glutenfreeCheckbox">
                             <label for="glutenfreeCheckbox">Gluten Free</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="dietaryCheckbox" id="halalCheckbox" value="halal">
+                            <input type="checkbox" name="dietaryCheckbox" id="halalCheckbox">
                             <label for="halalCheckbox">Halal</label>
                         </div>
                     </div>
-                    <!-- <div>
+                    <div>
                         <div class="filter_title">
                             <h3 class="distance">Distance</h3>
                         </div>
@@ -167,7 +153,7 @@
                         <div><input type="radio">
                             <label>30km</label>
                         </div>
-                    </div> -->
+                    </div>
                 </form>
                 <div class="buttons">
                     <button class="white_btn" id="clearAllButton">Clear all</button>
@@ -175,6 +161,7 @@
                 </div>
             </div>
         </div>
+
 
         <div id="map" class="map">
             <!--map -->
@@ -437,11 +424,11 @@
                 <button id="next">Next</button>
                 </div> -->
     </main>
-    <footer>
+    <!-- <footer>
         &copy; 2022 FOODLET, RIGHT RESERVED.
     </footer>
 
 
 
 
-</html>
+</html> -->
