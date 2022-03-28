@@ -44,8 +44,6 @@
                 <li>
                     <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
                 </li>
-
-
                 <li>
                     <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp2"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
                 </li>
@@ -54,10 +52,10 @@
     </header>
     <main>
 
-        <div id="main_page" class="page">
+        <div id="main_page" class="page cityFilter">
             <form class="citySelection">
                 <fieldset>
-                    <label>Select your city</label>
+                    <!-- <label>Select your city</label> -->
                     <select id="myCity" name="myCity" onchange="changeMap(this.value)">
                         <option value="All">Select a City</option>
                         <option value="Vancouver">Vancouver</option>
@@ -67,14 +65,14 @@
                     </select>
                 </fieldset>
             </form>
-            <div class="filterBtn" id="filterBtn">Filter</a>
+            <div class="filterBtn" id="filterBtn">Filter</a></div>
         </div>
         <!--Filter-->
         <div id="filter" class="page">
 
 
-            <h2 class="subbar_title">Filter</h2><a id="filter-close" class="close">close</a>
-            <div class="">
+            <h2 class="subbar_title">Filter</h2><a id="filter-close" class="close"><img src="../resources/Icons/close.png" alt=""></a>
+            <div class="filterSection-wrapper">
 
                 <form class="filter_cate">
                     <div> 
@@ -126,6 +124,7 @@
                             <label for="halalCheckbox">Halal</label>
                         </div>
                     </div>
+
                     <!-- <div>
                         <div class="filter_title">
                             <h3 class="distance">Distance</h3>
@@ -151,10 +150,11 @@
                             <label>30km</label>
                         </div>
                     </div> -->
+                
                 </form>
                 <div class="buttons">
-                    <button class="white_btn" id="clearAllButton">Clear all</button>
-                    <button class="green_btn" id="applyFilterButton">APPLY FILTER</button>
+                    <!-- <button class="white_btn" id="clearAllButton">Clear all</button> -->
+                    <button class="green_btn" id="applyFilterButton">Apply Filter</button>
                 </div>
             </div>
         </div>
@@ -413,12 +413,13 @@
                     </li>  -->
 
 
-                <!-- </ul>
-                </div>
-                
-                <button id="prev">Prev</button>
-                <button id="next">Next</button>
+                </ul>
+                <!-- </div>
+                    <button id="prev">Prev</button>
+                    <button id="next">Next</button>
                 </div> -->
+            </div>
+        </div>
     </main>
     <footer>
         &copy; 2022 FOODLET, RIGHT RESERVED.
