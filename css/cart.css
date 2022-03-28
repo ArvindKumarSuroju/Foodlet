@@ -1,28 +1,31 @@
 
-.restaurant img {
-    border:1px solid blue;
-}
+
 /* .restaurant_detail {
     justify-content: space-between;
 } */
-main ul>li:first-child {
+main .menu_detail>li:first-child {
     width:20%;
 
 }
 
-main ul>li:nth-child(2) {
+main .menu_detail>li:nth-child(2) {
     width:70%;
     padding:5px;
     /* border:1px solid green; */
 
 }
 
-main ul>li:nth-child(3) {
-    width:10%;
+main .menu_detail>li:nth-child(3) {
+    width:20%;
     /* border:1px solid red; */
-    margin-left:10%;
+    /* padding-left:10%; */
+    text-align:center;
 }
 
+.btn-danger img {
+    width:30px;
+    height:30px;
+}
 /* .menu {
     border-top: 2px solid #51cf67;
 }
@@ -38,21 +41,38 @@ main ul>li:nth-child(3) {
 /* .menu_info {
     position:absolute;
 } */
+.cartIcon {
+    width:30px;
+    height:30px;
+}
+
+.restaurant_detail>p>span {
+   line-height:1.2rem;
+}
 
 .menus {
     border-top: 1px solid #68B63E;
     padding:3% 0;
 }
-.save, .total, .pay {
+.total {
     display:flex;
     justify-content:space-between;
 }
 
 
-.save>p, .total>p, .pay>p{
+.total>p, .pay>p{
     width:100%;
     border-top: 1px solid #68B63E;
     padding:3% 0;
+}
+.total, .totalPrice {
+    color:#00615b;
+    font-weight: bold;
+}
+.totalPrice>span {
+    text-align:right;
+    margin-left:69%;
+    box-sizing: border-box;
 }
 
 .buttons {
@@ -66,12 +86,44 @@ main ul>li:nth-child(3) {
     font-size: 16px;
 }
 
-.inner {
+/* .inner {
     margin: 20px auto !important;
+} */
+
+.time {
+    width:30%;
+    margin: 5px;
 }
 
 .menu_detail .cart {
     background: center/cover url("../resources/Icons/deleteOrange.png") no-repeat;
     width: 32px;
     height: 32px;
+}
+
+.quantity {
+    width:50px;
+}
+
+.adjust {
+    display:flex;
+}
+
+
+.minus, .plus {
+    display:block;
+    width:20px;
+    height:20px;
+    line-height:20px;
+    color:black;
+    text-align:center;
+    margin:3px 10px 3px 0;
+    border-radius: 10px;
+    border:1px solid #00615b;
+}
+
+.plus {
+    margin:3px 10px;
+    background-color:#00615b;
+    color:white;
 }

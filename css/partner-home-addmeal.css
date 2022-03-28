@@ -16,24 +16,17 @@ nav {
 
 html,
 body {
-    height: 100%;
+    height: 100vh;
     position: relative;
     margin: 0;
     text-align: center;
     width: 100vw;
 }
+ 
 
-/* header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background: #00615B;
-    color: white;
-    padding: 12px 15px;
-    position: sticky;
-    top: 0;
-} */
+
+
+
 
 h1 {
     margin: 0;
@@ -59,38 +52,17 @@ header.header_desktop{
    display: none; 
 }
 
-.header_mobile {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    height: 50px;
-    background-color: #00615b;
-    /* position:relative; */
-  }
-  /* .mainlogo_img{
-    
-    margin-top: 5px;
-  } */
-  .mainlogo_img .nav_img{
-    min-height: 40px;
-    min-width: 200px;
-    max-height: 40px;
-    max-width: 200px;
-  }
-  .lout{
-    margin-left: 40%;
-      margin-bottom: 10px;
-    min-height: 45px;
-    min-width: 45px;
-    max-height: 45px;
-    max-width: 45px; 
-  }
-main {
-    padding:0 15px;
-    margin-bottom:30px;
+
+.header_mobile .header_mobile_partner{
+    width:100%;
+    height:100%;
+
 }
 
+.header_mobile .menu_item .logout {
+    width:40px;
+    height:40px;
+}
 #addMeal{
     display: grid;
     gap:1rem;
@@ -103,6 +75,10 @@ article {
     border: #CBE2D5 solid 1px;
     border-radius: 10px;
     padding: 16px;
+}
+
+article:hover {
+    border:#2E8B56 solid 1px;
 }
 
 article img {
@@ -118,6 +94,10 @@ article img {
     font-size: 16px;
 }
 
+.meal-info:hover {
+    color:#2E8B56;
+}
+
 article i {
     align-self: center;
     color: #2E8B56;
@@ -131,7 +111,10 @@ article i {
 .available-meals {
     display: grid;
     gap:1rem;
+    padding:0 15px;
+    margin-bottom:30px;
 }
+
 
 /* button style =============================================== */
 
@@ -191,19 +174,20 @@ article i {
     width:100%;
 }
 
-.addmealbutton.button{
+.addmealbutton{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     border: #CBE2D5 solid 1px;
     border-radius: 10px;
     padding:1rem 2rem;
-    margin-top: 1rem;
     width:360px;
-    margin: auto;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.addmealbutton.button a {
+.addmealbutton a {
     color:#2E8B56;
     text-decoration:none;
     font-weight: 700;
@@ -212,9 +196,12 @@ article i {
     gap: 0.5rem;
 }
 
+.addmealbutton.button:hover {
+    border:solid 1px #2E8B56;
+}
 
 
-/* .addmeal-button {
+ .addmeal-button {
     border: #CBE2D5 solid 1px;
     border-radius: 10px;
     color: #2E8B56;
@@ -229,16 +216,26 @@ article i {
 .addmeal-button i {
     font-size: 24px;
     padding-right: 12px;
-} */
+} 
 
+.add-photo input{
+    background-color:white;
+}
+
+.addphotoIcon img {
+    width:45px;
+    height:45px;
+    margin:5px 4px 5px 5px;
+    /* display:inline; */
+}
 footer {
     background: #00615B;
     color: white;
     font-weight: 600;
     font-size: 11px;
     padding: 5.75px 16px;
-
-    position: absolute;
+/* 
+    position: absolute; */
     bottom: 0;
     width: 100%;
 }
@@ -305,77 +302,8 @@ textarea {
     align-items: center;
 } */
 
-/* CHECKBOX STYLE  ==============================*/
-.checkbox {
-display: block;
-position: relative;
-/* padding-left: 35px; */
-margin-bottom: 12px;
-cursor: pointer;
-font-size: 16px;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
 
-/* Hide the browser's default checkbox */
-input[type="checkbox"] {
-/* position: absolute; */
-/* opacity: 0; */
-cursor: pointer;
-height: 0;
-width: 0;
-}
 
-/* Create a custom checkbox */
-.checkmark {
-position: absolute;
-top: 0;
-left: 0;
-height: 24px;
-width: 24px;
-background-color: #eee;
-border-radius:5px;
-border:#CBE2D5 solid 1px;
-}
-
-/* On mouse-over, add a grey background color */
-.checkbox:hover input ~ .checkmark {
-background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox input[type="checkbox"]:checked ~ .checkmark {
-background-color:#77BD51;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-content: "";
-position: absolute;
-display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox input:checked ~ .checkmark:after {
-display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox .checkmark:after {
-left: 7px;
-top: 3px;
-width: 5px;
-height: 10px;
-border: solid white;
-border-width: 0 3px 3px 0;
--webkit-transform: rotate(45deg);
--ms-transform: rotate(45deg);
-transform: rotate(45deg);
-}
-
-/* checkbox style end here ============================= */
 
 .two-columns {
     display: grid;
@@ -418,53 +346,124 @@ color: unset;
 
 .dietary-checkbox {
     text-align: left;
+    line-height: 1.6;
 }
 
-.add-photo-wrapper {
+.add-photo {
+    display:flex;
+    border: solid 1px #CBE2D5;
+    border-radius:10px;
+    /* padding:5px; */
+    height:55px;
+
+    /* display: flex; */
+    /* flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+/* .add-photo input {
+    text-align: center !important;
+    appearance: none;
+} */
+
+/* ADD MEAL IMAGE BUTTON  ===========================*/
+#addmeal_photo::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  #addmeal_photo::before {
+    content: 'Add Photo';
+    display: inline-block;
+    margin-left:128px;
+    /* justify-content: center; */
+    color:#2E8B56;
+    padding: 5px 8px;
+    outline: none;
+    
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  #addmeal_photo:hover::before {
+    border-color: black;
+  }
+  #addmeal_photo:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  .add-photo:hover {
+      border:solid 1px #2E8B56;
+  }
+
+
+/* EDIT MEAL IMAGE BUTTON  ===========================*/
+.edit-photo {
+    border: solid 1px #CBE2D5;
+    border-radius:10px;
+    padding:15px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-photo img {
+    width:108px;
+    height:auto;
+}
+
+#editmeal_photo::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  #editmeal_photo::before {
+    content: 'Edit Photo';
+    display: inline-block;
+    justify-content: center;
+    color:#2E8B56;
+    padding: 5px 8px;
+    outline: none;
+    
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  #editmeal_photo:hover::before {
+    border-color: black;
+  }
+  #editmeal_photo:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  .edit-photo:hover {
+      border:solid 1px #2E8B56;
+  }
+
+
+
+/* .add-photo-wrapper {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     border:#CBE2D5 solid 1px;
     border-radius: 10px;
-}
+} */
 
 input[type="image"] {
     padding-top: 10px;
 }
 
-.add-photo span {
+/* .add-photo span {
     padding-bottom: 10px;
-}
+} */
 
-input[type="file"] {
-    display: none;
-}
-
-.add-photo {
-    /* border:#CBE2D5 solid 2px; */
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    cursor: pointer;
-    font-weight: 700;
-    color:#2E8B56;
-    border-radius: 10px;
-}
-
-.add-photo img {
-    width:32px;
-    height:auto;
-}
-
-.added-photo-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    border:#CBE2D5 solid 1px;
-    border-radius: 10px;
-}
 
 /* .added-photo{
     width:72px;
@@ -512,17 +511,40 @@ input[type="file"] {
 
 
 @media screen and (min-width: 1000px) {
-    main {
+
+    .desktop-view {
+        background: center/cover url("../resources/Icons/notificationWhite.png") no-repeat;
+    
+    }
+    /*partner header*/
+    .partner-navbar-partnername {
+        display:block;
+        /* width:50%; */
+        margin:auto;
+    }
+    .profile{
+        display:flex;
+        width:300px;
+        position:absolute;
+        right:12%;
+
+    }
+    .profilePicture {
+        margin-top:3px;
+        border-radius: 50%;
+    }
+
+    .profilePicture img {
+        margin-top:10px;
+        width:44px;
+        height:44px;
+    }
+    .available-meals {
+
         width: 750px !important;
         margin-left:auto;
         margin-right:auto;
         margin-bottom:30px;
-        /* display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-end;
-        align-self: center; */
-    }
-    .available-meals {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
@@ -535,50 +557,5 @@ input[type="file"] {
     .dietary-checkbox .form-subject {
         grid-column: 1/-1;
     }
-
-    .header_mobile{
-        display: none;
-    }
-    .header_desktop {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        height: 40px;
-        background-color: #00615b;
-       
-        /* position:relative; */
-      }
-      .mainlogo_img{
-        margin-right: 10%;
-        margin-top: 5px;
-      }
-      .mainlogo_img .nav_img{
-        min-height: 40px;
-        min-width: 200px;
-        max-height: 40px;
-        max-width: 200px;
-      }
-
-      .cart_opt{
-       margin-left: 45%;
-      }
-      .orders_opt{
-        min-height: 40px;
-        min-width: 140px;
-        max-height: 40px;
-        max-width: 140px; 
-        margin-bottom: 10px; 
-        margin-left: 4%;
-      }
-      .logout_butt{
-       margin-left: 2%;
-       min-height: 40px;
-       min-width: 100px;
-       max-height: 40px;
-       max-width: 100px; 
-       margin-bottom: 26px;
-      }
-
 
 }

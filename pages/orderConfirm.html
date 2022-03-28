@@ -1,92 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/orderConfirm.css">
     <link rel="stylesheet" href="../css/cart.css">
-    <link rel="stylesheet" href="../css/pickup.css">
     <script text="javascript" src="../js/main.js" defer></script>
-    <title>Pick up</title>
-</head>
+    <title>Order Confirm</title>
+</head> -->
 
 <body>
 
     <header>
-        <ul class="header_mobile">
-            <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
-            <li class="logo"></li>
-            <li class="header_icon"></li>
-            <li>
-                <div class="menu_item cart"></div>
-            </li>
-            <li>
-                <div class="menu_i"></div>
-            </li>
-        </ul>
-        <div class="header_desktop">
-                <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
-                <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
-                <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
-                <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
-                <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
-                <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
-        </div>
 
+        <div class="inner">
+            <ul class="header_mobile">
+                <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
+                <li class="logo"></li>
+                <!-- <li class="header_icon"></li> -->
+                <li>
+                    <div class="menu_item cart"></div>
+                </li>
+                <!-- <li>
+                    <div class="header_icon"></div>
+                </li> -->
 
-        </div>
-        </ul>
-        <div id="sidebar">
-            <!--Sidebar-->
-            <h2 class="sidelogo"><img src="/images/Foodlet-Logo-primary-colorbg.png" alt="" class="sidenav_img"></h2>
-
-            <a class="side_close"><img src="">X</a>
-            <ul class="sidebar_menu">
-                <li>
-                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
-                    <p>your-email@gmail.com</p>
-                </li>
-                <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
-                </li>
-                <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
-                </li>
-                <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
-                </li>
-
-
-                <li>
-                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
-                </li>
             </ul>
-        </div>
+            <div class="header_desktop">
+                    <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                    <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                    <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                    <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                    <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+            </div>
+                    <div class="logout_butt">
+                        
+                        <button class="logouthead" id="logoutOfApp">Log Out</button>
+                    </div>
+                    
+            
+            </ul>
+             </div>
+            
+            <div id="sidebar">
+                <!--Sidebar-->
+                <h2 class="sidelogo"></h2>
+    
+                <a class="side_close"><img src="">X</a>
+                <ul class="sidebar_menu">
+                    <li>
+                        <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
+                        <p>your-email@gmail.com</p>
+                    </li>
+                    <li>
+                        <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
+                    </li>
+                    <li>
+                        <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
+                    </li>
+                    <li>
+                        <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
+                    </li>
+                  
+                    <li>
+                        <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+                    </li>
+                </ul>
+            </div>
+           
     </header>
     <main>
-        <div class="inner">
+        <div class="wrap">
             <h2 class="title">Your Order Has Been Confirmed</h2>
             <p class="text_title text_center text_color_tertiary">Waiting for pick up.</p>
             <p class="text_title text_center text_color_tertiary">Show this page to pick up and pay at the store.</p>
             <div class="pickup_info">
-                <h4>BC123AR 0930</h4>
-                <div>
+                <h4>Store Information</h4>
+                <div class="storeInfoBox">
                     <ul>
                         <li class="store_img" id="storeImage">
 
                         </li>
-                        <li><b id="storeImage"></b>
+
+                        <li>
                             <ul class="order_review">
-                                <li id="storeName"></li>
-                                <li>Pick up today by <span id="pickUpTime"></span></li>
-                                <li id="storeAddress"></li>
-                                <!-- <li><a>get direction</a></li> -->
-                                <!-- <li>Reserverd on 11st Feb 2022 5:00pm</li> -->
+                                <li><b>Amare Restaurant</b></li>
+                                <li>Pick up today by 3:30pm</li>
+                                <li>Knight St, Vancouver</li>
+                                <li class="reserveTime">Reserverd on 11st Feb 2022 5:00pm</li>
                             </ul>
+                            
+                        </li>
+                       
+
                     </ul>
                 </div>
             </div>
@@ -96,12 +106,12 @@
                         <li class="store_img">
                             <img src="../resources/Logo/Favicon.png" alt="" class="round">
                         </li>
-                        <li><b>Menu Name1</b>
-                            <p>1pcs x $ 4.99</p>
-                        </li>
+
+                        <li><b>Menu Name1</b><p>1pcs x $ 4.99</p><p class="saveweight">500 gr of food was saved</p></li>
+
                         <li>
                             <p class="price">
-                                <span class="price_crossout text_body_text text_color_secondary">$ 8.99</span>
+                                <span class="price_crossout text_body_text text_color_secondary" style="text-decoration:line-through">$ 8.99</span>
                                 <span class="text_body_text text_color_primary text_weight_700">&nbsp;&nbsp;$ 4.99</span>
                             </p>
                         </li>
@@ -128,22 +138,30 @@
                 <p><b>Need to pay</b></p>
                 <p class="price" id="originalAmount"></p>
             </div>
+            <div class="needtopay">
+                <p><b>Need to pay</b></p>
+                <p class="price"><span>$ 9.98</span></p>
+            </div>
             <div class="save">
                 <p>You will save</p>
-                <p class="price" id="savedAmount"></p>
+
+                <p class="price"><span>$ 10.00</span> </p>
+
             </div>
-            <div class="total">
+            <div class="weight">
                 <p>You will reduce food waste by</p>
-                <p class="price" id="foodWeight"></p>
+
+                <p class="totalWeight">1000 gr</p>
             </div>
+           
 
             <div class="buttons">
                 <button class="fill"><a href="#homepage">Discover More Store</a></button>
             </div>
         </div>
     </main>
-    <footer class="copyright">
+    <!-- <footer class="copyright">
         <span>
             &copy;2022 FOODLET. ALL RIGHTS RESERVED.
         </span>
-    </footer>
+    </footer> -->

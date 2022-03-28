@@ -5,34 +5,71 @@ main>p {
 .pickup_info {
     border:1px solid #ccc;
     border-radius: 5px;
+    margin-top:5%;
 }
 
 .pickup_info h4 {
     background-color:#FCE1C4;
+    padding-left:40px;
 }
 
+.order_review {
+    display:block;
+    padding:10px 0 10px 0px;
+}
+.order_review .reserveTime{
+    color:#616161;
+}
+.menu_list {
+    padding:1.2rem 0;
+}
 .menu_detail ul>li {
     display:block;
 }
-
-.pay {
+.saveweight {
+    color:#00615b;
+}
+.needtopay, .save, .weight {
     display:flex;
     justify-content:space-between;
+    border-top:1px solid #77BD51;
+    border-bottom:1px solid #77BD51
 }
+
+
+/* .price>span {
+         text-align:right; 
+        margin-left:64%;
+        box-sizing: border-box;
+        font-size:15px;
+        padding-right:10%;
+    } */
+
+
 
 /* .price {
     text-align:right;
     width:50%;
 } */
 
-
+.totalWeight {
+    /* margin-left:60%; */
+}
 .total>p {
     border-top:0 !important;
     padding:0 !important;
 }
 
-.save>p {
+/* .save>p {
     padding:0 !important;
+} */
+
+/* .save .total, .pay {
+    display:flex;
+    justify-content:space-between;
+} */
+.storeInfoBox .store_img {
+   width:19%;
 }
 
 .store_img {
@@ -44,10 +81,11 @@ main>p {
     height: 88px;
 }
 
+
 /*Desktop version*/
-@media (min-width: 1000px) {
+/* @media (min-width: 1000px) {
     .inner {
         width: 80%;
         max-width: 800px;
     }
-}
+} */

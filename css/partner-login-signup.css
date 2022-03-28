@@ -12,13 +12,13 @@ body, html {
 body {
     margin: 0rem;
     text-align: center;
-
+    height:100vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
 }
 
-main {
+.loginMain, .onboarding-content {
     display: flex;
     flex-grow: 3;
     flex-flow: column nowrap;
@@ -33,8 +33,7 @@ img {
 header{
     background: #00615B;
     color: white;
-    padding: 7px 20px;
-    height: 60px;
+
 }
 
 h1 {
@@ -62,28 +61,46 @@ h2 {
 
 
 
-.button {
+footer{
+    padding: 5.5px 15.5px;
+    background: #00615B;
+    color: white;
+    font-weight: 600;
+    font-size: 11px;
+}
+.name-field {
+    display:block;
+}
+
+
+.input-field #email {
+    padding:3%;
+}
+.loginButton {
     background: #2E8B56;
     color: white;
     font-weight: 600;
     font-size: 16px;
 
     width: 174px;
-    padding: 13px;
+    /* padding: px; */
     margin: 23px auto;
     border-radius: 10px;
 }
 
-.button a {
+.loginButton a {
     color: white;
     font-weight: 600;
     font-size: 16px;
 }
 
-/* a {
+
+
+a {
+
     color: #F19737;
     font-weight: 600;
-} */
+} 
 
 .two-column {
     display: grid;
@@ -129,6 +146,13 @@ form input[type=checkbox] {
     height: 24px;
 }
 
+.login-form {
+    margin-top:5%;
+}
+.input_field #email{
+    padding:0;
+}
+
 .checkbox {
     text-align: left;
     display: flex;
@@ -159,12 +183,13 @@ label {
     margin: 1.5rem auto;
 }
 
+.bottom-link a {
+    text-decoration: none;
+}
+
 .bottom-link p {
     margin: 0;
 }
-
-
-
 
 
 .onboarding {
@@ -176,7 +201,7 @@ label {
     display: flex;
     flex-grow: 1;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
 }
 
 
@@ -221,6 +246,44 @@ label {
     border-radius: 50%;
 }
 
+#mainArea {    
+    /* min-height: 100vh; */
+    display: flex;   
+    flex-direction: column;
+}
+
+
+#partner_signup_storetype, #partner_signup_city, #pickup_time {
+    color: #616161;
+    background: #EEF2F5;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+}
+
+#partner_signup_storetype:focus, #partner_signup_city:focus{
+    border: 2px solid #CBE0D5;
+} 
+
+
+#login-signup-button a {
+    text-decoration: none;
+}
+ 
+/* HOVER */
+
+#login-signup-button a:hover {
+    color: white; 
+}
+
+#login-signup-button:hover, #partnerSignupButton:hover {
+    background-color: #62A880;
+}
+
+.bottom-link a:hover {
+    text-decoration: underline;
+}
 
 
 
@@ -232,10 +295,19 @@ label {
         grid-row: 1/3;
     }
 
+    
+    .aside-content {
+        position:fixed;
+    }
+    .aside-content img {
+        width:90%;
+        height:90%;
+    }
+
     .desktop-view {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr 10fr;
+        /* grid-template-rows: 1fr 10fr; */
     }
 
    
@@ -247,7 +319,7 @@ label {
         font-size: 32px;
     }
 
-
+   
 
     .partner-signup-coverimage {
         width: 50vw;
@@ -297,5 +369,5 @@ label {
      padding-left: .75rem;
  }
     
-
+     
 }

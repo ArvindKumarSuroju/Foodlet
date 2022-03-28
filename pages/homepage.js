@@ -1008,12 +1008,6 @@ async function storeFilter(a, b) {
 
     }
 
-
-
-
-    // .catch( (error) => {
-    //     console.error(error);
-    // })
 }
 
 
