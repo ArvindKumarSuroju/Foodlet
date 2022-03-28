@@ -1,39 +1,62 @@
 main>p {
-    text-align:center;
+    text-align: center;
 }
 
 .pickup_info {
-    border:1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
-    margin-top:5%;
+    margin-top: 5%;
 }
 
 .pickup_info h4 {
-    background-color:#FCE1C4;
-    padding-left:40px;
+    background-color: #FCE1C4;
+    padding-left: 40px;
 }
 
 .order_review {
-    display:block;
-    padding:10px 0 10px 0px;
+    display: block;
+    padding: 10px 0 10px 0px;
 }
-.order_review .reserveTime{
-    color:#616161;
+
+.order_review .reserveTime {
+    color: #616161;
 }
+
 .menu_list {
-    padding:1.2rem 0;
+    padding: 1.2rem 0;
 }
+
 .menu_detail ul>li {
-    display:block;
+    display: block;
 }
+
 .saveweight {
-    color:#00615b;
+    color: #00615b;
 }
-.needtopay, .save, .weight {
-    display:flex;
-    justify-content:space-between;
-    border-top:1px solid #77BD51;
-    border-bottom:1px solid #77BD51
+
+.needtopay,
+.save,
+.weight {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save,
+.weight {
+    padding: 1rem;
+}
+
+.needtopay {
+    border-top: 1px solid #77BD51;
+    border-bottom: 1px solid #77BD51;
+    padding: 1rem;
+    color: #4f7942;
+}
+
+#discoverMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -46,30 +69,78 @@ main>p {
     } */
 
 
-
 /* .price {
     text-align:right;
     width:50%;
 } */
 
-.totalWeight {
-    /* margin-left:60%; */
-}
+
+/* .totalWeight {
+    margin-left:60%;
+} */
+
 .total>p {
-    border-top:0 !important;
-    padding:0 !important;
+    border-top: 0 !important;
+    padding: 0 !important;
 }
+
 
 /* .save>p {
     padding:0 !important;
 } */
 
+
 /* .save .total, .pay {
     display:flex;
     justify-content:space-between;
 } */
+
+.menu_list {
+    padding: 1.2rem 0.5rem;
+}
+
+ul.menu_detail li {
+    text-align: start;
+}
+
+li.store_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.storeInfoBox {
+    border: 1px solid #CBE2D5;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+.reserveTime {
+    color: lightgray;
+    font-size: small;
+}
+
+li.eachMealPrices {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+p.eachMealWeight {
+    color: #4f7942;
+    font-size: medium;
+}
+
+ul.order_review li {
+    text-align: start;
+}
+
 .storeInfoBox .store_img {
-   width:19%;
+    width: 19%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .store_img {
@@ -81,11 +152,30 @@ main>p {
     height: 88px;
 }
 
+img {
+    border-radius: 50%;
+}
+
+p[id*="givenSalePrice"] {
+    font-weight: bold;
+}
+
+.fill {
+    background-color: #2E8B56;
+    padding: 0 1rem;
+    color: white;
+    border: 0;
+    margin: 3% 0;
+}
+
 
 /*Desktop version*/
-/* @media (min-width: 1000px) {
-    .inner {
-        width: 80%;
-        max-width: 800px;
+
+@media (min-width: 1000px) {
+    li.eachMealPrices {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
     }
-} */
+}
