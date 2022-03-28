@@ -86,4 +86,4 @@ function calculatePrices(mealData) {
 }
 
 
-showMeals();
+// showMeals();
