@@ -4,10 +4,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body, html {
-    height: 100vh;
-    width: 100vw;
-}
+
 
 body {
     margin: 0rem;
@@ -61,13 +58,7 @@ h2 {
 
 
 
-footer{
-    padding: 5.5px 15.5px;
-    background: #00615B;
-    color: white;
-    font-weight: 600;
-    font-size: 11px;
-}
+
 .name-field {
     display:block;
 }

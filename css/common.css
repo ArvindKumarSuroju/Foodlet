@@ -17,12 +17,18 @@ body {
 body {
     width: 100vw;
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+    /* min-height: 100vh; */
 }
-
 button a {
     color: white;
 }
+
+
+html {
+  box-sizing: border-box;
+}
+
+
 
 ul {
     display: flex;
@@ -39,9 +45,18 @@ li {
 }
 
 button {
-    border-radius: 5px;
+  
+  display:block;
+  text-align:center;
+  margin: 4% auto;
+  display: block;
+  /* padding: 10px 60px; */
+  text-align: center;
+  border: 0;
+  border-radius: 14px;
+  background-color: #2e8b56;
+  color: white;
 }
-
 select {
     border-radius: 10px;
 }
@@ -52,14 +67,14 @@ header {
     background-color: #00615b;
 }
 
-.wrap {
-    height: 100vh;
-}
-
+/* .wrap {
+    height:100vh;
+} */
+/* 
 main {
-    height: 100vh;
-}
+  height:100vh;
 
+} 
 .copyright {
     background-color: #00615b;
     color: white;
@@ -70,6 +85,7 @@ main {
     font-weight: light;
     box-sizing: border-box;
 }
+*/
 
 
 /*header*/
@@ -386,14 +402,17 @@ div.sideitemsleft {
 
   } */
 
-.logoutsidebar {
-    margin-top: 40%;
-}
 
-.logout_butt {
-    display: none;
-}
+  .logoutsidebar {
+    margin-top:40%;
+  }
+  .logout_butt {
+      display:none;
+  }
+  
 
+
+/*
 footer {
     background-color: #00615b;
     color: white;
@@ -405,6 +424,7 @@ footer {
     box-sizing: border-box;
 }
 
+*/
 
 /* Desktop */
 

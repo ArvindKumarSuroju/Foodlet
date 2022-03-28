@@ -14,10 +14,10 @@ nav {
     width: 100vw;
 } */
 
-html,
+
 body {
     height: 100vh;
-    position: relative;
+    /* position: relative; */
     margin: 0;
     text-align: center;
     width: 100vw;
@@ -227,17 +227,6 @@ article i {
     height:45px;
     margin:5px 4px 5px 5px;
     /* display:inline; */
-}
-footer {
-    background: #00615B;
-    color: white;
-    font-weight: 600;
-    font-size: 11px;
-    padding: 5.75px 16px;
-/* 
-    position: absolute; */
-    bottom: 0;
-    width: 100%;
 }
 
 .partner-home{
