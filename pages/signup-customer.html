@@ -20,11 +20,19 @@
         <!--Sign up page-->
         <div id="signup" class="page">
             <div class="signup_page">
-                <div class="intro_img"></div>
+                <div class="intro_img">
+                    <img src="/resources/Images/Discount Food.png" alt="">
+                    <p class="aside-title">Dicounted Food</p>
+                    <p class="aside-text">Explore new menu with cheaper price</p>
+                </div>
                 <div class="signup_form">
                     <div class="header">
-                        <img src="../resources/Logo/FoodletLogoColoredBg.png">
-                    </div>
+                        <div class="site-branding">
+                            <img src="../resources/Logo/FoodletLogoColoredBg.png">
+                            
+                        </div>
+                </div>
+                    
                     <div class="inner">
                         <h2 class="title">Create an Account</h2>
 
@@ -45,25 +53,25 @@
                         <label for="">Email <span class="dot">*</span>
                             <input type="text" name = "email" id = "email" required>
                         </label>
-                        <label for="" required>Location <span class="dot">*</span></label>
-                        <div class="location">
+                        <!--<label for="" required>Location <span class="dot">*</span></label>
+                         <div class="location">
                             <select name="location" id="location" required>
                                 <option disabled value="">Choose your location</option>
-                                <option value="metroVancouver">Metro Vancouver</option>
-                                <option value="eastVancouver">East Vancouver</option>
+                                <option value="metroVancouver">Vancouver</option>
+                                <option value="eastVancouver">Burnaby</option>
                                 <option value="westVancouver">West Vancouver</option>
                                 <option value="northVancouver">North Vancouver</option>
                             </select>
-                        </div>
-                        <span class="require">* Required field</span>
+                        </div> -->
+                        <!-- <span class="require">* Required field</span>
                         <div class="check">
                             <input type="checkbox" id="termsAndConditions" name="termsAndConditions" style="width:10%">By signing up, you agree with Foodlet's <b>Terms of Service & Privacy Policy.</b>
-                        </div>
+                        </div> -->
                         <!-- <button type="submit"><a href="#registration-successful">SIGN UP</a></button> -->
-                        <button type="submit">SIGN UP</button>
+                        <button type="submit" class="loginBtn">SIGN UP</button>
                     </form>
                     <div class="btm2">
-                        <p class="question">I alredy have an account </p><a class="#login-customer">Log in</a>
+                        <p class="question">I alredy have an account </p><a href="#login-customer" class="customerLogin">Log in</a>
 
                     </div>
                 </div>

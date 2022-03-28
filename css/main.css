@@ -80,7 +80,7 @@ a {
 }
 
 .login_form .header img,
-.signup_form .header img,
+/* .signup_form .header img, */
 .complete_form .header img {
     position: relative;
     top: 50%;
@@ -189,7 +189,7 @@ select {
     }
     .intro_img {
         width: 50%;
-        background-color: #ecf1f4;
+        /* background-color: #ecf1f4; */
     }
     .login_form,
     .signup_form,
@@ -198,7 +198,7 @@ select {
         box-sizing: border-box;
     }
     .login_form .header,
-    .signup_form .header,
+    
     .complete_form .header {
         height: 95px;
     }
