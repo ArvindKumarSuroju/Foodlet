@@ -66,7 +66,7 @@ function renderEachMealData(groupedMeals, i) {
                                 <li><b>${groupedMeals[key].restaurantName}</b></li>
                                 <li>Pick up today by ${groupedMeals[key].pickUpTime}</li>
                                 <li>${groupedMeals[key].restaurantAddress}</li>
-                                <li class = "reserveTime"> Reserved on  </li>
+                                <li class = "reserveTime"></li>
                             </ul>
 
                         </li>
