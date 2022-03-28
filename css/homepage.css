@@ -13,20 +13,19 @@
   
 
   /*city selection*/
-  .citySelection {
+  /* .citySelection {
     width:300px;
     position: absolute;
     top:10%;
     left:20%;
     z-index:5;
     margin-top:2%;
-  }
+  } */
   /*filter*/
   #filter {
     position: absolute;
     top: 0;
     width:100vw;
-    left: -5000px;
     transition: left 0.3s ease-in-out;
     right: 0;
     z-index: 20;
@@ -35,11 +34,11 @@
     display: none;
   }
   
-  #filter.on {
+  /* #filter.on {
     display: block;;
-  }
+  } */
   
-  .filterBtn {
+  /* .filterBtn {
     position: absolute;
     top:15%;
     right:34%;
@@ -52,17 +51,11 @@
     cursor: pointer;
     box-shadow: 9px 12px 24px #555;
     border-radius: 5px;
-  }
+  } */
   
 
   
   /*Map*/
-<<<<<<< HEAD
-=======
-  #map {
-    height:430px;
-  }
->>>>>>> 1f75f35859c97dc399be3382b83bbd233d23432a
   .map {
     text-align: center;
     font-size: 20px;
@@ -115,7 +108,7 @@
 
     border: 1px solid #CBE2D5;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     display: flex;
     flex-flow: column nowrap;
@@ -268,9 +261,9 @@
       /* border:1px solid red; */
     }
 
-    /* .available_title {
-      padding: 26px 0 !important;
-    } */
+    .store_list {
+      margin-bottom: 17px;
+    }
 
   }
   

@@ -30,15 +30,9 @@ img {
     height: auto;
 }
 
-header{
+header {
     background: #00615B;
     color: white;
-<<<<<<< HEAD
-    padding: 7px 20px;
-    height: 48px;
-=======
-
->>>>>>> 1f75f35859c97dc399be3382b83bbd233d23432a
 }
 
 h1 {
@@ -324,8 +318,6 @@ label {
     h2 {
         font-size: 32px;
     }
-
-   
 
     .partner-signup-coverimage {
         width: 50vw;

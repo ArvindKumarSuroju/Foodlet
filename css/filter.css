@@ -6,7 +6,7 @@
 
   position: absolute;
   z-index: 3;
-  top: 4rem;
+  top: 3rem;
 
   width: 100vw;
 }
@@ -204,7 +204,7 @@
         position: absolute !important;
         left: 50%;
         transform: translateX(-50%);
-        top: 8.5rem !important;
+        top: 11rem !important;
         box-shadow: 5px 5px 5px grey;
         border-radius: 5px;
       }
@@ -224,7 +224,7 @@
       }
 
       .cityFilter {
-        top: 3.875rem;
+        top: 6.5rem;
       }
       
       .citySelection {
