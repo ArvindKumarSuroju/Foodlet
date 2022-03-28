@@ -111,18 +111,19 @@
                             <p><img src="/resources/Icons/storeName.png" class="cartIcon"><span>Amare Restaurant</span></p>
                             <p><img src="/resources/Icons/location.png" alt="icon" class="cartIcon"><span>address</span></p>
                             <p><img src="/resources/Icons/pickUpTime.png" alt="icon" class="cartIcon">Pick Up today by 
-                                <input type="time" class="time">
+                                <!-- <input type="time" class="time"> -->
+                                <span class="closeTime"></span>  
                             </p>
                   
                 </div>
 
             </div>
             <div class="menus" id="menuItems">
-                <!-- <div class="menu_list">
+              <div class="menu_list">
                     <ul class="menu_detail">
                         <li class="store_img"><img src="">img</li>
-                        <li>
-                            <b>Menu Name1</b>
+                        <li class="meal_detail">
+                            <p>Menu Name1</p> 
 
                             <!-- button for changing quantity-->
                             <p class="adjust">
@@ -141,8 +142,14 @@
                 <div class="menu_list">
                     <ul class="menu_detail">
                         <li class="store_img"><img src="">img</li>
-                        <li><b>Menu Name2</b>
+                        <li class="meal_detail">
+                            <p>Menu Name2</p>
                             <!-- <p>1pcs x $ 4.99</p> -->
+                            <p class="adjust">
+                                <a class="minus">-</a>
+                                <input class="quantity" type="text" value="0" maxlength="4" size="2">
+                                <a class="plus">+</a>
+                            </p>
                         </li>
                         <li><span style="text-decoration:line-through">$8.99</span>
                             <p><b>$ 4.99</b></p>

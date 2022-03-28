@@ -50,16 +50,7 @@ a {
     margin: 4% 0;
 }
 
-button {
-    margin: 10% auto;
-    display: block;
-    padding: 10px 60px;
-    text-align: center;
-    border: 0;
-    border-radius: 14px;
-    background-color: #2e8b56;
-    color: white;
-}
+
 
 .question {
     display: inline-block;
@@ -170,16 +161,20 @@ select {
 
 /*footer*/
 
-footer {
-    height: 30px;
-    background-color: #00615b;
-    color: white;
-}
+
 
 .copyright {
     text-align: center;
     font-size: 10px;
+    background-color: #00615b;
+    height: 30px;
     line-height: 30px;
+    font-weight: 600;
+    padding: 5.75px 16px;
+/* 
+    position: absolute; */
+    
+    width: 100%;
 }
 
 
