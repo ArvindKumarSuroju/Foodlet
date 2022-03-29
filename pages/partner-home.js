@@ -2,6 +2,7 @@ myMeals();
 
 async function myMeals() {
     let createMeals = document.getElementById("createMeals");
+
     // alert("h1");
 
     const user = await getSignedInUser();
@@ -32,16 +33,48 @@ async function myMeals() {
         <div class="meal-price">${doc.data().salePrice}</div>
         <div class="availability">${doc.data().quantity} left</div>
     </div>
-    <i class="far fa-trash-alt"></i>
+   
     </article>`
     }
 
 }
 
 
+// delete button before article HTML
+/* <i class="far fa-trash-alt"></i> */
 
+init();
+
+
+
+async function init() {
+    let userName = document.getElementById("userName");
+    const user = await getSignedInUser();
+    let partnerData = db.collection("partners").doc(user.uid);
+    partnerData.get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            userName.innerHTML = `${doc.data().name}`
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+
+}
 
 function goToMeal(docId) {
     sharedDataId["partnerHomedocumentId"] = docId;
     location.href = "#partner-addmeal"
 }
+
+logoutOfApp.addEventListener('click', () => {
+    console.log("logout check");
+    auth.signOut().then(() => {
+
+        location.href = "#on-boarding";
+    }).catch((error) => {
+        // An error happened.
+    })
+})

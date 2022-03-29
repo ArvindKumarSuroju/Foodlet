@@ -16,33 +16,34 @@ async function handleFormSubmit(e) {
         // console.log('added meal');
 
     if (sharedDataId['partnerHomedocumentId']) {
-        
+        console.log("set");
         await db.collection("partners").doc(auth.currentUser.uid).collection('partnerAddMeals').doc(sharedDataId['partnerHomedocumentId']).set({
+
             menuName: addMeal["menu_name"].value,
             originalPrice: addMeal["original_price"].value,
             salePrice: addMeal["sale_price"].value,
-      
+
             dietary: dietaryArray,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
-         
+
             menuDetails: addMeal["menu_details"].value,
             imageUrl: document.getElementById('addmeal_photo').value ? await uploadData() : document.getElementById('mealImage').src
         })
         sharedDataId['partnerHomedocumentId'] = '';
     } else {
         // console.log('This is the dietaryArray: ' + dietaryArray);
-
+        console.log("add");
 
         await db.collection("partners").doc(auth.currentUser.uid).collection('partnerAddMeals').add({
             menuName: addMeal["menu_name"].value,
             originalPrice: addMeal["original_price"].value,
             salePrice: addMeal["sale_price"].value,
-            
+
             dietary: dietaryArray,
             foodWeight: addMeal["food_weight"].value,
             quantity: addMeal["quantity"].value,
-           
+
             menuDetails: addMeal["menu_details"].value,
             imageUrl: await uploadData()
 
@@ -135,6 +136,19 @@ async function init() {
         let partnerMealDocData = await db.collection(`partners/${currentUser.uid}/partnerAddMeals`).doc(sharedDataId["partnerHomedocumentId"]).get();
         setFormData(partnerMealDocData.data())
     }
+    let userName = document.getElementById("userName");
+    const user = await getSignedInUser();
+    let partnerData = db.collection("partners").doc(user.uid);
+    partnerData.get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            userName.innerHTML = `${doc.data().name}`
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
 }
 
 function setFormData(mealData) {
@@ -144,13 +158,13 @@ function setFormData(mealData) {
     let a, b, c, d, e;
 
     for (let i = 0; i < mealData.dietary.length; i++) {
-        if (mealData.dietary[i] == 'non_vegetarian') {
+        if (mealData.dietary[i] == 'nonvegetarian') {
             a = true;
         } else if (mealData.dietary[i] == 'vegetarian') {
             b = true;
         } else if (mealData.dietary[i] == 'vegan') {
             c = true;
-        } else if (mealData.dietary[i] == 'gluten_free') {
+        } else if (mealData.dietary[i] == 'glutenfree') {
             d = true;
         } else if (mealData.dietary[i] == 'halal') {
             e = true;
@@ -165,15 +179,15 @@ function setFormData(mealData) {
 
     // console.log(a +' '+ b +' '+ c +' '+ d +' '+ e);
 
-    // console.log(mealData);
+    console.log(mealData);
     addMeal["menu_name"].value = mealData.menuName;
     document.getElementById('mealImage').src = mealData.imageUrl;
     addMeal["original_price"].value = mealData.originalPrice;
     addMeal["sale_price"].value = mealData.salePrice;
-    addMeal["non_vegetarian"].checked = a;
+    addMeal["nonvegetarian"].checked = a;
     addMeal["vegetarian"].checked = b;
     addMeal["vegan"].checked = c;
-    addMeal["gluten_free"].checked = d;
+    addMeal["glutenfree"].checked = d;
     addMeal["halal"].checked = e;
     addMeal["food_weight"].value = mealData.foodWeight;
     // addMeal["storeType"].value = mealData.storeType;
@@ -182,3 +196,13 @@ function setFormData(mealData) {
 }
 
 init();
+
+logoutOfApp.addEventListener('click', () => {
+    console.log("logout check");
+    auth.signOut().then(() => {
+
+        location.href = "#on-boarding";
+    }).catch((error) => {
+        // An error happened.
+    })
+})
