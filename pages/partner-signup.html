@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodlet: Partner's Log-in & Sign-up Page</title>
 
-    <link rel="stylesheet" href="../css/partner-login-signup.css">
+    <!-- <link rel="stylesheet" href="../css/partner-login-signup.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
 
-    <script src="../js/partner-signup.js" defer></script>
+    <script src="../js/partner-signup.js" defer></script> -->
 
 </head>
 
@@ -26,21 +26,22 @@
         </header>
 
         <div class="aside">
-            <img src="../resources/Images/Easy to Maintain.png" alt="">
+            <div class="maintainImg">
+                    <p class="aside-title partner-title">Easy to Maintain</p>
 
-            <p class="aside-title">Easy to Maintain</p>
-
-            <p class="aside-text">Update available menu easily</p>
-
+                    <p class="aside-text partner-text">Update available menu easily</p>
+        
+            </div>
         </div>
 
         <main>
+            <div class="partner-create-account">
             <h2>Create a Partner Account</h2>
 
             <div class="partner-signup-form">
-                <div class="partner-signup-coverimage" id="partner-signup-coverimage">
+                <!-- <div class="partner-signup-coverimage" id="partner-signup-coverimage">
                     <span><i class="fa-solid fa-pen"></i></span>
-                </div>
+                </div> -->
                 <div class="partner-signup-editpicture">
                     <img src="../images/app-icon.jpg" id="partner-signup-profilepicture">
                 </div>
@@ -57,7 +58,7 @@
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_email">Email*</label>
-                        <input type="text" id="partner_signup_email" name="partner-signup-email" required>
+                        <input type="text" id="partner_signup_email" name="partner-signup-email" required placeholder="Enter your email">
                     </div>
                     <div class="inside-form">
                         <label for="partner_signup_password">Password*</label>
@@ -110,25 +111,17 @@
                         <input type="tel" id="partner_signup_phonenumber" name="partner-signup-phonenumber" required placeholder="Enter your business phone number">
                     </div>
 
-                    <!-- <div class="inside-form">
-                        <label for="partner_signup_email">Email*</label>
-                        <input type="text" id="partner_signup_email" name="partner-signup-email" required placeholder="Enter your email">
-                    </div> -->
 
                     <p class="requiredField">*Required field</p>
 
-                    <div class="checkbox">
-                        <input type="checkbox" id="partner_signup_termsagreement" name="partner-signup-termsagreement" required>
-                        <label for="partner_signup_termsagreement">By signing up, you agree with Foodlet's <a href="#">Terms of Service & Privacy Policy</a></label>
-                    </div>
-                    <button type="submit" id="partnerSignupButton" class="button">Sign up</button>
+                    <button type="submit" id="partnerSignupButton" class="button signupBtn">Sign up</button>
                 </form>
             </div>
 
             <div class="bottom-link">
                 <p>I already have a partner account. <a href="#partner-login">Log in</a></p>
             </div>
-
+        </div>
         </main>
     </div>
 

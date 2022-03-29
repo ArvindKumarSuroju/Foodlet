@@ -79,7 +79,7 @@ function renderEachMealData(groupedMeals, i) {
         <div class="restaurant_detail">
             <p><img src="/resources/Icons/storeName.png" class="cartIcon"><span>${groupedMeals[key].restaurantName}</span></p>
             <p><img src="/resources/Icons/location.png" alt="icon" class="cartIcon"><span>${groupedMeals[key].restaurantAddress}</span></p>
-            <p><img src="/resources/Icons/pickUpTime.png" alt="icon" class="cartIcon">Pick Up today by
+            <p><img src="/resources/Icons/pickUpTime.png" alt="icon" class="cartIcon"><span>Pick Up today by</span>
                 <!-- <input type="time" class="time"> -->
                 <span class="closeTime">${groupedMeals[key].pickUpTime}</span>
             </p>

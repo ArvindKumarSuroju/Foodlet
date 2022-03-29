@@ -37,8 +37,15 @@ img {
 }
 
 header {
+    box-sizing: border-box;
+}
+
+.site-branding {
     background: #00615B;
     color: white;
+    height:70px;
+    box-sizing: border-box;
+    margin-top:4%;
 }
 
 h1 {
@@ -208,6 +215,9 @@ label {
 }
 
 
+.partner-create-account {
+    padding-top:8%;
+}
 
 
 .partner-login-forgetpassword {
@@ -240,7 +250,7 @@ label {
     align-items: center;
 
     position: relative;
-    bottom: 60px;
+    top: 20px;
 
 }
 
@@ -258,8 +268,8 @@ label {
 main {
     grid-row: 2/3;
     flex-grow: 1;
-    display: flex;
-    flex-flow: column nowrap;
+    /* display: flex;
+    flex-flow: column nowrap; */
 }
 
 #partner_signup_storetype, #partner_signup_city, #pickup_time {
@@ -279,7 +289,9 @@ main {
 #login-signup-button a {
     text-decoration: none;
 }
- 
+.signupBtn{
+    padding:2% 12%;
+}
 /* HOVER */
 
 #login-signup-button a:hover {
@@ -302,6 +314,18 @@ main {
         /* background: url("https://picsum.photos/2500/2500/?random=3"); */
         background-size: cover;
         grid-row: 1/3;
+
+
+    }
+
+    .aside .maintainImg {
+        width:100%;
+        height:100%;
+        background-image: url(/resources/Images/Easy\ to\ Maintain.png);
+        background-repeat: no-repeat;
+        position: fixed;
+            /* background-attachment: fixed; */
+            background-position: left top;
     }
 
     
@@ -316,9 +340,10 @@ main {
     .desktop-view {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* grid-template-rows: 1fr 10fr; */
     }
-
+    .partnerlogin-view {
+        grid-template-rows: 1fr 10fr;
+    }
     h2 {
         font-size: 32px;
     }
@@ -337,13 +362,25 @@ main {
         background-color: #CBE1D5;
     }
 
+    
     .aside-title {
     color: #275F5B;
     font-weight: 700;
     font-size: 45px;
     letter-spacing: -2%;
-    margin-top: 0;
     margin-bottom: 0;
+    }
+
+    .partner-title {
+        
+        position:absolute;
+        left:10%;
+        top:80%;
+    }
+    .partner-text {
+        position:absolute;
+        left:14%;
+        top:89%;
     }
 
     .aside-text {
@@ -371,5 +408,6 @@ main {
      padding-left: .75rem;
  }
     
+ 
      
 }
