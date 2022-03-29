@@ -117,11 +117,8 @@ main {
 }
 
 .mainlogo_img .nav_img{
-
-  min-height: 36px;
-  min-width: 200px;
-  max-height: 36px;
-  max-width: 200px; 
+  height: 36px;
+  width: 200px;
 }
 
 .hamburger {
@@ -731,6 +728,11 @@ footer {
   #filter h2 {
     font-size: 32px;
   }
+
+
+  .mainlogo_img .nav_img{
+    max-width: 290px;
+  }
   
 }
 
@@ -943,14 +945,31 @@ footer {
       font-size:15px;
   }
 
+  .partner-home .mainlogo_img {
+    margin: 0;
+  }
+
+  .partner-home .header_mobile, .partner-home .header_desktop, .partner-addmeal .header_mobile, .partner-addmeal .header_desktop {
+    padding: .5rem 2%;
+  }
+
+  .lout img {
+    height: 24px;
+  }
+
+  .lout a {
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+  }
   
   .mainlogo_img{
     margin-right: 5%;
     margin-top: 5px;
   }
   .mainlogo_img .nav_img{
-    
-    max-width: 200px;
+    max-width: 224px;
+    height: auto;
   }
 
   .cart_opt{

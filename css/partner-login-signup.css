@@ -4,8 +4,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
+.tagline{
+    display: none;
+}
+/* git */
+/* #minimumsix{
+    margin-bottom: 15px;
+} */
 body {
     margin: 0rem;
     /* text-align: center; */
@@ -48,7 +53,6 @@ header {
     color: white;
     height:70px;
     box-sizing: border-box;
-    margin-top:4%;
 }
 
 h1 {
@@ -64,7 +68,9 @@ h1 {
 }
 
 .site-branding img {
-    width: 223px;
+    width: 67%;
+    vertical-align: middle;
+    padding-top:10px;
 }
 
 h2 {
@@ -140,8 +146,8 @@ a {
 
 /*  FORMS */
 form {
-    padding: 0 18px;
-    margin: auto;
+    /* padding: 0 18px; */
+    margin: 0 auto;
     max-width: 500px;
 }
 
@@ -329,7 +335,9 @@ main {
         background-size: cover;
         grid-row: 1/3;
         background-color: #CBE1D5;
+
         /* align-items: center; */ /*don't add this*/
+
 
     }
 
@@ -344,7 +352,7 @@ main {
             /* background-attachment: fixed; */
             background-position: center top;
 
-            
+
     }
 
     
@@ -385,6 +393,7 @@ main {
     }
     .site-branding img {
         width: 443px;
+        padding-top:8px;
     }
 
     .aside img{
@@ -406,12 +415,14 @@ main {
     }
     .partner-text {
         text-align:center;
+
     }
 
     .aside-text {
         font-weight: bolder;
         font-size: 18px;
         text-align:center;
+
          
     }
 
