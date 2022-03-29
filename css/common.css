@@ -723,6 +723,15 @@ footer {
   .white_btn, .green_btn {
     padding: 0;
   }
+
+  .filter_cate div div label, .white_btn, .green_btn  {
+    font-size: 20px;
+  }
+
+  #filter h2 {
+    font-size: 32px;
+  }
+  
 }
 
 .buttons {

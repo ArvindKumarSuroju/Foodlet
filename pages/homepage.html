@@ -28,7 +28,7 @@
             </div>
         
         </div>
-        
+
         <div id="sidebar">
             <!--Sidebar-->
             <h2 class="sidelogo"></h2>
@@ -48,31 +48,26 @@
                 <li>
                     <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/orderWhite.png" alt="">Orders</div>
                 </li>
-
                 <li>
                     <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp2"><p>Log Out</p></button></div>
                 </li>
             </ul>
         </div>
 
+    </header>
+    <main>
 
-        </ul>
-    </div>
-
-</header>
-<main>
-
-    <div id="main_page" class="page cityFilter">
-        <form class="citySelection">
-            <fieldset>
-                <!-- <label>Select your city</label> -->
-                <select id="myCity" name="myCity" onchange="changeMap(this.value)">
-                            <option value="All">Select a City</option>
-                            <option value="Vancouver">Vancouver</option>
-                            <option value="Burnaby">Burnaby</option>
-                            <option value="Richmond">Richmond</option>
-                            <option value="Surrey">Surrey</option>
-                        </select>
+        <div id="main_page" class="page cityFilter">
+            <form class="citySelection">
+                <fieldset>
+                    <!-- <label>Select your city</label> -->
+                    <select id="myCity" name="myCity" onchange="changeMap(this.value)">
+                        <option value="All">Select a City</option>
+                        <option value="Vancouver">Vancouver</option>
+                        <option value="Burnaby">Burnaby</option>
+                        <option value="Richmond">Richmond</option>
+                        <option value="Surrey">Surrey</option>
+                    </select>
                 </fieldset>
             </form>
             <div class="filterBtn" id="filterBtn">Filter</div>
@@ -102,9 +97,10 @@
                         <div>
                             <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox" value="Bakery">
                             <label for="bakeryCheckbox">Bakery</label>
-                        </div>               
 
-                <div>
+                        </div>               
+                    </div>
+
                     <div>
                         <div class="filter_title">
                             <h3 class="dietary">Dietary</h3>
@@ -131,7 +127,6 @@
                             <label for="halalCheckbox">Halal</label>
                         </div>
                     </div>
-                </div>
 
                 </form>
                 <div class="buttons">
@@ -140,10 +135,10 @@
                 </div>
             </div>
         </div>
-    </div>
+
+        <div id="map" class="map">
 
 
-    <div id="map" class="map">
         <!--map -->
 
 
