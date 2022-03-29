@@ -4,8 +4,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
+.tagline{
+    display: none;
+}
+/* git */
+/* #minimumsix{
+    margin-bottom: 15px;
+} */
 body {
     margin: 0rem;
     /* text-align: center; */
@@ -408,6 +413,7 @@ main {
     .aside-text {
         font-weight: bolder;
         font-size: 18px;
+        margin: 0 10%;
          
     }
 
