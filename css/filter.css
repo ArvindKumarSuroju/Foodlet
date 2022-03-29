@@ -266,5 +266,9 @@
       .category, .dietary, .distance {
         font-size: 20px;
       }
+
+      .available_title {
+        font-size: 20px
+      }
     
 };

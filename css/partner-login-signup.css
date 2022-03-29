@@ -8,7 +8,7 @@
 
 body {
     margin: 0rem;
-    text-align: center;
+    /* text-align: center; */
     height:100vh;
     display: flex;
     flex-flow: column nowrap;
@@ -34,6 +34,9 @@ img {
     width: 174px;
     margin: 23px auto;
     border-radius: 10px;
+}
+.buttononboard a{
+    margin-left: 40px;
 }
 
 header {
@@ -123,9 +126,12 @@ a {
 .aside {
     display: none;
 }
+.aside img{
+    width: 70%;
+}
 
 .desktop-view {
-   min-height: 100vh;
+   min-height: 96vh;
 }
 
 
@@ -196,6 +202,11 @@ label {
 
 .bottom-link a {
     text-decoration: none;
+
+}
+.bottom-link .plbutt {
+    margin-left: 50px;
+
 }
 
 .bottom-link p {
@@ -212,12 +223,14 @@ label {
     display: flex;
     flex-grow: 1;
     flex-flow: column nowrap;
-    justify-content:space-evenly;
+    justify-content:center;
+    
 }
 
 
 .partner-create-account {
     padding-top:8%;
+    height:200vh;
 }
 
 
@@ -311,12 +324,15 @@ main {
 
 @media screen and (min-width: 1000px){
     .aside {
-        display: block;
+        display: flex;
+        flex-direction: column;
         /* background: url("https://picsum.photos/2500/2500/?random=3"); */
         background-size: cover;
         grid-row: 1/3;
+        background-color: #CBE1D5;
 
     }
+
 
     .aside .maintainImg {
         width:50%;
@@ -344,6 +360,14 @@ main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
+
+    .desktopP-view {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
     .partnerlogin-view {
         grid-template-rows: 1fr 10fr;
     }
@@ -362,9 +386,6 @@ main {
         padding-top:8px;
     }
 
-    .aside {
-        background-color: #CBE1D5;
-    }
 
     
     .aside-title {
