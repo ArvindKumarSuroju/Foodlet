@@ -30,7 +30,6 @@ main>p {
     display: block;
 }
 
-
 .saveweight {
     color: #00615b;
 }
@@ -68,6 +67,7 @@ main>p {
         font-size:15px;
         padding-right:10%;
     } */
+
 
 /* .price {
     text-align:right;
@@ -179,4 +179,8 @@ p[id*="givenSalePrice"] {
         align-items: center;
         justify-content: space-between;
     }
+}
+
+.innerOrderConfirm {
+    margin: 0 3%;
 }
