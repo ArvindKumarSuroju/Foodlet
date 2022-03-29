@@ -1,7 +1,18 @@
 /*MAR 15th - by Hyewon */
 
 
-  
+  .homepage {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  .homepage main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
 
   /*city selection*/
   /* .citySelection {
