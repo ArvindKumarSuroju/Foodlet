@@ -295,17 +295,25 @@ footer {
     font-weight: light;
     box-sizing: border-box;
 }
+.storeinfo-availablemeallist{
+    display: flex;
+    flex-direction: column;
+        }
 
 
 /*  DESKTOP SCREEN */
 
 @media screen and (min-width: 1000px) {
     .storeinfo-basicinfo,
-    .storeinfo-availablemeallist,
-    .storeinfo-reviews {
+    .storeinfo-availablemeallist{
         max-width: 750px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .storeinfo-availablemeallist{
+display: flex;
+flex-direction: column;
     }
     /*  STORE BASIC INFO */
     .storeinfo-images {
