@@ -71,9 +71,7 @@ function renderEachMealData(doc) {
                 <p id="updated-availability-output"><i class="fas fa-concierge-bell"></i> ${doc.data().quantity} left</p>
                 <form class="formclass">
                     <div class="quantity-input">
-                        <button class="minusbutton" id="storeinfo-minusbutton">-</button>
                         <input id="input${doc.id}" name="tobuyquantity" type="number" placeholder="0" onChange="saveCartItem('${doc.id}')">
-                        <button id="storeinfo-plusbutton" class="plusbutton">+</button>
                     </div>
                 </form>
             </div>
