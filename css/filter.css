@@ -262,5 +262,9 @@
         padding: 14px 0 !important;
         font-size: 20px !important;
       }
+
+      .category, .dietary, .distance {
+        font-size: 20px;
+      }
     
 };
