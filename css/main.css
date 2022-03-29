@@ -229,10 +229,12 @@ footer {
      min-height: 100vh;
     } */
     .intro_img {
-        display: block;
+        display: flex;
+        flex-direction: column;
         width: 50%;
         background-color: #CBE1D5;
         height: 96vh;
+        align-items: center;
     }
     .intr_img {
         display: flex;
