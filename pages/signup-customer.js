@@ -5,11 +5,15 @@ addCustomer.addEventListener('submit', (e) => {
 
     let mail = email.value;
     let passwordKey = password.value;
+
+    console.log(mail + "   " + passwordKey);
+
     auth.createUserWithEmailAndPassword(mail, passwordKey)
         .then(async(userCredential) => {
 
             // Signed in 
             const user = userCredential.user;
+            console.log(user);
             await addUserMetaData(user)
             location.href = "#login-customer";
             // ...
@@ -34,6 +38,7 @@ addCustomer.addEventListener('submit', (e) => {
 
 
 })
+
 async function addUserMetaData(user) {
     await db.collection('customers').doc(user.uid).set({
         name: addCustomer.name.value,
@@ -41,6 +46,6 @@ async function addUserMetaData(user) {
         phoneNumber: addCustomer.phoneNumber.value,
         email: addCustomer.email.value,
         location: addCustomer.location.value,
-        termsAndConditions: addCustomer.termsAndConditions.value
+        // termsAndConditions: addCustomer.termsAndConditions.value
     });
 }

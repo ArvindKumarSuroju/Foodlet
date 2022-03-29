@@ -3,7 +3,8 @@ addPartner.addEventListener('submit', async(e) => {
 
     let mail = partner_signup_email.value;
     let passwordKey = partner_signup_password.value;
-    
+
+
     auth.createUserWithEmailAndPassword(mail, passwordKey)
         .then(async(userCredential) => {
             // Signed in 
@@ -17,7 +18,7 @@ addPartner.addEventListener('submit', async(e) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
-            // ..
+
         });
 
 });
@@ -32,7 +33,7 @@ async function addUserMeta(user) {
         zipcode: addPartner.partner_signup_zipcode.value,
         phoneNumber: addPartner.partner_signup_phonenumber.value,
         emailAddress: addPartner.partner_signup_email.value,
-        termsAndConditions: addPartner.partner_signup_termsagreement.value,
+        // termsAndConditions: addPartner.partner_signup_termsagreement.value,
         storeType: addPartner.partner_signup_storetype.value,
         pickUpTime: addPartner.pickup_time.value,
         fileURL: await uploadData()
