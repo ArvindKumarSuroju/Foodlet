@@ -153,9 +153,9 @@ ul.order_review li {
 }
 
 
-img {
+/* img {
     border-radius: 50%;
-}
+} */
 
 p[id*="givenSalePrice"] {
     font-weight: bold;
