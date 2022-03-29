@@ -78,6 +78,11 @@ h2 {
     border-radius: 10px;
 }
 
+#loginCustomer label {
+    display:block;
+    text-align:left;
+}
+
 .loginButton a {
     color: white;
     font-weight: 600;
