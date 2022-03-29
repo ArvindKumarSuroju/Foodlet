@@ -96,6 +96,8 @@ article.eachMealArticle {
     border: #CBE2D5 solid 1px;
     border-radius: 10px;
     padding: 16px;
+    width: 360px;
+    height: 126px;
 }
 
 article.eachMealArticle:hover {
@@ -104,7 +106,9 @@ article.eachMealArticle:hover {
 
 article.eachMealArticle img {
     width: 80px;
+    height: 80px;
     border-radius: 50%;
+    flex-shrink: 1;
 }
 
 .meal-info {
@@ -134,7 +138,7 @@ article.eachMealArticle i {
     flex-flow: column nowrap;
 }
 
-.partner-addmeal .userOnHeader {
+.partner-addmeal .userOnHeader, .partner-home .userOnHeader {
     margin-right: 2rem;
 }
 
@@ -145,7 +149,7 @@ article.eachMealArticle i {
     margin-right: auto;
     margin-bottom: 30px;
     max-width: 350px;
-    flex-grow: 1;
+    flex-grow: 0;
 }
 
 
