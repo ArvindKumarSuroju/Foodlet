@@ -229,7 +229,7 @@ label {
 
 .partner-create-account {
     padding-top:8%;
-    height:200vh;
+    /* height:200vh; */
 }
 
 
@@ -329,19 +329,21 @@ main {
         background-size: cover;
         grid-row: 1/3;
         background-color: #CBE1D5;
-        align-items: center;
+        /* align-items: center; */ /*don't add this*/
 
     }
 
 
     .aside .maintainImg {
-        width:100%;
+        width:50%;
         height:100%;
         background-image: url(/resources/Images/Easy\ to\ Maintain.png);
         background-repeat: no-repeat;
         position: fixed;
+        background-size:500px;
             /* background-attachment: fixed; */
-            background-position: left top;
+            background-position: center top;
+
             
     }
 
@@ -378,14 +380,19 @@ main {
         height: 200px;
     }
 
-
+    .site-branding {
+        text-align:center;
+    }
     .site-branding img {
         width: 443px;
     }
 
-
+    .aside img{
+       margin-left:10%;
+    }
     
     .aside-title {
+    text-align:center;
     color: #275F5B;
     font-weight: 700;
     font-size: 45px;
@@ -394,20 +401,17 @@ main {
     }
 
     .partner-title {
-        
-        position:absolute;
-        left:10%;
-        top:80%;
+        text-align:center;
+        padding-top:66%;
     }
     .partner-text {
-        position:absolute;
-        left:14%;
-        top:89%;
+        text-align:center;
     }
 
     .aside-text {
         font-weight: bolder;
         font-size: 18px;
+        text-align:center;
          
     }
 
