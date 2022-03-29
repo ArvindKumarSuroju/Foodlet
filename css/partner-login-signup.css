@@ -242,6 +242,12 @@ label {
     flex-direction: column;
 }
 
+main {
+    grid-row: 2/3;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
 
 #partner_signup_storetype, #partner_signup_city, #pickup_time {
     color: #616161;
@@ -298,12 +304,6 @@ label {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         /* grid-template-rows: 1fr 10fr; */
-    }
-
-   
-    main {
-        grid-row: 2/3;
-        flex-grow: 1;
     }
 
     h2 {

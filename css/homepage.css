@@ -107,9 +107,9 @@
   }
   
   .stores_slide {
-    width: 100%;
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 0 .5rem;
   }
   
@@ -241,8 +241,7 @@
     .stores_slide {
       width: 100%;
       border-radius: 10px;
-      display: flex;
-      justify-content: center;
+      padding: 0 1rem;
     }
   
   
