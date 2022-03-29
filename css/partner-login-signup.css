@@ -48,7 +48,6 @@ header {
     color: white;
     height:70px;
     box-sizing: border-box;
-    margin-top:4%;
 }
 
 h1 {
@@ -64,7 +63,9 @@ h1 {
 }
 
 .site-branding img {
-    width: 223px;
+    width: 67%;
+    vertical-align: middle;
+    padding-top:10px;
 }
 
 h2 {
@@ -140,8 +141,8 @@ a {
 
 /*  FORMS */
 form {
-    padding: 0 18px;
-    margin: auto;
+    /* padding: 0 18px; */
+    margin: 0 auto;
     max-width: 500px;
 }
 
@@ -329,19 +330,20 @@ main {
         background-size: cover;
         grid-row: 1/3;
         background-color: #CBE1D5;
-        align-items: center;
 
     }
 
 
     .aside .maintainImg {
-        width:100%;
+        width:50%;
         height:100%;
         background-image: url(/resources/Images/Easy\ to\ Maintain.png);
         background-repeat: no-repeat;
         position: fixed;
+        background-position: left top;
+        background-color:#CBE1D5;
+        
             /* background-attachment: fixed; */
-            background-position: left top;
             
     }
 
@@ -381,6 +383,7 @@ main {
 
     .site-branding img {
         width: 443px;
+        padding-top:8px;
     }
 
 
@@ -396,12 +399,12 @@ main {
     .partner-title {
         
         position:absolute;
-        left:10%;
+        left:30%;
         top:80%;
     }
     .partner-text {
         position:absolute;
-        left:14%;
+        left:34%;
         top:89%;
     }
 
