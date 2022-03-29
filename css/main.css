@@ -64,7 +64,17 @@ a {
     background-color: #2e8b56;
     color: white;
 }
-
+.signcust{
+    margin: 10% auto;
+    display: block;
+    padding: 10px 60px;
+    text-align: center;
+    border: 0;
+    border-radius: 14px;
+    background-color: #2e8b56;
+    color: white;
+    margin-top: 90px;
+}
 
 .question {
     display: inline-block;
@@ -72,7 +82,7 @@ a {
 
 .btm {
     text-align: center;
-    padding: 15% 0 15% 0;
+    padding: 10% 0 15% 0;
 }
 
 .caption {
@@ -101,7 +111,9 @@ a {
     transform: translateY(-50%);
     height: 50%;
 }
-
+.intr_img{
+    display: none;
+}
 
 /*Log in screen*/
 
@@ -220,7 +232,23 @@ footer {
         display: block;
         width: 50%;
         background-color: #CBE1D5;
-        height: 100vh;
+        height: 96vh;
+    }
+    .intr_img {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        background-color: #CBE1D5;
+        height: 115vh;
+        align-items: center;
+
+    }
+    .intr_img img{
+        width: 70%;
+    }
+
+    .intro_img img{
+        width: 70%;
     }
     .login_form,
     .signup_form,
