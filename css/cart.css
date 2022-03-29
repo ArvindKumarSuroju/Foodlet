@@ -1,27 +1,48 @@
 
-.restaurant img {
-    border:1px solid blue;
-}
 /* .restaurant_detail {
     justify-content: space-between;
 } */
-main ul>li:first-child {
-    width:20%;
 
+#mainArea {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-main ul>li:nth-child(2) {
-    width:70%;
-    padding:5px;
+main .menu_detail>li:first-child {
+    width: 20%;
+}
+
+.restaurant {
+    text-align: left;
+}
+
+.meal_detail p {
+    font-weight: bold;
+    text-align: left;
+}
+
+
+main .menu_detail>li:nth-child(2) {
+    width: 70%;
+    padding: 5px;
+
     /* border:1px solid green; */
-
 }
 
-main ul>li:nth-child(3) {
-    width:10%;
+
+main .menu_detail>li:nth-child(3) {
+    width: 20%;
     /* border:1px solid red; */
-    margin-left:10%;
+    /* padding-left:10%; */
+    text-align: center;
 }
+
+.btn-danger img {
+    width: 30px;
+    height: 30px;
+}
+
 
 /* .menu {
     border-top: 2px solid #51cf67;
@@ -35,30 +56,67 @@ main ul>li:nth-child(3) {
     justify-content: flex-end;
 } */
 
+
 /* .menu_info {
     position:absolute;
 } */
 
+
+.cartIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.restaurant_detail>p:nth-child(3) {
+    padding-bottom: 20px;
+}
+
+.restaurant_detail>p>span {
+    line-height: 1.2rem;
+}
+
+
 .menus {
     border-top: 1px solid #68B63E;
-    padding:3% 0;
-}
-.save, .total, .pay {
-    display:flex;
-    justify-content:space-between;
+    padding: 3% 0;
 }
 
 
-.save>p, .total>p, .pay>p{
-    width:100%;
+.total {
+    display: flex;
+    justify-content: space-between;
     border-top: 1px solid #68B63E;
-    padding:3% 0;
+    padding-top: 20px;
+    align-items: center;
+    padding-left: 1rem;
 }
+
+.total>p,
+.pay>p {
+    /* width: 100%; */
+    border-top: 1px solid #68B63E;
+    padding: 3% 0;
+}
+
+
+.total,
+.totalPrice {
+    color: #00615b;
+    font-weight: bold;
+}
+
+.totalPrice>span {
+    text-align: right;
+    margin-left: 51%;
+    box-sizing: border-box;
+}
+
 
 .buttons {
     text-align: center;
     margin: auto;
 }
+
 .button_reserve {
     width: 244px;
     height: 48px;
@@ -66,12 +124,50 @@ main ul>li:nth-child(3) {
     font-size: 16px;
 }
 
-.inner {
+
+
+/* .inner {
     margin: 20px auto !important;
+} */
+
+.time {
+    width: 30%;
+    margin: 5px;
 }
 
 .menu_detail .cart {
     background: center/cover url("../resources/Icons/deleteOrange.png") no-repeat;
     width: 32px;
     height: 32px;
+}
+
+.quantity {
+    width: 50px;
+}
+
+.adjust {
+    display: flex;
+}
+
+.adjust a {
+    margin-top: 10px;
+}
+
+.minus,
+.plus {
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: black;
+    text-align: center;
+    margin: 3px 13px 3px 0;
+    border-radius: 10px;
+    border: 1px solid #00615b;
+}
+
+.plus {
+    margin: 3px 10px;
+    background-color: #00615b;
+    color: white;
 }

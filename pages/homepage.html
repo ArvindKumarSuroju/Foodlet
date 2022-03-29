@@ -1,5 +1,3 @@
-
-
 <!-- <body> -->
     <header>
         <div class="inner">
@@ -56,15 +54,45 @@
                 </li>
             </ul>
         </div>
-       
-    </header>
-    <main>
 
-        <div id="main_page" class="page cityFilter">
-            <form class="citySelection">
-                <fieldset>
-                    <!-- <label>Select your city</label> -->
-                    <select id="myCity" name="myCity" onchange="changeMap(this.value)">
+
+        </ul>
+    </div>
+
+    <div id="sidebar">
+        <!--Sidebar-->
+        <h2 class="sidelogo"></h2>
+
+        <a class="side_close"><img src="">X</a>
+        <ul class="sidebar_menu">
+            <li>
+                <img src="../resources/Icons/profileWhite.png" alt="">Hi, Use Name
+                <p>your-email@gmail.com</p>
+            </li>
+            <li>
+                <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discoverWhite.png" alt="">Discover</div>
+            </li>
+            <li>
+                <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/cartWhite.png" alt="">Cart</div>
+            </li>
+            <li>
+                <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/orderWhite.png" alt="">Orders</div>
+            </li>
+
+            <li>
+                <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp2"><p>Log Out</p></button></div>
+            </li>
+        </ul>
+    </div>
+
+</header>
+<main>
+
+    <div id="main_page" class="page cityFilter">
+        <form class="citySelection">
+            <fieldset>
+                <!-- <label>Select your city</label> -->
+                <select id="myCity" name="myCity" onchange="changeMap(this.value)">
                             <option value="All">Select a City</option>
                             <option value="Vancouver">Vancouver</option>
                             <option value="Burnaby">Burnaby</option>
@@ -100,11 +128,13 @@
                         <div>
                             <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox" value="Bakery">
                             <label for="bakeryCheckbox">Bakery</label>
-                        </div>
-                        
+                        </div>               
 
+                <div>
+                    <div class="filter_title">
+                        <h3 class="dietary">Dietary</h3>
+                        <button id="selectAllDietaryButton" onclick="selectAllDietary()">select all</button>
                     </div>
-    
                     <div>
                         <div class="filter_title">
                             <h3 class="dietary">Dietary</h3>
@@ -131,6 +161,23 @@
                             <label for="halalCheckbox">Halal</label>
                         </div>
                     </div>
+                    <div>
+                        <input type="checkbox" name="dietaryCheckbox" id="vegetarianCheckbox">
+                        <label for="vegetarianCheckbox">Vegatarian</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietaryCheckbox" id="veganCheckbox">
+                        <label for="veganCheckbox">Vegan</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietaryCheckbox" id="glutenfreeCheckbox">
+                        <label for="glutenfreeCheckbox">Gluten Free</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="dietaryCheckbox" id="halalCheckbox">
+                        <label for="halalCheckbox">Halal</label>
+                    </div>
+                </div>
 
                 </form>
                 <div class="buttons">
@@ -139,10 +186,12 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div id="map" class="map">
-            <!--map -->
+    <div id="map" class="map">
+        <!--map -->
+
 
         </div>
         <div class="availableStore_wrapper">
@@ -152,8 +201,8 @@
                 <!--store list -->
                 <ul class="stores_slide" id="availableStoreNearby">
 
-
                 </ul>
+
 
             </div>
         </div>
@@ -161,3 +210,4 @@
     <footer>
         &copy; 2022 FOODLET, RIGHT RESERVED.
     </footer>
+

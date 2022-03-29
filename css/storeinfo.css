@@ -102,6 +102,13 @@ i.fa-smile {
     text-align: left;
 }
 
+.storeinfo-availablemeallist h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+}
+
 
 /*  AVAILABLE MEAL LIST */
 
@@ -123,7 +130,6 @@ i.fa-smile {
     margin: 0;
     text-align: left;
 }
-
 
 /* .storeinfo-availablemeallist .two-columns {
     width: 65vw;
@@ -168,6 +174,10 @@ i.fa-smile {
     border-radius: 10px;
 }
 
+form.formclass {
+    min-width: 150px;
+}
+
 .mealinfo-layout {
     /* display: flex; */
     display: grid;
@@ -200,8 +210,9 @@ i.fa-smile {
 
 .minusbutton,
 .plusbutton {
-    border-radius: 50%;
-    width: 22.25px;
+    border-radius: 100%;
+    min-width: 22.25px;
+    max-width: 22.25px;
     height: 22.25px;
 }
 
@@ -221,7 +232,8 @@ i.fa-smile {
     border: none;
     border-radius: 10px;
     padding: 1rem 2rem;
-    margin: 0;
+    margin: auto;
+    width: 200px;
     text-decoration: none;
     background: #2e8b56;
     color: #ffffff;
@@ -231,6 +243,7 @@ i.fa-smile {
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
+    margin-bottom: 30px;
     /* color: white;
     border: none;
     border-radius: 10px;
@@ -316,19 +329,16 @@ footer {
         grid-template-columns: 1fr;
         grid-template-rows: 4fr 1fr;
     }
-    
-    .partner-signup-coverimage {
+  
+    .partner-signup-coverimage1 {
         grid-column: 1/1;
         grid-row: 1/2;
     }
-    
     .partner-signup-profilepicture img {
         width: 84px;
         height: 84px;
-        border: #FAFCFE solid 2px;
         border-radius: 50%;
     }
-    
     .partner-signup-profilepicture {
         grid-row: -1/1;
         grid-column: -1/1;
@@ -336,8 +346,8 @@ footer {
         justify-content: center;
         align-items: flex-end;
     }
-/* //////////////////////////////////////////////// */
-    .partner-signup-coverimage {
+    /* //////////////////////////////////////////////// */
+    .partner-signup-coverimage1 {
         height: 424px;
     }
     .partner-signup-profilepicture img {
@@ -369,11 +379,13 @@ footer {
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
     }
-    .storeinfo-availablemeallist h3,
+
+    #eachmeal h3,
     #storeinfo-addtocartbutton {
         grid-column: -1/1;
     }
-    .storeinfo-availablemeallist h3 {
+    #eachmeal h3 {
+
         font-size: 20px;
         /* margin: 30px 0; */
     }
@@ -387,7 +399,7 @@ footer {
         max-width: 324px;
         margin: 24px;
     }
-    .availablemeal p,
+  
     .availablemeal span {
         font-size: 16px;
     }
