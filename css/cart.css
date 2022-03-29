@@ -22,7 +22,6 @@ main .menu_detail>li:first-child {
     text-align: left;
 }
 
-
 main .menu_detail>li:nth-child(2) {
     width: 70%;
     padding: 5px;
@@ -63,8 +62,9 @@ main .menu_detail>li:nth-child(3) {
 
 
 .cartIcon {
-    width: 30px;
-    height: 30px;
+    width: 29px;
+    height: 29px;
+    margin-top:5px;
 }
 
 .restaurant_detail>p:nth-child(3) {
@@ -72,10 +72,17 @@ main .menu_detail>li:nth-child(3) {
 }
 
 .restaurant_detail>p>span {
-    line-height: 1.2rem;
+    vertical-align: middle;
+    /* border:1px solid red; */
+    display:inline-block;
+    padding-left:10px;
+
 }
 
-
+.restaurant_detail>p>img {
+    vertical-align: middle;
+    /* border:1px solid blue; */
+}
 .menus {
     border-top: 1px solid #68B63E;
     padding: 3% 0;
@@ -103,6 +110,10 @@ main .menu_detail>li:nth-child(3) {
 .totalPrice {
     color: #00615b;
     font-weight: bold;
+}
+
+.totalPrice {
+    margin-right:10%;
 }
 
 .totalPrice>span {
