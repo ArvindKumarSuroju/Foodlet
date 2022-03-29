@@ -8,7 +8,7 @@
 
 body {
     margin: 0rem;
-    text-align: center;
+    /* text-align: center; */
     height:100vh;
     display: flex;
     flex-flow: column nowrap;
@@ -115,9 +115,12 @@ a {
 .aside {
     display: none;
 }
+.aside img{
+    width: 70%;
+}
 
 .desktop-view {
-   min-height: 100vh;
+   min-height: 96vh;
 }
 
 

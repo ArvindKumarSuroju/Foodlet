@@ -274,7 +274,7 @@ li {
 }
 
 .inner {
-  width: 97vw;
+  /* width: 97vw; */
   margin: 0 auto;
   /* border:1px solid yellow; */
 }
