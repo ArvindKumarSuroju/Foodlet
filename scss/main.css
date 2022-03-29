@@ -1,0 +1,141 @@
+/*mobile version*/
+body {
+  width: 100%;
+}
+
+.inner {
+  padding: 0 8%;
+  border: 1px solid yellow;
+}
+
+input {
+  background-color: #ccc;
+  border: 0;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.caption {
+  text-align: right;
+}
+
+button {
+  margin: 10% auto;
+  display: block;
+  padding: 10px 50px;
+  text-align: center;
+  border: 0;
+  border-radius: 14px;
+  background-color: #ccc;
+}
+
+.question {
+  display: inline-block;
+}
+
+.btm {
+  text-align: center;
+  padding-top: 40%;
+}
+
+.click {
+  font-weight: bold;
+  padding: 0 7px;
+}
+
+/*sign up screen*/
+select {
+  width: 100%;
+  border: 0;
+  background-color: #ccc;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.btm2 {
+  text-align: center;
+}
+
+/*complete screen*/
+.complete_icon {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.complete_t {
+  text-align: center;
+}
+
+.complete_p {
+  text-align: center;
+}
+
+/*footer*/
+footer {
+  height: 30px;
+  background-color: #ccc;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 10px;
+  line-height: 30px;
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  body {
+    width: 100%;
+  }
+  .login_page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .intro_img {
+    width: 50%;
+    border: 1px solid red;
+  }
+  .login_form {
+    width: 50%;
+    border: 1px solid blue;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .signup_page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .signup_form {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 8%;
+  }
+  .complete_page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .complete_form {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .complete_icon {
+    margin-top: 20%;
+  }
+  .complete_t {
+    padding: 60px 0 40px 0;
+  }
+  .complete_p {
+    margin-bottom: 160px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

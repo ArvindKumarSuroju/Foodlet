@@ -30,6 +30,7 @@ main>p {
     display: block;
 }
 
+
 .saveweight {
     color: #00615b;
 }
@@ -67,7 +68,6 @@ main>p {
         font-size:15px;
         padding-right:10%;
     } */
-
 
 /* .price {
     text-align:right;
@@ -151,6 +151,7 @@ ul.order_review li {
     width: 88px;
     height: 88px;
 }
+
 
 img {
     border-radius: 50%;

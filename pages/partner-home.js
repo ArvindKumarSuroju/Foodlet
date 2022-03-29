@@ -43,5 +43,5 @@ async function myMeals() {
 
 function goToMeal(docId) {
     sharedDataId["partnerHomedocumentId"] = docId;
-    location.href = "#partner-editmeal"
+    location.href = "#partner-addmeal"
 }

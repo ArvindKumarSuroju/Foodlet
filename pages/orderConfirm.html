@@ -1,20 +1,56 @@
+
 <body>
 
     <header>
+        <ul class="header_mobile">
+            <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
+            <li class="logo"></li>
+            <li class="header_icon"></li>
+            <li>
+                <div class="menu_item cart"></div>
+            </li>
+            <li>
+                <div class="menu_i"></div>
+            </li>
+        </ul>
+        <div class="header_desktop">
+                <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+                <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
+        </div>
 
-        <div class="inner">
-            <ul class="header_mobile">
-                <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
-                <li class="logo"></li>
-                <!-- <li class="header_icon"></li> -->
+
+        </div>
+        </ul>
+        <div id="sidebar">
+            <!--Sidebar-->
+            <h2 class="sidelogo"><img src="/images/Foodlet-Logo-primary-colorbg.png" alt="" class="sidenav_img"></h2>
+
+            <a class="side_close"><img src="">X</a>
+            <ul class="sidebar_menu">
                 <li>
-                    <div class="menu_item cart"></div>
+                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
+                    <p>your-email@gmail.com</p>
                 </li>
-                <!-- <li>
-                    <div class="header_icon"></div>
-                </li> -->
+                <li>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discover.png" alt="">Discover</div>
+                </li>
+                <li>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Cart.png" alt="">Cart</div>
+                </li>
+                <li>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/Order.png" alt="">Orders</div>
+                </li>
 
+
+                <li>
+                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+                </li>
             </ul>
+
             <div class="header_desktop">
                 <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
                 <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
@@ -61,7 +97,7 @@
 
     </header>
     <main>
-        <div class="wrap">
+        <div class="inner">
             <h2 class="title">Your Order Has Been Confirmed</h2>
             <p class="text_title text_center text_color_tertiary">Waiting for pick up.</p>
             <p class="text_title text_center text_color_tertiary">Show this page to pick up and pay at the store.</p>
@@ -75,17 +111,15 @@
                         <li class="store_img" id="storeImage">
 
                         </li>
-
-                        <li>
+                        <li><b id="storeImage"></b>
                             <ul class="order_review">
-                                <li><b>Amare Restaurant</b></li>
-                                <li>Pick up today by 3:30pm</li>
-                                <li>Knight St, Vancouver</li>
-                                <li class="reserveTime">Reserverd on 11st Feb 2022 5:00pm</li>
+                                <li id="storeName"></li>
+                                <li>Pick up today by <span id="pickUpTime"></span></li>
+                                <li id="storeAddress"></li>
+                                <!-- <li><a>get direction</a></li> -->
+                                <!-- <li>Reserverd on 11st Feb 2022 5:00pm</li> -->
                             </ul>
-
                         </li>
-
 
                     </ul>
                 </div> -->
@@ -139,24 +173,21 @@
             </div>
             <div class="save">
                 <p>You will save</p>
-
-                <p class="price"><span>$ 10.00</span> </p>
-
+                <p class="price" id="savedAmount"></p>
             </div>
-            <div class="weight">
+            <div class="total">
                 <p>You will reduce food waste by</p>
 
                 <p class="totalWeight">1000 gr</p>
             </div> -->
-
 
             <div class="buttons" id="discoverMore">
                 <button class="fill"><a href="#homepage">Discover More Store</a></button>
             </div>
         </div>
     </main>
-    <!-- <footer class="copyright">
+    <footer class="copyright">
         <span>
             &copy;2022 FOODLET. ALL RIGHTS RESERVED.
         </span>
-    </footer> -->
+    </footer>

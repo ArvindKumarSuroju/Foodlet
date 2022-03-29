@@ -166,8 +166,20 @@ select {
 }
 
 .start_btn {
-    margin-top: 15%;
-    margin-bottom: 20%;
+
+  margin-top: 15%;
+  margin-bottom: 20%;
+}
+
+/*footer*/
+footer {
+  height: 30px;
+  background-color: #00615b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 

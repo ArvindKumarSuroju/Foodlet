@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/homepage.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <script text="javascript" src="homepage.js" defer></script>
+    <script text="javascript" src="../js/main.js" defer></script>
     <title>Cart</title>
-</head> -->
+</head>
 
 <body>
     <!--Header nav-->
@@ -19,14 +18,38 @@
 
 
     <header>
+        <ul class="header_mobile">
+            <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
+            <li class="logo"></li>
+            <li class="header_icon"></li>
+            <li>
+                <div class="menu_item cart"></div>
+            </li>
+            <li>
+                <div class="menu_i"></div>
+            </li>
+        </ul>
+        <div class="header_desktop">
+                <div class="mainlogo_img"><img src="/images/Foodlet Logo.png" alt="" class="nav_img"></div>
+                <div class="discover_opt"><a class="cpagea" href="#homepage">Discover</a></div>
+                <div class="cart_opt"><a class="cpagea" href="#cart">Cart</a></div>
+                <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
+                <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+                <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
+        </div>
 
-        <div class="inner">
-            <ul class="header_mobile">
-                <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
-                <li class="logo"></li>
-                <!-- <li class="header_icon"></li> -->
+
+        </div>
+        </ul>
+        <div id="sidebar">
+            <!--Sidebar-->
+            <h2 class="sidelogo"><img src="/images/Foodlet-Logo-primary-colorbg.png" alt="" class="sidenav_img"></h2>
+
+            <a class="side_close"><img src="">X</a>
+            <ul class="sidebar_menu">
                 <li>
-                    <div class="menu_item cart"></div>
+                    <img src="../resources/Icons/Profile.png" alt="">Hi, Use Name
+                    <p>your-email@gmail.com</p>
                 </li>
                 <!-- <li>
                     <div class="header_icon"></div>
@@ -70,6 +93,11 @@
             </ul>
         </div>
 
+                <li>
+                    <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp"><img class="menu_icon" src="/resources/Icons/LogOut.png" alt=""><p>Log Out</p></button></div>
+                </li>
+            </ul>
+        </div>
     </header>
     <!--Cart screen-->
     <main>
@@ -138,12 +166,13 @@
         </div>
         </div>
         </div>
+
     </main>
     <!-- <footer class="copyright">
         <span>
             &copy;2022 FOODLET. ALL RIGHTS RESERVED.
         </span>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

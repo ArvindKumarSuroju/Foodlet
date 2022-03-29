@@ -36,7 +36,7 @@ a {
     grid-template-rows: 4fr 1fr;
 }
 
-.partner-signup-coverimage1 {
+.partner-signup-coverimage {
     grid-column: -1/1;
     grid-row: 1/2;
 }
@@ -67,9 +67,8 @@ a {
 .storeinfo-basicinfo h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #2E8B56;
+    color: #00615B;
     margin: 0;
-    margin-bottom: 30px;
 }
 
 #partner-signup-storetype-output {
@@ -113,31 +112,34 @@ i.fa-smile {
 
 /*  AVAILABLE MEAL LIST */
 
-#eachmeal {
+.storeinfo-availablemeallist {
     border-top: #51CF67 solid 1px;
     /* border-bottom: #51CF67 solid 1px; */
     padding: 15px 0;
-    margin: 5px 15px;
+    margin: 24px 15px;
     text-align: center;
     display: grid;
     flex-flow: column nowrap;
     grid-gap: 1rem;
-    justify-content: center;
-    /* align-items:center; */
-    /* min-width: 352px;
-    max-width: 352px; */
+    align-items: center;
 }
 
+.storeinfo-availablemeallist h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+}
 
 /* .storeinfo-availablemeallist .two-columns {
     width: 65vw;
 } */
 
-#eachmeal form {
+.storeinfo-availablemeallist form {
     text-align: right;
 }
 
-#eachmeal form button {
+.storeinfo-availablemeallist form button {
     margin: 5px;
 }
 
@@ -146,10 +148,6 @@ i.fa-smile {
     text-align: left;
     border: 1px solid #CBE2D5;
     border-radius: 10px;
-    height: 100%;
-    min-width: 352px;
-    max-width: 352px;
-    /* align-self: center; */
 }
 
 .availablemeal p,
@@ -263,7 +261,6 @@ form.formclass {
 #updated-availability-output {
     display: flex;
     align-items: center;
-    flex: nowrap;
 }
 
 .dietary {
@@ -330,8 +327,9 @@ footer {
         text-align: center;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 8fr 1fr;
+        grid-template-rows: 4fr 1fr;
     }
+  
     .partner-signup-coverimage1 {
         grid-column: 1/1;
         grid-row: 1/2;
@@ -342,8 +340,8 @@ footer {
         border-radius: 50%;
     }
     .partner-signup-profilepicture {
-        grid-row: 4/1;
-        grid-column: 1/1;
+        grid-row: -1/1;
+        grid-column: -1/1;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -376,16 +374,18 @@ footer {
         grid-column: 2/3;
     }
     /*  AVAILABLE MEALS */
-    #eachmeal {
+    .storeinfo-availablemeallist {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
     }
+
     #eachmeal h3,
     #storeinfo-addtocartbutton {
         grid-column: -1/1;
     }
     #eachmeal h3 {
+
         font-size: 20px;
         /* margin: 30px 0; */
     }
@@ -399,6 +399,7 @@ footer {
         max-width: 324px;
         margin: 24px;
     }
+  
     .availablemeal span {
         font-size: 16px;
     }

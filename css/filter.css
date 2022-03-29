@@ -1,12 +1,33 @@
 /*MOBILE*/
-#filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    background-color: white;
-  }
+.cityFilter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  z-index: 3;
+  top: 3rem;
+
+  width: 100vw;
+}
+
+#myCity {
+  padding: .65rem;
+  width: 257px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  /* or 22px */
+
+  letter-spacing: 0.02em;
+}
+
+.close img {
+  width: 1.5rem;
+  border-radius: 50%;
+  margin-top: .75rem;
+}
   
   .filter {
     background-color: #cbe2d5;
@@ -17,6 +38,7 @@
     cursor: pointer;
     border-radius: 20px;
   }
+  
   
   .map {
     text-align: center;
@@ -39,14 +61,24 @@
     cursor: pointer;
   } */
   .subbar_title {
-    padding: 10px 0 20px 0;
+    padding: 10px 0 0 0;
     font-size: 15px;
     text-align: center;
   }
 
   .category, .dietary, .distance {
-    padding: 3% 0 5px 0;
-    font-size: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    padding-bottom: .5rem;
+  }
+
+  .filter_cate input[type="checkbox"] {
+    margin: .5rem 9px .5rem 0;
+  }
+
+  .filter_cate input[type="checkbox"]:checked {
+    background: #51cf67;
   }
   
   label {
@@ -137,8 +169,10 @@
     padding: .5rem;
   }
 
-  fieldset {
+  .citySelection fieldset {
     border: none;
+    padding: 0;
+    margin-left: .5rem;
   }
 
   /*Desktop*/
@@ -167,9 +201,10 @@
       }
     
       #filter {
-        width: 70%;
-        left: 15%;
-        top: 13%;
+        position: absolute !important;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 11rem !important;
         box-shadow: 5px 5px 5px grey;
         border-radius: 5px;
       }
@@ -187,7 +222,21 @@
         flex-flow: row nowrap;
         justify-content: space-evenly;
       }
-    
+
+      .cityFilter {
+        top: 6.5rem;
+      }
+      
+      .citySelection {
+        width: 400px;
+      }
+
+      .citySelection fieldset {
+        width: 400px;
+        margin: 0;
+        text-align: right;
+      }
+
       /* .filter_cate a {
         line-height: 0;
         margin-top: 8%;
@@ -202,8 +251,16 @@
         text-align: center;
       }
     
-      
+      #myCity {
+        width: 400px;
+        height: 56px;
+        font-size: 20px;
+      }
     
-    
+      .filterBtn {
+        width: 187px !important;
+        padding: 14px 0 !important;
+        font-size: 20px !important;
+      }
     
 };

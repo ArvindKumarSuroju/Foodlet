@@ -63,8 +63,11 @@ select {
 
 header {
     vertical-align: middle;
-    padding: 10px 0;
-    background-color: #00615b;
+    background-color:#00615b;
+}
+.wrap {
+    height:100vh;
+
 }
 
 /* .wrap {
@@ -73,8 +76,10 @@ header {
 /* 
 main {
   height:100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
 
-} 
 .copyright {
     background-color: #00615b;
     color: white;
@@ -91,7 +96,168 @@ main {
 /*header*/
 
 
-/* .header_mobile {
+.header_mobile {
+  height: 48px;
+  background-color: #00615b;
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_mobile li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gm-style-mtc, .gm-fullscreen-control, .gm-svpc {
+  display: none;
+}
+
+.mainlogo_img .nav_img{
+
+  min-height: 36px;
+  min-width: 200px;
+  max-height: 36px;
+  max-width: 200px; 
+}
+
+.hamburger {
+  height: 40px;
+  width: 40px;
+
+  cursor: pointer;
+}
+
+.header_icon {
+  height: 50px;
+  width: 50px;
+ 
+}
+ 
+.logo {
+  width: 50%;
+  height: 100%;
+  background-image: url("/images/Foodlet Logo.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 138px;
+  margin-left: 2%;
+  flex-grow: 1;
+}
+
+
+.citySelection {
+  padding: 0;
+  margin: .5rem .5rem .5rem 0;
+}
+
+
+
+#filter {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  transition: left 0.3s ease-in-out;
+  right: 0;
+  z-index: 20;
+  background-color: white;
+  height: 100vh;
+  display: none;
+}
+
+#filter.show-filter {
+  display: block;
+}
+
+#filter div.buttons {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
+}
+
+.filter_cate div div {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.filter_cate > div:nth-child(2) {
+  margin-top: 1.5rem;
+}
+
+.filter_cate div div label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.filter_title {
+  margin-bottom: .25rem;
+}
+
+#filter h2 {
+  font-size: 24px;
+}
+
+.filterBtn {
+  /* position: absolute;
+  top: 10%;
+  right: 10%; */
+  
+  background-color: #cbe2d5;
+  color: #00615b;
+  /* box-shadow: 9px 12px 24px #555; */
+
+  border: 0;
+  padding: .5rem 0;
+  width: 80px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-right: 0.5rem;
+  height: auto;
+  z-index: 10;
+  border-radius: 10px;
+  
+  cursor: pointer;
+}
+
+.header_desktop {
+  display: none;
+}
+/* header */
+button a {
+  color: white;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+div,
+li,
+ul,
+a,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ul {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -103,25 +269,314 @@ main {
     top: 0;
 } */
 
-.header_mobile {
-    height: 50px;
-    background-color: #00615b;
-    line-height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* position: sticky; */
-    /* padding:7px 0; */
-    top: 0;
-    flex-flow: row nowrap;
+li {
+  list-style: none;
 }
 
-.mainlogo_img .nav_img {
+.inner {
+  width: 97vw;
+  margin: 0 auto;
+  /* border:1px solid yellow; */
+}
+
+button {
+  border-radius: 5px;
+}
+
+select {
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 1px solid blue;
+}
+
+.white_btn,
+.green_btn {
+  width: 164px;
+  height: 48px;
+  padding: 3% 0;
+  color: #2e8b56;
+  text-align: center;
+
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.white_btn {
+  border: 1px solid #eee;
+  background-color: white;
+}
+
+.green_btn {
+  border: 0;
+  font-weight: bold;
+  background-color: #cbe2d5;
+}
+
+.button_green {
+  background-color: #2e8b56;
+  border: 0;
+  color: white;
+  border-radius: 10px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.fill {
+  background-color: #2e8b56;
+  padding: 2% 8%;
+  color: white;
+  border: 0;
+  margin: 3% 0;
+}
+
+img.round {
+  border-radius: 50%;
+}
+
+.text_title {
+  /* Mobile-Titles */
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.text_body_text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #323232;
+}
+
+.text_color_primary {
+  color: #313131;
+}
+
+.text_color_secondary {
+  color: #616161;
+}
+
+.text_color_tertiary {
+  color: #00615b;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_weight_700 {
+  font-weight: 700;
+}
+
+/* sidebar */
+#sidebar {
+  width: 91%;
+  background-color: #00615b;
+  position: absolute;
+  left: -1000px;
+  top: 0;
+  transition: left 0.3s ease-in-out;
+  z-index: 10;
+}
+
+#sidebar.on {
+  left: 0;
+  height: 100%;
+}
+
+.sidelogo {
+   /* position: relative;
+  width: 100%;  */
+  padding-top: 5%;
+  /* padding-bottom: 15%;  */
+} 
+.sidenav_img{
+      width:260px;
+      height:125px;
+}
+.side_close {
+  position: absolute;
+  right: 3.2%;
+  top: 1%;
+  color: blue;
+  cursor: pointer;
+}
+
+.sidebar_menu {
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+
+}
+.sidebar_menu li {
+  border-bottom: 2px solid white;
+  margin: 0 5%;
+  color: white;
+
+  padding-top: 2%;
+  padding-bottom: 2%; 
+  align-content: left;
+}
+
+.sidebar_menu li:last-child {
+  padding-bottom: 55%;
+  border-bottom: 1px solid #00615b;
+}
+
+.sidebar_menu li a {
+  color: white;
+}
+div.sideitemsleft{
+  align-content: flex-start;
+}
+.logoutsidebar {
+  display: flex;
+  align-items: center;
+}
+.sidebar_menu img {
+  width: 24px;
+  height: 24px;
+  margin: auto 10px;
+  vertical-align: left;
+}
+
+li.heart {
+  text-align: center;
+}
+
+div.heart {
+  background: center/cover url("../resources/Icons/Favourite.png") no-repeat;
+
+  width: 13px;
+  height: 13px;
+  margin: 0 auto;
+}
+
+div.heart_active {
+  background: center/cover url("../resources/Icons/FavouriteActive.png")
+    no-repeat;
+}
+.header_mobile .menu_item,
+.header_desktop .menu_item {
+  width: 30px;
+  height: 30px;
+}
+
+.header_mobile .cart,
+.header_desktop .cart {
+  background: center/cover url("../resources/Icons/cartWhite.png") no-repeat;
+}
+.header_mobile .cart_active,
+.header_nav .cart_active {
+  background: center/cover url("../resources/Icons/cartOrange.png") no-repeat;
+}
+
+.header_mobile .notification,
+.header_nav .notification {
+  background: center/cover url("../resources/Icons/notificationWhite.png")
+    no-repeat;
+}
+.header_mobile .notification_active,
+.header_nav .notification_active {
+  background: center/cover url("../resources/Icons/notificationOrange.png")
+    no-repeat;
+}
+a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #ccc;
+  line-height: 50px;
+}
+
+footer {
+  background-color: #00615b;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  line-height: 30px;
+  height: 30px;
+  font-weight: light;
+  box-sizing: border-box;
+}
+
+#mainArea {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+#map {
+  flex-grow: 1;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1000px) {
+  .text_title {
+    font-size: 20px;
+  }
+  .text_body_text {
+    font-size: 20px;
+  }
+  body {
+    width: 100%;
+  }
+  #sidebar {
+    display: none;
+  }
+  
+  .header_mobile {
+    display: none;
+  }
+/* heder flex */
+  .header_desktop {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    height: 104px;
+    background-color: #00615b;
+  }
+
+  .header_desktop > div:first-child {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .header_desktop > div:last-child {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .mainlogo_img{
+    margin-left: 2%;
+    margin-top: 5px;
+  }
+
+
+/* .mainlogo_img .nav_img {
     min-height: 36px;
     min-width: 200px;
     max-height: 36px;
     max-width: 200px;
-}
+} */
 
 .hamburger {
     height: 40px;
@@ -140,26 +595,20 @@ main {
     width: 50px;
 }
 
-.header_desktop {
-    display: none;
+  .header_mobile .logo {
+      width:100%;
+      height:100%;
+  }
+  .header_desktop .menu_item {
+    width:40px;
+    /* height:80%;
+    margin-left:10%;
+    margin-right: 10%; */
+    /* position:absolute;
+    top:5%;
+    right:16%; */
 }
-
-.header_mobile .logo {
-    width: 100%;
-    height: 100%;
-}
-
-.header_desktop .menu_item {
-    width: 40px;
-    height: 80%;
-    margin-left: 4%;
-    position: absolute;
-    top: 5%;
-    right: 16%;
-}
-
-.header_mobile .menu_item,
-.header_desktop .menu_item {
+  .header_mobile .menu_item, .header_desktop .menu_item {
     width: 40px;
     height: 40px;
 }
@@ -248,7 +697,32 @@ main {
     background-color: #2e8b56;
     border: 0;
     color: white;
-    border-radius: 10px;
+    padding: 5px 20px;
+    margin-top: 12%;
+    min-height: 40px;
+    min-width: 100px;
+    max-height: 40px;
+    max-width: 100px; 
+ 
+  }
+  .header_mobile .menu_item,
+  .header_desktop .menu_item {
+    width: 40px;
+    height: 40px;
+  }
+
+  #filter.show-filter {
+    width: 500px;
+    height: 380px;
+  }
+
+  .filter_cate > div:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .white_btn, .green_btn {
+    padding: 0;
+  }
 }
 
 .buttons {
@@ -427,93 +901,81 @@ footer {
 */
 
 /* Desktop */
-
-.gm-style-mtc {
-    display: none;
-}
-
-@media screen and (min-width:1000px) {
-    .wrap {
-        padding: 5% 0;
-        width: 80%;
-        margin: 0 auto;
-        box-sizing: border-box;
-        height: 100vh;
-    }
-    .logo {
-        width: 100%;
-        height: 100%;
-        background-image: url("/images/Foodlet Logo.png");
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: 160px;
-        margin-left: 2%;
-    }
-    .header_desktop {
-        /* padding:7px 0; */
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        height: 40px;
-        background-color: #00615b;
-        position: relative;
-    }
-    .header_desktop a {
-        font-size: 15px;
-    }
-    .mainlogo_img {
-        margin-right: 10%;
-        margin-top: 5px;
-    }
-    .mainlogo_img .nav_img {
-        max-width: 200px;
-    }
-    .cart_opt {
-        margin-left: 8%;
-        line-height: 50px;
-    }
-    .orders_opt {
-        min-height: 40px;
-        min-width: 140px;
-        max-height: 40px;
-        max-width: 140px;
-        margin-bottom: 10px;
-        margin-left: 4%;
-    }
-    .logout_butt {
-        display: block;
-        /* margin: 26px 0; */
-        position: absolute;
-        top: 0;
-        /* width:200px; */
-        right: 5%;
-        /* top:10%; */
-    }
-    .logouthead {
-        background-color: rgb(46, 139, 86);
-        color: white;
-        /* margin-top: 12%; */
-        min-height: 40px;
-        min-width: 100px;
-        max-height: 40px;
-        max-width: 100px;
-        border-width: 0px;
-        border-style: initial;
-        border-color: initial;
-        border-image: initial;
-        padding: 5px 20px;
-    }
+  .gm-style-mtc {
+    display:none;
+  }
+  .wrap {
+      padding:5% 0;
+      width:80%;
+      margin:0 auto;
+      box-sizing: border-box;
+      height:100vh;
+  }
+  .logo {
+      width: 100%;
+      height: 100%;
+      background-image: url("/images/Foodlet Logo.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size:160px;
+      margin-left:2%;
+  }
     /* .header_desktop {
-        position:relative;
-      } */
-    .header_mobile {
-        display: none;
-    }
-    .text_title {
-        font-size: 20px;
-    }
-    .text_body_text {
-        font-size: 20px;
-    }
-}
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      height: 40px;
+      background-color: #00615b;
+      position:relative;
+    } */
+
+  .header_desktop a {
+      font-size:15px;
+  }
+
+  
+  .mainlogo_img{
+    margin-right: 5%;
+    margin-top: 5px;
+  }
+  .mainlogo_img .nav_img{
+    
+    max-width: 200px;
+  }
+
+  .cart_opt{
+    margin-left: 2rem;
+    
+  }
+  .orders_opt{
+    margin-left: 2rem;
+  }
+  .logout_butt{
+    display:block;
+  
+  }
+  .logouthead {
+    
+    background-color: rgb(46, 139, 86);
+    color: white;
+    /* margin-top: 12%; */
+    min-height: 40px;
+    min-width: 100px;
+    max-height: 40px;
+    max-width: 100px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    padding: 5px 20px;
+  }
+    /* .header_desktop {
+      position:relative;
+    } */
+  .text_title {
+      font-size: 20px;
+  }
+  .text_body_text {
+      font-size: 20px;
+  }
