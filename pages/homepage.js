@@ -90,7 +90,7 @@ function initMap() {
         });
 
     }
-    console.error("==============" + stores.length);
+    console.log("==============" + stores.length);
 
     console.log('STORES ARRAY: ' + stores);
 
@@ -101,7 +101,7 @@ function initMap() {
     mainMap.setCenter(new google.maps.LatLng(firstStoreCode[1], firstStoreCode[2]));
 
 
-
+    console.log('firstStoreCode: ' + firstStoreCode);
 
 }
 
@@ -137,7 +137,7 @@ async function fetchAvailableStores(city) {
                 });
 
                 if (availableMeals > 0) {
-                    console.error("AVAILABLE STORES INFO: " + JSON.stringify(doc.data()));
+                    console.log("AVAILABLE STORES INFO: " + JSON.stringify(doc.data()));
                     var marker;
 
                     //         displayAvailableStores = JSON.parse(doc.data());
@@ -205,6 +205,8 @@ async function renderData(doc) {
     if (doc.data().coordinate == undefined) {
         var coordi = await getCoordinates(doc.data().storeName, doc.data().zipcode);
         updateCoord(doc.id, coordi);
+        
+        console.log('Im in function renderData()')
     } else {
         stores.push([doc.data().storeName, doc.data().latitude[0], doc.data().longitude[1]]);
         // doc.data().coordinate = coordi;
@@ -212,7 +214,7 @@ async function renderData(doc) {
     }
     initMap();
     // not a good way , it keeps bring data
-    console.error("============partner=====");
+    console.log("============partner=====");
 };
 
 
@@ -228,7 +230,7 @@ function updateCoord(id, coordinate) {
         }, { merge: true })
         .then((docRef) => {
             if (docRef) {
-                console.error("Success edit user.");
+                console.log("Success edit user.");
             }
         })
         .catch((error) => {
@@ -260,7 +262,7 @@ async function getPartners() {
 
 
                 if (availableMeals > 0) {
-                    console.error("RENDER DATA FUCTION IS WORKING");
+                    console.log("RENDER DATA FUCTION IS WORKING for " + doc.data());
                     renderData(doc)
                 }
 
@@ -283,16 +285,14 @@ function renderData(doc) {
 }
 
 
-db.partner
 db.collection('partnerAddMeals').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
+
         renderData(doc);
         doc.update();
 
 
     })
-
-
 
     initMap();
     // addMarker();
@@ -306,11 +306,16 @@ async function getCoordinates(name, zipcode) {
 
     var coordinate = [];
 
+    
+
     try {
-        const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode)
+        const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode);
         const data = await response.json();
 
-        if (data.result.length > 0) {
+        console.log(JSON.stringify(data).length);
+
+        if (JSON.stringify(data).length > 0) {            
+
             const latitude = data.results[0].geometry.location.lat;
             const longitude = data.results[0].geometry.location.lng;
             coordinate = [latitude, longitude];
@@ -318,8 +323,11 @@ async function getCoordinates(name, zipcode) {
             console.info({ latitude, longitude });
         }
         return coordinate;
-    } catch (err) {
+    } 
+
+    catch (err) {
         console.error(err);
+        console.error('$%^&*');
     }
 }
 
@@ -333,7 +341,7 @@ function updateCoord(id, coordinate) {
         }, { merge: true })
         .then((docRef) => {
             if (docRef) {
-                console.error("Success edit user.");
+                console.log("Success edit user.");
             }
         })
         .catch((error) => {
@@ -347,28 +355,34 @@ function updateCoord(id, coordinate) {
 //update lat and long to database (0321 modified by hyewon)
 
 async function renderData(doc) {
+    
     if (doc.data().zipcode != undefined && doc.data().zipcode != "") {
-
+        
         if (doc.data().latitude == undefined) {
-            console.error(zipcode);
+            console.log('**function renderData(doc)** for ' + doc.data().storeName);
+            // console.error(zipcode);
             var coordi = await getCoordinates(doc.data().storeName, doc.data().zipcode);
-            console.error(coordi);
-            console.error(doc.data().storeName);
+
+            console.log(coordi);
+            console.log(doc.data().storeName);
+
             if (coordi.length > 0) {
                 updateCoord(doc.id, coordi);
+            } else {
+                console.log('coordi error')
             }
         } else {
 
             stores.push([doc.data().storeName, doc.data().latitude, doc.data().longitude]);
 
-            console.error(stores + " --> FROM function renderData()");
+            console.log(stores + " ----> FROM function renderData()");
             // doc.data().coordinate = coordi;
             //   UpdateData(doc.data().partner.storeName);
         }
 
         initMap();
         // not a good way , it keeps bring data
-        console.error("============partner=====");
+        console.log("============partner=====");
     };
 }
 
