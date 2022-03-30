@@ -66,6 +66,8 @@ header.header_desktop{
 
 .partner-home .availableMeals {
     margin: 25px 0 15px 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .partner-addmeal .add-meal-form h2 {
