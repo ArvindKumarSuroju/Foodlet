@@ -24,6 +24,33 @@ const filter = document.querySelector("#filter");
 const ExitBtn = document.querySelector(".close");
 
 
+initCustomerData();
+
+
+
+async function initCustomerData() {
+    let customerUsername = document.getElementById("customerUsername");
+    let customerEmail = document.getElementById("customerEmail");
+    const user = await getSignedInUser();
+    console.log(user.uid);
+    let partnerData = db.collection("customers").doc(user.uid);
+    partnerData.get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            customerUsername.innerHTML = `${doc.data().name}`;
+            customerEmail.innerHTML = `${doc.data().email}`;
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+
+}
+
+
+
+
 filterBtn.addEventListener('click', () => {
     if (filter.classList.contains('on')) {
         filter.classList.remove('on');
@@ -90,9 +117,9 @@ function initMap() {
         });
 
     }
-    console.log("==============" + stores.length);
+    // console.log("==============" + stores.length);
 
-    console.log('STORES ARRAY: ' + stores);
+    // console.log('STORES ARRAY: ' + stores);
 
 
 
@@ -101,7 +128,7 @@ function initMap() {
     mainMap.setCenter(new google.maps.LatLng(firstStoreCode[1], firstStoreCode[2]));
 
 
-    console.log('firstStoreCode: ' + firstStoreCode);
+    // console.log('firstStoreCode: ' + firstStoreCode);
 
 }
 
@@ -205,7 +232,7 @@ async function renderData(doc) {
     if (doc.data().coordinate == undefined) {
         var coordi = await getCoordinates(doc.data().storeName, doc.data().zipcode);
         updateCoord(doc.id, coordi);
-        
+
         console.log('Im in function renderData()')
     } else {
         stores.push([doc.data().storeName, doc.data().latitude[0], doc.data().longitude[1]]);
@@ -306,7 +333,7 @@ async function getCoordinates(name, zipcode) {
 
     var coordinate = [];
 
-    
+
 
     try {
         const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC4byKhswn0HQGQ4OKH9syarm00rqdm2WQ&address=" + zipcode);
@@ -314,7 +341,7 @@ async function getCoordinates(name, zipcode) {
 
         console.log(JSON.stringify(data).length);
 
-        if (JSON.stringify(data).length > 0) {            
+        if (JSON.stringify(data).length > 0) {
 
             const latitude = data.results[0].geometry.location.lat;
             const longitude = data.results[0].geometry.location.lng;
@@ -323,9 +350,7 @@ async function getCoordinates(name, zipcode) {
             console.info({ latitude, longitude });
         }
         return coordinate;
-    } 
-
-    catch (err) {
+    } catch (err) {
         console.error(err);
         console.error('$%^&*');
     }
@@ -355,9 +380,9 @@ function updateCoord(id, coordinate) {
 //update lat and long to database (0321 modified by hyewon)
 
 async function renderData(doc) {
-    
+
     if (doc.data().zipcode != undefined && doc.data().zipcode != "") {
-        
+
         if (doc.data().latitude == undefined) {
             console.log('**function renderData(doc)** for ' + doc.data().storeName);
             // console.error(zipcode);
@@ -447,14 +472,14 @@ function renderStoreInfo(doc, lsp) {
     storeList.innerHTML += `
         <li id="${doc.id}" class="store_list">
             <ul class="store_detail">
-                <li class="store_img"><img src="${doc.data().fileURL}" width="50px" class="round"></li>
+                <li class="store_img"><img src="${p}" width="50px" class="round"></li>
                 <li>
 
                     <h5 class="text_title text_color_primary store_name" onclick="goToStoreInfo('${doc.id}')">${doc.data().storeName}</h5>
 
                     <p class="text_body_text text_color_primary store_cate">${doc.data().storeType}</p>
                 </li>
-                <li><i class="far fa-heart"></i></li>
+                <li><i class=""></i></li>
             </ul>
             <ul class="pickup_detail" id="pickupDetail">
                 <li><i class="far fa-clock"></i> Pick up by ${doc.data().pickUpTime}</li>
