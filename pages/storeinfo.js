@@ -1,4 +1,3 @@
-
 // Setting Up Store Data
 
 
@@ -25,11 +24,11 @@ async function init() {
 }
 
 function setPartnerData(storeData) {
-    // console.log(storeData);
+    console.log(storeData);
     partnerFullName.innerHTML = storeData.storeName;
     storeType.innerHTML = storeData.storeType;
     storeAddress.innerHTML = storeData.storeAddress;
-    partnerProfilePicture.src = storeData.partnerSignupProfilePicture;
+    partnerProfilePicture.src = storeData.fileURL;
 }
 
 
@@ -156,4 +155,3 @@ menuBton.addEventListener('click', () => {
 closeBt0n.addEventListener('click', () => {
     sidebaar.classList.remove('on');
 });
-
