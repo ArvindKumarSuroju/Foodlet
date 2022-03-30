@@ -120,6 +120,7 @@
   .stores_slide {
     width: 100vw;
     display: flex;
+    padding-left: 1rem;
     /* justify-content: center; */
     gap: 0 .5rem;
   }

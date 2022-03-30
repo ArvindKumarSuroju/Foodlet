@@ -9,6 +9,13 @@
     flex-direction: column;
 }
 
+.cartPage {
+    min-height: max-content;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
 main .menu_detail>li:first-child {
     width: 20%;
 }
