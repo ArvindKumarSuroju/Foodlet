@@ -433,7 +433,7 @@ function renderStoreInfo(doc, lsp) {
     storeList.innerHTML += `
         <li id="${doc.id}" class="store_list">
             <ul class="store_detail">
-                <li class="store_img"><img src="${p}" width="50px" class="round"></li>
+                <li class="store_img"><img src="${doc.data().fileURL}" width="50px" class="round"></li>
                 <li>
 
                     <h5 class="text_title text_color_primary store_name" onclick="goToStoreInfo('${doc.id}')">${doc.data().storeName}</h5>
