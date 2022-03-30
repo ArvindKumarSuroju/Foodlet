@@ -348,6 +348,18 @@ img.round {
   color: #000000;
 }
 
+h5.store_name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+h5.store_name + p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
 .text_body_text {
   font-family: Poppins;
   font-style: normal;

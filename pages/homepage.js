@@ -436,10 +436,10 @@ const partnersRef = db.collection('partners');
 
 function renderStoreInfo(doc, lsp) {
 
-    let p = doc.data().partnerSignupProfilePicture;
+    let p = doc.data().fileURL;
 
     if (p != undefined) {
-        p = doc.data().partnerSignupProfilePicture;
+        p = doc.data().fileURL;
     } else {
         p = "../resources/Logo/Favicon.png";
     }
@@ -457,8 +457,8 @@ function renderStoreInfo(doc, lsp) {
                 <li><i class="far fa-heart"></i></li>
             </ul>
             <ul class="pickup_detail" id="pickupDetail">
-                <li><i class="far fa-clock">Pick up by ${doc.data().pickUpTime}</i></li>
-                <li><i class="far fa-clock">starting from $${lsp}</i></li>
+                <li><i class="far fa-clock"></i> Pick up by ${doc.data().pickUpTime}</li>
+                <li>from <strong>$${lsp}</strong></li>
             </ul>
         </li>
     `;
@@ -499,7 +499,7 @@ async function availableStores(doc) {
 function cityAreaSelection(city) {
     storeList.innerHTML = "";
     // let cityArea = document.getElementById('locationSelection');
-    console.log('x0x0x0x0x0x' + selectedCity.value)
+    console.log('You have selected stores in ' + selectedCity.value)
 
     if (selectedCity.value == 'All') {
         partnersRef.get().then((snapshot2) => {
