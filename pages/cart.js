@@ -74,28 +74,28 @@ function renderEachMealData(groupedMeals, i) {
     divElement.innerHTML = '';
     Object.keys(groupedMeals).forEach((key, index) => {
         divElement.innerHTML += `
-        <div class="restaurant">
+        <div class="eachCart">
+            <div class="restaurant">
 
-        <div class="restaurant_detail">
-            <p><img src="/resources/Icons/storeName.png" class="cartIcon"><span>${groupedMeals[key].restaurantName}</span></p>
-            <p><img src="/resources/Icons/location.png" alt="icon" class="cartIcon"><span>${groupedMeals[key].restaurantAddress}</span></p>
-            <p><img src="/resources/Icons/pickUpTime.png" alt="icon" class="cartIcon"><span>Pick Up today by</span>
-                <!-- <input type="time" class="time"> -->
-                <span class="closeTime">${groupedMeals[key].pickUpTime}</span>
-            </p>
+                <div class="restaurant_detail">
+                    <p><img src="/resources/Icons/storeName.png" class="cartIcon"><span>${groupedMeals[key].restaurantName}</span></p>
+                    <p><img src="/resources/Icons/location.png" alt="icon" class="cartIcon"><span>${groupedMeals[key].restaurantAddress}</span></p>
+                    <p><img src="/resources/Icons/pickUpTime.png" alt="icon" class="cartIcon"><span>Pick Up today by</span>
+                        <!-- <input type="time" class="time"> -->
+                        <span class="closeTime">${groupedMeals[key].pickUpTime}</span>
+                    </p>
 
-        </div>
+                </div>
 
-    </div>
-    <div class="menus" id="menuItems">
-`
+            </div>
+            
+            <div class="menus" id="menuItems">
+        
+        `
 
 
         groupedMeals[key].meals.forEach((mealItem, i) => {
             divElement.innerHTML += `
-
-
-
             <div class="menu_list">
             <ul class="menu_detail">
                 <li class="store_img"><img src="${mealItem.mealImage}" alt=""></li>
@@ -119,9 +119,6 @@ function renderEachMealData(groupedMeals, i) {
                     <a class="btn-danger"><img src="/resources/Icons/deleteOrange.png"></a>
                 </li>
             </ul>
-        </div>
-
-
         `
         })
 
