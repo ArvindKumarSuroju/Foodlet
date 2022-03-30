@@ -2,7 +2,7 @@
 <div class="homepage">
     <header>
         <div class="inner">
-            
+
             <ul class="header_mobile">
                 <li class="hamburger"><img src="/resources/Icons/hamburger.png" alt="" class="nav_img"></li>
                 <li class="logo"></li>
@@ -23,11 +23,13 @@
                     <div class="orders_opt"><a class="cpagea" href="#orderConfirm">Orders</a></div>
                 </div>
                 <div>
-                    <div class="menu_item cart"><a class="cpagea" href="#cart"></a></div>
+                    <div class="menu_item cart">
+                        <a class="cpagea" href="#cart"></a>
+                    </div>
                     <div class="logout_butt"><button class="logouthead" id="logoutOfApp">Log Out</button></div>
                 </div>
             </div>
-        
+
         </div>
 
         <div id="sidebar">
@@ -37,17 +39,18 @@
             <a class="side_close"><img src="">X</a>
             <ul class="sidebar_menu">
                 <li>
-                    <img src="../resources/Icons/profileWhite.png" alt="">Hi, Use Name
-                    <p>your-email@gmail.com</p>
+                    <img src="../resources/Icons/profileWhite.png" alt="">Hi, <span id="customerUsername"></span>
+                    <p id="customerEmail"></p>
                 </li>
                 <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discoverWhite.png" alt="">Discover</div>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/discoverWhite.png" alt=""><a href="#homepage">Discover</a></div>
                 </li>
                 <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/cartWhite.png" alt="">Cart</div>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/cartWhite.png" alt=""><a href="#cart">Cart</a></div>
                 </li>
                 <li>
-                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/orderWhite.png" alt="">Orders</div>
+                    <div class="sideitemsleft"><img class="menu_icon" src="/resources/Icons/orderWhite.png" alt=""><a href="#orderConfirm"><a href="#orderConfirm">Orders</a></a>
+                    </div>
                 </li>
                 <li>
                     <div class="sideitemsleft"><button class="logoutsidebar" id="logoutOfApp2"><p>Log Out</p></button></div>
@@ -78,11 +81,12 @@
         <div id="filter" class="page">
 
 
-            <h2 class="subbar_title">Filter</h2><a id="filter-close" class="close"><img src="../resources/Icons/close-black.png" alt=""></a>
+            <h2 class="subbar_title">Filter</h2>
+            <a id="filter-close" class="close"><img src="../resources/Icons/close-black.png" alt=""></a>
             <div class="filterSection-wrapper">
 
                 <form class="filter_cate">
-                    <div> 
+                    <div>
                         <div class="filter_title">
                             <h3 class="category">Store Type</h3>
                             <!-- <button id="selectAllStoreTypeButton">select all</button> -->
@@ -98,7 +102,7 @@
                         <div>
                             <input type="checkbox" name="storeTypeCheckbox" id="bakeryCheckbox" value="Bakery">
                             <label for="bakeryCheckbox">Bakery</label>
-                        </div>              
+                        </div>
                     </div>
 
                     <div>
@@ -139,7 +143,7 @@
         <div id="map" class="map">
 
 
-        <!--map -->
+            <!--map -->
 
 
         </div>
