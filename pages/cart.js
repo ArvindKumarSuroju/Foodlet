@@ -19,7 +19,29 @@ closeBtbn.addEventListener('click', () => {
 });
 
 
+initCustomerData();
 
+
+
+async function initCustomerData() {
+    let customerUsername = document.getElementById("customerUsername");
+    let customerEmail = document.getElementById("customerEmail");
+    const user = await getSignedInUser();
+    console.log(user.uid);
+    let partnerData = db.collection("customers").doc(user.uid);
+    partnerData.get().then((doc) => {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            customerUsername.innerHTML = `${doc.data().name}`;
+            customerEmail.innerHTML = `${doc.data().email}`;
+        } else {
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+
+}
 
 
 
@@ -73,7 +95,11 @@ function renderEachMealData(groupedMeals, i) {
     const divElement = document.getElementById('renderedRestaurant');
     divElement.innerHTML = '';
     Object.keys(groupedMeals).forEach((key, index) => {
-        divElement.innerHTML += `
+        const parentDiv = document.createElement('div');
+        parentDiv.classList.add('eachRestaurantCart');
+        let innerHTML = '';
+
+        innerHTML += `
         <div class="eachCart">
             <div class="restaurant">
 
@@ -95,7 +121,7 @@ function renderEachMealData(groupedMeals, i) {
 
 
         groupedMeals[key].meals.forEach((mealItem, i) => {
-            divElement.innerHTML += `
+            innerHTML += `
             <div class="menu_list">
             <ul class="menu_detail">
                 <li class="store_img"><img src="${mealItem.mealImage}" alt=""></li>
@@ -124,7 +150,7 @@ function renderEachMealData(groupedMeals, i) {
 
 
 
-        divElement.innerHTML += `</div>
+        innerHTML += `</div>
         <div class="total">
                 <p>Total Order</p>
                 <p class="totalPrice"  id="originalAmount${index}">
@@ -133,6 +159,8 @@ function renderEachMealData(groupedMeals, i) {
 
             </div>
         `;
+        parentDiv.innerHTML = innerHTML;
+        divElement.appendChild(parentDiv)
 
         //     <div class="restaurant">
         //     <ul class="restaurant_detail">
