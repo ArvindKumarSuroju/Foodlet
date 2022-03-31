@@ -1,3 +1,25 @@
+const menueBtb = document.querySelector(".hamburger");
+const sidebbar = document.querySelector("#sidebar");
+const closeBtbn = document.querySelector(".side_close");
+let displayAvailablestores = [];
+
+menueBtb.addEventListener('click', () => {
+    if (sidebbar.classList.contains('on')) {
+        sidebbar.classList.remove('on');
+    } else {
+        sidebbar.classList.add('on');
+    }
+});
+
+
+closeBtbn.addEventListener('click', () => {
+    sidebbar.classList.remove('on');
+});
+
+
+
+
+
 async function showMeals() {
 
     const user = await getSignedInUser();
@@ -39,6 +61,31 @@ async function showMeals() {
         });
 
     });
+
+
+    initCustomerData();
+
+
+
+    async function initCustomerData() {
+        let customerUsername = document.getElementById("customerUsername");
+        let customerEmail = document.getElementById("customerEmail");
+        const user = await getSignedInUser();
+        console.log(user.uid);
+        let partnerData = db.collection("customers").doc(user.uid);
+        partnerData.get().then((doc) => {
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+                customerUsername.innerHTML = `${doc.data().name}`;
+                customerEmail.innerHTML = `${doc.data().email}`;
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+
+    }
 
 
 
