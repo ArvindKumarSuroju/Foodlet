@@ -1,24 +1,26 @@
 // Building each Meal
+function initHamburger() {
+    const menueBtb = document.querySelector(".hamburger");
+    const sidebbar = document.querySelector("#sidebar");
+    const closeBtbn = document.querySelector(".side_close");
+    let displayAvailablestores = [];
 
-const menueBtb = document.querySelector(".hamburger");
-const sidebbar = document.querySelector("#sidebar");
-const closeBtbn = document.querySelector(".side_close");
-let displayAvailablestores = [];
+    menueBtb.addEventListener('click', () => {
+        if (sidebbar.classList.contains('on')) {
+            sidebbar.classList.remove('on');
+        } else {
+            sidebbar.classList.add('on');
+        }
+    });
 
-menueBtb.addEventListener('click', () => {
-    if (sidebbar.classList.contains('on')) {
+
+    closeBtbn.addEventListener('click', () => {
         sidebbar.classList.remove('on');
-    } else {
-        sidebbar.classList.add('on');
-    }
-});
+    });
+}
 
 
-closeBtbn.addEventListener('click', () => {
-    sidebbar.classList.remove('on');
-});
-
-
+initHamburger();
 initCustomerData();
 
 
