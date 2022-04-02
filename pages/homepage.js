@@ -113,7 +113,7 @@ function initMap() {
             position: new google.maps.LatLng(stores[i][1], stores[i][2]),
             map: mainMap,
             icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-            title: "Hello World!",
+            title: stores[i][0]
         });
 
     }
@@ -512,7 +512,7 @@ async function availableStores(doc) {
             console.log(lowestSalePrice);
 
             console.log(doc.data());
-            renderStoreInfo(doc, lowestSalePrice);
+            renderStoreInfo(doc, lowestSalePrice.toFixed(2));
         }
 
     });
