@@ -170,9 +170,9 @@ i.fa-smile {
 }
 
 .availablemeal input {
-    width: 39px;
+    width: 47px;
     height: 32px;
-    
+    text-align:center;
     background: #ECF1F4;
     border: none;
     border-radius: 10px;
@@ -190,7 +190,14 @@ form.formclass{
 .mealinfo-text {
     margin: 0 0 0 15px;
 }
-
+.partner-signup-coverimage1 {
+    height:170px;
+}
+.partner-signup-coverimage1{
+    background-image:url("../resources/Images/Coverimage.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
 #menu-name {
     font-size: 16px;
     font-weight: 700;

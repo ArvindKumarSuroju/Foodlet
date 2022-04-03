@@ -132,10 +132,10 @@ function renderEachMealData(groupedMeals, i) {
 
                     <!-- button for changing quantity-->
                     <p class="adjust">
-                        <a class="minus">-</a>
+                        
                         <input class="quantity" type="number" maxlength="4" size="2" id= "givenQuantity" onkeyup="changeQuantity(event, '${mealItem.mealId}','${key}')"  value="${mealItem.Quantity}"> 
 
-                        <a class="plus">+</a>
+                       
                     </p>
 
                 </li>

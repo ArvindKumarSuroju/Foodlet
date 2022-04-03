@@ -454,7 +454,6 @@ div.sideitemsleft {
 }
 
 .logoutsidebar {
-    display: flex;
     align-items: center;
 }
 
@@ -795,7 +794,7 @@ img.round {
 .sidelogo {
     /* position:relative; */
     background-image: url("/resources/Logo/Foodlet-Logo-primary-colorbg.png");
-    background-size: 300px 150px;
+    background-size:68% 80%;
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
@@ -820,6 +819,7 @@ img.round {
 .sidebar_menu {
     display: flex;
     flex-flow: column;
+    margin-top:5%;
 }
 
 .sidebar_menu li {
@@ -849,10 +849,6 @@ div.sideitemsleft {
     align-content: flex-start;
 }
 
-.logoutsidebar {
-    display: flex;
-    align-items: center;
-}
 
 .sidebar_menu img {
     width: 24px;
@@ -984,7 +980,7 @@ footer {
     border-style: initial;
     border-color: initial;
     border-image: initial;
-    padding: 5px 20px;
+    /* padding: 5px 20px; */
 }
 
 
