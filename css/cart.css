@@ -1,4 +1,3 @@
-
 #mainArea {
     min-height: 100%;
     display: flex;
@@ -183,4 +182,14 @@ main .menu_detail>li:nth-child(3) {
     border: 1px solid #68B63E;
     margin: 2rem 0;
     padding: 1rem;
+}
+
+.cartEmptyImage {
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+
+.storeImage {
+    border-radius: 50%;
 }

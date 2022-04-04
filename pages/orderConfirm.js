@@ -29,7 +29,9 @@ logoutOfApp.addEventListener('click', () => {
     }).catch((error) => {
         // An error happened.
     })
-})
+});
+
+
 
 
 
@@ -106,10 +108,20 @@ async function showMeals() {
 
 function renderEachMealData(groupedMeals, i) {
 
+    console.log("test + " + sharedDataId.cartMeals)
+
+
+
 
     const divElement = document.getElementById('renderedRestaurant');
+    const orderConfirmMessage = document.getElementById('orderConfirmMessage');
+
     divElement.innerHTML = '';
     Object.keys(groupedMeals).forEach((key, index) => {
+
+        orderConfirmMessage.innerHTML = ` <h2 class="title">Your Order Has Been Confirmed</h2>
+<p class="text_title text_center text_color_tertiary">Waiting for pick up.</p>
+<p class="text_title text_center text_color_tertiary">Show this page to pick up and pay at the store.</p>`;
         divElement.innerHTML += `
 
        
@@ -118,7 +130,7 @@ function renderEachMealData(groupedMeals, i) {
                 <h4>Store Information</h4>
                     <ul>
                         <li class="store_img" id="storeImage">
-                        <img src="${groupedMeals[key].storeImage}"  alt = "storeimage">
+                        <img src="${groupedMeals[key].storeImage}"  alt = "storeimage" class = "storeImage" >
                         </li>
 
                         <li>
@@ -145,7 +157,7 @@ function renderEachMealData(groupedMeals, i) {
             divElement.innerHTML += `
                     <div class="menu_list">
             <ul class="menu_detail">
-                <li class="store_img">  <img src="${mealItem.mealImage}" alt=""></li>
+                <li class="store_img">  <img src="${mealItem.mealImage}" alt="" class = "storeImage"></li>
                 <li>
                     <b>${mealItem.menuName}</b>
 
