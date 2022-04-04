@@ -115,6 +115,9 @@ li.store_img {
     border-radius: 5px;
     margin-top: 5%;
 }
+.storeInfoBox ul {
+    padding-left:0.5rem;
+}
 
 .reserveTime {
     color: lightgray;

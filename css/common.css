@@ -429,6 +429,7 @@ h5.store_name+p {
     display: flex;
     flex-flow: column;
     align-content: flex-start;
+    background-color:#00615b;
 }
 
 .sidebar_menu li {

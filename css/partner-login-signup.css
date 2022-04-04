@@ -132,9 +132,6 @@ a {
     display: none;
 }
 
-.aside img {
-    width: 70%;
-}
 
 .desktop-view {
     min-height: 96vh;
@@ -238,7 +235,9 @@ label {
     padding-top: 8%;
     /* height:200vh; */
 }
-
+.partner-login-form {
+    margin:0 5%;
+}
 .partner-login-forgetpassword {
     text-align: right;
     display: block;
@@ -327,6 +326,12 @@ main {
 }
 
 @media screen and (min-width: 1000px) {
+
+    .header img {
+        width:260px;
+    }
+
+
     .aside {
         display: flex;
         flex-direction: column;
@@ -337,15 +342,33 @@ main {
         /* align-items: center; */
         /*don't add this*/
     }
+    .aside-img{
+        width:100%;
+        height:70%;
+        background-image:url(/resources/Images/Save\ environment.png);
+        background-size:500px;
+        background-position: 40% 50%;
+        background-repeat: no-repeat;
+    }
+
+    .partner-img {
+        width:100%;
+        height:70%;
+        background-image:url(/resources/Images/Generate\ Money.png);
+        background-size:500px;
+        background-position: 40% 50%;
+        background-repeat: no-repeat;
+    }
+    
     .aside .maintainImg {
         width: 50%;
-        height: 100%;
+        height: 70%;
         background-image: url(/resources/Images/Easy\ to\ Maintain.png);
         background-repeat: no-repeat;
         position: fixed;
-        background-size: 500px;
+        background-size: 600px;
         /* background-attachment: fixed; */
-        background-position: center top;
+        background-position: 3% 10px;
     }
     .aside-content {
         position: fixed;
@@ -380,7 +403,7 @@ main {
         padding-top: 8px;
     }
     .aside img {
-        margin-left: 10%;
+        /* margin-left: 7%; */
     }
     .aside-title {
         text-align: center;
@@ -392,7 +415,7 @@ main {
     }
     .partner-title {
         text-align: center;
-        padding-top: 66%;
+        padding-top: 77%;
     }
     .partner-text {
         text-align: center;
