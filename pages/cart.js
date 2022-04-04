@@ -104,13 +104,18 @@ async function showMeals() {
 }
 
 function renderEachMealData(groupedMeals, i) {
+    const emptyCart = document.getElementById('cartEmptyMessage');
 
     const divElement = document.getElementById('renderedRestaurant');
     divElement.innerHTML = '';
     Object.keys(groupedMeals).forEach((key, index) => {
+
+
         const parentDiv = document.createElement('div');
         parentDiv.classList.add('eachRestaurantCart');
         let innerHTML = '';
+
+        emptyCart.innerHTML = '';
 
         innerHTML += `
         <div class="eachCart">
@@ -137,7 +142,7 @@ function renderEachMealData(groupedMeals, i) {
             innerHTML += `
             <div class="menu_list">
             <ul class="menu_detail">
-                <li class="store_img"><img src="${mealItem.mealImage}" alt=""></li>
+                <li class="store_img"><img src="${mealItem.mealImage}" alt="" class = "storeImage"></li>
                 <li class="meal_detail">
                     <p>${mealItem.menuName}</p>
 
@@ -172,7 +177,10 @@ function renderEachMealData(groupedMeals, i) {
 
             </div>
         `;
-        parentDiv.innerHTML = innerHTML;
+        parentDiv.innerHTML = innerHTML + ` <div class="buttons">
+        <button class="button_green button_reserve" id="reserveMeal" onclick="cart()">Reserve</button>
+
+    </div>`;
         divElement.appendChild(parentDiv)
 
         //     <div class="restaurant">

@@ -103,6 +103,12 @@ ul.menu_detail li {
     text-align: start;
 }
 
+.orderEmptyImage {
+    width: 30%;
+    margin: auto;
+    display: block;
+}
+
 li.store_img {
     display: flex;
     align-items: center;
@@ -153,10 +159,9 @@ ul.order_review li {
     height: 88px;
 }
 
-
-/* img {
+.storeImage {
     border-radius: 50%;
-} */
+}
 
 p[id*="givenSalePrice"] {
     font-weight: bold;
